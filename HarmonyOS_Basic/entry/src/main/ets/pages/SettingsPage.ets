@@ -1,23 +1,22 @@
+import { SettingsPanel } from '../components/SettingsPanel'
+
 @Entry
 @Component
 struct SettingsPage {
-  @State message: string = 'Hello World';
+  @State isDarkMode: boolean = false
+  @State fontSize: number = 16
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('SettingsPageHelloWorld')
-        .fontSize($r('app.float.page_text_font_size'))
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
-        .onClick(() => {
-          this.message = 'Welcome';
-        })
+    Column() {
+      Text('当前设置')
+        .fontSize(this.fontSize)
+        .fontColor(this.isDarkMode ? Color.White : Color.Black)
+
+      SettingsPanel({
+        isDarkMode: $isDarkMode, // 使用$传递Link
+        fontSize: $fontSize
+      })
     }
-    .height('100%')
-    .width('100%')
+    .backgroundColor(this.isDarkMode ? Color.Black : Color.White)
   }
 }

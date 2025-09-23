@@ -67,6 +67,48 @@ struct Index {
       });
 
 
+      Button() {
+        Text('一维布局容器练习')
+          .fontSize(22)
+          .fontWeight(FontWeight.Medium)
+          .fontColor('#FFFFFF')
+      }
+      .type(ButtonType.Capsule)
+      .backgroundColor('#3182CE')
+      .width('75%')
+      .height(58)
+      .shadow({
+        radius: 8,
+        color: '#3182CE25',
+        offsetX: 0,
+        offsetY: 4
+      })
+      .onClick(() => {
+        this.navigateToPage('pages/ComponentPage', '商品页面');
+      });
+
+
+
+      Button() {
+        Text('二维布局容器练习')
+          .fontSize(22)
+          .fontWeight(FontWeight.Medium)
+          .fontColor('#FFFFFF')
+      }
+      .type(ButtonType.Capsule)
+      .backgroundColor('#3182CE')
+      .width('75%')
+      .height(58)
+      .shadow({
+        radius: 8,
+        color: '#3182CE25',
+        offsetX: 0,
+        offsetY: 4
+      })
+      .onClick(() => {
+        this.navigateToPage('pages/Component2Page', '商品页面');
+      });
+
       // Card()
       // MyButton()
       // UserProfile()

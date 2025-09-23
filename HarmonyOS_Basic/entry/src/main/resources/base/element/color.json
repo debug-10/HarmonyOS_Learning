@@ -3,6 +3,18 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "windows_color",
+      "value": "#ff5d91bf"
+    },
+    {
+      "name": "bg_color",
+      "value": "#FF340381"
+    },
+    {
+      "name": "font_color",
+      "value": "#ffaa5dbf"
     }
   ]
 }
