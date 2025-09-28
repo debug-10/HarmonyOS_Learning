@@ -4,6 +4,11 @@
     "pages/ProductListPage",
     "pages/SettingsPage",
     "pages/ComponentPage",
-    "pages/Component2Page"
+    "pages/Component2Page",
+    "pages/ExplictAnimationPage",
+    "pages/SlideTipCardPage",
+    "pages/KeyframeAnimationPage",
+    "pages/ProductList",
+    "pages/ProductDetail"
   ]
 }

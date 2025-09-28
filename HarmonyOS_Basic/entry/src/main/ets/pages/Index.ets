@@ -26,8 +26,91 @@ struct Index {
   build() {
     Column({space : 20}){
 
+      // Button() {
+      //   Text('进入商品页面')
+      //     .fontSize(22)
+      //     .fontWeight(FontWeight.Medium)
+      //     .fontColor('#FFFFFF')
+      // }
+      // .type(ButtonType.Capsule)
+      // .backgroundColor('#3182CE')
+      // .width('75%')
+      // .height(58)
+      // .shadow({
+      //   radius: 8,
+      //   color: '#3182CE25',
+      //   offsetX: 0,
+      //   offsetY: 4
+      // })
+      // .onClick(() => {
+      //   this.navigateToPage('pages/ProductListPage', '商品页面');
+      // });
+      //
+      // Button() {
+      //   Text('进入设置页面')
+      //     .fontSize(22)
+      //     .fontWeight(FontWeight.Medium)
+      //     .fontColor('#FFFFFF')
+      // }
+      // .type(ButtonType.Capsule)
+      // .backgroundColor('#3182CE')
+      // .width('75%')
+      // .height(58)
+      // .shadow({
+      //   radius: 8,
+      //   color: '#3182CE25',
+      //   offsetX: 0,
+      //   offsetY: 4
+      // })
+      // .onClick(() => {
+      //   this.navigateToPage('pages/SettingsPage', '商品页面');
+      // });
+      //
+      //
+      // Button() {
+      //   Text('一维布局容器练习')
+      //     .fontSize(22)
+      //     .fontWeight(FontWeight.Medium)
+      //     .fontColor('#FFFFFF')
+      // }
+      // .type(ButtonType.Capsule)
+      // .backgroundColor('#3182CE')
+      // .width('75%')
+      // .height(58)
+      // .shadow({
+      //   radius: 8,
+      //   color: '#3182CE25',
+      //   offsetX: 0,
+      //   offsetY: 4
+      // })
+      // .onClick(() => {
+      //   this.navigateToPage('pages/ComponentPage', '商品页面');
+      // });
+      //
+      //
+      //
+      // Button() {
+      //   Text('二维布局容器练习')
+      //     .fontSize(22)
+      //     .fontWeight(FontWeight.Medium)
+      //     .fontColor('#FFFFFF')
+      // }
+      // .type(ButtonType.Capsule)
+      // .backgroundColor('#3182CE')
+      // .width('75%')
+      // .height(58)
+      // .shadow({
+      //   radius: 8,
+      //   color: '#3182CE25',
+      //   offsetX: 0,
+      //   offsetY: 4
+      // })
+      // .onClick(() => {
+      //   this.navigateToPage('pages/Component2Page', '商品页面');
+      // });
+
       Button() {
-        Text('进入商品页面')
+        Text('显式动画')
           .fontSize(22)
           .fontWeight(FontWeight.Medium)
           .fontColor('#FFFFFF')
@@ -43,11 +126,11 @@ struct Index {
         offsetY: 4
       })
       .onClick(() => {
-        this.navigateToPage('pages/ProductListPage', '商品页面');
+        this.navigateToPage('pages/ExplictAnimationPage', '显式动画');
       });
 
       Button() {
-        Text('进入设置页面')
+        Text('滑动提示卡片')
           .fontSize(22)
           .fontWeight(FontWeight.Medium)
           .fontColor('#FFFFFF')
@@ -63,12 +146,12 @@ struct Index {
         offsetY: 4
       })
       .onClick(() => {
-        this.navigateToPage('pages/SettingsPage', '商品页面');
+        this.navigateToPage('pages/SlideTipCardPage', '滑动提示卡片');
       });
 
 
       Button() {
-        Text('一维布局容器练习')
+        Text('商品列表页面')
           .fontSize(22)
           .fontWeight(FontWeight.Medium)
           .fontColor('#FFFFFF')
@@ -84,31 +167,8 @@ struct Index {
         offsetY: 4
       })
       .onClick(() => {
-        this.navigateToPage('pages/ComponentPage', '商品页面');
+        this.navigateToPage('pages/ProductList', '商品列表');
       });
-
-
-
-      Button() {
-        Text('二维布局容器练习')
-          .fontSize(22)
-          .fontWeight(FontWeight.Medium)
-          .fontColor('#FFFFFF')
-      }
-      .type(ButtonType.Capsule)
-      .backgroundColor('#3182CE')
-      .width('75%')
-      .height(58)
-      .shadow({
-        radius: 8,
-        color: '#3182CE25',
-        offsetX: 0,
-        offsetY: 4
-      })
-      .onClick(() => {
-        this.navigateToPage('pages/Component2Page', '商品页面');
-      });
-
       // Card()
       // MyButton()
       // UserProfile()
