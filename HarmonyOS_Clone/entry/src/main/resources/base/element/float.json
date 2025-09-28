@@ -1,0 +1,131 @@
+{
+  "float": [
+    {
+      "name": "page_text_font_size",
+      "value": "50fp"
+    },
+    {
+      "name": "title_font_size_large",
+      "value": "36fp"
+    },
+    {
+      "name": "title_font_size_medium",
+      "value": "32fp"
+    },
+    {
+      "name": "title_font_size_small",
+      "value": "28fp"
+    },
+    {
+      "name": "body_font_size_large",
+      "value": "24fp"
+    },
+    {
+      "name": "body_font_size_medium",
+      "value": "20fp"
+    },
+    {
+      "name": "body_font_size_small",
+      "value": "18fp"
+    },
+    {
+      "name": "caption_font_size_large",
+      "value": "16fp"
+    },
+    {
+      "name": "caption_font_size_small",
+      "value": "14fp"
+    },
+    {
+      "name": "label_font_size",
+      "value": "12fp"
+    },
+
+    {
+      "name": "spacing_extra_large",
+      "value": "32vp"
+    },
+    {
+      "name": "spacing_large",
+      "value": "24vp"
+    },
+    {
+      "name": "spacing_medium",
+      "value": "16vp"
+    },
+    {
+      "name": "spacing_small",
+      "value": "12vp"
+    },
+    {
+      "name": "spacing_extra_small",
+      "value": "8vp"
+    },
+    {
+      "name": "spacing_tiny",
+      "value": "4vp"
+    },
+
+    {
+      "name": "corner_radius_large",
+      "value": "24vp"
+    },
+    {
+      "name": "corner_radius_medium",
+      "value": "16vp"
+    },
+    {
+      "name": "corner_radius_small",
+      "value": "8vp"
+    },
+    {
+      "name": "corner_radius_extra_small",
+      "value": "4vp"
+    },
+    {
+      "name": "corner_radius_circle",
+      "value": "9999vp"
+    },
+
+    {
+      "name": "button_height_large",
+      "value": "56vp"
+    },
+    {
+      "name": "button_height_medium",
+      "value": "48vp"
+    },
+    {
+      "name": "button_height_small",
+      "value": "40vp"
+    },
+    {
+      "name": "input_height_large",
+      "value": "56vp"
+    },
+    {
+      "name": "input_height_medium",
+      "value": "48vp"
+    },
+    {
+      "name": "border_width_thick",
+      "value": "2vp"
+    },
+    {
+      "name": "border_width_normal",
+      "value": "1vp"
+    },
+    {
+      "name": "shadow_radius_large",
+      "value": "16vp"
+    },
+    {
+      "name": "shadow_radius_medium",
+      "value": "8vp"
+    },
+    {
+      "name": "shadow_radius_small",
+      "value": "4vp"
+    }
+  ]
+}

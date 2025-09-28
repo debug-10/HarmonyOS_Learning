@@ -1,0 +1,826 @@
+[2025-09-28T15:05:02.248] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T15:05:02.891] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T15:05:05.648] [DEBUG] debug-file - hvigorfile, require result:  { appTasks: [Getter] }
+[2025-09-28T15:05:05.859] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T15:05:05.865] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T15:05:05.878] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T15:05:05.953] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:05:05.927] [DEBUG] debug-file - Project task initialization takes 7 ms 
+[2025-09-28T15:05:02.251] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '5.0.5',
+  dependencies: {},
+  execution: {},
+  logging: {},
+  debugging: {}
+}
+[2025-09-28T15:05:05.962] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T15:05:05.973] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:05:05.985] [DEBUG] debug-file - entry : clean cost memory 0.11283111572265625
+[2025-09-28T15:05:06.011] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T15:05:02.892] [DEBUG] debug-file - Since current hvigor version 6.0.6 differs from last hvigor version 
+      undefined, delete file-cache.json and task-cache.json.
+[2025-09-28T15:05:05.649] [DEBUG] debug-file - hvigorfile, binding system plugins { appTasks: [Getter] }
+[2025-09-28T15:05:05.860] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T15:05:05.867] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T15:05:05.919] [DEBUG] debug-file - Sdk init in 51 ms 
+[2025-09-28T15:05:05.953] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:05:05.927] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\hvigorfile.ts
+[2025-09-28T15:05:02.255] [DEBUG] debug-file - env: daemon=false
+[2025-09-28T15:05:05.963] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T15:05:05.976] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T15:05:05.985] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 104 ms 
+[2025-09-28T15:05:06.013] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T15:05:02.893] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-09-28T15:05:05.860] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T15:05:05.870] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T15:05:05.928] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\hvigorfile.ts
+[2025-09-28T15:05:05.953] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:05:02.255] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2025-09-28T15:05:05.967] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T15:05:05.976] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T15:05:05.987] [INFO] debug-file - Finished :entry:clean... after 3 ms 
+[2025-09-28T15:05:06.015] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2025-09-28T15:05:02.894] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\hvigorfile.ts
+[2025-09-28T15:05:05.860] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T15:05:05.873] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T15:05:05.934] [DEBUG] debug-file - hvigorfile, require result:  { hapTasks: [Getter] }
+[2025-09-28T15:05:05.953] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:05:05.968] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:05:05.980] [DEBUG] debug-file - Configuration phase cost:3 s 88 ms 
+[2025-09-28T15:05:05.987] [DEBUG] debug-file - Executing task ::clean
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Clear worker 0.
+[2025-09-28T15:05:05.934] [DEBUG] debug-file - hvigorfile, binding system plugins { hapTasks: [Getter] }
+[2025-09-28T15:05:05.953] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T15:05:05.971] [DEBUG] debug-file - Module ToDoList Collected Dependency: 
+[2025-09-28T15:05:05.982] [DEBUG] debug-file - Configuration task cost before running: 3 s 101 ms 
+[2025-09-28T15:05:05.987] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Worker 0 has been cleared.
+[2025-09-28T15:05:05.936] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\hvigorfile.ts
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\cli\main\cli.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\bin\hvigor.js
+[2025-09-28T15:05:05.953] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:05:05.971] [DEBUG] debug-file - Module ToDoList's total dependency: 0
+[2025-09-28T15:05:05.983] [DEBUG] debug-file - Executing task :entry:clean
+[2025-09-28T15:05:05.987] [DEBUG] debug-file - ToDoList : clean cost memory 0.0202789306640625
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T15:05:05.983] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T15:05:05.954] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:05:05.988] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 106 ms 
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T15:05:05.954] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:05:05.988] [INFO] debug-file - Finished ::clean... after 1 ms 
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Clear worker 1.
+[2025-09-28T15:05:05.954] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:05:05.988] [DEBUG] debug-file - Executing task :entry:init
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Worker 1 has been cleared.
+[2025-09-28T15:05:05.954] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:05:05.988] [DEBUG] debug-file - entry : init cost memory 0.01276397705078125
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Current idle worker size: 0.
+[2025-09-28T15:05:05.954] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:05:05.988] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 107 ms 
+[2025-09-28T15:05:06.016] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T15:05:05.954] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:05:05.989] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2025-09-28T15:05:06.017] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T15:05:05.954] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T15:05:05.989] [DEBUG] debug-file - Executing task ::init
+[2025-09-28T15:05:06.022] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2025-09-28T15:05:05.960] [DEBUG] debug-file - Module entry task initialization takes 6 ms 
+[2025-09-28T15:05:05.989] [DEBUG] debug-file - ToDoList : init cost memory 0.01154327392578125
+[2025-09-28T15:05:06.022] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2025-09-28T15:05:05.961] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\hvigorfile.ts
+[2025-09-28T15:05:05.989] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 108 ms 
+[2025-09-28T15:05:06.026] [DEBUG] debug-file - Current worker pool is terminated.
+[2025-09-28T15:05:05.989] [INFO] debug-file - Finished ::init... after 1 ms 
+[2025-09-28T15:05:06.001] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T15:05:06.008] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T15:05:06.008] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T15:05:12.788] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T15:05:12.902] [DEBUG] debug-file - env: daemon=true
+[2025-09-28T15:05:12.790] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '5.0.5',
+  dependencies: {},
+  execution: {},
+  logging: {},
+  debugging: {}
+}
+[2025-09-28T15:05:13.967] [DEBUG] debug-file - java daemon tryConnect failed Error: connect ECONNREFUSED 127.0.0.1:45050
+[2025-09-28T15:05:13.979] [DEBUG] debug-file - java daemon started at port 45050 pid 29728
+[2025-09-28T15:05:14.024] [DEBUG] debug-file - session manager: set active socket. socketId=WMos0jeN6h4-gvzPAAAB
+[2025-09-28T15:05:15.141] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T15:05:15.150] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T15:05:15.151] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-09-28T15:05:15.153] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\hvigorfile.ts
+[2025-09-28T15:05:17.370] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T15:05:17.370] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T15:05:17.574] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T15:05:17.575] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T15:05:17.576] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T15:05:17.576] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T15:05:17.578] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T15:05:17.580] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T15:05:17.582] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T15:05:17.585] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T15:05:17.588] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T15:05:17.624] [DEBUG] debug-file - Sdk init in 44 ms 
+[2025-09-28T15:05:17.630] [DEBUG] debug-file - Project task initialization takes 5 ms 
+[2025-09-28T15:05:17.630] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\hvigorfile.ts
+[2025-09-28T15:05:17.631] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\hvigorfile.ts
+[2025-09-28T15:05:17.636] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T15:05:17.636] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T15:05:17.637] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\hvigorfile.ts
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-09-28T15:05:17.650] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:05:17.650] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:05:17.651] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:05:17.652] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:05:17.652] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:05:17.652] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T15:05:17.660] [DEBUG] debug-file - Module entry task initialization takes 7 ms 
+[2025-09-28T15:05:17.660] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\hvigorfile.ts
+[2025-09-28T15:05:17.680] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 20 ms 
+[2025-09-28T15:05:17.681] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T15:05:17.683] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T15:05:17.690] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T15:05:17.691] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:05:17.695] [DEBUG] debug-file - Module ToDoList Collected Dependency: 
+[2025-09-28T15:05:17.695] [DEBUG] debug-file - Module ToDoList's total dependency: 0
+[2025-09-28T15:05:17.697] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:05:17.700] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T15:05:17.700] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T15:05:17.705] [DEBUG] debug-file - Configuration phase cost:2 s 554 ms 
+[2025-09-28T15:05:17.707] [DEBUG] debug-file - Configuration task cost before running: 2 s 563 ms 
+[2025-09-28T15:05:17.714] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-09-28T15:05:17.715] [DEBUG] debug-file - Task 'entry:default@PreBuild' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:17.858] [DEBUG] debug-file - current product is not Atomic service.
+[2025-09-28T15:05:17.858] [DEBUG] debug-file - Use tool [win32: JAVA_HOME, CLASSPATH]
+ [
+  { JAVA_HOME: 'D:\\tool\\DevEco Studio 6\\DevEco Studio\\jbr' },
+  { CLASSPATH: '.;D:\\jdk-17\\lib;D:\\jdk-17\\lib\\tools.jar' }
+]
+[2025-09-28T15:05:17.858] [DEBUG] debug-file - Use tool [win32: NODE_HOME]
+ [
+  {
+    NODE_HOME: 'D:\\tool\\DevEco Studio 6\\DevEco Studio\\tools\\node'
+  }
+]
+[2025-09-28T15:05:17.859] [DEBUG] debug-file - entry : default@PreBuild cost memory 18.401329040527344
+[2025-09-28T15:05:17.859] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 715 ms 
+[2025-09-28T15:05:17.863] [INFO] debug-file - Finished :entry:default@PreBuild... after 146 ms 
+[2025-09-28T15:05:17.865] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-09-28T15:05:17.866] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:17.866] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.0417022705078125
+[2025-09-28T15:05:17.866] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 722 ms 
+[2025-09-28T15:05:17.866] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-09-28T15:05:17.868] [DEBUG] debug-file - Executing task :entry:default@GenerateMetadata
+[2025-09-28T15:05:17.869] [DEBUG] debug-file - Task 'entry:default@GenerateMetadata' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:17.871] [DEBUG] debug-file - entry : default@GenerateMetadata cost memory 0.06978607177734375
+[2025-09-28T15:05:17.872] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 728 ms 
+[2025-09-28T15:05:17.872] [INFO] debug-file - Finished :entry:default@GenerateMetadata... after 4 ms 
+[2025-09-28T15:05:17.873] [DEBUG] debug-file - Executing task :entry:default@ConfigureCmake
+[2025-09-28T15:05:17.873] [DEBUG] debug-file - entry : default@ConfigureCmake cost memory 0.016143798828125
+[2025-09-28T15:05:17.874] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 730 ms 
+[2025-09-28T15:05:17.874] [INFO] debug-file - Finished :entry:default@ConfigureCmake... after 1 ms 
+[2025-09-28T15:05:17.875] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-09-28T15:05:17.876] [DEBUG] debug-file - Task 'entry:default@MergeProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:17.876] [DEBUG] debug-file - Change app api release type with 'Release'
+[2025-09-28T15:05:17.877] [DEBUG] debug-file - Change app compile API version with '6.0.0.47'
+[2025-09-28T15:05:17.877] [DEBUG] debug-file - Change app target API version with '50005017'
+[2025-09-28T15:05:17.877] [DEBUG] debug-file - Change app minimum API version with '50005017'
+[2025-09-28T15:05:17.877] [DEBUG] debug-file - Use cli appEnvironment
+[2025-09-28T15:05:17.879] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.06463623046875
+[2025-09-28T15:05:17.879] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 735 ms 
+[2025-09-28T15:05:17.880] [INFO] debug-file - Finished :entry:default@MergeProfile... after 5 ms 
+[2025-09-28T15:05:17.885] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-09-28T15:05:17.885] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:17.887] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.073638916015625
+[2025-09-28T15:05:17.887] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 744 ms 
+[2025-09-28T15:05:17.888] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 3 ms 
+[2025-09-28T15:05:17.889] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-09-28T15:05:17.889] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01638031005859375
+[2025-09-28T15:05:17.890] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 746 ms 
+[2025-09-28T15:05:17.890] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-09-28T15:05:17.892] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-09-28T15:05:17.901] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:17.902] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.4580078125
+[2025-09-28T15:05:17.902] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 758 ms 
+[2025-09-28T15:05:17.902] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 11 ms 
+[2025-09-28T15:05:17.907] [DEBUG] debug-file - Executing task :entry:default@ProcessIntegratedHsp
+[2025-09-28T15:05:17.908] [DEBUG] debug-file - entry : default@ProcessIntegratedHsp cost memory 0.03310394287109375
+[2025-09-28T15:05:17.908] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 764 ms 
+[2025-09-28T15:05:17.908] [INFO] debug-file - Finished :entry:default@ProcessIntegratedHsp... after 1 ms 
+[2025-09-28T15:05:17.910] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithCmake
+[2025-09-28T15:05:17.910] [DEBUG] debug-file - entry : default@BuildNativeWithCmake cost memory 0.017578125
+[2025-09-28T15:05:17.910] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 766 ms 
+[2025-09-28T15:05:17.910] [INFO] debug-file - Finished :entry:default@BuildNativeWithCmake... after 1 ms 
+[2025-09-28T15:05:17.912] [DEBUG] debug-file - Executing task :entry:default@MakePackInfo
+[2025-09-28T15:05:17.914] [DEBUG] debug-file - Module Pack Info:  {
+  summary: {
+    app: { bundleName: 'c***t', bundleType: 'app', version: [Object] },
+    modules: [ [Object] ]
+  },
+  packages: [
+    {
+      deviceType: [Array],
+      moduleType: 'entry',
+      deliveryWithInstall: true,
+      name: 'entry-default'
+    }
+  ]
+}
+[2025-09-28T15:05:17.915] [DEBUG] debug-file - entry : default@MakePackInfo cost memory 0.1040191650390625
+[2025-09-28T15:05:17.916] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 772 ms 
+[2025-09-28T15:05:17.916] [INFO] debug-file - Finished :entry:default@MakePackInfo... after 4 ms 
+[2025-09-28T15:05:17.919] [DEBUG] debug-file - Executing task :entry:default@SyscapTransform
+[2025-09-28T15:05:17.919] [DEBUG] debug-file - File: 'D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\syscap.json' from 'sysCapJsonPath' is not exists, just ignore.
+[2025-09-28T15:05:17.920] [DEBUG] debug-file - Task 'entry:default@SyscapTransform' cost while wrapping incremental declarations: 2 ms 
+[2025-09-28T15:05:17.921] [DEBUG] debug-file - entry : default@SyscapTransform cost memory 0.0610809326171875
+[2025-09-28T15:05:17.921] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 777 ms 
+[2025-09-28T15:05:17.922] [INFO] debug-file - Finished :entry:default@SyscapTransform... after 3 ms 
+[2025-09-28T15:05:17.926] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-09-28T15:05:17.928] [DEBUG] debug-file - Task 'entry:default@ProcessProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:17.930] [DEBUG] debug-file - [
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\tools\\node\\node.exe',
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '17'
+]
+[2025-09-28T15:05:18.129] [DEBUG] debug-file - 12.0.6.0
+[2025-09-28T15:05:18.132] [DEBUG] debug-file - No need to add fake ui ability because of not in preview process.
+[2025-09-28T15:05:18.133] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 2.105438232421875
+[2025-09-28T15:05:18.133] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 989 ms 
+[2025-09-28T15:05:18.133] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 208 ms 
+[2025-09-28T15:05:18.134] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-09-28T15:05:18.138] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.08750152587890625
+[2025-09-28T15:05:18.138] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 994 ms 
+[2025-09-28T15:05:18.139] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 4 ms 
+[2025-09-28T15:05:18.140] [DEBUG] debug-file - Executing task :entry:default@ProcessShareConfig
+[2025-09-28T15:05:18.143] [DEBUG] debug-file - entry : default@ProcessShareConfig cost memory 0.07250213623046875
+[2025-09-28T15:05:18.143] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 999 ms 
+[2025-09-28T15:05:18.144] [INFO] debug-file - Finished :entry:default@ProcessShareConfig... after 3 ms 
+[2025-09-28T15:05:18.145] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-09-28T15:05:18.145] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:18.146] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.06859588623046875
+[2025-09-28T15:05:18.146] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 2 ms 
+[2025-09-28T15:05:18.146] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 2 ms 
+[2025-09-28T15:05:18.147] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithNinja
+[2025-09-28T15:05:18.149] [DEBUG] debug-file - entry : default@BuildNativeWithNinja cost memory 0.030670166015625
+[2025-09-28T15:05:18.149] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 5 ms 
+[2025-09-28T15:05:18.149] [INFO] debug-file - Finished :entry:default@BuildNativeWithNinja... after 2 ms 
+[2025-09-28T15:05:18.151] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@ProcessResource
+[2025-09-28T15:05:18.154] [DEBUG] debug-file - Executing task :entry:default@ProcessResource
+[2025-09-28T15:05:18.154] [DEBUG] debug-file - Task 'entry:default@ProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:18.156] [DEBUG] debug-file - entry : default@ProcessResource cost memory 0.1270294189453125
+[2025-09-28T15:05:18.157] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 13 ms 
+[2025-09-28T15:05:18.158] [INFO] debug-file - Finished :entry:default@ProcessResource... after 5 ms 
+[2025-09-28T15:05:18.161] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-09-28T15:05:18.161] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:18.172] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.7694778442382812
+[2025-09-28T15:05:18.172] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 28 ms 
+[2025-09-28T15:05:18.175] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 12 ms 
+[2025-09-28T15:05:18.177] [DEBUG] debug-file - Executing task :entry:default@ProcessLibs
+[2025-09-28T15:05:18.182] [DEBUG] debug-file - Worker dispatch failed, running processLibs on main thread.
+[2025-09-28T15:05:18.183] [DEBUG] debug-file - entry : default@ProcessLibs cost memory 0.2898406982421875
+[2025-09-28T15:05:18.183] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 40 ms 
+[2025-09-28T15:05:18.184] [INFO] debug-file - Finished :entry:default@ProcessLibs... after 7 ms 
+[2025-09-28T15:05:18.185] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@CompileResource
+[2025-09-28T15:05:18.186] [DEBUG] debug-file - Executing task :entry:default@CompileResource
+[2025-09-28T15:05:18.194] [DEBUG] debug-file - Use tool [D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-l',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\res\\default\\resConfig.json'
+]
+[2025-09-28T15:05:18.196] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 221470720,
+  heapTotal: 165244928,
+  heapUsed: 139715520,
+  external: 14034928,
+  arrayBuffers: 11133731
+} os memoryUsage :13.282157897949219
+[2025-09-28T15:05:18.412] [DEBUG] debug-file - Info: Pack: normal pack mode
+
+[2025-09-28T15:05:18.461] [DEBUG] debug-file - Info: hardware concurrency count is : 16
+Info: thread count is : 16
+
+[2025-09-28T15:05:18.461] [DEBUG] debug-file - Info: thread pool is started
+
+[2025-09-28T15:05:18.462] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T15:05:18.469] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T15:05:18.471] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T15:05:18.476] [DEBUG] debug-file - 09-28 15:05:18.477 23188 21728 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+09-28 15:05:18.477 23188 21728 E C01400/ImageTranscoderUtils: ImageFilter IN D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T15:05:18.477] [DEBUG] debug-file - 09-28 15:05:18.477 23188 21728 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T15:05:18.477] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T15:05:18.478] [DEBUG] debug-file - 09-28 15:05:18.479 23188 21728 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+
+[2025-09-28T15:05:18.479] [DEBUG] debug-file - 09-28 15:05:18.479 23188 21728 E C01400/ImageTranscoderUtils: ImageFilter IN D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\resources\base\media\ic_icon.png
+09-28 15:05:18.479 23188 21728 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\resources\base\media\ic_icon.png
+
+[2025-09-28T15:05:18.479] [DEBUG] debug-file - Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T15:05:18.480] [DEBUG] debug-file - Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\resources\base\media\ic_icon.png
+
+[2025-09-28T15:05:18.481] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-09-28T15:05:18.481] [DEBUG] debug-file - Info: thread pool is stopped
+
+[2025-09-28T15:05:18.543] [DEBUG] debug-file - entry : default@CompileResource cost memory 0.9644088745117188
+[2025-09-28T15:05:18.543] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 399 ms 
+[2025-09-28T15:05:18.544] [INFO] debug-file - Finished :entry:default@CompileResource... after 358 ms 
+[2025-09-28T15:05:18.546] [DEBUG] debug-file - Executing task :entry:default@DoNativeStrip
+[2025-09-28T15:05:18.546] [DEBUG] debug-file - Task 'entry:default@DoNativeStrip' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:18.549] [DEBUG] debug-file - entry : default@DoNativeStrip cost memory 0.14510345458984375
+[2025-09-28T15:05:18.549] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 405 ms 
+[2025-09-28T15:05:18.549] [INFO] debug-file - Finished :entry:default@DoNativeStrip... after 4 ms 
+[2025-09-28T15:05:18.551] [DEBUG] debug-file - Executing task :entry:default@CompileArkTS
+[2025-09-28T15:05:18.552] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-09-28T15:05:18.573] [DEBUG] debug-file - build config:
+[2025-09-28T15:05:18.574] [DEBUG] debug-file - {
+  moduleType: 'entry',
+  perf: 0,
+  targetName: '.default',
+  packageManagerType: 'ohpm',
+  localPropertiesPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\local.properties',
+  isPreview: false,
+  isOhosTest: false,
+  isLocalTest: false,
+  buildMode: 'Debug',
+  hotReloadBuild: undefined,
+  watchMode: 'false',
+  aceProfilePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile',
+  etsLoaderPath: 'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader',
+  modulePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry',
+  testFrameworkPar: {
+    testMode: undefined,
+    coveragePathFilter: undefined,
+    coverageMode: undefined
+  },
+  needCoverageInsert: false,
+  debugLine: false,
+  projectTopDir: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList',
+  compileSdkVersion: 20,
+  compatibleSdkVersion: 17,
+  compatibleSdkVersionStage: undefined,
+  bundleName: 'c***t',
+  etsLoaderVersion: '6.0.0.47',
+  etsLoaderReleaseType: 'Release',
+  aotCompileMode: 'type',
+  apPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\modules.ap',
+  entryModuleName: 'entry',
+  entryModuleVersion: '1.0.0',
+  entryPackageName: 'entry',
+  allModuleNameHash: 'bb001b5aefb722b17adb583421af4822',
+  externalApiPaths: [
+    'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\hms\\ets'
+  ],
+  compilerTypes: [],
+  isCrossplatform: false,
+  hvigorPluginFile: undefined,
+  compilePluginPath: undefined,
+  buildGeneratedProfilePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\generated\\profile\\default',
+  bundleType: 'app',
+  arkTSVersion: undefined,
+  apiVersion: 20,
+  needCompleteSourcesMap: false,
+  isFaMode: false,
+  strictMode: undefined,
+  buildDir: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build',
+  deviceTypes: [ 'phone' ],
+  useNormalizedOHMUrl: false,
+  pkgContextInfo: undefined,
+  ohPackagePathMap: {},
+  dependencyAliasMap: {},
+  permission: { requestPermissions: undefined, definePermissions: undefined },
+  integratedHsp: false,
+  projectArkOption: undefined,
+  sourceMapDir: undefined,
+  branchElimination: false,
+  transformLib: undefined,
+  caseSensitiveCheck: false,
+  tsImportSendable: false,
+  resolveConflictMode: true,
+  depName2RootPath: {},
+  depName2DepInfo: {},
+  rootPathSet: [ 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList' ],
+  useNativeResolver: true,
+  shouldEmitJs: true,
+  useTscResolve: false,
+  singleFileEmit: false,
+  userProjectConfig: {
+    autoLazyImport: false,
+    allowEmptyBundleName: false,
+    reExportCheckMode: 'noCheck',
+    executionMode: 'memory',
+    usePathPlaceholder: false,
+    writeRollupCache: true,
+    isExpandImportEnabled: false,
+    expandImportExclude: '',
+    ignoreCrossplatformCheck: false,
+    isPreloadSoEnabled: false
+  },
+  skipOhModulesLint: false,
+  executionMode: 'memory',
+  autoLazyImport: false,
+  allowEmptyBundleName: false,
+  reExportCheckMode: 'noCheck',
+  usePathPlaceholder: false,
+  writeRollupCache: true,
+  isExpandImportEnabled: false,
+  expandImportExclude: '',
+  ignoreCrossplatformCheck: false,
+  isPreloadSoEnabled: false,
+  arkCompileCachePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule',
+  aceModuleJsonPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\res\\default\\ark_module.json',
+  appResource: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\res\\default\\ResourceTable.txt',
+  rawFileResource: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\res\\default\\resources\\rawfile',
+  resourceTableHash: 'abbe5e625d03faaaaf534f31328b8aaa',
+  runtimeOS: 'HarmonyOS',
+  sdkInfo: 'false:20:6.0.0.47:Release',
+  aceModuleRoot: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\src\\main\\ets',
+  compileMode: 'esmodule',
+  aceSuperVisualPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\src\\main\\supervisual',
+  aceBuildJson: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\loader\\default\\loader.json',
+  cachePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule\\debug',
+  aceModuleBuild: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\loader_out\\default\\ets',
+  supportChunks: true,
+  declaredFilesPath: undefined,
+  shouldCollectDirectImportees: false,
+  isByteCodeHarOptimize: false,
+  expandImportPath: undefined,
+  pkgNameToPkgBriefInfo: {
+    entry: {
+      pkgRoot: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry',
+      originalSourceRoots: undefined,
+      sourceRoots: [Array],
+      pkgName: 'entry'
+    }
+  },
+  projectModel: {
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\src\\main': {
+      moduleName: 'entry',
+      modulePkgPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry',
+      belongProjectPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList'
+    },
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry': {
+      moduleName: 'entry',
+      modulePkgPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry',
+      belongProjectPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList'
+    },
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList': {
+      moduleName: 'ToDoList',
+      modulePkgPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList',
+      belongProjectPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList'
+    }
+  },
+  pkgJsonFileHash: 'e391d5b0315896a54817e25af7828641',
+  allModulePaths: [ 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry' ],
+  routerMap: {},
+  obfuscationOptions: undefined,
+  byteCodeHarToDependencyKeys: undefined,
+  compileBlockPkg: [],
+  mockParams: {
+    decorator: '@MockSetup',
+    packageName: '@ohos/hamock',
+    etsSourceRootPath: 'src/main/ets',
+    mockConfigPath: undefined,
+    mockConfigKey2ModuleInfo: {},
+    source2ModuleIdMap: {}
+  },
+  copyCodeResourceEnable: true,
+  copyCodeResourceExcludes: [],
+  copyCodeResourceIncludes: undefined,
+  uiTransformOptimization: false,
+  sdkPath: 'D:/tool/DevEco Studio 6/DevEco Studio/sdk',
+  needPreloadSoFileSet: {},
+  preloadSoFilePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\preload\\default\\preload.json',
+  useSourceHash: false,
+  localModuleParamMap: {},
+  otherPaths: {
+    'entry/*': [
+      '..\\*',
+      '..\\..\\..\\build\\default\\generated\\profile\\default\\*'
+    ]
+  },
+  collectImportersConfig: undefined
+}
+[2025-09-28T15:05:18.574] [DEBUG] debug-file - Compile arkts with external api path: D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\hms\ets
+[2025-09-28T15:05:18.576] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T15:05:18.576] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T15:05:18.577] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T15:05:18.579] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T15:05:18.582] [DEBUG] debug-file - default@CompileArkTS work[0] is submitted.
+[2025-09-28T15:05:18.583] [DEBUG] debug-file - default@CompileArkTS work[0] is pushed to ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[12] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[11] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[10] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[9] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.584] [DEBUG] debug-file - A work dispatched to worker[8] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.585] [DEBUG] debug-file - A work dispatched to worker[7] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.585] [DEBUG] debug-file - A work dispatched to worker[6] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.585] [DEBUG] debug-file - A work dispatched to worker[5] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.585] [DEBUG] debug-file - Create  resident worker with id: 4.
+[2025-09-28T15:05:18.587] [DEBUG] debug-file - default@CompileArkTS work[0] has been dispatched to worker[4].
+[2025-09-28T15:05:18.588] [DEBUG] debug-file - default@CompileArkTS work[0] is dispatched.
+[2025-09-28T15:05:18.588] [DEBUG] debug-file - CopyResources startTime: 517705393379700
+[2025-09-28T15:05:18.588] [DEBUG] debug-file - default@CompileArkTS work[1] is submitted.
+[2025-09-28T15:05:18.588] [DEBUG] debug-file - default@CompileArkTS work[1] is pushed to ready queue.
+[2025-09-28T15:05:18.588] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.589] [DEBUG] debug-file - Create  resident worker with id: 14.
+[2025-09-28T15:05:18.590] [DEBUG] debug-file - default@CompileArkTS work[1] has been dispatched to worker[14].
+[2025-09-28T15:05:18.590] [DEBUG] debug-file - default@CompileArkTS work[1] is dispatched.
+[2025-09-28T15:05:18.591] [DEBUG] debug-file - entry : default@CompileArkTS cost memory 2.1434707641601562
+[2025-09-28T15:05:18.593] [DEBUG] debug-file - Executing task :entry:default@BuildJS
+[2025-09-28T15:05:18.596] [DEBUG] debug-file - entry : default@BuildJS cost memory 0.12442779541015625
+[2025-09-28T15:05:18.596] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 453 ms 
+[2025-09-28T15:05:18.597] [INFO] debug-file - Finished :entry:default@BuildJS... after 4 ms 
+[2025-09-28T15:05:18.599] [DEBUG] debug-file - Executing task :entry:default@CacheNativeLibs
+[2025-09-28T15:05:18.599] [DEBUG] debug-file - Task 'entry:default@CacheNativeLibs' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:18.600] [DEBUG] debug-file - default@CacheNativeLibs work[2] is submitted.
+[2025-09-28T15:05:18.600] [DEBUG] debug-file - default@CacheNativeLibs work[2] is pushed to ready queue.
+[2025-09-28T15:05:18.600] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T15:05:18.600] [DEBUG] debug-file - A work dispatched to worker[14] failed because of worker busy.
+[2025-09-28T15:05:18.600] [DEBUG] debug-file - Create  resident worker with id: 13.
+[2025-09-28T15:05:18.601] [DEBUG] debug-file - default@CacheNativeLibs work[2] has been dispatched to worker[13].
+[2025-09-28T15:05:18.602] [DEBUG] debug-file - default@CacheNativeLibs work[2] is dispatched.
+[2025-09-28T15:05:18.602] [DEBUG] debug-file - entry : default@CacheNativeLibs cost memory 0.1947784423828125
+[2025-09-28T15:05:19.890] [DEBUG] debug-file - worker[13] has one work done.
+[2025-09-28T15:05:19.890] [DEBUG] debug-file - default@CacheNativeLibs work[2] done.
+[2025-09-28T15:05:19.890] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T15:05:19.890] [INFO] debug-file - Finished :entry:default@CacheNativeLibs... after 10 ms 
+[2025-09-28T15:05:19.901] [DEBUG] debug-file - worker[14] has one work done.
+[2025-09-28T15:05:19.901] [DEBUG] debug-file - CopyResources is end, endTime: 517706706411000
+[2025-09-28T15:05:19.901] [DEBUG] debug-file - default@CompileArkTS work[1] done.
+[2025-09-28T15:05:19.901] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T15:05:27.019] [DEBUG] debug-file - worker[4] has one work done.
+[2025-09-28T15:05:27.019] [DEBUG] debug-file - Ark compile task finished.finished time is 517713824156100
+[2025-09-28T15:05:27.023] [DEBUG] debug-file - default@CompileArkTS work[0] done.
+[2025-09-28T15:05:27.024] [DEBUG] debug-file - A work dispatched to worker[4] failed because unable to get work from ready queue.
+[2025-09-28T15:05:27.027] [INFO] debug-file - Finished :entry:default@CompileArkTS... after 5 s 356 ms 
+[2025-09-28T15:05:27.030] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgModuleJson
+[2025-09-28T15:05:27.030] [DEBUG] debug-file - File: 'D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\preload\default\preload.json' from 'preloadSoJsonPath' is not exists, just ignore.
+[2025-09-28T15:05:27.031] [DEBUG] debug-file - Task 'entry:default@GeneratePkgModuleJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:27.035] [DEBUG] debug-file - entry : default@GeneratePkgModuleJson cost memory 0.0763702392578125
+[2025-09-28T15:05:27.036] [DEBUG] debug-file - runTaskFromQueue task cost before running: 11 s 892 ms 
+[2025-09-28T15:05:27.036] [INFO] debug-file - Finished :entry:default@GeneratePkgModuleJson... after 6 ms 
+[2025-09-28T15:05:27.038] [DEBUG] debug-file - Executing task :entry:default@ProcessCompiledResources
+[2025-09-28T15:05:27.039] [DEBUG] debug-file - File: 'D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\preload\default\preload.json' from 'preloadSoJsonPath' is not exists, just ignore.
+[2025-09-28T15:05:27.039] [DEBUG] debug-file - Task 'entry:default@ProcessCompiledResources' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:05:27.040] [DEBUG] debug-file - entry : default@ProcessCompiledResources cost memory 0.0655517578125
+[2025-09-28T15:05:27.040] [DEBUG] debug-file - runTaskFromQueue task cost before running: 11 s 896 ms 
+[2025-09-28T15:05:27.040] [INFO] debug-file - Finished :entry:default@ProcessCompiledResources... after 2 ms 
+[2025-09-28T15:05:27.044] [DEBUG] debug-file - Executing task :entry:default@PackageHap
+[2025-09-28T15:05:27.051] [DEBUG] debug-file - Use tool [D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\toolchains\lib\app_packing_tool.jar]
+ [
+  'java',
+  '-Dfile.encoding=GBK',
+  '-jar',
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\lib\\app_packing_tool.jar',
+  '--mode',
+  'hap',
+  '--force',
+  'true',
+  '--lib-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\stripped_native_libs\\default',
+  '--json-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\package\\default\\module.json',
+  '--resources-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\res\\default\\resources',
+  '--index-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\res\\default\\resources.index',
+  '--pack-info-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\outputs\\default\\pack.info',
+  '--out-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap',
+  '--ets-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ToDoList\\entry\\build\\default\\intermediates\\loader_out\\default\\ets'
+]
+[2025-09-28T15:05:27.489] [DEBUG] debug-file - java daemon socket received message:{"code":0,"message":"pack success"}
+[2025-09-28T15:05:27.495] [DEBUG] debug-file - entry : default@PackageHap cost memory -31.880699157714844
+[2025-09-28T15:05:27.496] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 352 ms 
+[2025-09-28T15:05:27.497] [INFO] debug-file - Finished :entry:default@PackageHap... after 452 ms 
+[2025-09-28T15:05:27.500] [DEBUG] debug-file - Executing task :entry:default@PackingCheck
+[2025-09-28T15:05:27.509] [DEBUG] debug-file - entry : default@PackingCheck cost memory 0.5750503540039062
+[2025-09-28T15:05:27.510] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 366 ms 
+[2025-09-28T15:05:27.510] [INFO] debug-file - Finished :entry:default@PackingCheck... after 10 ms 
+[2025-09-28T15:05:27.512] [DEBUG] debug-file - Executing task :entry:default@SignHap
+[2025-09-28T15:05:27.512] [WARN] debug-file - Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
+             If needed, configure the signingConfigs in D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\build-profile.json5.
+[2025-09-28T15:05:27.513] [DEBUG] debug-file - entry : default@SignHap cost memory 0.0765228271484375
+[2025-09-28T15:05:27.513] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 370 ms 
+[2025-09-28T15:05:27.514] [INFO] debug-file - Finished :entry:default@SignHap... after 2 ms 
+[2025-09-28T15:05:27.515] [DEBUG] debug-file - Executing task :entry:default@CollectDebugSymbol
+[2025-09-28T15:05:27.517] [DEBUG] debug-file - entry : default@CollectDebugSymbol cost memory 0.10201263427734375
+[2025-09-28T15:05:27.517] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 373 ms 
+[2025-09-28T15:05:27.517] [INFO] debug-file - Finished :entry:default@CollectDebugSymbol... after 2 ms 
+[2025-09-28T15:05:27.518] [DEBUG] debug-file - Executing task :entry:assembleHap
+[2025-09-28T15:05:27.518] [DEBUG] debug-file - entry : assembleHap cost memory 0.01442718505859375
+[2025-09-28T15:05:27.518] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 374 ms 
+[2025-09-28T15:05:27.518] [INFO] debug-file - Finished :entry:assembleHap... after 1 ms 
+[2025-09-28T15:05:27.530] [INFO] debug-file - BUILD SUCCESSFUL in 12 s 386 ms 
+[2025-09-28T15:05:27.532] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:05:27.533] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:05:27.534] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\build-profile.json5 cache by regenerate.
+[2025-09-28T15:05:27.534] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T15:05:27.534] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\resources\base\profile\main_pages.json cache by regenerate.
+[2025-09-28T15:05:27.535] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\hvigor\hvigor-config.json5 cache by regenerate.
+[2025-09-28T15:05:27.535] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T15:05:27.536] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\oh-package.json5 cache by regenerate.
+[2025-09-28T15:05:27.536] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:6 ms .
+[2025-09-28T15:05:27.537] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-09-28T15:05:27.537] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-09-28T15:05:27.538] [DEBUG] debug-file - Update task entry:default@GenerateMetadata input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:05:27.538] [DEBUG] debug-file - Update task entry:default@GenerateMetadata output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\hap_metadata\default\output_metadata.json cache.
+[2025-09-28T15:05:27.539] [DEBUG] debug-file - Incremental task entry:default@GenerateMetadata post-execution cost:2 ms .
+[2025-09-28T15:05:27.539] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:05:27.539] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\build-profile.json5 cache by regenerate.
+[2025-09-28T15:05:27.540] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:05:27.540] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\merge_profile\default\module.json cache.
+[2025-09-28T15:05:27.541] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:3 ms .
+[2025-09-28T15:05:27.541] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:05:27.542] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\build-profile.json5 cache by regenerate.
+[2025-09-28T15:05:27.542] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\generated\profile\default\BuildProfile.ets cache.
+[2025-09-28T15:05:27.543] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:2 ms .
+[2025-09-28T15:05:27.543] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2025-09-28T15:05:27.543] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2025-09-28T15:05:27.543] [DEBUG] debug-file - Update task entry:default@ProcessIntegratedHsp output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\build\cache\default\integrated_hsp\integratedHspCache.json cache.
+[2025-09-28T15:05:27.544] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp post-execution cost:1 ms .
+[2025-09-28T15:05:27.544] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:05:27.544] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:05:27.545] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\build-profile.json5 cache by regenerate.
+[2025-09-28T15:05:27.545] [DEBUG] debug-file - Update task entry:default@MakePackInfo output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\outputs\default\pack.info cache.
+[2025-09-28T15:05:27.545] [DEBUG] debug-file - Incremental task entry:default@MakePackInfo post-execution cost:2 ms .
+[2025-09-28T15:05:27.545] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\toolchains\syscap_tool.exe cache by regenerate.
+[2025-09-28T15:05:27.546] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\ets\api\device-define cache by regenerate.
+[2025-09-28T15:05:27.548] [DEBUG] debug-file - Update task entry:default@SyscapTransform output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\syscap\default\rpcid.sc cache.
+[2025-09-28T15:05:27.549] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform post-execution cost:4 ms .
+[2025-09-28T15:05:27.549] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-09-28T15:05:27.549] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\process_profile\default\module.json cache.
+[2025-09-28T15:05:27.550] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2025-09-28T15:05:27.550] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T15:05:27.550] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\oh-package.json5 cache by regenerate.
+[2025-09-28T15:05:27.551] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:05:27.551] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\router_map\default\temp-router-map.json cache.
+[2025-09-28T15:05:27.551] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\router_map\default\loader-router-map.json cache.
+[2025-09-28T15:05:27.551] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:2 ms .
+[2025-09-28T15:05:27.552] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T15:05:27.552] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\oh-package.json5 cache by regenerate.
+[2025-09-28T15:05:27.553] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:05:27.553] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\share_config\default\temp-share-config.json cache.
+[2025-09-28T15:05:27.553] [DEBUG] debug-file - Incremental task entry:default@ProcessShareConfig post-execution cost:2 ms .
+[2025-09-28T15:05:27.554] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\startup\default\startup_config.json cache.
+[2025-09-28T15:05:27.554] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2025-09-28T15:05:27.554] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\resConfig.json cache.
+[2025-09-28T15:05:27.554] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\opt-compression.json cache.
+[2025-09-28T15:05:27.555] [DEBUG] debug-file - Incremental task entry:default@ProcessResource post-execution cost:1 ms .
+[2025-09-28T15:05:27.556] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\router_map\default\temp-router-map.json cache by regenerate.
+[2025-09-28T15:05:27.556] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader\default\loader.json cache.
+[2025-09-28T15:05:27.557] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:2 ms .
+[2025-09-28T15:05:27.557] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\build-profile.json5 cache by regenerate.
+[2025-09-28T15:05:27.558] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T15:05:27.558] [DEBUG] debug-file - Update task entry:default@ProcessLibs output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\libs\default cache.
+[2025-09-28T15:05:27.558] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs post-execution cost:2 ms .
+[2025-09-28T15:05:27.559] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\resources cache by regenerate.
+[2025-09-28T15:05:27.564] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\AppScope\resources cache by regenerate.
+[2025-09-28T15:05:27.566] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-09-28T15:05:27.566] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\resConfig.json cache by regenerate.
+[2025-09-28T15:05:27.566] [DEBUG] debug-file - Update task entry:default@CompileResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default cache.
+[2025-09-28T15:05:27.571] [DEBUG] debug-file - Update task entry:default@CompileResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\generated\r\default\ResourceTable.h cache.
+[2025-09-28T15:05:27.571] [DEBUG] debug-file - Update task entry:default@CompileResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\generated\r\default cache.
+[2025-09-28T15:05:27.572] [DEBUG] debug-file - Incremental task entry:default@CompileResource post-execution cost:14 ms .
+[2025-09-28T15:05:27.572] [DEBUG] debug-file - Update task entry:default@DoNativeStrip input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T15:05:27.573] [DEBUG] debug-file - Update task entry:default@DoNativeStrip output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\stripped_native_libs\default cache.
+[2025-09-28T15:05:27.573] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip post-execution cost:1 ms .
+[2025-09-28T15:05:27.576] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T15:05:27.576] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T15:05:27.577] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T15:05:27.577] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T15:05:27.578] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\src\main\ets cache by regenerate.
+[2025-09-28T15:05:27.581] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T15:05:27.582] [DEBUG] debug-file - Update task entry:default@CompileArkTS output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader_out\default\ets cache.
+[2025-09-28T15:05:27.583] [DEBUG] debug-file - Incremental task entry:default@CompileArkTS post-execution cost:10 ms .
+[2025-09-28T15:05:27.584] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T15:05:27.585] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T15:05:27.585] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T15:05:27.585] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T15:05:27.586] [DEBUG] debug-file - Update task entry:default@BuildJS output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader_out\default\js cache.
+[2025-09-28T15:05:27.587] [DEBUG] debug-file - Incremental task entry:default@BuildJS post-execution cost:4 ms .
+[2025-09-28T15:05:27.587] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T15:05:27.587] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T15:05:27.588] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\patch\default\base_native_libs.json cache.
+[2025-09-28T15:05:27.588] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs post-execution cost:2 ms .
+[2025-09-28T15:05:27.588] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T15:05:27.589] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\package\default\module.json cache.
+[2025-09-28T15:05:27.589] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgModuleJson post-execution cost:1 ms .
+[2025-09-28T15:05:27.589] [DEBUG] debug-file - Incremental task entry:default@ProcessCompiledResources post-execution cost:1 ms .
+[2025-09-28T15:05:27.590] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T15:05:27.591] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T15:05:27.591] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\resources cache by regenerate.
+[2025-09-28T15:05:27.595] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\res\default\resources.index cache by regenerate.
+[2025-09-28T15:05:27.595] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\outputs\default\pack.info cache by regenerate.
+[2025-09-28T15:05:27.596] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader_out\default\ets cache by regenerate.
+[2025-09-28T15:05:27.596] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T15:05:27.597] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T15:05:27.597] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\outputs\default\entry-default-unsigned.hap cache.
+[2025-09-28T15:05:27.598] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\source_map\default\sourceMaps.map cache.
+[2025-09-28T15:05:27.598] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\outputs\default\mapping\sourceMaps.map cache.
+[2025-09-28T15:05:27.598] [DEBUG] debug-file - Incremental task entry:default@PackageHap post-execution cost:9 ms .
+[2025-09-28T15:05:27.599] [DEBUG] debug-file - Update task entry:default@SignHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\outputs\default\entry-default-unsigned.hap cache by regenerate.
+[2025-09-28T15:05:27.599] [DEBUG] debug-file - Update task entry:default@SignHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\outputs\default\entry-default-signed.hap cache.
+[2025-09-28T15:05:27.600] [DEBUG] debug-file - Incremental task entry:default@SignHap post-execution cost:1 ms .
+[2025-09-28T15:05:27.601] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T15:05:27.601] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T15:05:27.602] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\ToDoList\entry\build\default\outputs\default\symbol cache.
+[2025-09-28T15:05:27.602] [DEBUG] debug-file - Incremental task entry:default@CollectDebugSymbol post-execution cost:3 ms .
+[2025-09-28T15:05:27.632] [DEBUG] debug-file - Cleanup worker 0.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Worker 0 has been cleaned up.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Current idle worker size: 4.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Cleanup worker 1.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Worker 1 has been cleaned up.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Current idle worker size: 3.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:05:27.633] [DEBUG] debug-file - Cleanup worker 13.
+[2025-09-28T15:05:27.634] [DEBUG] debug-file - Worker 13 has been cleaned up.
+[2025-09-28T15:05:27.634] [DEBUG] debug-file - Current idle worker size: 2.
+[2025-09-28T15:05:27.634] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:05:27.634] [DEBUG] debug-file - Cleanup worker 14.
+[2025-09-28T15:05:27.634] [DEBUG] debug-file - Worker 14 has been cleaned up.
+[2025-09-28T15:05:27.634] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T15:05:27.634] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:05:27.637] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T15:05:27.638] [DEBUG] debug-file - java daemon socket close code:1000 reason:close by user
+[2025-09-28T15:05:27.646] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T15:05:27.648] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T15:05:27.640] [DEBUG] debug-file - worker[0] exits with exit code 1.
+[2025-09-28T15:05:27.640] [DEBUG] debug-file - worker[1] exits with exit code 1.
+[2025-09-28T15:05:27.646] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T15:05:27.647] [DEBUG] debug-file - worker[13] exits with exit code 1.
+[2025-09-28T15:05:27.648] [DEBUG] debug-file - worker[14] exits with exit code 1.
+[2025-09-28T15:05:27.648] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.

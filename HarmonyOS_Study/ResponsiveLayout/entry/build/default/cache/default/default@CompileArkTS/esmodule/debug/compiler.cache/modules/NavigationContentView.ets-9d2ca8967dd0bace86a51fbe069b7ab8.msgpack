@@ -1,0 +1,455 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚ+åif (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+export class NavigationContent1 extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__mainWindowInfo = new SynchedPropertyNesedObjectPU(params.mainWindowInfo, this, "mainWindowInfo");
+        this.isTripleView = false;
+        this.pathStack = new NavPathStack();
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        this.__mainWindowInfo.set(params.mainWindowInfo);
+        if (params.isTripleView !== undefined) {
+            this.isTripleView = params.isTripleView;
+        }
+        if (params.pathStack !== undefined) {
+            this.pathStack = params.pathStack;
+        }
+    }
+    updateStateVars(params) {
+        this.__mainWindowInfo.set(params.mainWindowInfo);
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__mainWindowInfo.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__mainWindowInfo.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get mainWindowInfo() {
+        return this.__mainWindowInfo.get();
+    }
+    /**
+     * æ„å»ºå¯¼èˆªå†…å®¹1è§†å›¾
+     * åŒ…å«è¿”å›æŒ‰é’®å’Œé¡µé¢å†…å®¹
+     */
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            NavDestination.create(() => {
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    // è¿”å›æŒ‰é’®è¡Œ
+                    Row.create();
+                    // è¿”å›æŒ‰é’®è¡Œ
+                    Row.width('100%');
+                    // è¿”å›æŒ‰é’®è¡Œ
+                    Row.margin({ bottom: 12 });
+                }, Row);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    Image.create({ "id": 16777248, "type": 20000, params: [], "bundleName": "top.mqxu.test", "moduleName": "entry" });
+                    Image.width(24);
+                    Image.height(24);
+                    Image.margin({ right: 12 });
+                    Image.onClick(() => {
+                        // ç‚¹å‡»è¿”å›æŒ‰é’®ï¼Œä»å¯¼èˆªæ ˆä¸­å¼¹å‡ºå½“å‰é¡µé¢
+                        this.pathStack.pop();
+                    });
+                }, Image);
+                // è¿”å›æŒ‰é’®è¡Œ
+                Row.pop();
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    // é¡µé¢ä¸»è¦å†…å®¹åŒºåŸŸ
+                    Column.create();
+                    // é¡µé¢ä¸»è¦å†…å®¹åŒºåŸŸ
+                    Column.height('100%');
+                    // é¡µé¢ä¸»è¦å†…å®¹åŒºåŸŸ
+                    Column.width('100%');
+                    // é¡µé¢ä¸»è¦å†…å®¹åŒºåŸŸ
+                    Column.justifyContent(FlexAlign.Center);
+                }, Column);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    // Navigationæ ‡ç­¾æ–‡æœ¬
+                    Text.create('Navigation');
+                    // Navigationæ ‡ç­¾æ–‡æœ¬
+                    Text.fontSize(18);
+                    // Navigationæ ‡ç­¾æ–‡æœ¬
+                    Text.margin({ bottom: 12 });
+                }, Text);
+                // Navigationæ ‡ç­¾æ–‡æœ¬
+                Text.pop();
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜
+                    Text.create({ "id": 16777230, "type": 10003, params: [], "bundleName": "top.mqxu.test", "moduleName": "entry" });
+                    // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜
+                    Text.fontSize(24);
+                    // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜
+                    Text.margin({ bottom: 12 });
+                }, Text);
+                // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜
+                Text.pop();
+                // é¡µé¢ä¸»è¦å†…å®¹åŒºåŸŸ
+                Column.pop();
+            }, { moduleName: "entry", pagePath: "entry/src/main/ets/views/NavigationContentView" });
+            NavDestination.width('100%');
+            NavDestination.height('100%');
+            NavDestination.onReady((context) => {
+                // å¯¼èˆªç›®æ ‡å‡†å¤‡å°±ç»ªæ—¶ï¼Œè·å–è·¯å¾„æ ˆå¼•ç”¨
+                this.pathStack = context.pathStack;
+            });
+            NavDestination.padding({
+                // é¡¶éƒ¨å†…è¾¹è·ï¼šç³»ç»ŸçŠ¶æ€æ é«˜åº¦ + 12pxé¢å¤–é—´è·
+                top: this.getUIContext().px2vp(this.mainWindowInfo.AvoidSystem?.topRect.height) + 12,
+                // åº•éƒ¨å†…è¾¹è·ï¼šå¯¼èˆªæŒ‡ç¤ºå™¨é«˜åº¦ï¼Œé¿å…è¢«ç³»ç»Ÿå¯¼èˆªæ é®æŒ¡
+                bottom: this.getUIContext().px2vp(this.mainWindowInfo.AvoidNavigationIndicator?.bottomRect.height),
+                left: 12,
+                right: 12 // å³ä¾§å†…è¾¹è·12px
+            });
+            NavDestination.hideTitleBar(true);
+            NavDestination.backgroundColor('#FDBFFC');
+        }, NavDestination);
+        NavDestination.pop();
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+}
+export class NavigationContent2 extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__mainWindowInfo = new SynchedPropertyNesedObjectPU(params.mainWindowInfo, this, "mainWindowInfo");
+        this.__isShow = new ObservedPropertySimplePU(false, this, "isShow");
+        this.pathStack = new NavPathStack();
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        this.__mainWindowInfo.set(params.mainWindowInfo);
+        if (params.isShow !== undefined) {
+            this.isShow = params.isShow;
+        }
+        if (params.pathStack !== undefined) {
+            this.pathStack = params.pathStack;
+        }
+    }
+    updateStateVars(params) {
+        this.__mainWindowInfo.set(params.mainWindowInfo);
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__mainWindowInfo.purgeDependencyOnElmtId(rmElmtId);
+        this.__isShow.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__mainWindowInfo.aboutToBeDeleted();
+        this.__isShow.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get mainWindowInfo() {
+        return this.__mainWindowInfo.get();
+    }
+    get isShow() {
+        return this.__isShow.get();
+    }
+    set isShow(newValue) {
+        this.__isShow.set(newValue);
+    }
+    /**
+     * æ„å»ºå¯¼èˆªå†…å®¹2è§†å›¾
+     * åŒ…å«ç»å¯¹å®šä½çš„è¿”å›æŒ‰é’®å’Œå±…ä¸­çš„é¡µé¢å†…å®¹
+     */
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            NavDestination.create(() => {
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    Column.create();
+                    Column.height('100%');
+                    Column.width('100%');
+                    Column.justifyContent(FlexAlign.Center);
+                    Column.padding({
+                        // é¡¶éƒ¨å†…è¾¹è·ï¼šç³»ç»ŸçŠ¶æ€æ é«˜åº¦ + 12pxé¢å¤–é—´è·
+                        top: this.getUIContext().px2vp(this.mainWindowInfo.AvoidSystem?.topRect.height) + 12,
+                        // åº•éƒ¨å†…è¾¹è·ï¼šå¯¼èˆªæŒ‡ç¤ºå™¨é«˜åº¦ï¼Œé¿å…è¢«ç³»ç»Ÿå¯¼èˆªæ é®æŒ¡
+                        bottom: this.getUIContext().px2vp(this.mainWindowInfo.AvoidNavigationIndicator?.bottomRect.height),
+                        left: 16,
+                        right: 16 // å³ä¾§å†…è¾¹è·16px
+                    });
+                }, Column);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    // è¿”å›æŒ‰é’®ï¼Œä½¿ç”¨ç»å¯¹å®šä½æ”¾ç½®åœ¨å·¦ä¸Šè§’
+                    Image.create({ "id": 16777248, "type": 20000, params: [], "bundleName": "top.mqxu.test", "moduleName": "entry" });
+                    // è¿”å›æŒ‰é’®ï¼Œä½¿ç”¨ç»å¯¹å®šä½æ”¾ç½®åœ¨å·¦ä¸Šè§’
+                    Image.width(24);
+                    // è¿”å›æŒ‰é’®ï¼Œä½¿ç”¨ç»å¯¹å®šä½æ”¾ç½®åœ¨å·¦ä¸Šè§’
+                    Image.height(24);
+                    // è¿”å›æŒ‰é’®ï¼Œä½¿ç”¨ç»å¯¹å®šä½æ”¾ç½®åœ¨å·¦ä¸Šè§’
+                    Image.position({
+                        x: 0,
+                        y: 0 // Yåæ ‡ä¸º0ï¼Œä½äºé¡¶éƒ¨
+                    });
+                    // è¿”å›æŒ‰é’®ï¼Œä½¿ç”¨ç»å¯¹å®šä½æ”¾ç½®åœ¨å·¦ä¸Šè§’
+                    Image.onClick(() => {
+                        // ç‚¹å‡»è¿”å›æŒ‰é’®ï¼Œä»å¯¼èˆªæ ˆä¸­å¼¹å‡ºå½“å‰é¡µé¢
+                        this.pathStack.pop();
+                    });
+                }, Image);
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    // Navigationæ ‡ç­¾æ–‡æœ¬
+                    Text.create('Navigation');
+                    // Navigationæ ‡ç­¾æ–‡æœ¬
+                    Text.fontSize(18);
+                    // Navigationæ ‡ç­¾æ–‡æœ¬
+                    Text.margin({ bottom: 12 });
+                }, Text);
+                // Navigationæ ‡ç­¾æ–‡æœ¬
+                Text.pop();
+                this.observeComponentCreation2((elmtId, isInitialRender) => {
+                    // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜ï¼ˆå¯ç‚¹å‡»ï¼‰
+                    Text.create({ "id": 16777230, "type": 10003, params: [], "bundleName": "top.mqxu.test", "moduleName": "entry" });
+                    // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜ï¼ˆå¯ç‚¹å‡»ï¼‰
+                    Text.fontSize(24);
+                    // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜ï¼ˆå¯ç‚¹å‡»ï¼‰
+                    Text.onClick(() => {
+                        // ç‚¹å‡»æ–‡æœ¬æ—¶æ”¹å˜æ˜¾ç¤ºçŠ¶æ€
+                        this.isShow = true;
+                    });
+                }, Text);
+                // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜ï¼ˆå¯ç‚¹å‡»ï¼‰
+                Text.pop();
+                Column.pop();
+            }, { moduleName: "entry", pagePath: "entry/src/main/ets/views/NavigationContentView" });
+            NavDestination.width('100%');
+            NavDestination.height('100%');
+            NavDestination.onReady((context) => {
+                // å¯¼èˆªç›®æ ‡å‡†å¤‡å°±ç»ªæ—¶ï¼Œè·å–è·¯å¾„æ ˆå¼•ç”¨
+                this.pathStack = context.pathStack;
+            });
+            NavDestination.hideTitleBar(true);
+            NavDestination.backgroundColor('#FDBFFC');
+        }, NavDestination);
+        NavDestination.pop();
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+}
+//# sourceMappingURL=NavigationContentView.js.mapÂÙkD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\views\NavigationContentView.etsÔrBœªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo¯hostModulesInfo°belongModulePath§checker¬shouldEmitJs¥entryÃÂÙ>D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entryÙ8D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout¥entry¥1.0.0Ô  ’ÔrC’²hostDependencyName®hostModuleName·./NavigationContentView¥entryC·./NavigationContentView¥entryÙ>D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entryÔrDÜ ®¬getNodeCount²getIdentifierCount®getSymbolCount¬getTypeCountµgetInstantiationCountµgetRelationCacheSizes±isUndefinedSymbol±isArgumentsSymbol¯isUnknownSymbol¯getMergedSymbol®getDiagnostics´getGlobalDiagnostics´getRecursionIdentity¶getUnmatchedProperties¹getTypeOfSymbolAtLocation¯getTypeOfSymbolÙ(getSymbolsOfParameterPropertyDeclaration·getDeclaredTypeOfSymbol³getPropertiesOfType±getPropertyOfTypeÙ"getPrivateIdentifierPropertyOfType·getTypeOfPropertyOfType²getIndexInfoOfType³getIndexInfosOfTypeºgetIndexInfosOfIndexSymbol³getSignaturesOfType²getIndexTypeOfType¬getIndexType¬getBaseTypes¸getBaseTypeOfLiteralType®getWidenedType³getTypeFromTypeNode°getParameterTypeÙ$getParameterIdentifierNameAtPosition¸getPromisedTypeOfPromise®getAwaitedType¸getReturnTypeOfSignature®isNullableType¯getNullableType²getNonNullableType²getNonOptionalType°getTypeArguments®typeToTypeNodeÙ$indexInfoToIndexSignatureDeclaration¿signatureToSignatureDeclaration²symbolToEntityName²symbolToExpression¬symbolToNodeÙ!symbolToTypeParameterDeclarations¼symbolToParameterDeclarationºtypeParameterToDeclaration±getSymbolsInScope³getSymbolAtLocation·getIndexInfosAtLocationÙ!getShorthandAssignmentValueSymbolÙ#getExportSpecifierLocalTargetSymbol·getExportSymbolOfSymbol±getTypeAtLocationÙ tryGetTypeAtLocationWithoutCheckºgetTypeOfAssignmentPatternÙ*getPropertySymbolOfDestructuringAssignment±signatureToString¬typeToString®symbolToStringµtypePredicateToString®writeSignature©writeType«writeSymbol²writeTypePredicate¼getAugmentedPropertiesOfType®getRootSymbols²getSymbolOfExpando±getContextualTypeÙ(getContextualTypeForObjectLiteralElementÙ#getContextualTypeForArgumentAtIndexÙ getContextualTypeForJsxAttribute²isContextSensitiveÙ!getTypeOfPropertyOfContextualTypeµgetFullyQualifiedNameÙ#tryGetResolvedSignatureWithoutCheck´getResolvedSignatureÙ/getResolvedSignatureForStringLiteralCompletionsÙ$getResolvedSignatureForSignatureHelpµgetExpandedParameters¹hasEffectiveRestParameterºcontainsArgumentsReference°getConstantValueµisValidPropertyAccessÙ#isValidPropertyAccessForCompletions»getSignatureFromDeclarationºisImplementationOfOverload¹getImmediateAliasedSymbol°getAliasedSymbol¯getEmitResolver²getExportsOfModule¿getExportsAndPropertiesOfModuleÙ forEachExportAndPropertyOfModule¯getSymbolWalker±getAmbientModules¹getJsxIntrinsicTagNamesAt³isOptionalParameter»tryGetMemberInModuleExportsÙ(tryGetMemberInModuleExportsAndProperties´tryFindAmbientModuleÙ(tryFindAmbientModuleWithoutAugmentations¯getApparentType¬getUnionType²isTypeAssignableTo³createAnonymousType¯createSignature¬createSymbol¯createIndexInfoªgetAnyType­getStringType­getNumberType±createPromiseType¯createArrayType¹getElementTypeOfArrayType®getBooleanType¬getFalseType«getTrueType«getVoidType°getUndefinedType«getNullType¯getESSymbolType¬getNeverType¯getOptionalType®getPromiseType²getPromiseLikeType´getAsyncIterableType²isSymbolAccessible«isArrayType«isTupleType¯isArrayLikeTypeÙ#isTypeInvalidDueToUnionDiscriminantºgetExactOptionalProperties¿getAllPossiblePropertiesOfTypesÙ(getSuggestedSymbolForNonexistentPropertyÙ#getSuggestionForNonexistentPropertyÙ,getSuggestedSymbolForNonexistentJSXAttributeÙ&getSuggestedSymbolForNonexistentSymbolÙ!getSuggestionForNonexistentSymbolÙ&getSuggestedSymbolForNonexistentModuleÙ!getSuggestionForNonexistentExportÙ+getSuggestedSymbolForNonexistentClassMember·getBaseConstraintOfType»getDefaultFromTypeParameter«resolveName¯getJsxNamespaceµgetJsxFragmentFactory¸getAccessibleSymbolChain»getTypePredicateOfSignature¹resolveExternalModuleName»resolveExternalModuleSymbol°tryGetThisTypeAt¹getTypeArgumentConstraint¸getSuggestionDiagnostics¸runWithCancellationTokenÙ3getLocalTypeParametersOfClassOrInterfaceOrTypeAlias´isDeclarationVisible´isPropertyAccessible»getTypeOnlyAliasDeclaration¿getMemberOverrideModifierStatusÙ!isTypeParameterPossiblyReferenced²getConstEnumRelate´clearConstEnumRelateµdeleteConstEnumRelateÙ$getTypeArgumentsForResolvedSignatureµgetCheckedSourceFilesÙ"collectHaveTsNoCheckFilesForLinter·clearQualifiedNameCache®isStaticRecord²isStaticSourceFile³createIntrinsicTypeÔ  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  ÃÃÚÂ// å¯¼å…¥çª—å£ä¿¡æ¯å·¥å…·ç±»ï¼Œç”¨äºè·å–çª—å£å±æ€§å’Œæ–­ç‚¹ä¿¡æ¯
+import { WindowInfo } from '../utils/WindowUtil';
+
+/**
+ * å¯¼èˆªå†…å®¹è§†å›¾1ç»„ä»¶
+ *
+ * è¿™æ˜¯ä¸€ä¸ªå¯¼èˆªç›®æ ‡é¡µé¢ç»„ä»¶ï¼Œä¸»è¦ç‰¹æ€§åŒ…æ‹¬ï¼š
+ * - ä½œä¸ºNavigationç»„ä»¶çš„ç›®æ ‡é¡µé¢å†…å®¹
+ * - æä¾›é¦–é¡µå†…å®¹æ˜¾ç¤ºåŠŸèƒ½
+ * - æ”¯æŒè¿”å›å¯¼èˆªæ“ä½œ
+ * - è‡ªé€‚åº”å®‰å…¨åŒºåŸŸå¸ƒå±€
+ * - éšè—ç³»ç»Ÿæ ‡é¢˜æ ï¼Œä½¿ç”¨è‡ªå®šä¹‰æ ‡é¢˜æ 
+ *
+ * ç”¨é€”ï¼šåœ¨åŒæ å’Œä¸‰æ å¸ƒå±€ä¸­ä½œä¸ºå³ä¾§å†…å®¹åŒºåŸŸçš„é¦–é¡µæ˜¾ç¤º
+ *
+ * @since 2023-xx-xx
+ */
+@Component
+export struct NavigationContent1 {
+  @ObjectLink mainWindowInfo: WindowInfo; // ä¸»çª—å£ä¿¡æ¯å¯¹è±¡ï¼ŒåŒ…å«çª—å£å°ºå¯¸å’Œæ–­ç‚¹ä¿¡æ¯
+  isTripleView: boolean = false; // æ˜¯å¦ä¸ºä¸‰æ è§†å›¾æ¨¡å¼æ ‡è¯†
+  pathStack: NavPathStack = new NavPathStack(); // è·¯å¾„å¯¼èˆªæ ˆï¼Œç”¨äºé¡µé¢è·¯ç”±ç®¡ç†
+
+  /**
+   * æ„å»ºå¯¼èˆªå†…å®¹1è§†å›¾
+   * åŒ…å«è¿”å›æŒ‰é’®å’Œé¡µé¢å†…å®¹
+   */
+  build() {
+    NavDestination() {
+      // è¿”å›æŒ‰é’®è¡Œ
+      Row() {
+        Image($r('app.media.arrow_left'))
+          .width(24)
+          .height(24)
+          .margin({ right: 12 }) // å³è¾¹è·12px
+          .onClick(() => {
+            // ç‚¹å‡»è¿”å›æŒ‰é’®ï¼Œä»å¯¼èˆªæ ˆä¸­å¼¹å‡ºå½“å‰é¡µé¢
+            this.pathStack.pop();
+          })
+      }
+      .width('100%') // å®½åº¦å æ»¡çˆ¶å®¹å™¨
+      .margin({ bottom: 12 }) // åº•éƒ¨è¾¹è·12px
+
+      // é¡µé¢ä¸»è¦å†…å®¹åŒºåŸŸ
+      Column() {
+        // Navigationæ ‡ç­¾æ–‡æœ¬
+        Text('Navigation')
+          .fontSize(18) // å­—ä½“å¤§å°18px
+          .margin({ bottom: 12 }) // åº•éƒ¨è¾¹è·12px
+
+        // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜
+        Text($r('app.string.navigation_content_home'))
+          .fontSize(24) // å­—ä½“å¤§å°24px
+          .margin({ bottom: 12 }) // åº•éƒ¨è¾¹è·12px
+      }
+      .height('100%') // é«˜åº¦å æ»¡çˆ¶å®¹å™¨
+      .width('100%') // å®½åº¦å æ»¡çˆ¶å®¹å™¨
+      .justifyContent(FlexAlign.Center) // å‚ç›´å±…ä¸­å¯¹é½
+    }
+    .width('100%') // å¯¼èˆªç›®æ ‡å®½åº¦å æ»¡çˆ¶å®¹å™¨
+    .height('100%') // å¯¼èˆªç›®æ ‡é«˜åº¦å æ»¡çˆ¶å®¹å™¨
+    .onReady((context: NavDestinationContext) => {
+      // å¯¼èˆªç›®æ ‡å‡†å¤‡å°±ç»ªæ—¶ï¼Œè·å–è·¯å¾„æ ˆå¼•ç”¨
+      this.pathStack = context.pathStack;
+    })
+    .padding({
+      // é¡¶éƒ¨å†…è¾¹è·ï¼šç³»ç»ŸçŠ¶æ€æ é«˜åº¦ + 12pxé¢å¤–é—´è·
+      top: this.getUIContext().px2vp(this.mainWindowInfo.AvoidSystem?.topRect.height) + 12,
+      // åº•éƒ¨å†…è¾¹è·ï¼šå¯¼èˆªæŒ‡ç¤ºå™¨é«˜åº¦ï¼Œé¿å…è¢«ç³»ç»Ÿå¯¼èˆªæ é®æŒ¡
+      bottom: this.getUIContext().px2vp(this.mainWindowInfo.AvoidNavigationIndicator?.bottomRect.height),
+      left: 12, // å·¦ä¾§å†…è¾¹è·12px
+      right: 12 // å³ä¾§å†…è¾¹è·12px
+    })
+    .hideTitleBar(true) // éšè—ç³»ç»Ÿæ ‡é¢˜æ 
+    .backgroundColor('#FDBFFC') // æµ…ç²‰è‰²èƒŒæ™¯
+  }
+}
+
+/**
+ * å¯¼èˆªå†…å®¹è§†å›¾2ç»„ä»¶
+ *
+ * è¿™æ˜¯ä¸€ä¸ªå¯¼èˆªç›®æ ‡é¡µé¢ç»„ä»¶ï¼Œä¸»è¦ç‰¹æ€§åŒ…æ‹¬ï¼š
+ * - ä½œä¸ºNavigationç»„ä»¶çš„ç›®æ ‡é¡µé¢å†…å®¹
+ * - æä¾›è¯¦æƒ…é¡µå†…å®¹æ˜¾ç¤ºåŠŸèƒ½
+ * - æ”¯æŒè¿”å›å¯¼èˆªæ“ä½œå’Œäº¤äº’çŠ¶æ€ç®¡ç†
+ * - è‡ªé€‚åº”å®‰å…¨åŒºåŸŸå¸ƒå±€
+ * - éšè—ç³»ç»Ÿæ ‡é¢˜æ ï¼Œä½¿ç”¨è‡ªå®šä¹‰å¸ƒå±€
+ *
+ * ç”¨é€”ï¼šåœ¨åŒæ å’Œä¸‰æ å¸ƒå±€ä¸­ä½œä¸ºå³ä¾§å†…å®¹åŒºåŸŸçš„è¯¦æƒ…é¡µæ˜¾ç¤º
+ *
+ * @since 2023-xx-xx
+ */
+@Component
+export struct NavigationContent2 {
+  @ObjectLink mainWindowInfo: WindowInfo; // ä¸»çª—å£ä¿¡æ¯å¯¹è±¡ï¼ŒåŒ…å«çª—å£å°ºå¯¸å’Œæ–­ç‚¹ä¿¡æ¯
+  @State isShow: boolean = false; // æ˜¾ç¤ºçŠ¶æ€æ ‡è¯†ï¼Œç”¨äºäº¤äº’åé¦ˆ
+  pathStack: NavPathStack = new NavPathStack(); // è·¯å¾„å¯¼èˆªæ ˆï¼Œç”¨äºé¡µé¢è·¯ç”±ç®¡ç†
+
+  /**
+   * æ„å»ºå¯¼èˆªå†…å®¹2è§†å›¾
+   * åŒ…å«ç»å¯¹å®šä½çš„è¿”å›æŒ‰é’®å’Œå±…ä¸­çš„é¡µé¢å†…å®¹
+   */
+  build() {
+    NavDestination() {
+      Column() {
+        // è¿”å›æŒ‰é’®ï¼Œä½¿ç”¨ç»å¯¹å®šä½æ”¾ç½®åœ¨å·¦ä¸Šè§’
+        Image($r('app.media.arrow_left'))
+          .width(24)
+          .height(24)
+          .position({
+            x: 0, // Xåæ ‡ä¸º0ï¼Œä½äºå·¦ä¾§
+            y: 0  // Yåæ ‡ä¸º0ï¼Œä½äºé¡¶éƒ¨
+          })
+          .onClick(() => {
+            // ç‚¹å‡»è¿”å›æŒ‰é’®ï¼Œä»å¯¼èˆªæ ˆä¸­å¼¹å‡ºå½“å‰é¡µé¢
+            this.pathStack.pop();
+          })
+
+        // Navigationæ ‡ç­¾æ–‡æœ¬
+        Text('Navigation')
+          .fontSize(18) // å­—ä½“å¤§å°18px
+          .margin({ bottom: 12 }) // åº•éƒ¨è¾¹è·12px
+
+        // å¯¼èˆªå†…å®¹é¦–é¡µæ ‡é¢˜ï¼ˆå¯ç‚¹å‡»ï¼‰
+        Text($r('app.string.navigation_content_home'))
+          .fontSize(24) // å­—ä½“å¤§å°24px
+          .onClick(() => {
+            // ç‚¹å‡»æ–‡æœ¬æ—¶æ”¹å˜æ˜¾ç¤ºçŠ¶æ€
+            this.isShow = true;
+          })
+      }
+      .height('100%') // é«˜åº¦å æ»¡çˆ¶å®¹å™¨
+      .width('100%') // å®½åº¦å æ»¡çˆ¶å®¹å™¨
+      .justifyContent(FlexAlign.Center) // å‚ç›´å±…ä¸­å¯¹é½
+      .padding({
+        // é¡¶éƒ¨å†…è¾¹è·ï¼šç³»ç»ŸçŠ¶æ€æ é«˜åº¦ + 12pxé¢å¤–é—´è·
+        top: this.getUIContext().px2vp(this.mainWindowInfo.AvoidSystem?.topRect.height) + 12,
+        // åº•éƒ¨å†…è¾¹è·ï¼šå¯¼èˆªæŒ‡ç¤ºå™¨é«˜åº¦ï¼Œé¿å…è¢«ç³»ç»Ÿå¯¼èˆªæ é®æŒ¡
+        bottom: this.getUIContext().px2vp(this.mainWindowInfo.AvoidNavigationIndicator?.bottomRect.height),
+        left: 16, // å·¦ä¾§å†…è¾¹è·16px
+        right: 16 // å³ä¾§å†…è¾¹è·16px
+      })
+    }
+    .width('100%') // å¯¼èˆªç›®æ ‡å®½åº¦å æ»¡çˆ¶å®¹å™¨
+    .height('100%') // å¯¼èˆªç›®æ ‡é«˜åº¦å æ»¡çˆ¶å®¹å™¨
+    .onReady((context: NavDestinationContext) => {
+      // å¯¼èˆªç›®æ ‡å‡†å¤‡å°±ç»ªæ—¶ï¼Œè·å–è·¯å¾„æ ˆå¼•ç”¨
+      this.pathStack = context.pathStack;
+    })
+    .hideTitleBar(true) // éšè—ç³»ç»Ÿæ ‡é¢˜æ 
+    .backgroundColor('#FDBFFC') // æµ…ç²‰è‰²èƒŒæ™¯
+  }
+}ÀA“ÔrE–§version¤fileªsourceRoot§sources¥names¨mappings¸NavigationContentView.js ‘¹NavigationContentView.etsÜ ï””   ” ” ”  ‘”  ’” ”! ”” ”  ”) ,”+ .‘” 1’” ” ‘” ‘” ‘” ’” ” ’” ” 	’” ” –” ” 	” (” (” (”$ (’” ” š” ” 	” )” )” )”! )”' )”) )”+ )”- )’” ” –” ” ”  ”  ”   ”"  –” ” ” !”  !”! !”# !š” ” ” "”  "”! "”# "”( "”* "”, "”. "—” ” ” #”! #”" #”% #”' #’” $”- $!˜” %” %” %”& %”' %”* %”, % ”- %!’” &
+” &’” ” ’” ” 	’” +” +’” ,” ,’” +” +–” ,” ,” 7”! 7”" 7”( 7’” +” +–” ,” ,” 8”  8”! 8”' 8’” +” +˜” ,” ,” 9”) 9”* 9”3 9”4 9 ”: 9&’” -”% -”” .” .”  .”, .’” -”% -–” .” .” /”! /”" /”$ /’” -”% -š” .” .” 0” 0”  0”" 0”( 0”* 0”, 0”. 0 ’” -”! -’” .” .’” 2” 2’” 3” 3’” 2” 2–” 3” 3” 4”! 4”" 4”$ 4’” 2” 2š” 3” 3” 5” 5”  5”" 5”( 5”* 5”, 5”. 5 ’” 2” 2’” 3” 3’” +” +’” ,” ,”” ;”  ;
+”! ;”' ;”” <”! <”" <”( <—” =”" =”# =”$ =”+ =,”- =.”/ =0’” >”$ >™” ?” ?
+” ?” ?”! ?”( ?”) ?”2 ?(”3 ?)’” Ì@” Ì@“” ÌA”" ÌA”# ÌA’” ÌB”+ ÌB!Ü ” ÌC” ÌC	” ÌC” ÌC” ÌC”& ÌC”( ÌC”) ÌC”. ÌC$”/ ÌC%”3 ÌC)”4 ÌC*”ÌB ÌC8”ÌC ÌC9”ÌN ÌCÌD”ÌP ÌCÌF”ÌW ÌCÌM”ÌX ÌCÌN”Ì^ ÌCÌT”Ì_ ÌCÌU”Ìb ÌCÌX”Ìd ÌCÌZ’” ÌD”+ ÌD!Ü ” ÌE” ÌE” ÌE” ÌE” ÌE”) ÌE”+ ÌE!”, ÌE"”1 ÌE'”2 ÌE(”6 ÌE,”7 ÌE-”ÌE ÌE;”ÌF ÌE<”Ì^ ÌEÌT”Ì` ÌEÌV”Ìj ÌEÌ`”Ìk ÌEÌa”Ìq ÌEÌg”Ìr ÌEÌh”” ÌF” ÌF
+” ÌF” ÌF–” ÌG” ÌG” ÌG” ÌG” ÌG”& ÌG‘” ÌH”” ÌI”' ÌI”( ÌI”, ÌI”” ÌJ”* ÌJ”+ ÌJ”4 ÌJ‘” ÌK””  Ì] ” Ì]” Ì]” Ì] ‘” Ì\ ’”5 Ì_”: Ì_ ”” Ì`” Ì` ”) Ì`,”+ Ì`.‘” ÌL’” Ì^” Ì^’” Ì_	” Ì_’” Ì_	” Ì_‘” Ìb‘” Ìe‘” Ìf’” Ìh” Ìh–” Ìh” Ìh” Ìƒ”! Ìƒ”" Ìƒ”( Ìƒ–” Ìh” Ìh” Ì„”  Ì„”! Ì„”' Ì„˜” Ìh” Ìh” Ì…”) Ì…”* Ì…”3 Ì…”4 Ì… ”: Ì…&•” Ìh” Ìh” Ì†”" Ì†”# Ì†’” Ì‡”3 Ì‡#Ü ” Ìˆ” Ìˆ” Ìˆ”! Ìˆ”" Ìˆ”. Ìˆ”0 Ìˆ ”1 Ìˆ!”6 Ìˆ&”7 Ìˆ'”; Ìˆ+”< Ìˆ,”ÌJ Ìˆ:”ÌK Ìˆ;”ÌV ÌˆÌF”ÌX ÌˆÌH”Ì_ ÌˆÌO”Ì` ÌˆÌP”Ìf ÌˆÌV”Ìg ÌˆÌW”Ìj ÌˆÌZ”Ìl ÌˆÌ\’” Ì‰”3 Ì‰#Ü ” ÌŠ” ÌŠ”  ÌŠ”$ ÌŠ”% ÌŠ”1 ÌŠ!”3 ÌŠ#”4 ÌŠ$”9 ÌŠ)”: ÌŠ*”> ÌŠ.”? ÌŠ/”ÌM ÌŠ=”ÌN ÌŠ>”Ìf ÌŠÌV”Ìh ÌŠÌX”Ìr ÌŠÌb”Ìs ÌŠÌc”Ìy ÌŠÌi”Ìz ÌŠÌj”” Ì‹” Ì‹” Ì‹”  Ì‹–” ÌŒ” ÌŒ” ÌŒ”! ÌŒ”" ÌŒ”. ÌŒ‘” Ì’” Ìi”( Ìi’” Ìj” Ìj’” Ìi”( Ìi–” Ìj” Ìj” Ìk” Ìk”  Ìk”" Ìk’” Ìi”( Ìi–” Ìj” Ìj” Ìl”  Ìl”! Ìl”# Ìl’” Ìi”( Ìi•” Ìj” Ìj” Ìm”" Ìm”# Ìm”” Ìn” Ìn” Ìn” Ìn–” Ìo” Ìo” Ìo” Ìo” Ìo”* Ìo‘” Ìp’” Ìi”( Ìi—” Ìj” Ìj” Ìq”! Ìq”" Ìq”% Ìq”' Ìq’” Ìr”- Ìr!˜” Ìs” Ìs” Ìs”& Ìs”' Ìs”* Ìs”, Ìs ”- Ìs!’” Ìt
+” Ìt’” Ìv”% Ìv”” Ìw” Ìw”  Ìw”, Ìw’” Ìv”% Ìv–” Ìw” Ìw” Ìx”! Ìx”" Ìx”$ Ìx’” Ìv”% Ìvš” Ìw” Ìw” Ìy” Ìy”  Ìy”" Ìy”( Ìy”* Ìy”, Ìy”. Ìy ’” Ìv”! Ìv’” Ìw” Ìw’” Ì{”$ Ì{’” Ì|” Ì|’” Ì{”$ Ì{–” Ì|” Ì|” Ì}”! Ì}”" Ì}”$ Ì}’” Ì{”$ Ì{—” Ì|” Ì|” Ì~”  Ì~”! Ì~”$ Ì~”& Ì~’” Ì”& Ì—” Ì€” Ì€” Ì€”# Ì€”& Ì€”* Ì€”+ Ì€’” Ì
+” Ì’” Ì{”  Ì{’” Ì|” Ì|’” Ìh” Ìh”” Ì”  Ì
+”! Ì”' Ì”” Ì”! Ì”" Ì”( Ì—” Ì‘”" Ì‘”# Ì‘”$ Ì‘”+ Ì‘,”- Ì‘.”/ Ì‘0’” Ì’”$ Ì’™” Ì“” Ì“
+” Ì“” Ì“”! Ì“”( Ì“”) Ì“”2 Ì“(”3 Ì“)’” Ì”” Ì””” Ì•”' Ì•”( Ì•”, Ì•”” Ì–”* Ì–”+ Ì–”4 Ì–‘” Ì—ÔrF–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ ô‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌĞ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ‘”  ÌÜ ‘”  Ìİ ‘”  ÌŞ ‘”  Ìß ‘”  Ìà ‘”  Ìá ‘”  Ìâ ‘”  Ìã ‘”  Ìä ‘”  Ìå ‘”  Ìæ ‘”  Ìç ‘”  Ìè ‘”  Ìé ‘”  Ìê ‘”  Ìë ‘”  Ìì ‘”  Ìí ‘”  Ìî ‘”  Ìï ‘”  Ìğ ‘”  Ìñ ‘”  Ìò ‘”  Ìó ÔrG’§missing¦pluginÃ¦genAbcÂÔ  ÔrH”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache’ÔrI–¤type¥start£end«declarationªspecifiers¦source¶ExportNamedDeclarationÌ€ÍÆÔrJ–¤type¥start£end¢idªsuperClass¤body°ClassDeclarationÌ‡ÍÆÔrK”¤type¥start£end¤nameªIdentifierÌÌŸ²NavigationContent1KªIdentifierÌ¨Ì®¦ViewPUÔrL”¤type¥start£end¤body©ClassBodyÌ¯ÍÆ˜ÔrM˜¤type¥start£end¦static¨computed£key¤kind¥value°MethodDefinitionÌ¶ÍãÂÂKªIdentifierÌ¶ÌÁ«constructor«constructorÔrN™¤type¥start£end¢idªexpression©generator¥async¦params¤body²FunctionExpressionÌÁÍãÀÂÂÂ–KªIdentifierÌÂÌÈ¦parentKªIdentifierÌÊÌĞ¦paramsKªIdentifierÌÒÌà®__localStorageÔrO•¤type¥start£end¤left¥right±AssignmentPatternÌâÌíKªIdentifierÌâÌè¦elmtIdÔrP–¤type¥start£end¨operator¦prefix¨argument¯UnaryExpressionÌëÌí¡-ÃÔrQ•¤type¥start£end¥value£raw§LiteralÌìÌí¡1O±AssignmentPatternÌïÍKªIdentifierÌïÌû¬paramsLambdaKªIdentifierÌşÍ©undefinedKªIdentifierÍ	Í©extraInfoL®BlockStatementÍÍã—ÔrR”¤type¥start£endªexpression³ExpressionStatementÍÍPÔrS–¤type¥start£end¦callee©arguments¨optional®CallExpressionÍÍOÔrT“¤type¥start£end¥SuperÍÍ$”KªIdentifierÍ%Í+¦parentKªIdentifierÍ-Í;®__localStorageKªIdentifierÍ=ÍC¦elmtIdKªIdentifierÍEÍN©extraInfoÂÔrU–¤type¥start£end¤testªconsequent©alternate«IfStatementÍZÍÁÔrV–¤type¥start£end¤left¨operator¥right°BinaryExpressionÍ^Í€P¯UnaryExpressionÍ^Íq¦typeofÃKªIdentifierÍeÍq¬paramsLambda£===Q§LiteralÍvÍ€¨functionª"function"L®BlockStatementÍ‚ÍÁ‘R³ExpressionStatementÍ‘Í¶ÔrW–¤type¥start£end¨operator¤left¥right´AssignmentExpressionÍ‘Íµ¡=ÔrX—¤type¥start£end¦object¨property¨computed¨optional°MemberExpressionÍ‘Í¦T®ThisExpressionÍ‘Í•KªIdentifierÍ–Í¦°paramsGenerator_ÂÂKªIdentifierÍ©Íµ¬paramsLambdaÀR³ExpressionStatementÍËÍ3W´AssignmentExpressionÍËÍ2¡=X°MemberExpressionÍËÍàT®ThisExpressionÍËÍÏKªIdentifierÍĞÍà°__mainWindowInfoÂÂÔrY•¤type¥start£end¦callee©arguments­NewExpressionÍãÍ2KªIdentifierÍçÍ¼SynchedPropertyNesedObjectPU“X°MemberExpressionÍÍKªIdentifierÍÍ
+¦paramsKªIdentifierÍÍ®mainWindowInfoÂÂT®ThisExpressionÍÍQ§LiteralÍ!Í1®mainWindowInfo°"mainWindowInfo"R³ExpressionStatementÍ=ÍWW´AssignmentExpressionÍ=ÍV¡=X°MemberExpressionÍ=ÍNT®ThisExpressionÍ=ÍAKªIdentifierÍBÍN¬isTripleViewÂÂQ§LiteralÍQÍVÂ¥falseR³ExpressionStatementÍaÍ…W´AssignmentExpressionÍaÍ„¡=X°MemberExpressionÍaÍoT®ThisExpressionÍaÍeKªIdentifierÍfÍo©pathStackÂÂY­NewExpressionÍrÍ„KªIdentifierÍvÍ‚¬NavPathStackR³ExpressionStatementÍÍ¶S®CallExpressionÍÍµX°MemberExpressionÍÍ­T®ThisExpressionÍÍ“KªIdentifierÍ”Í­¹setInitiallyProvidedValueÂÂ‘KªIdentifierÍ®Í´¦paramsÂR³ExpressionStatementÍÀÍÜS®CallExpressionÍÀÍÛX°MemberExpressionÍÀÍÙT®ThisExpressionÍÀÍÄKªIdentifierÍÅÍÙ´finalizeConstructionÂÂÂM°MethodDefinitionÍéÍ+ÂÂKªIdentifierÍéÍ¹setInitiallyProvidedValue¦methodN²FunctionExpressionÍÍ+ÀÂÂÂ‘KªIdentifierÍÍ	¦paramsL®BlockStatementÍÍ+“R³ExpressionStatementÍÍGS®CallExpressionÍÍFX°MemberExpressionÍÍ/X°MemberExpressionÍÍ+T®ThisExpressionÍÍKªIdentifierÍÍ+°__mainWindowInfoÂÂKªIdentifierÍ,Í/£setÂÂ‘X°MemberExpressionÍ0ÍEKªIdentifierÍ0Í6¦paramsKªIdentifierÍ7ÍE®mainWindowInfoÂÂÂU«IfStatementÍQÍºV°BinaryExpressionÍUÍvX°MemberExpressionÍUÍhKªIdentifierÍUÍ[¦paramsKªIdentifierÍ\Íh¬isTripleViewÂÂ£!==KªIdentifierÍmÍv©undefinedL®BlockStatementÍxÍº‘R³ExpressionStatementÍ‡Í¯W´AssignmentExpressionÍ‡Í®¡=X°MemberExpressionÍ‡Í˜T®ThisExpressionÍ‡Í‹KªIdentifierÍŒÍ˜¬isTripleViewÂÂX°MemberExpressionÍ›Í®KªIdentifierÍ›Í¡¦paramsKªIdentifierÍ¢Í®¬isTripleViewÂÂÀU«IfStatementÍÄÍ$V°BinaryExpressionÍÈÍæX°MemberExpressionÍÈÍØKªIdentifierÍÈÍÎ¦paramsKªIdentifierÍÏÍØ©pathStackÂÂ£!==KªIdentifierÍİÍæ©undefinedL®BlockStatementÍèÍ$‘R³ExpressionStatementÍ÷ÍW´AssignmentExpressionÍ÷Í¡=X°MemberExpressionÍ÷ÍT®ThisExpressionÍ÷ÍûKªIdentifierÍüÍ©pathStackÂÂX°MemberExpressionÍÍKªIdentifierÍÍ¦paramsKªIdentifierÍÍ©pathStackÂÂÀM°MethodDefinitionÍ1ÍŒÂÂKªIdentifierÍ1Í@¯updateStateVars¦methodN²FunctionExpressionÍ@ÍŒÀÂÂÂ‘KªIdentifierÍAÍG¦paramsL®BlockStatementÍIÍŒ‘R³ExpressionStatementÍTÍ…S®CallExpressionÍTÍ„X°MemberExpressionÍTÍmX°MemberExpressionÍTÍiT®ThisExpressionÍTÍXKªIdentifierÍYÍi°__mainWindowInfoÂÂKªIdentifierÍjÍm£setÂÂ‘X°MemberExpressionÍnÍƒKªIdentifierÍnÍt¦paramsKªIdentifierÍuÍƒ®mainWindowInfoÂÂÂM°MethodDefinitionÍ’ÍÂÂKªIdentifierÍ’Í³Ù!purgeVariableDependenciesOnElmtId¦methodN²FunctionExpressionÍ³ÍÀÂÂÂ‘KªIdentifierÍ´Í¼¨rmElmtIdL®BlockStatementÍ¾Í‘R³ExpressionStatementÍÉÍS®CallExpressionÍÉÍ X°MemberExpressionÍÉÍöX°MemberExpressionÍÉÍŞT®ThisExpressionÍÉÍÍKªIdentifierÍÎÍŞ°__mainWindowInfoÂÂKªIdentifierÍßÍö·purgeDependencyOnElmtIdÂÂ‘KªIdentifierÍ÷Íÿ¨rmElmtIdÂM°MethodDefinitionÍÍ¼ÂÂKªIdentifierÍÍ°aboutToBeDeleted¦methodN²FunctionExpressionÍÍ¼ÀÂÂÂL®BlockStatementÍ!Í¼“R³ExpressionStatementÍ,ÍUS®CallExpressionÍ,ÍTX°MemberExpressionÍ,ÍRX°MemberExpressionÍ,ÍAT®ThisExpressionÍ,Í0KªIdentifierÍ1ÍA°__mainWindowInfoÂÂKªIdentifierÍBÍR°aboutToBeDeletedÂÂÂR³ExpressionStatementÍ_Í‹S®CallExpressionÍ_ÍŠX°MemberExpressionÍ_Í}S®CallExpressionÍ_ÍvX°MemberExpressionÍ_ÍtKªIdentifierÍ_Íp±SubscriberManagerKªIdentifierÍqÍt£GetÂÂÂKªIdentifierÍwÍ}¦deleteÂÂ‘S®CallExpressionÍ~Í‰X°MemberExpressionÍ~Í‡T®ThisExpressionÍ~Í‚KªIdentifierÍƒÍ‡¤id__ÂÂÂÂR³ExpressionStatementÍ•ÍµS®CallExpressionÍ•Í´X°MemberExpressionÍ•Í²T®ThisExpressionÍ•Í™KªIdentifierÍšÍ²¸aboutToBeDeletedInternalÂÂÂM°MethodDefinitionÍÂÍÂÂKªIdentifierÍÆÍÔ®mainWindowInfo£getN²FunctionExpressionÍÔÍÀÂÂÂL®BlockStatementÍ×Í‘ÔrZ”¤type¥start£end¨argument¯ReturnStatementÍâÍS®CallExpressionÍéÍX°MemberExpressionÍéÍX°MemberExpressionÍéÍşT®ThisExpressionÍéÍíKªIdentifierÍîÍş°__mainWindowInfoÂÂKªIdentifierÍÿÍ£getÂÂÂM°MethodDefinitionÍJÍ…ÂÂKªIdentifierÍJÍW­initialRender¦methodN²FunctionExpressionÍWÍ…ÀÂÂÂL®BlockStatementÍZÍ…’R³ExpressionStatementÍeÍ_S®CallExpressionÍeÍ^X°MemberExpressionÍeÍƒT®ThisExpressionÍeÍiKªIdentifierÍjÍƒ¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍ„ÍMÀÂÂÂ’KªIdentifierÍ…Í‹¦elmtIdKªIdentifierÍÍœ¯isInitialRenderL®BlockStatementÍ¡ÍM—R³ExpressionStatementÍ°Í4S®CallExpressionÍ°Í3X°MemberExpressionÍ°ÍÅKªIdentifierÍ°Í¾®NavDestinationKªIdentifierÍ¿ÍÅ¦createÂÂ’N·ArrowFunctionExpressionÍÆÍİÀÂÂÂL®BlockStatementÍÌÍİ™R³ExpressionStatementÍßÍS®CallExpressionÍßÍX°MemberExpressionÍßÍıT®ThisExpressionÍßÍãKªIdentifierÍäÍı¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍşÍÀÂÂÂ’KªIdentifierÍÿÍ¦elmtIdKªIdentifierÍÍ¯isInitialRenderL®BlockStatementÍÍ“R³ExpressionStatementÍPÍ]S®CallExpressionÍPÍ\X°MemberExpressionÍPÍZKªIdentifierÍPÍS£RowKªIdentifierÍTÍZ¦createÂÂÂR³ExpressionStatementÍ‘Í£S®CallExpressionÍ‘Í¢X°MemberExpressionÍ‘ÍšKªIdentifierÍ‘Í”£RowKªIdentifierÍ•Íš¥widthÂÂ‘Q§LiteralÍ›Í¡¤100%¦'100%'ÂR³ExpressionStatementÍ×ÍòS®CallExpressionÍ×ÍñX°MemberExpressionÍ×ÍáKªIdentifierÍ×ÍÚ£RowKªIdentifierÍÛÍá¦marginÂÂ‘Ôr[”¤type¥start£endªproperties°ObjectExpressionÍâÍğ‘Ôr\™¤type¥start£end¦method©shorthand¨computed£key¥value¤kind¨PropertyÍäÍîÂÂÂKªIdentifierÍäÍê¦bottomQ§LiteralÍìÍî¢12¤initÂKªIdentifierÍÍ
+£RowÂR³ExpressionStatementÍÍ
+ S®CallExpressionÍÍ
+X°MemberExpressionÍÍ<T®ThisExpressionÍÍ"KªIdentifierÍ#Í<¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍ=Í
+ÀÂÂÂ’KªIdentifierÍ>ÍD¦elmtIdKªIdentifierÍFÍU¯isInitialRenderL®BlockStatementÍZÍ
+•R³ExpressionStatementÍqÍãS®CallExpressionÍqÍâX°MemberExpressionÍqÍ}KªIdentifierÍqÍv¥ImageKªIdentifierÍwÍ}¦createÂÂ‘[°ObjectExpressionÍ~Íá•\¨PropertyÍ€ÍÂÂÂQ§LiteralÍ€Í„¢id¤"id"Q§LiteralÍ†ÍÎ   ¨16777248¤init\¨PropertyÍÍÂÂÂQ§LiteralÍÍ–¤type¦"type"Q§LiteralÍ˜ÍÍN ¥20000¤init\¨PropertyÍŸÍ©ÂÂÂKªIdentifierÍŸÍ¥¦paramsÔr]”¤type¥start£end¨elements¯ArrayExpressionÍ§Í©¤init\¨PropertyÍ«ÍÈÂÂÂQ§LiteralÍ«Í·ªbundleName¬"bundleName"Q§LiteralÍ¹ÍÈ­top.mqxu.test¯"top.mqxu.test"¤init\¨PropertyÍÊÍßÂÂÂQ§LiteralÍÊÍÖªmoduleName¬"moduleName"Q§LiteralÍØÍß¥entry§"entry"¤initÂR³ExpressionStatementÍùÍ		S®CallExpressionÍùÍ	X°MemberExpressionÍùÍ	KªIdentifierÍùÍş¥ImageKªIdentifierÍÿÍ	¥widthÂÂ‘Q§LiteralÍ	Í	¢24ÂR³ExpressionStatementÍ	Í	0S®CallExpressionÍ	Í	/X°MemberExpressionÍ	Í	+KªIdentifierÍ	Í	$¥ImageKªIdentifierÍ	%Í	+¦heightÂÂ‘Q§LiteralÍ	,Í	.¢24ÂR³ExpressionStatementÍ	FÍ	bS®CallExpressionÍ	FÍ	aX°MemberExpressionÍ	FÍ	RKªIdentifierÍ	FÍ	K¥ImageKªIdentifierÍ	LÍ	R¦marginÂÂ‘[°ObjectExpressionÍ	SÍ	`‘\¨PropertyÍ	UÍ	^ÂÂÂKªIdentifierÍ	UÍ	Z¥rightQ§LiteralÍ	\Í	^¢12¤initÂR³ExpressionStatementÍ	xÍ
+S®CallExpressionÍ	xÍ
+X°MemberExpressionÍ	xÍ	…KªIdentifierÍ	xÍ	}¥ImageKªIdentifierÍ	~Í	…§onClickÂÂ‘N·ArrowFunctionExpressionÍ	†Í
+ÀÂÂÂL®BlockStatementÍ	ŒÍ
+‘R³ExpressionStatementÍ	ÖÍ	ëS®CallExpressionÍ	ÖÍ	êX°MemberExpressionÍ	ÖÍ	èX°MemberExpressionÍ	ÖÍ	äT®ThisExpressionÍ	ÖÍ	ÚKªIdentifierÍ	ÛÍ	ä©pathStackÂÂKªIdentifierÍ	åÍ	è£popÂÂÂÂKªIdentifierÍ
+Í
+¥ImageÂR³ExpressionStatementÍ
+LÍ
+VS®CallExpressionÍ
+LÍ
+UX°MemberExpressionÍ
+LÍ
+SKªIdentifierÍ
+LÍ
+O£RowKªIdentifierÍ
+PÍ
+S£popÂÂÂR³ExpressionStatementÍ
+hÍS®CallExpressionÍ
+hÍ X°MemberExpressionÍ
+hÍ
+†T®ThisExpressionÍ
+hÍ
+lKªIdentifierÍ
+mÍ
+†¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍ
+‡Í÷ÀÂÂÂ’KªIdentifierÍ
+ˆÍ
+¦elmtIdKªIdentifierÍ
+Í
+Ÿ¯isInitialRenderL®BlockStatementÍ
+¤Í÷”R³ExpressionStatementÍ
+ÜÍ
+ìS®CallExpressionÍ
+ÜÍ
+ëX°MemberExpressionÍ
+ÜÍ
+éKªIdentifierÍ
+ÜÍ
+â¦ColumnKªIdentifierÍ
+ãÍ
+é¦createÂÂÂR³ExpressionStatementÍ#Í9S®CallExpressionÍ#Í8X°MemberExpressionÍ#Í0KªIdentifierÍ#Í)¦ColumnKªIdentifierÍ*Í0¦heightÂÂ‘Q§LiteralÍ1Í7¤100%¦'100%'ÂR³ExpressionStatementÍpÍ…S®CallExpressionÍpÍ„X°MemberExpressionÍpÍ|KªIdentifierÍpÍv¦ColumnKªIdentifierÍwÍ|¥widthÂÂ‘Q§LiteralÍ}Íƒ¤100%¦'100%'ÂR³ExpressionStatementÍ¼ÍäS®CallExpressionÍ¼ÍãX°MemberExpressionÍ¼ÍÑKªIdentifierÍ¼ÍÂ¦ColumnKªIdentifierÍÃÍÑ®justifyContentÂÂ‘X°MemberExpressionÍÒÍâKªIdentifierÍÒÍÛ©FlexAlignKªIdentifierÍÜÍâ¦CenterÂÂÂKªIdentifierÍùÍÿ¦ColumnÂR³ExpressionStatementÍÍjS®CallExpressionÍÍiX°MemberExpressionÍÍ1T®ThisExpressionÍÍKªIdentifierÍÍ1¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍ2ÍbÀÂÂÂ’KªIdentifierÍ3Í9¦elmtIdKªIdentifierÍ;ÍJ¯isInitialRenderL®BlockStatementÍOÍb“R³ExpressionStatementÍÍ§S®CallExpressionÍÍ¦X°MemberExpressionÍÍ˜KªIdentifierÍÍ‘¤TextKªIdentifierÍ’Í˜¦createÂÂ‘Q§LiteralÍ™Í¥ªNavigation¬'Navigation'ÂR³ExpressionStatementÍäÍöS®CallExpressionÍäÍõX°MemberExpressionÍäÍñKªIdentifierÍäÍè¤TextKªIdentifierÍéÍñ¨fontSizeÂÂ‘Q§LiteralÍòÍô¢18ÂR³ExpressionStatementÍ3ÍOS®CallExpressionÍ3ÍNX°MemberExpressionÍ3Í>KªIdentifierÍ3Í7¤TextKªIdentifierÍ8Í>¦marginÂÂ‘[°ObjectExpressionÍ?ÍM‘\¨PropertyÍAÍKÂÂÂKªIdentifierÍAÍG¦bottomQ§LiteralÍIÍK¢12¤initÂKªIdentifierÍdÍh¤TextÂR³ExpressionStatementÍŸÍªS®CallExpressionÍŸÍ©X°MemberExpressionÍŸÍ§KªIdentifierÍŸÍ£¤TextKªIdentifierÍ¤Í§£popÂÂÂR³ExpressionStatementÍ¼ÍXS®CallExpressionÍ¼ÍWX°MemberExpressionÍ¼ÍÚT®ThisExpressionÍ¼ÍÀKªIdentifierÍÁÍÚ¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍÛÍPÀÂÂÂ’KªIdentifierÍÜÍâ¦elmtIdKªIdentifierÍäÍó¯isInitialRenderL®BlockStatementÍøÍP“R³ExpressionStatementÍ0Í¡S®CallExpressionÍ0Í X°MemberExpressionÍ0Í;KªIdentifierÍ0Í4¤TextKªIdentifierÍ5Í;¦createÂÂ‘[°ObjectExpressionÍ<ÍŸ•\¨PropertyÍ>ÍLÂÂÂQ§LiteralÍ>ÍB¢id¤"id"Q§LiteralÍDÍLÎ  ¨16777230¤init\¨PropertyÍNÍ[ÂÂÂQ§LiteralÍNÍT¤type¦"type"Q§LiteralÍVÍ[Í'¥10003¤init\¨PropertyÍ]ÍgÂÂÂKªIdentifierÍ]Íc¦params]¯ArrayExpressionÍeÍg¤init\¨PropertyÍiÍ†ÂÂÂQ§LiteralÍiÍuªbundleName¬"bundleName"Q§LiteralÍwÍ†­top.mqxu.test¯"top.mqxu.test"¤init\¨PropertyÍˆÍÂÂÂQ§LiteralÍˆÍ”ªmoduleName¬"moduleName"Q§LiteralÍ–Í¥entry§"entry"¤initÂR³ExpressionStatementÍØÍêS®CallExpressionÍØÍéX°MemberExpressionÍØÍåKªIdentifierÍØÍÜ¤TextKªIdentifierÍİÍå¨fontSizeÂÂ‘Q§LiteralÍæÍè¢24ÂR³ExpressionStatementÍ!Í=S®CallExpressionÍ!Í<X°MemberExpressionÍ!Í,KªIdentifierÍ!Í%¤TextKªIdentifierÍ&Í,¦marginÂÂ‘[°ObjectExpressionÍ-Í;‘\¨PropertyÍ/Í9ÂÂÂKªIdentifierÍ/Í5¦bottomQ§LiteralÍ7Í9¢12¤initÂKªIdentifierÍRÍV¤TextÂR³ExpressionStatementÍ‡Í’S®CallExpressionÍ‡Í‘X°MemberExpressionÍ‡ÍKªIdentifierÍ‡Í‹¤TextKªIdentifierÍŒÍ£popÂÂÂR³ExpressionStatementÍÁÍÎS®CallExpressionÍÁÍÍX°MemberExpressionÍÁÍËKªIdentifierÍÁÍÇ¦ColumnKªIdentifierÍÈÍË£popÂÂÂ[°ObjectExpressionÍßÍ2’\¨PropertyÍáÍôÂÂÂKªIdentifierÍáÍëªmoduleNameQ§LiteralÍíÍô¥entry§"entry"¤init\¨PropertyÍöÍ0ÂÂÂKªIdentifierÍöÍş¨pagePathQ§LiteralÍ Í0Ù.entry/src/main/ets/views/NavigationContentViewÙ0"entry/src/main/ets/views/NavigationContentView"¤initÂR³ExpressionStatementÍBÍ_S®CallExpressionÍBÍ^X°MemberExpressionÍBÍVKªIdentifierÍBÍP®NavDestinationKªIdentifierÍQÍV¥widthÂÂ‘Q§LiteralÍWÍ]¤100%¦'100%'ÂR³ExpressionStatementÍmÍ‹S®CallExpressionÍmÍŠX°MemberExpressionÍmÍ‚KªIdentifierÍmÍ{®NavDestinationKªIdentifierÍ|Í‚¦heightÂÂ‘Q§LiteralÍƒÍ‰¤100%¦'100%'ÂR³ExpressionStatementÍ™Í*S®CallExpressionÍ™Í)X°MemberExpressionÍ™Í¯KªIdentifierÍ™Í§®NavDestinationKªIdentifierÍ¨Í¯§onReadyÂÂ‘N·ArrowFunctionExpressionÍ°Í(ÀÂÂÂ‘KªIdentifierÍ±Í¸§contextL®BlockStatementÍ½Í(‘R³ExpressionStatementÍöÍW´AssignmentExpressionÍöÍ¡=X°MemberExpressionÍöÍT®ThisExpressionÍöÍúKªIdentifierÍûÍ©pathStackÂÂX°MemberExpressionÍÍKªIdentifierÍÍ§contextKªIdentifierÍÍ©pathStackÂÂÂR³ExpressionStatementÍ8ÍÚS®CallExpressionÍ8ÍÙX°MemberExpressionÍ8ÍNKªIdentifierÍ8ÍF®NavDestinationKªIdentifierÍGÍN§paddingÂÂ‘[°ObjectExpressionÍOÍØ”\¨PropertyÍÍãÂÂÂKªIdentifierÍÍ’£topV°BinaryExpressionÍ”ÍãS®CallExpressionÍ”ÍŞX°MemberExpressionÍ”Í­S®CallExpressionÍ”Í§X°MemberExpressionÍ”Í¥T®ThisExpressionÍ”Í˜KªIdentifierÍ™Í¥¬getUIContextÂÂÂKªIdentifierÍ¨Í­¥px2vpÂÂ‘R¯ChainExpressionÍ®ÍİX°MemberExpressionÍ®ÍİX°MemberExpressionÍ®ÍÖX°MemberExpressionÍ®ÍÍX°MemberExpressionÍ®ÍÁT®ThisExpressionÍ®Í²KªIdentifierÍ³ÍÁ®mainWindowInfoÂÂKªIdentifierÍÂÍÍ«AvoidSystemÂÂKªIdentifierÍÏÍÖ§topRectÂÃKªIdentifierÍ×Íİ¦heightÂÂÂ¡+Q§LiteralÍáÍã¢12¤init\¨PropertyÍ#Í…ÂÂÂKªIdentifierÍ#Í)¦bottomS®CallExpressionÍ+Í…X°MemberExpressionÍ+ÍDS®CallExpressionÍ+Í>X°MemberExpressionÍ+Í<T®ThisExpressionÍ+Í/KªIdentifierÍ0Í<¬getUIContextÂÂÂKªIdentifierÍ?ÍD¥px2vpÂÂ‘R¯ChainExpressionÍEÍ„X°MemberExpressionÍEÍ„X°MemberExpressionÍEÍ}X°MemberExpressionÍEÍqX°MemberExpressionÍEÍXT®ThisExpressionÍEÍIKªIdentifierÍJÍX®mainWindowInfoÂÂKªIdentifierÍYÍq¸AvoidNavigationIndicatorÂÂKªIdentifierÍsÍ}ªbottomRectÂÃKªIdentifierÍ~Í„¦heightÂÂÂ¤init\¨PropertyÍ˜Í ÂÂÂKªIdentifierÍ˜Íœ¤leftQ§LiteralÍÍ ¢12¤init\¨PropertyÍ³Í¼ÂÂÂKªIdentifierÍ³Í¸¥rightQ§LiteralÍºÍ¼¢12¤initÂR³ExpressionStatementÍèÍ
+S®CallExpressionÍèÍ	X°MemberExpressionÍèÍKªIdentifierÍèÍö®NavDestinationKªIdentifierÍ÷Í¬hideTitleBarÂÂ‘Q§LiteralÍÍÃ¤trueÂR³ExpressionStatementÍÍBS®CallExpressionÍÍAX°MemberExpressionÍÍ6KªIdentifierÍÍ&®NavDestinationKªIdentifierÍ'Í6¯backgroundColorÂÂ‘Q§LiteralÍ7Í@§#FDBFFC©'#FDBFFC'ÂKªIdentifierÍOÍ]®NavDestinationÂR³ExpressionStatementÍiÍ~S®CallExpressionÍiÍ}X°MemberExpressionÍiÍ{KªIdentifierÍiÍw®NavDestinationKªIdentifierÍxÍ{£popÂÂÂM°MethodDefinitionÍ‹ÍÃÂÂKªIdentifierÍ‹Í“¨rerender¦methodN²FunctionExpressionÍ“ÍÃÀÂÂÂL®BlockStatementÍ–ÍÃ‘R³ExpressionStatementÍ¡Í¼S®CallExpressionÍ¡Í»X°MemberExpressionÍ¡Í¹T®ThisExpressionÍ¡Í¥KªIdentifierÍ¦Í¹³updateDirtyElementsÂÂÂÀI¶ExportNamedDeclarationÍÈÍ'âJ°ClassDeclarationÍÏÍ'âKªIdentifierÍÕÍç²NavigationContent2KªIdentifierÍğÍö¦ViewPUL©ClassBodyÍ÷Í'âšM°MethodDefinitionÍşÍUÂÂKªIdentifierÍşÍ	«constructor«constructorN²FunctionExpressionÍ	ÍUÀÂÂÂ–KªIdentifierÍ
+Í¦parentKªIdentifierÍÍ¦paramsKªIdentifierÍÍ(®__localStorageO±AssignmentPatternÍ*Í5KªIdentifierÍ*Í0¦elmtIdP¯UnaryExpressionÍ3Í5¡-ÃQ§LiteralÍ4Í5¡1O±AssignmentPatternÍ7ÍOKªIdentifierÍ7ÍC¬paramsLambdaKªIdentifierÍFÍO©undefinedKªIdentifierÍQÍZ©extraInfoL®BlockStatementÍ\ÍU—R³ExpressionStatementÍgÍ˜S®CallExpressionÍgÍ—T¥SuperÍgÍl”KªIdentifierÍmÍs¦parentKªIdentifierÍuÍƒ®__localStorageKªIdentifierÍ…Í‹¦elmtIdKªIdentifierÍÍ–©extraInfoÂU«IfStatementÍ¢Í	V°BinaryExpressionÍ¦ÍÈP¯UnaryExpressionÍ¦Í¹¦typeofÃKªIdentifierÍ­Í¹¬paramsLambda£===Q§LiteralÍ¾ÍÈ¨functionª"function"L®BlockStatementÍÊÍ	‘R³ExpressionStatementÍÙÍşW´AssignmentExpressionÍÙÍı¡=X°MemberExpressionÍÙÍîT®ThisExpressionÍÙÍİKªIdentifierÍŞÍî°paramsGenerator_ÂÂKªIdentifierÍñÍı¬paramsLambdaÀR³ExpressionStatementÍÍ{W´AssignmentExpressionÍÍz¡=X°MemberExpressionÍÍ(T®ThisExpressionÍÍKªIdentifierÍÍ(°__mainWindowInfoÂÂY­NewExpressionÍ+ÍzKªIdentifierÍ/ÍK¼SynchedPropertyNesedObjectPU“X°MemberExpressionÍLÍaKªIdentifierÍLÍR¦paramsKªIdentifierÍSÍa®mainWindowInfoÂÂT®ThisExpressionÍcÍgQ§LiteralÍiÍy®mainWindowInfo°"mainWindowInfo"R³ExpressionStatementÍ…ÍÉW´AssignmentExpressionÍ…ÍÈ¡=X°MemberExpressionÍ…Í’T®ThisExpressionÍ…Í‰KªIdentifierÍŠÍ’¨__isShowÂÂY­NewExpressionÍ•ÍÈKªIdentifierÍ™Í±¸ObservedPropertySimplePU“Q§LiteralÍ²Í·Â¥falseT®ThisExpressionÍ¹Í½Q§LiteralÍ¿ÍÇ¦isShow¨"isShow"R³ExpressionStatementÍÓÍ÷W´AssignmentExpressionÍÓÍö¡=X°MemberExpressionÍÓÍáT®ThisExpressionÍÓÍ×KªIdentifierÍØÍá©pathStackÂÂY­NewExpressionÍäÍöKªIdentifierÍèÍô¬NavPathStackR³ExpressionStatementÍÍ(S®CallExpressionÍÍ'X°MemberExpressionÍÍT®ThisExpressionÍÍKªIdentifierÍÍ¹setInitiallyProvidedValueÂÂ‘KªIdentifierÍ Í&¦paramsÂR³ExpressionStatementÍ2ÍNS®CallExpressionÍ2ÍMX°MemberExpressionÍ2ÍKT®ThisExpressionÍ2Í6KªIdentifierÍ7ÍK´finalizeConstructionÂÂÂM°MethodDefinitionÍ[Í‹ÂÂKªIdentifierÍ[Ít¹setInitiallyProvidedValue¦methodN²FunctionExpressionÍtÍ‹ÀÂÂÂ‘KªIdentifierÍuÍ{¦paramsL®BlockStatementÍ}Í‹“R³ExpressionStatementÍˆÍ¹S®CallExpressionÍˆÍ¸X°MemberExpressionÍˆÍ¡X°MemberExpressionÍˆÍT®ThisExpressionÍˆÍŒKªIdentifierÍÍ°__mainWindowInfoÂÂKªIdentifierÍÍ¡£setÂÂ‘X°MemberExpressionÍ¢Í·KªIdentifierÍ¢Í¨¦paramsKªIdentifierÍ©Í·®mainWindowInfoÂÂÂU«IfStatementÍÃÍV°BinaryExpressionÍÇÍâX°MemberExpressionÍÇÍÔKªIdentifierÍÇÍÍ¦paramsKªIdentifierÍÎÍÔ¦isShowÂÂ£!==KªIdentifierÍÙÍâ©undefinedL®BlockStatementÍäÍ‘R³ExpressionStatementÍóÍW´AssignmentExpressionÍóÍ¡=X°MemberExpressionÍóÍşT®ThisExpressionÍóÍ÷KªIdentifierÍøÍş¦isShowÂÂX°MemberExpressionÍÍKªIdentifierÍÍ¦paramsKªIdentifierÍÍ¦isShowÂÂÀU«IfStatementÍ$Í„V°BinaryExpressionÍ(ÍFX°MemberExpressionÍ(Í8KªIdentifierÍ(Í.¦paramsKªIdentifierÍ/Í8©pathStackÂÂ£!==KªIdentifierÍ=ÍF©undefinedL®BlockStatementÍHÍ„‘R³ExpressionStatementÍWÍyW´AssignmentExpressionÍWÍx¡=X°MemberExpressionÍWÍeT®ThisExpressionÍWÍ[KªIdentifierÍ\Íe©pathStackÂÂX°MemberExpressionÍhÍxKªIdentifierÍhÍn¦paramsKªIdentifierÍoÍx©pathStackÂÂÀM°MethodDefinitionÍ‘ÍìÂÂKªIdentifierÍ‘Í ¯updateStateVars¦methodN²FunctionExpressionÍ ÍìÀÂÂÂ‘KªIdentifierÍ¡Í§¦paramsL®BlockStatementÍ©Íì‘R³ExpressionStatementÍ´ÍåS®CallExpressionÍ´ÍäX°MemberExpressionÍ´ÍÍX°MemberExpressionÍ´ÍÉT®ThisExpressionÍ´Í¸KªIdentifierÍ¹ÍÉ°__mainWindowInfoÂÂKªIdentifierÍÊÍÍ£setÂÂ‘X°MemberExpressionÍÎÍãKªIdentifierÍÎÍÔ¦paramsKªIdentifierÍÕÍã®mainWindowInfoÂÂÂM°MethodDefinitionÍòÍ¢ÂÂKªIdentifierÍòÍÙ!purgeVariableDependenciesOnElmtId¦methodN²FunctionExpressionÍÍ¢ÀÂÂÂ‘KªIdentifierÍÍ¨rmElmtIdL®BlockStatementÍÍ¢’R³ExpressionStatementÍ)ÍaS®CallExpressionÍ)Í`X°MemberExpressionÍ)ÍVX°MemberExpressionÍ)Í>T®ThisExpressionÍ)Í-KªIdentifierÍ.Í>°__mainWindowInfoÂÂKªIdentifierÍ?ÍV·purgeDependencyOnElmtIdÂÂ‘KªIdentifierÍWÍ_¨rmElmtIdÂR³ExpressionStatementÍkÍ›S®CallExpressionÍkÍšX°MemberExpressionÍkÍX°MemberExpressionÍkÍxT®ThisExpressionÍkÍoKªIdentifierÍpÍx¨__isShowÂÂKªIdentifierÍyÍ·purgeDependencyOnElmtIdÂÂ‘KªIdentifierÍ‘Í™¨rmElmtIdÂM°MethodDefinitionÍ¨ÍÂÂKªIdentifierÍ¨Í¸°aboutToBeDeleted¦methodN²FunctionExpressionÍ¸ÍÀÂÂÂL®BlockStatementÍ»Í”R³ExpressionStatementÍÆÍïS®CallExpressionÍÆÍîX°MemberExpressionÍÆÍìX°MemberExpressionÍÆÍÛT®ThisExpressionÍÆÍÊKªIdentifierÍËÍÛ°__mainWindowInfoÂÂKªIdentifierÍÜÍì°aboutToBeDeletedÂÂÂR³ExpressionStatementÍùÍS®CallExpressionÍùÍX°MemberExpressionÍùÍX°MemberExpressionÍùÍT®ThisExpressionÍùÍıKªIdentifierÍşÍ¨__isShowÂÂKªIdentifierÍÍ°aboutToBeDeletedÂÂÂR³ExpressionStatementÍ$ÍPS®CallExpressionÍ$ÍOX°MemberExpressionÍ$ÍBS®CallExpressionÍ$Í;X°MemberExpressionÍ$Í9KªIdentifierÍ$Í5±SubscriberManagerKªIdentifierÍ6Í9£GetÂÂÂKªIdentifierÍ<ÍB¦deleteÂÂ‘S®CallExpressionÍCÍNX°MemberExpressionÍCÍLT®ThisExpressionÍCÍGKªIdentifierÍHÍL¤id__ÂÂÂÂR³ExpressionStatementÍZÍzS®CallExpressionÍZÍyX°MemberExpressionÍZÍwT®ThisExpressionÍZÍ^KªIdentifierÍ_Íw¸aboutToBeDeletedInternalÂÂÂM°MethodDefinitionÍ‡ÍÑÂÂKªIdentifierÍ‹Í™®mainWindowInfo£getN²FunctionExpressionÍ™ÍÑÀÂÂÂL®BlockStatementÍœÍÑ‘Z¯ReturnStatementÍ§ÍÊS®CallExpressionÍ®ÍÉX°MemberExpressionÍ®ÍÇX°MemberExpressionÍ®ÍÃT®ThisExpressionÍ®Í²KªIdentifierÍ³ÍÃ°__mainWindowInfoÂÂKªIdentifierÍÄÍÇ£getÂÂÂM°MethodDefinitionÍ×ÍÂÂKªIdentifierÍÛÍá¦isShow£getN²FunctionExpressionÍáÍÀÂÂÂL®BlockStatementÍäÍ‘Z¯ReturnStatementÍïÍ
+S®CallExpressionÍöÍ	X°MemberExpressionÍöÍX°MemberExpressionÍöÍT®ThisExpressionÍöÍúKªIdentifierÍûÍ¨__isShowÂÂKªIdentifierÍÍ£getÂÂÂM°MethodDefinitionÍÍZÂÂKªIdentifierÍÍ!¦isShow£setN²FunctionExpressionÍ!ÍZÀÂÂÂ‘KªIdentifierÍ"Í*¨newValueL®BlockStatementÍ,ÍZ‘R³ExpressionStatementÍ7ÍSS®CallExpressionÍ7ÍRX°MemberExpressionÍ7ÍHX°MemberExpressionÍ7ÍDT®ThisExpressionÍ7Í;KªIdentifierÍ<ÍD¨__isShowÂÂKªIdentifierÍEÍH£setÂÂ‘KªIdentifierÍIÍQ¨newValueÂM°MethodDefinitionÍ Í'¡ÂÂKªIdentifierÍ Í­­initialRender¦methodN²FunctionExpressionÍ­Í'¡ÀÂÂÂL®BlockStatementÍ°Í'¡’R³ExpressionStatementÍ»Í'{S®CallExpressionÍ»Í'zX°MemberExpressionÍ»ÍÙT®ThisExpressionÍ»Í¿KªIdentifierÍÀÍÙ¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍÚÍ'iÀÂÂÂ’KªIdentifierÍÛÍá¦elmtIdKªIdentifierÍãÍò¯isInitialRenderL®BlockStatementÍ÷Í'i–R³ExpressionStatementÍÍ& S®CallExpressionÍÍ%ÿX°MemberExpressionÍÍKªIdentifierÍÍ®NavDestinationKªIdentifierÍÍ¦createÂÂ’N·ArrowFunctionExpressionÍÍ%©ÀÂÂÂL®BlockStatementÍ"Í%©—R³ExpressionStatementÍ5Í2S®CallExpressionÍ5Í1X°MemberExpressionÍ5ÍST®ThisExpressionÍ5Í9KªIdentifierÍ:ÍS¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍTÍ(ÀÂÂÂ’KªIdentifierÍUÍ[¦elmtIdKªIdentifierÍ]Íl¯isInitialRenderL®BlockStatementÍqÍ(•R³ExpressionStatementÍˆÍ˜S®CallExpressionÍˆÍ—X°MemberExpressionÍˆÍ•KªIdentifierÍˆÍ¦ColumnKªIdentifierÍÍ•¦createÂÂÂR³ExpressionStatementÍ®ÍÄS®CallExpressionÍ®ÍÃX°MemberExpressionÍ®Í»KªIdentifierÍ®Í´¦ColumnKªIdentifierÍµÍ»¦heightÂÂ‘Q§LiteralÍ¼ÍÂ¤100%¦'100%'ÂR³ExpressionStatementÍÚÍïS®CallExpressionÍÚÍîX°MemberExpressionÍÚÍæKªIdentifierÍÚÍà¦ColumnKªIdentifierÍáÍæ¥widthÂÂ‘Q§LiteralÍçÍí¤100%¦'100%'ÂR³ExpressionStatementÍÍ-S®CallExpressionÍÍ,X°MemberExpressionÍÍKªIdentifierÍÍ¦ColumnKªIdentifierÍÍ®justifyContentÂÂ‘X°MemberExpressionÍÍ+KªIdentifierÍÍ$©FlexAlignKªIdentifierÍ%Í+¦CenterÂÂÂR³ExpressionStatementÍCÍS®CallExpressionÍCÍX°MemberExpressionÍCÍQKªIdentifierÍCÍI¦ColumnKªIdentifierÍJÍQ§paddingÂÂ‘[°ObjectExpressionÍRÍ”\¨PropertyÍ¢ÍöÂÂÂKªIdentifierÍ¢Í¥£topV°BinaryExpressionÍ§ÍöS®CallExpressionÍ§ÍñX°MemberExpressionÍ§ÍÀS®CallExpressionÍ§ÍºX°MemberExpressionÍ§Í¸T®ThisExpressionÍ§Í«KªIdentifierÍ¬Í¸¬getUIContextÂÂÂKªIdentifierÍ»ÍÀ¥px2vpÂÂ‘R¯ChainExpressionÍÁÍğX°MemberExpressionÍÁÍğX°MemberExpressionÍÁÍéX°MemberExpressionÍÁÍàX°MemberExpressionÍÁÍÔT®ThisExpressionÍÁÍÅKªIdentifierÍÆÍÔ®mainWindowInfoÂÂKªIdentifierÍÕÍà«AvoidSystemÂÂKªIdentifierÍâÍé§topRectÂÃKªIdentifierÍêÍğ¦heightÂÂÂ¡+Q§LiteralÍôÍö¢12¤init\¨PropertyÍFÍ¨ÂÂÂKªIdentifierÍFÍL¦bottomS®CallExpressionÍNÍ¨X°MemberExpressionÍNÍgS®CallExpressionÍNÍaX°MemberExpressionÍNÍ_T®ThisExpressionÍNÍRKªIdentifierÍSÍ_¬getUIContextÂÂÂKªIdentifierÍbÍg¥px2vpÂÂ‘R¯ChainExpressionÍhÍ§X°MemberExpressionÍhÍ§X°MemberExpressionÍhÍ X°MemberExpressionÍhÍ”X°MemberExpressionÍhÍ{T®ThisExpressionÍhÍlKªIdentifierÍmÍ{®mainWindowInfoÂÂKªIdentifierÍ|Í”¸AvoidNavigationIndicatorÂÂKªIdentifierÍ–Í ªbottomRectÂÃKªIdentifierÍ¡Í§¦heightÂÂÂ¤init\¨PropertyÍÃÍËÂÂÂKªIdentifierÍÃÍÇ¤leftQ§LiteralÍÉÍË¢16¤init\¨PropertyÍæÍïÂÂÂKªIdentifierÍæÍë¥rightQ§LiteralÍíÍï¢16¤initÂKªIdentifierÍ*Í0¦ColumnÂR³ExpressionStatementÍDÍ!pS®CallExpressionÍDÍ!oX°MemberExpressionÍDÍbT®ThisExpressionÍDÍHKªIdentifierÍIÍb¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍcÍ!gÀÂÂÂ’KªIdentifierÍdÍj¦elmtIdKªIdentifierÍlÍ{¯isInitialRenderL®BlockStatementÍ€Í!g•R³ExpressionStatementÍÁÍ3S®CallExpressionÍÁÍ2X°MemberExpressionÍÁÍÍKªIdentifierÍÁÍÆ¥ImageKªIdentifierÍÇÍÍ¦createÂÂ‘[°ObjectExpressionÍÎÍ1•\¨PropertyÍĞÍŞÂÂÂQ§LiteralÍĞÍÔ¢id¤"id"Q§LiteralÍÖÍŞÎ   ¨16777248¤init\¨PropertyÍàÍíÂÂÂQ§LiteralÍàÍæ¤type¦"type"Q§LiteralÍèÍíÍN ¥20000¤init\¨PropertyÍïÍùÂÂÂKªIdentifierÍïÍõ¦params]¯ArrayExpressionÍ÷Íù¤init\¨PropertyÍûÍÂÂÂQ§LiteralÍûÍªbundleName¬"bundleName"Q§LiteralÍ	Í­top.mqxu.test¯"top.mqxu.test"¤init\¨PropertyÍÍ/ÂÂÂQ§LiteralÍÍ&ªmoduleName¬"moduleName"Q§LiteralÍ(Í/¥entry§"entry"¤initÂR³ExpressionStatementÍsÍƒS®CallExpressionÍsÍ‚X°MemberExpressionÍsÍ~KªIdentifierÍsÍx¥ImageKªIdentifierÍyÍ~¥widthÂÂ‘Q§LiteralÍÍ¢24ÂR³ExpressionStatementÍÃÍÔS®CallExpressionÍÃÍÓX°MemberExpressionÍÃÍÏKªIdentifierÍÃÍÈ¥ImageKªIdentifierÍÉÍÏ¦heightÂÂ‘Q§LiteralÍĞÍÒ¢24ÂR³ExpressionStatementÍ Í ˆS®CallExpressionÍ Í ‡X°MemberExpressionÍ Í "KªIdentifierÍ Í ¥ImageKªIdentifierÍ Í "¨positionÂÂ‘[°ObjectExpressionÍ #Í †’\¨PropertyÍ >Í BÂÂÂKªIdentifierÍ >Í ?¡xQ§LiteralÍ AÍ B ¡0¤init\¨PropertyÍ ]Í aÂÂÂKªIdentifierÍ ]Í ^¡yQ§LiteralÍ `Í a ¡0¤initÂR³ExpressionStatementÍ ÈÍ!TS®CallExpressionÍ ÈÍ!SX°MemberExpressionÍ ÈÍ ÕKªIdentifierÍ ÈÍ Í¥ImageKªIdentifierÍ ÎÍ Õ§onClickÂÂ‘N·ArrowFunctionExpressionÍ ÖÍ!RÀÂÂÂL®BlockStatementÍ ÜÍ!R‘R³ExpressionStatementÍ!&Í!;S®CallExpressionÍ!&Í!:X°MemberExpressionÍ!&Í!8X°MemberExpressionÍ!&Í!4T®ThisExpressionÍ!&Í!*KªIdentifierÍ!+Í!4©pathStackÂÂKªIdentifierÍ!5Í!8£popÂÂÂÂKªIdentifierÍ!iÍ!n¥ImageÂR³ExpressionStatementÍ!‚Í"ÙS®CallExpressionÍ!‚Í"ØX°MemberExpressionÍ!‚Í! T®ThisExpressionÍ!‚Í!†KªIdentifierÍ!‡Í! ¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍ!¡Í"ÑÀÂÂÂ’KªIdentifierÍ!¢Í!¨¦elmtIdKªIdentifierÍ!ªÍ!¹¯isInitialRenderL®BlockStatementÍ!¾Í"Ñ“R³ExpressionStatementÍ!üÍ"S®CallExpressionÍ!üÍ"X°MemberExpressionÍ!üÍ"KªIdentifierÍ!üÍ" ¤TextKªIdentifierÍ"Í"¦createÂÂ‘Q§LiteralÍ"Í"ªNavigation¬'Navigation'ÂR³ExpressionStatementÍ"SÍ"eS®CallExpressionÍ"SÍ"dX°MemberExpressionÍ"SÍ"`KªIdentifierÍ"SÍ"W¤TextKªIdentifierÍ"XÍ"`¨fontSizeÂÂ‘Q§LiteralÍ"aÍ"c¢18ÂR³ExpressionStatementÍ"¢Í"¾S®CallExpressionÍ"¢Í"½X°MemberExpressionÍ"¢Í"­KªIdentifierÍ"¢Í"¦¤TextKªIdentifierÍ"§Í"­¦marginÂÂ‘[°ObjectExpressionÍ"®Í"¼‘\¨PropertyÍ"°Í"ºÂÂÂKªIdentifierÍ"°Í"¶¦bottomQ§LiteralÍ"¸Í"º¢12¤initÂKªIdentifierÍ"ÓÍ"×¤TextÂR³ExpressionStatementÍ#Í#S®CallExpressionÍ#Í#X°MemberExpressionÍ#Í#KªIdentifierÍ#Í#¤TextKªIdentifierÍ#Í#£popÂÂÂR³ExpressionStatementÍ#+Í%<S®CallExpressionÍ#+Í%;X°MemberExpressionÍ#+Í#IT®ThisExpressionÍ#+Í#/KªIdentifierÍ#0Í#I¹observeComponentCreation2ÂÂ’N·ArrowFunctionExpressionÍ#JÍ%4ÀÂÂÂ’KªIdentifierÍ#KÍ#Q¦elmtIdKªIdentifierÍ#SÍ#b¯isInitialRenderL®BlockStatementÍ#gÍ%4“R³ExpressionStatementÍ#¤Í$S®CallExpressionÍ#¤Í$X°MemberExpressionÍ#¤Í#¯KªIdentifierÍ#¤Í#¨¤TextKªIdentifierÍ#©Í#¯¦createÂÂ‘[°ObjectExpressionÍ#°Í$•\¨PropertyÍ#²Í#ÀÂÂÂQ§LiteralÍ#²Í#¶¢id¤"id"Q§LiteralÍ#¸Í#ÀÎ  ¨16777230¤init\¨PropertyÍ#ÂÍ#ÏÂÂÂQ§LiteralÍ#ÂÍ#È¤type¦"type"Q§LiteralÍ#ÊÍ#ÏÍ'¥10003¤init\¨PropertyÍ#ÑÍ#ÛÂÂÂKªIdentifierÍ#ÑÍ#×¦params]¯ArrayExpressionÍ#ÙÍ#Û¤init\¨PropertyÍ#İÍ#úÂÂÂQ§LiteralÍ#İÍ#éªbundleName¬"bundleName"Q§LiteralÍ#ëÍ#ú­top.mqxu.test¯"top.mqxu.test"¤init\¨PropertyÍ#üÍ$ÂÂÂQ§LiteralÍ#üÍ$ªmoduleName¬"moduleName"Q§LiteralÍ$
+Í$¥entry§"entry"¤initÂR³ExpressionStatementÍ$QÍ$cS®CallExpressionÍ$QÍ$bX°MemberExpressionÍ$QÍ$^KªIdentifierÍ$QÍ$U¤TextKªIdentifierÍ$VÍ$^¨fontSizeÂÂ‘Q§LiteralÍ$_Í$a¢24ÂR³ExpressionStatementÍ$ŸÍ%!S®CallExpressionÍ$ŸÍ% X°MemberExpressionÍ$ŸÍ$«KªIdentifierÍ$ŸÍ$£¤TextKªIdentifierÍ$¤Í$«§onClickÂÂ‘N·ArrowFunctionExpressionÍ$¬Í%ÀÂÂÂL®BlockStatementÍ$²Í%‘R³ExpressionStatementÍ$õÍ%W´AssignmentExpressionÍ$õÍ%¡=X°MemberExpressionÍ$õÍ% T®ThisExpressionÍ$õÍ$ùKªIdentifierÍ$úÍ% ¦isShowÂÂQ§LiteralÍ%Í%Ã¤trueÂKªIdentifierÍ%6Í%:¤TextÂR³ExpressionStatementÍ%pÍ%{S®CallExpressionÍ%pÍ%zX°MemberExpressionÍ%pÍ%xKªIdentifierÍ%pÍ%t¤TextKªIdentifierÍ%uÍ%x£popÂÂÂR³ExpressionStatementÍ%Í%šS®CallExpressionÍ%Í%™X°MemberExpressionÍ%Í%—KªIdentifierÍ%Í%“¦ColumnKªIdentifierÍ%”Í%—£popÂÂÂ[°ObjectExpressionÍ%«Í%ş’\¨PropertyÍ%­Í%ÀÂÂÂKªIdentifierÍ%­Í%·ªmoduleNameQ§LiteralÍ%¹Í%À¥entry§"entry"¤init\¨PropertyÍ%ÂÍ%üÂÂÂKªIdentifierÍ%ÂÍ%Ê¨pagePathQ§LiteralÍ%ÌÍ%üÙ.entry/src/main/ets/views/NavigationContentViewÙ0"entry/src/main/ets/views/NavigationContentView"¤initÂR³ExpressionStatementÍ&Í&+S®CallExpressionÍ&Í&*X°MemberExpressionÍ&Í&"KªIdentifierÍ&Í&®NavDestinationKªIdentifierÍ&Í&"¥widthÂÂ‘Q§LiteralÍ&#Í&)¤100%¦'100%'ÂR³ExpressionStatementÍ&9Í&WS®CallExpressionÍ&9Í&VX°MemberExpressionÍ&9Í&NKªIdentifierÍ&9Í&G®NavDestinationKªIdentifierÍ&HÍ&N¦heightÂÂ‘Q§LiteralÍ&OÍ&U¤100%¦'100%'ÂR³ExpressionStatementÍ&eÍ&öS®CallExpressionÍ&eÍ&õX°MemberExpressionÍ&eÍ&{KªIdentifierÍ&eÍ&s®NavDestinationKªIdentifierÍ&tÍ&{§onReadyÂÂ‘N·ArrowFunctionExpressionÍ&|Í&ôÀÂÂÂ‘KªIdentifierÍ&}Í&„§contextL®BlockStatementÍ&‰Í&ô‘R³ExpressionStatementÍ&ÂÍ&åW´AssignmentExpressionÍ&ÂÍ&ä¡=X°MemberExpressionÍ&ÂÍ&ĞT®ThisExpressionÍ&ÂÍ&ÆKªIdentifierÍ&ÇÍ&Ğ©pathStackÂÂX°MemberExpressionÍ&ÓÍ&äKªIdentifierÍ&ÓÍ&Ú§contextKªIdentifierÍ&ÛÍ&ä©pathStackÂÂÂR³ExpressionStatementÍ'Í'&S®CallExpressionÍ'Í'%X°MemberExpressionÍ'Í'KªIdentifierÍ'Í'®NavDestinationKªIdentifierÍ'Í'¬hideTitleBarÂÂ‘Q§LiteralÍ' Í'$Ã¤trueÂR³ExpressionStatementÍ'4Í'^S®CallExpressionÍ'4Í']X°MemberExpressionÍ'4Í'RKªIdentifierÍ'4Í'B®NavDestinationKªIdentifierÍ'CÍ'R¯backgroundColorÂÂ‘Q§LiteralÍ'SÍ'\§#FDBFFC©'#FDBFFC'ÂKªIdentifierÍ'kÍ'y®NavDestinationÂR³ExpressionStatementÍ'…Í'šS®CallExpressionÍ'…Í'™X°MemberExpressionÍ'…Í'—KªIdentifierÍ'…Í'“®NavDestinationKªIdentifierÍ'”Í'—£popÂÂÂM°MethodDefinitionÍ'§Í'ßÂÂKªIdentifierÍ'§Í'¯¨rerender¦methodN²FunctionExpressionÍ'¯Í'ßÀÂÂÂL®BlockStatementÍ'²Í'ß‘R³ExpressionStatementÍ'½Í'ØS®CallExpressionÍ'½Í'×X°MemberExpressionÍ'½Í'ÕT®ThisExpressionÍ'½Í'ÁKªIdentifierÍ'ÂÍ'Õ³updateDirtyElementsÂÂÂÀ

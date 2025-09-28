@@ -1,0 +1,144 @@
+{
+  "color": [
+    {
+      "name": "primary_color",
+      "value": "#007DFF"
+    },
+    {
+      "name": "primary_light",
+      "value": "#E6F0FF"
+    },
+    {
+      "name": "primary_dark",
+      "value": "#005CC8"
+    },
+
+    {
+      "name": "secondary_color",
+      "value": "#00B42A"
+    },
+    {
+      "name": "secondary_light",
+      "value": "#E8FFF2"
+    },
+    {
+      "name": "secondary_dark",
+      "value": "#008A20"
+    },
+
+    // 核心色彩 - 辅助色（橙）
+    {
+      "name": "secondary_color_orange",
+      "value": "#FF7D00"
+    },
+    {
+      "name": "secondary_light_orange",
+      "value": "#FFF3E6"
+    },
+    {
+      "name": "secondary_dark_orange",
+      "value": "#D46A00"
+    },
+
+    {
+      "name": "error_color",
+      "value": "#F53F3F"
+    },
+    {
+      "name": "error_light",
+      "value": "#FFECE8"
+    },
+    {
+      "name": "error_dark",
+      "value": "#D43C33"
+    },
+
+    {
+      "name": "info_color",
+      "value": "#86909C"
+    },
+    {
+      "name": "info_light",
+      "value": "#F2F3F5"
+    },
+    {
+      "name": "info_dark",
+      "value": "#6B7785"
+    },
+
+    {
+      "name": "link_color",
+      "value": "#007DFF"
+    },
+    {
+      "name": "link_active_color",
+      "value": "#005CC8"
+    },
+
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "page_background",
+      "value": "#F7F8FA"
+    },
+    {
+      "name": "card_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "text_primary",
+      "value": "#1D2129"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#4E5969"
+    },
+    {
+      "name": "text_tertiary",
+      "value": "#86909C"
+    },
+    {
+      "name": "border_color",
+      "value": "#E5E6EB"
+    },
+    {
+      "name": "divider_color",
+      "value": "#F2F3F5"
+    },
+
+    {
+      "name": "start_window_background_dark",
+      "value": "#111111"
+    },
+    {
+      "name": "page_background_dark",
+      "value": "#18181B"
+    },
+    {
+      "name": "card_background_dark",
+      "value": "#27272A"
+    },
+    {
+      "name": "text_primary_dark",
+      "value": "#F2F2F2"
+    },
+    {
+      "name": "text_secondary_dark",
+      "value": "#E0E0E0"
+    },
+    {
+      "name": "text_tertiary_dark",
+      "value": "#A1A1AA"
+    },
+    {
+      "name": "border_color_dark",
+      "value": "#3F3F46"
+    },
+    {
+      "name": "divider_color_dark",
+      "value": "#323234"
+    }
+  ]
+}

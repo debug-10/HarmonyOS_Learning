@@ -1,0 +1,178 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "app_name",
+      "value": "Harmony App"
+    },
+    {
+      "name": "app_description",
+      "value": "A powerful application built with HarmonyOS"
+    },
+
+    {
+      "name": "btn_confirm",
+      "value": "Confirm"
+    },
+    {
+      "name": "btn_cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "btn_save",
+      "value": "Save"
+    },
+    {
+      "name": "btn_delete",
+      "value": "Delete"
+    },
+    {
+      "name": "btn_back",
+      "value": "Back"
+    },
+    {
+      "name": "btn_next",
+      "value": "Next"
+    },
+    {
+      "name": "btn_login",
+      "value": "Log in"
+    },
+    {
+      "name": "btn_register",
+      "value": "Register"
+    },
+    {
+      "name": "btn_edit",
+      "value": "Edit"
+    },
+    {
+      "name": "btn_share",
+      "value": "Share"
+    },
+
+    {
+      "name": "title_home",
+      "value": "Home"
+    },
+    {
+      "name": "title_profile",
+      "value": "Profile"
+    },
+    {
+      "name": "title_settings",
+      "value": "Settings"
+    },
+    {
+      "name": "title_details",
+      "value": "Details"
+    },
+    {
+      "name": "title_notifications",
+      "value": "Notifications"
+    },
+    {
+      "name": "title_about",
+      "value": "About"
+    },
+
+    {
+      "name": "toast_success",
+      "value": "Operation successful"
+    },
+    {
+      "name": "toast_failed",
+      "value": "Operation failed"
+    },
+    {
+      "name": "toast_loading",
+      "value": "Loading..."
+    },
+    {
+      "name": "toast_no_network",
+      "value": "No network connection"
+    },
+    {
+      "name": "toast_data_updated",
+      "value": "Data updated"
+    },
+
+    {
+      "name": "hint_username",
+      "value": "Enter username"
+    },
+    {
+      "name": "hint_password",
+      "value": "Enter password"
+    },
+    {
+      "name": "hint_search",
+      "value": "Search..."
+    },
+    {
+      "name": "hint_email",
+      "value": "Enter email address"
+    },
+    {
+      "name": "hint_phone",
+      "value": "Enter phone number"
+    },
+
+    {
+      "name": "error_empty_username",
+      "value": "Username cannot be empty"
+    },
+    {
+      "name": "error_invalid_email",
+      "value": "Invalid email format"
+    },
+    {
+      "name": "error_network_error",
+      "value": "Network error, please try again"
+    },
+    {
+      "name": "error_server_error",
+      "value": "Server error, please try later"
+    },
+    {
+      "name": "error_password_mismatch",
+      "value": "Passwords do not match"
+    },
+
+    {
+      "name": "setting_language",
+      "value": "Language"
+    },
+    {
+      "name": "setting_theme",
+      "value": "Theme"
+    },
+    {
+      "name": "setting_notifications",
+      "value": "Notifications"
+    },
+    {
+      "name": "setting_privacy",
+      "value": "Privacy"
+    },
+    {
+      "name": "setting_about",
+      "value": "About"
+    },
+    {
+      "name": "setting_version",
+      "value": "Version"
+    }
+  ]
+}

@@ -1,0 +1,836 @@
+[2025-09-28T15:06:16.058] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T15:06:16.660] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T15:06:19.236] [DEBUG] debug-file - hvigorfile, require result:  { appTasks: [Getter] }
+[2025-09-28T15:06:19.455] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T15:06:19.461] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T15:06:19.547] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T15:06:19.480] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T15:06:19.525] [DEBUG] debug-file - Project task initialization takes 7 ms 
+[2025-09-28T15:06:19.556] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T15:06:19.569] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:06:16.061] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.5', dependencies: {} }
+[2025-09-28T15:06:19.581] [DEBUG] debug-file - entry : clean cost memory 0.11379241943359375
+[2025-09-28T15:06:19.605] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T15:06:16.660] [DEBUG] debug-file - Since current hvigor version 6.0.6 differs from last hvigor version 
+      undefined, delete file-cache.json and task-cache.json.
+[2025-09-28T15:06:19.237] [DEBUG] debug-file - hvigorfile, binding system plugins { appTasks: [Getter] }
+[2025-09-28T15:06:19.455] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T15:06:19.464] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T15:06:19.547] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:06:19.517] [DEBUG] debug-file - Sdk init in 51 ms 
+[2025-09-28T15:06:19.525] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T15:06:19.557] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T15:06:19.572] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T15:06:16.064] [DEBUG] debug-file - env: daemon=false
+[2025-09-28T15:06:19.581] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 932 ms 
+[2025-09-28T15:06:19.607] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T15:06:16.661] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-09-28T15:06:19.456] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T15:06:19.468] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:06:19.526] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T15:06:19.563] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T15:06:19.572] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T15:06:16.064] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2025-09-28T15:06:19.582] [INFO] debug-file - Finished :entry:clean... after 3 ms 
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2025-09-28T15:06:16.662] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T15:06:19.456] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T15:06:19.474] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:06:19.532] [DEBUG] debug-file - hvigorfile, require result:  { hapTasks: [Getter] }
+[2025-09-28T15:06:19.564] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:06:19.575] [DEBUG] debug-file - Configuration phase cost:2 s 915 ms 
+[2025-09-28T15:06:19.582] [DEBUG] debug-file - Executing task ::clean
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Clear worker 0.
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:06:19.532] [DEBUG] debug-file - hvigorfile, binding system plugins { hapTasks: [Getter] }
+[2025-09-28T15:06:19.578] [DEBUG] debug-file - Configuration task cost before running: 2 s 929 ms 
+[2025-09-28T15:06:19.567] [DEBUG] debug-file - Module TransitionAnimation-master Collected Dependency: 
+[2025-09-28T15:06:19.582] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Worker 0 has been cleared.
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:06:19.533] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\hvigorfile.ts
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\cli\main\cli.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\bin\hvigor.js
+[2025-09-28T15:06:19.578] [DEBUG] debug-file - Executing task :entry:clean
+[2025-09-28T15:06:19.567] [DEBUG] debug-file - Module TransitionAnimation-master's total dependency: 0
+[2025-09-28T15:06:19.582] [DEBUG] debug-file - TransitionAnimation-master : clean cost memory 0.02037811279296875
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:06:19.578] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T15:06:19.582] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 934 ms 
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:06:19.583] [INFO] debug-file - Finished ::clean... after 1 ms 
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Clear worker 1.
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:06:19.583] [DEBUG] debug-file - Executing task :entry:init
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Worker 1 has been cleared.
+[2025-09-28T15:06:19.548] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:06:19.583] [DEBUG] debug-file - entry : init cost memory 0.01271820068359375
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Current idle worker size: 0.
+[2025-09-28T15:06:19.549] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:06:19.583] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 934 ms 
+[2025-09-28T15:06:19.610] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T15:06:19.549] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:06:19.583] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2025-09-28T15:06:19.611] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T15:06:19.549] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T15:06:19.583] [DEBUG] debug-file - Executing task ::init
+[2025-09-28T15:06:19.617] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2025-09-28T15:06:19.554] [DEBUG] debug-file - Module entry task initialization takes 5 ms 
+[2025-09-28T15:06:19.584] [DEBUG] debug-file - TransitionAnimation-master : init cost memory 0.01149749755859375
+[2025-09-28T15:06:19.617] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2025-09-28T15:06:19.555] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T15:06:19.584] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 935 ms 
+[2025-09-28T15:06:19.618] [DEBUG] debug-file - Current worker pool is terminated.
+[2025-09-28T15:06:19.584] [INFO] debug-file - Finished ::init... after 1 ms 
+[2025-09-28T15:06:19.594] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T15:06:19.602] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T15:06:19.602] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T15:06:39.103] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T15:06:39.198] [DEBUG] debug-file - env: daemon=true
+[2025-09-28T15:06:39.105] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.5', dependencies: {} }
+[2025-09-28T15:06:40.108] [DEBUG] debug-file - java daemon tryConnect failed Error: connect ECONNREFUSED 127.0.0.1:45050
+[2025-09-28T15:06:40.119] [DEBUG] debug-file - java daemon started at port 45050 pid 21612
+[2025-09-28T15:06:40.157] [DEBUG] debug-file - session manager: set active socket. socketId=qShFXWpQVltng6RrAAAB
+[2025-09-28T15:06:41.130] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T15:06:41.138] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T15:06:41.140] [DEBUG] debug-file - Cache service initialization finished in 2 ms 
+[2025-09-28T15:06:41.142] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T15:06:43.364] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T15:06:43.365] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T15:06:43.566] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T15:06:43.566] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T15:06:43.567] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T15:06:43.567] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T15:06:43.570] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T15:06:43.572] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T15:06:43.576] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T15:06:43.579] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T15:06:43.582] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T15:06:43.618] [DEBUG] debug-file - Sdk init in 44 ms 
+[2025-09-28T15:06:43.623] [DEBUG] debug-file - Project task initialization takes 5 ms 
+[2025-09-28T15:06:43.623] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T15:06:43.624] [DEBUG] debug-file - hvigorfile, resolving D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T15:06:43.629] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T15:06:43.630] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T15:06:43.631] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\hvigorfile.ts
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- D:\tool\DevEco Studio 6\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-09-28T15:06:43.643] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T15:06:43.643] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:06:43.644] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:06:43.644] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:06:43.644] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:06:43.644] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:06:43.645] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:06:43.645] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:06:43.645] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T15:06:43.645] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T15:06:43.645] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T15:06:43.646] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T15:06:43.646] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T15:06:43.653] [DEBUG] debug-file - Module entry task initialization takes 6 ms 
+[2025-09-28T15:06:43.653] [DEBUG] debug-file - hvigorfile, resolve finished D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T15:06:43.673] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 19 ms 
+[2025-09-28T15:06:43.673] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T15:06:43.675] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T15:06:43.682] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T15:06:43.683] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:06:43.688] [DEBUG] debug-file - Module TransitionAnimation-master Collected Dependency: 
+[2025-09-28T15:06:43.688] [DEBUG] debug-file - Module TransitionAnimation-master's total dependency: 0
+[2025-09-28T15:06:43.690] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T15:06:43.694] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T15:06:43.695] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T15:06:43.699] [DEBUG] debug-file - Configuration phase cost:2 s 559 ms 
+[2025-09-28T15:06:43.702] [DEBUG] debug-file - Configuration task cost before running: 2 s 570 ms 
+[2025-09-28T15:06:43.709] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-09-28T15:06:43.711] [DEBUG] debug-file - Task 'entry:default@PreBuild' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.840] [DEBUG] debug-file - current product is not Atomic service.
+[2025-09-28T15:06:43.840] [DEBUG] debug-file - Use tool [win32: JAVA_HOME, CLASSPATH]
+ [
+  { JAVA_HOME: 'D:\\tool\\DevEco Studio 6\\DevEco Studio\\jbr' },
+  { CLASSPATH: '.;D:\\jdk-17\\lib;D:\\jdk-17\\lib\\tools.jar' }
+]
+[2025-09-28T15:06:43.840] [DEBUG] debug-file - Use tool [win32: NODE_HOME]
+ [
+  {
+    NODE_HOME: 'D:\\tool\\DevEco Studio 6\\DevEco Studio\\tools\\node'
+  }
+]
+[2025-09-28T15:06:43.841] [DEBUG] debug-file - entry : default@PreBuild cost memory 18.357452392578125
+[2025-09-28T15:06:43.841] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 709 ms 
+[2025-09-28T15:06:43.844] [INFO] debug-file - Finished :entry:default@PreBuild... after 133 ms 
+[2025-09-28T15:06:43.845] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-09-28T15:06:43.846] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.846] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.04285430908203125
+[2025-09-28T15:06:43.846] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 714 ms 
+[2025-09-28T15:06:43.846] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-09-28T15:06:43.847] [DEBUG] debug-file - Executing task :entry:default@GenerateMetadata
+[2025-09-28T15:06:43.848] [DEBUG] debug-file - Task 'entry:default@GenerateMetadata' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.851] [DEBUG] debug-file - entry : default@GenerateMetadata cost memory 0.31887054443359375
+[2025-09-28T15:06:43.851] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 719 ms 
+[2025-09-28T15:06:43.851] [INFO] debug-file - Finished :entry:default@GenerateMetadata... after 4 ms 
+[2025-09-28T15:06:43.852] [DEBUG] debug-file - Executing task :entry:default@ConfigureCmake
+[2025-09-28T15:06:43.853] [DEBUG] debug-file - entry : default@ConfigureCmake cost memory 0.0161590576171875
+[2025-09-28T15:06:43.853] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 720 ms 
+[2025-09-28T15:06:43.853] [INFO] debug-file - Finished :entry:default@ConfigureCmake... after 1 ms 
+[2025-09-28T15:06:43.854] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-09-28T15:06:43.855] [DEBUG] debug-file - Task 'entry:default@MergeProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.856] [DEBUG] debug-file - Change app api release type with 'Release'
+[2025-09-28T15:06:43.856] [DEBUG] debug-file - Change app compile API version with '6.0.0.47'
+[2025-09-28T15:06:43.856] [DEBUG] debug-file - Change app target API version with '50005017'
+[2025-09-28T15:06:43.856] [DEBUG] debug-file - Change app minimum API version with '50005017'
+[2025-09-28T15:06:43.856] [DEBUG] debug-file - Use cli appEnvironment
+[2025-09-28T15:06:43.858] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.02227020263671875
+[2025-09-28T15:06:43.858] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 726 ms 
+[2025-09-28T15:06:43.859] [INFO] debug-file - Finished :entry:default@MergeProfile... after 5 ms 
+[2025-09-28T15:06:43.863] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-09-28T15:06:43.864] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.866] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.07476043701171875
+[2025-09-28T15:06:43.866] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 733 ms 
+[2025-09-28T15:06:43.866] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 3 ms 
+[2025-09-28T15:06:43.867] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-09-28T15:06:43.867] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01639556884765625
+[2025-09-28T15:06:43.868] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 735 ms 
+[2025-09-28T15:06:43.868] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-09-28T15:06:43.870] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-09-28T15:06:43.878] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.879] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.24234771728515625
+[2025-09-28T15:06:43.879] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 746 ms 
+[2025-09-28T15:06:43.879] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 9 ms 
+[2025-09-28T15:06:43.883] [DEBUG] debug-file - Executing task :entry:default@ProcessIntegratedHsp
+[2025-09-28T15:06:43.884] [DEBUG] debug-file - entry : default@ProcessIntegratedHsp cost memory 0.0334014892578125
+[2025-09-28T15:06:43.884] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 752 ms 
+[2025-09-28T15:06:43.884] [INFO] debug-file - Finished :entry:default@ProcessIntegratedHsp... after 1 ms 
+[2025-09-28T15:06:43.886] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithCmake
+[2025-09-28T15:06:43.886] [DEBUG] debug-file - entry : default@BuildNativeWithCmake cost memory 0.017608642578125
+[2025-09-28T15:06:43.886] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 754 ms 
+[2025-09-28T15:06:43.886] [INFO] debug-file - Finished :entry:default@BuildNativeWithCmake... after 1 ms 
+[2025-09-28T15:06:43.888] [DEBUG] debug-file - Executing task :entry:default@MakePackInfo
+[2025-09-28T15:06:43.889] [DEBUG] debug-file - Module Pack Info:  {
+  summary: {
+    app: { bundleName: 'c***n', bundleType: 'app', version: [Object] },
+    modules: [ [Object] ]
+  },
+  packages: [
+    {
+      deviceType: [Array],
+      moduleType: 'entry',
+      deliveryWithInstall: true,
+      name: 'entry-default'
+    }
+  ]
+}
+[2025-09-28T15:06:43.891] [DEBUG] debug-file - entry : default@MakePackInfo cost memory 0.105255126953125
+[2025-09-28T15:06:43.891] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 759 ms 
+[2025-09-28T15:06:43.891] [INFO] debug-file - Finished :entry:default@MakePackInfo... after 3 ms 
+[2025-09-28T15:06:43.893] [DEBUG] debug-file - Executing task :entry:default@SyscapTransform
+[2025-09-28T15:06:43.893] [DEBUG] debug-file - File: 'D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\syscap.json' from 'sysCapJsonPath' is not exists, just ignore.
+[2025-09-28T15:06:43.894] [DEBUG] debug-file - Task 'entry:default@SyscapTransform' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.894] [DEBUG] debug-file - entry : default@SyscapTransform cost memory 0.12677001953125
+[2025-09-28T15:06:43.894] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 762 ms 
+[2025-09-28T15:06:43.895] [INFO] debug-file - Finished :entry:default@SyscapTransform... after 2 ms 
+[2025-09-28T15:06:43.897] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-09-28T15:06:43.898] [DEBUG] debug-file - Task 'entry:default@ProcessProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:43.899] [DEBUG] debug-file - [
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\tools\\node\\node.exe',
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '17'
+]
+[2025-09-28T15:06:44.103] [DEBUG] debug-file - 12.0.6.0
+[2025-09-28T15:06:44.106] [DEBUG] debug-file - No need to add fake ui ability because of not in preview process.
+[2025-09-28T15:06:44.108] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 2.1767196655273438
+[2025-09-28T15:06:44.108] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 976 ms 
+[2025-09-28T15:06:44.108] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 212 ms 
+[2025-09-28T15:06:44.110] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-09-28T15:06:44.114] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.09076690673828125
+[2025-09-28T15:06:44.115] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 982 ms 
+[2025-09-28T15:06:44.115] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 5 ms 
+[2025-09-28T15:06:44.117] [DEBUG] debug-file - Executing task :entry:default@ProcessShareConfig
+[2025-09-28T15:06:44.121] [DEBUG] debug-file - entry : default@ProcessShareConfig cost memory 0.07431793212890625
+[2025-09-28T15:06:44.121] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 989 ms 
+[2025-09-28T15:06:44.122] [INFO] debug-file - Finished :entry:default@ProcessShareConfig... after 5 ms 
+[2025-09-28T15:06:44.124] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-09-28T15:06:44.125] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:44.126] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.0700225830078125
+[2025-09-28T15:06:44.126] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 994 ms 
+[2025-09-28T15:06:44.126] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 2 ms 
+[2025-09-28T15:06:44.128] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithNinja
+[2025-09-28T15:06:44.130] [DEBUG] debug-file - entry : default@BuildNativeWithNinja cost memory 0.03118133544921875
+[2025-09-28T15:06:44.130] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 998 ms 
+[2025-09-28T15:06:44.130] [INFO] debug-file - Finished :entry:default@BuildNativeWithNinja... after 3 ms 
+[2025-09-28T15:06:44.133] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@ProcessResource
+[2025-09-28T15:06:44.137] [DEBUG] debug-file - Executing task :entry:default@ProcessResource
+[2025-09-28T15:06:44.137] [DEBUG] debug-file - Task 'entry:default@ProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:44.140] [DEBUG] debug-file - entry : default@ProcessResource cost memory 0.13092803955078125
+[2025-09-28T15:06:44.142] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 10 ms 
+[2025-09-28T15:06:44.144] [INFO] debug-file - Finished :entry:default@ProcessResource... after 7 ms 
+[2025-09-28T15:06:44.147] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-09-28T15:06:44.148] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:44.165] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.572235107421875
+[2025-09-28T15:06:44.166] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 33 ms 
+[2025-09-28T15:06:44.170] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 19 ms 
+[2025-09-28T15:06:44.172] [DEBUG] debug-file - Executing task :entry:default@ProcessLibs
+[2025-09-28T15:06:44.178] [DEBUG] debug-file - Worker dispatch failed, running processLibs on main thread.
+[2025-09-28T15:06:44.180] [DEBUG] debug-file - entry : default@ProcessLibs cost memory 0.48989105224609375
+[2025-09-28T15:06:44.180] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 48 ms 
+[2025-09-28T15:06:44.181] [INFO] debug-file - Finished :entry:default@ProcessLibs... after 9 ms 
+[2025-09-28T15:06:44.183] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@CompileResource
+[2025-09-28T15:06:44.184] [DEBUG] debug-file - Executing task :entry:default@CompileResource
+[2025-09-28T15:06:44.195] [DEBUG] debug-file - Use tool [D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-l',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resConfig.json'
+]
+[2025-09-28T15:06:44.196] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 210264064,
+  heapTotal: 165244928,
+  heapUsed: 139879016,
+  external: 3089199,
+  arrayBuffers: 269114
+} os memoryUsage :13.218879699707031
+[2025-09-28T15:06:44.427] [DEBUG] debug-file - Info: Pack: normal pack mode
+
+[2025-09-28T15:06:44.480] [DEBUG] debug-file - Info: hardware concurrency count is : 16
+Info: thread count is : 16
+
+[2025-09-28T15:06:44.481] [DEBUG] debug-file - Info: thread pool is started
+
+[2025-09-28T15:06:44.482] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T15:06:44.492] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T15:06:44.503] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T15:06:44.513] [DEBUG] debug-file - 09-28 15:06:44.514 14684 30496 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+09-28 15:06:44.514 14684 30496 E C01400/ImageTranscoderUtils: ImageFilter IN D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T15:06:44.514] [DEBUG] debug-file - 09-28 15:06:44.515 14684 30496 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T15:06:44.514] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T15:06:44.515] [DEBUG] debug-file - 09-28 15:06:44.516 14684 30496 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+09-28 15:06:44.516 14684 30496 E C01400/ImageTranscoderUtils: ImageFilter IN D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\media\background.png
+
+[2025-09-28T15:06:44.517] [DEBUG] debug-file - 09-28 15:06:44.518 14684 30496 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T15:06:44.517] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\media\background.png
+
+[2025-09-28T15:06:44.520] [DEBUG] debug-file - 09-28 15:06:44.520 14684 30496 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+09-28 15:06:44.520 14684 30496 E C01400/ImageTranscoderUtils: ImageFilter IN D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\media\foreground.png
+
+[2025-09-28T15:06:44.521] [DEBUG] debug-file - 09-28 15:06:44.522 14684 30496 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T15:06:44.521] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\media\foreground.png
+
+[2025-09-28T15:06:44.522] [DEBUG] debug-file - Info: can't scale media json file.
+
+[2025-09-28T15:06:44.522] [DEBUG] debug-file - Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T15:06:44.523] [DEBUG] debug-file - Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\media\background.png
+Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\media\foreground.png
+
+[2025-09-28T15:06:44.523] [DEBUG] debug-file - Warning: D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\media\layered_image.json is not png format
+
+[2025-09-28T15:06:44.524] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-09-28T15:06:44.525] [DEBUG] debug-file - Info: thread pool is stopped
+
+[2025-09-28T15:06:44.590] [DEBUG] debug-file - entry : default@CompileResource cost memory 1.05584716796875
+[2025-09-28T15:06:44.590] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 458 ms 
+[2025-09-28T15:06:44.591] [INFO] debug-file - Finished :entry:default@CompileResource... after 407 ms 
+[2025-09-28T15:06:44.593] [DEBUG] debug-file - Executing task :entry:default@DoNativeStrip
+[2025-09-28T15:06:44.594] [DEBUG] debug-file - Task 'entry:default@DoNativeStrip' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:44.597] [DEBUG] debug-file - entry : default@DoNativeStrip cost memory 0.06561279296875
+[2025-09-28T15:06:44.597] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 465 ms 
+[2025-09-28T15:06:44.598] [INFO] debug-file - Finished :entry:default@DoNativeStrip... after 5 ms 
+[2025-09-28T15:06:44.600] [DEBUG] debug-file - Executing task :entry:default@CompileArkTS
+[2025-09-28T15:06:44.601] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-09-28T15:06:44.621] [DEBUG] debug-file - build config:
+[2025-09-28T15:06:44.621] [DEBUG] debug-file - {
+  moduleType: 'entry',
+  perf: 0,
+  targetName: '.default',
+  packageManagerType: 'ohpm',
+  localPropertiesPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\local.properties',
+  isPreview: false,
+  isOhosTest: false,
+  isLocalTest: false,
+  buildMode: 'Debug',
+  hotReloadBuild: undefined,
+  watchMode: 'false',
+  aceProfilePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile',
+  etsLoaderPath: 'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader',
+  modulePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry',
+  testFrameworkPar: {
+    testMode: undefined,
+    coveragePathFilter: undefined,
+    coverageMode: undefined
+  },
+  needCoverageInsert: false,
+  debugLine: false,
+  projectTopDir: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master',
+  compileSdkVersion: 20,
+  compatibleSdkVersion: 17,
+  compatibleSdkVersionStage: undefined,
+  bundleName: 'c***n',
+  etsLoaderVersion: '6.0.0.47',
+  etsLoaderReleaseType: 'Release',
+  aotCompileMode: 'type',
+  apPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\modules.ap',
+  entryModuleName: 'entry',
+  entryModuleVersion: '1.0.0',
+  entryPackageName: 'entry',
+  allModuleNameHash: '38eebcd0193774a5e9c4e3f9b3809eac',
+  externalApiPaths: [
+    'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\hms\\ets'
+  ],
+  compilerTypes: [],
+  isCrossplatform: false,
+  hvigorPluginFile: undefined,
+  compilePluginPath: undefined,
+  buildGeneratedProfilePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\generated\\profile\\default',
+  bundleType: 'app',
+  arkTSVersion: undefined,
+  apiVersion: 20,
+  needCompleteSourcesMap: false,
+  isFaMode: false,
+  strictMode: undefined,
+  buildDir: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build',
+  deviceTypes: [ 'phone' ],
+  useNormalizedOHMUrl: false,
+  pkgContextInfo: undefined,
+  ohPackagePathMap: {},
+  dependencyAliasMap: {},
+  permission: { requestPermissions: undefined, definePermissions: undefined },
+  integratedHsp: false,
+  projectArkOption: undefined,
+  sourceMapDir: undefined,
+  branchElimination: false,
+  transformLib: undefined,
+  caseSensitiveCheck: false,
+  tsImportSendable: false,
+  resolveConflictMode: true,
+  depName2RootPath: {},
+  depName2DepInfo: {},
+  rootPathSet: [
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master'
+  ],
+  useNativeResolver: true,
+  shouldEmitJs: true,
+  useTscResolve: false,
+  singleFileEmit: false,
+  userProjectConfig: {
+    autoLazyImport: false,
+    allowEmptyBundleName: false,
+    reExportCheckMode: 'noCheck',
+    executionMode: 'memory',
+    usePathPlaceholder: false,
+    writeRollupCache: true,
+    isExpandImportEnabled: false,
+    expandImportExclude: '',
+    ignoreCrossplatformCheck: false,
+    isPreloadSoEnabled: false
+  },
+  skipOhModulesLint: false,
+  executionMode: 'memory',
+  autoLazyImport: false,
+  allowEmptyBundleName: false,
+  reExportCheckMode: 'noCheck',
+  usePathPlaceholder: false,
+  writeRollupCache: true,
+  isExpandImportEnabled: false,
+  expandImportExclude: '',
+  ignoreCrossplatformCheck: false,
+  isPreloadSoEnabled: false,
+  arkCompileCachePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule',
+  aceModuleJsonPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\ark_module.json',
+  appResource: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\ResourceTable.txt',
+  rawFileResource: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources\\rawfile',
+  resourceTableHash: '5679b331fed45840f2835ddc1408702f',
+  runtimeOS: 'HarmonyOS',
+  sdkInfo: 'false:20:6.0.0.47:Release',
+  aceModuleRoot: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\src\\main\\ets',
+  compileMode: 'esmodule',
+  aceSuperVisualPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\src\\main\\supervisual',
+  aceBuildJson: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\loader\\default\\loader.json',
+  cachePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule\\debug',
+  aceModuleBuild: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\loader_out\\default\\ets',
+  supportChunks: true,
+  declaredFilesPath: undefined,
+  shouldCollectDirectImportees: false,
+  isByteCodeHarOptimize: false,
+  expandImportPath: undefined,
+  pkgNameToPkgBriefInfo: {
+    entry: {
+      pkgRoot: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry',
+      originalSourceRoots: undefined,
+      sourceRoots: [Array],
+      pkgName: 'entry'
+    }
+  },
+  projectModel: {
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\src\\main': {
+      moduleName: 'entry',
+      modulePkgPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry',
+      belongProjectPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master'
+    },
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry': {
+      moduleName: 'entry',
+      modulePkgPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry',
+      belongProjectPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master'
+    },
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master': {
+      moduleName: 'TransitionAnimation-master',
+      modulePkgPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master',
+      belongProjectPath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master'
+    }
+  },
+  pkgJsonFileHash: '172beb4545b6b99fb4e8f4dca3554044',
+  allModulePaths: [
+    'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry'
+  ],
+  routerMap: {},
+  obfuscationOptions: undefined,
+  byteCodeHarToDependencyKeys: undefined,
+  compileBlockPkg: [],
+  mockParams: {
+    decorator: '@MockSetup',
+    packageName: '@ohos/hamock',
+    etsSourceRootPath: 'src/main/ets',
+    mockConfigPath: undefined,
+    mockConfigKey2ModuleInfo: {},
+    source2ModuleIdMap: {}
+  },
+  copyCodeResourceEnable: true,
+  copyCodeResourceExcludes: [],
+  copyCodeResourceIncludes: undefined,
+  uiTransformOptimization: false,
+  sdkPath: 'D:/tool/DevEco Studio 6/DevEco Studio/sdk',
+  needPreloadSoFileSet: {},
+  preloadSoFilePath: 'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\preload\\default\\preload.json',
+  useSourceHash: false,
+  localModuleParamMap: {},
+  otherPaths: {
+    'entry/*': [
+      '..\\*',
+      '..\\..\\..\\build\\default\\generated\\profile\\default\\*'
+    ]
+  },
+  collectImportersConfig: undefined
+}
+[2025-09-28T15:06:44.622] [DEBUG] debug-file - Compile arkts with external api path: D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\hms\ets
+[2025-09-28T15:06:44.624] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T15:06:44.624] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T15:06:44.625] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T15:06:44.628] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T15:06:44.631] [DEBUG] debug-file - default@CompileArkTS work[0] is submitted.
+[2025-09-28T15:06:44.632] [DEBUG] debug-file - default@CompileArkTS work[0] is pushed to ready queue.
+[2025-09-28T15:06:44.632] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[12] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[11] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[10] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[9] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[8] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.633] [DEBUG] debug-file - A work dispatched to worker[7] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.634] [DEBUG] debug-file - A work dispatched to worker[6] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.634] [DEBUG] debug-file - A work dispatched to worker[5] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.634] [DEBUG] debug-file - Create  resident worker with id: 4.
+[2025-09-28T15:06:44.636] [DEBUG] debug-file - default@CompileArkTS work[0] has been dispatched to worker[4].
+[2025-09-28T15:06:44.637] [DEBUG] debug-file - default@CompileArkTS work[0] is dispatched.
+[2025-09-28T15:06:44.637] [DEBUG] debug-file - CopyResources startTime: 517791443011600
+[2025-09-28T15:06:44.637] [DEBUG] debug-file - default@CompileArkTS work[1] is submitted.
+[2025-09-28T15:06:44.638] [DEBUG] debug-file - default@CompileArkTS work[1] is pushed to ready queue.
+[2025-09-28T15:06:44.638] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.638] [DEBUG] debug-file - Create  resident worker with id: 14.
+[2025-09-28T15:06:44.640] [DEBUG] debug-file - default@CompileArkTS work[1] has been dispatched to worker[14].
+[2025-09-28T15:06:44.640] [DEBUG] debug-file - default@CompileArkTS work[1] is dispatched.
+[2025-09-28T15:06:44.641] [DEBUG] debug-file - entry : default@CompileArkTS cost memory 2.17724609375
+[2025-09-28T15:06:44.643] [DEBUG] debug-file - Executing task :entry:default@BuildJS
+[2025-09-28T15:06:44.648] [DEBUG] debug-file - entry : default@BuildJS cost memory 0.13135528564453125
+[2025-09-28T15:06:44.649] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 516 ms 
+[2025-09-28T15:06:44.649] [INFO] debug-file - Finished :entry:default@BuildJS... after 6 ms 
+[2025-09-28T15:06:44.651] [DEBUG] debug-file - Executing task :entry:default@CacheNativeLibs
+[2025-09-28T15:06:44.652] [DEBUG] debug-file - Task 'entry:default@CacheNativeLibs' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:44.652] [DEBUG] debug-file - default@CacheNativeLibs work[2] is submitted.
+[2025-09-28T15:06:44.652] [DEBUG] debug-file - default@CacheNativeLibs work[2] is pushed to ready queue.
+[2025-09-28T15:06:44.653] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T15:06:44.653] [DEBUG] debug-file - A work dispatched to worker[14] failed because of worker busy.
+[2025-09-28T15:06:44.653] [DEBUG] debug-file - Create  resident worker with id: 13.
+[2025-09-28T15:06:44.654] [DEBUG] debug-file - default@CacheNativeLibs work[2] has been dispatched to worker[13].
+[2025-09-28T15:06:44.654] [DEBUG] debug-file - default@CacheNativeLibs work[2] is dispatched.
+[2025-09-28T15:06:44.655] [DEBUG] debug-file - entry : default@CacheNativeLibs cost memory 0.19635772705078125
+[2025-09-28T15:06:46.400] [DEBUG] debug-file - worker[13] has one work done.
+[2025-09-28T15:06:46.400] [DEBUG] debug-file - default@CacheNativeLibs work[2] done.
+[2025-09-28T15:06:46.401] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T15:06:46.401] [INFO] debug-file - Finished :entry:default@CacheNativeLibs... after 17 ms 
+[2025-09-28T15:06:46.412] [DEBUG] debug-file - worker[14] has one work done.
+[2025-09-28T15:06:46.412] [DEBUG] debug-file - CopyResources is end, endTime: 517793218160300
+[2025-09-28T15:06:46.413] [DEBUG] debug-file - default@CompileArkTS work[1] done.
+[2025-09-28T15:06:46.413] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T15:06:55.132] [WARN] debug-file - [33mWARN: [33m[33mArkTS:WARN File: D:/S/HarmonyOS_Learning/HarmonyOS_Study/TransitionAnimation-master/entry/src/main/ets/entryability/EntryAbility.ets:22:5
+ Function may throw exceptions. Special handling is required.
+[39m[39m
+
+[2025-09-28T15:06:55.133] [DEBUG] debug-file - Ark compile task finished.finished time is 517801938809600
+[2025-09-28T15:06:55.134] [DEBUG] debug-file - worker[4] has one work done.
+[2025-09-28T15:06:55.136] [DEBUG] debug-file - default@CompileArkTS work[0] done.
+[2025-09-28T15:06:55.136] [DEBUG] debug-file - A work dispatched to worker[4] failed because unable to get work from ready queue.
+[2025-09-28T15:06:55.138] [INFO] debug-file - Finished :entry:default@CompileArkTS... after 6 s 546 ms 
+[2025-09-28T15:06:55.139] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgModuleJson
+[2025-09-28T15:06:55.140] [DEBUG] debug-file - File: 'D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\preload\default\preload.json' from 'preloadSoJsonPath' is not exists, just ignore.
+[2025-09-28T15:06:55.140] [DEBUG] debug-file - Task 'entry:default@GeneratePkgModuleJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:55.143] [DEBUG] debug-file - entry : default@GeneratePkgModuleJson cost memory 0.078338623046875
+[2025-09-28T15:06:55.143] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 11 ms 
+[2025-09-28T15:06:55.143] [INFO] debug-file - Finished :entry:default@GeneratePkgModuleJson... after 5 ms 
+[2025-09-28T15:06:55.145] [DEBUG] debug-file - Executing task :entry:default@ProcessCompiledResources
+[2025-09-28T15:06:55.145] [DEBUG] debug-file - File: 'D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\preload\default\preload.json' from 'preloadSoJsonPath' is not exists, just ignore.
+[2025-09-28T15:06:55.145] [DEBUG] debug-file - Task 'entry:default@ProcessCompiledResources' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T15:06:55.145] [DEBUG] debug-file - entry : default@ProcessCompiledResources cost memory 0.06798553466796875
+[2025-09-28T15:06:55.145] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 13 ms 
+[2025-09-28T15:06:55.146] [INFO] debug-file - Finished :entry:default@ProcessCompiledResources... after 1 ms 
+[2025-09-28T15:06:55.148] [DEBUG] debug-file - Executing task :entry:default@PackageHap
+[2025-09-28T15:06:55.153] [DEBUG] debug-file - Use tool [D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\toolchains\lib\app_packing_tool.jar]
+ [
+  'java',
+  '-Dfile.encoding=GBK',
+  '-jar',
+  'D:\\tool\\DevEco Studio 6\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\lib\\app_packing_tool.jar',
+  '--mode',
+  'hap',
+  '--force',
+  'true',
+  '--lib-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\stripped_native_libs\\default',
+  '--json-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\package\\default\\module.json',
+  '--resources-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources',
+  '--index-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources.index',
+  '--pack-info-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\outputs\\default\\pack.info',
+  '--out-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap',
+  '--ets-path',
+  'D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\loader_out\\default\\ets'
+]
+[2025-09-28T15:06:55.595] [DEBUG] debug-file - java daemon socket received message:{"code":0,"message":"pack success"}
+[2025-09-28T15:06:55.600] [DEBUG] debug-file - entry : default@PackageHap cost memory 0.5766677856445312
+[2025-09-28T15:06:55.601] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 468 ms 
+[2025-09-28T15:06:55.602] [INFO] debug-file - Finished :entry:default@PackageHap... after 453 ms 
+[2025-09-28T15:06:55.604] [DEBUG] debug-file - Executing task :entry:default@PackingCheck
+[2025-09-28T15:06:55.611] [DEBUG] debug-file - entry : default@PackingCheck cost memory 0.5007705688476562
+[2025-09-28T15:06:55.611] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 479 ms 
+[2025-09-28T15:06:55.612] [INFO] debug-file - Finished :entry:default@PackingCheck... after 8 ms 
+[2025-09-28T15:06:55.614] [DEBUG] debug-file - Executing task :entry:default@SignHap
+[2025-09-28T15:06:55.614] [WARN] debug-file - Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
+             If needed, configure the signingConfigs in D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\build-profile.json5.
+[2025-09-28T15:06:55.616] [DEBUG] debug-file - entry : default@SignHap cost memory 0.064483642578125
+[2025-09-28T15:06:55.616] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 484 ms 
+[2025-09-28T15:06:55.617] [INFO] debug-file - Finished :entry:default@SignHap... after 3 ms 
+[2025-09-28T15:06:55.618] [DEBUG] debug-file - Executing task :entry:default@CollectDebugSymbol
+[2025-09-28T15:06:55.620] [DEBUG] debug-file - entry : default@CollectDebugSymbol cost memory 0.10234832763671875
+[2025-09-28T15:06:55.620] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 488 ms 
+[2025-09-28T15:06:55.620] [INFO] debug-file - Finished :entry:default@CollectDebugSymbol... after 2 ms 
+[2025-09-28T15:06:55.621] [DEBUG] debug-file - Executing task :entry:assembleHap
+[2025-09-28T15:06:55.621] [DEBUG] debug-file - entry : assembleHap cost memory 0.01444244384765625
+[2025-09-28T15:06:55.621] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 489 ms 
+[2025-09-28T15:06:55.621] [INFO] debug-file - Finished :entry:assembleHap... after 1 ms 
+[2025-09-28T15:06:55.633] [INFO] debug-file - BUILD SUCCESSFUL in 14 s 501 ms 
+[2025-09-28T15:06:55.635] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:06:55.635] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:06:55.636] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T15:06:55.636] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T15:06:55.636] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources\base\profile\main_pages.json cache by regenerate.
+[2025-09-28T15:06:55.637] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\hvigor\hvigor-config.json5 cache by regenerate.
+[2025-09-28T15:06:55.637] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T15:06:55.637] [DEBUG] debug-file - Update task entry:default@PreBuild input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\oh-package.json5 cache by regenerate.
+[2025-09-28T15:06:55.638] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:5 ms .
+[2025-09-28T15:06:55.638] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-09-28T15:06:55.638] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-09-28T15:06:55.639] [DEBUG] debug-file - Update task entry:default@GenerateMetadata input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:06:55.639] [DEBUG] debug-file - Update task entry:default@GenerateMetadata output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\hap_metadata\default\output_metadata.json cache.
+[2025-09-28T15:06:55.639] [DEBUG] debug-file - Incremental task entry:default@GenerateMetadata post-execution cost:1 ms .
+[2025-09-28T15:06:55.639] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:06:55.640] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T15:06:55.640] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:06:55.640] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\merge_profile\default\module.json cache.
+[2025-09-28T15:06:55.641] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:2 ms .
+[2025-09-28T15:06:55.641] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:06:55.641] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T15:06:55.641] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\generated\profile\default\BuildProfile.ets cache.
+[2025-09-28T15:06:55.642] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:1 ms .
+[2025-09-28T15:06:55.642] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2025-09-28T15:06:55.642] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2025-09-28T15:06:55.642] [DEBUG] debug-file - Update task entry:default@ProcessIntegratedHsp output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\build\cache\default\integrated_hsp\integratedHspCache.json cache.
+[2025-09-28T15:06:55.642] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp post-execution cost:1 ms .
+[2025-09-28T15:06:55.642] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T15:06:55.643] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:06:55.643] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T15:06:55.643] [DEBUG] debug-file - Update task entry:default@MakePackInfo output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\outputs\default\pack.info cache.
+[2025-09-28T15:06:55.644] [DEBUG] debug-file - Incremental task entry:default@MakePackInfo post-execution cost:2 ms .
+[2025-09-28T15:06:55.644] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\toolchains\syscap_tool.exe cache by regenerate.
+[2025-09-28T15:06:55.644] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\tool\DevEco Studio 6\DevEco Studio\sdk\default\openharmony\ets\api\device-define cache by regenerate.
+[2025-09-28T15:06:55.646] [DEBUG] debug-file - Update task entry:default@SyscapTransform output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\syscap\default\rpcid.sc cache.
+[2025-09-28T15:06:55.646] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform post-execution cost:3 ms .
+[2025-09-28T15:06:55.646] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-09-28T15:06:55.646] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\process_profile\default\module.json cache.
+[2025-09-28T15:06:55.647] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2025-09-28T15:06:55.647] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T15:06:55.647] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\oh-package.json5 cache by regenerate.
+[2025-09-28T15:06:55.648] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:06:55.648] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\router_map\default\temp-router-map.json cache.
+[2025-09-28T15:06:55.648] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\router_map\default\loader-router-map.json cache.
+[2025-09-28T15:06:55.648] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:2 ms .
+[2025-09-28T15:06:55.649] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T15:06:55.649] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\oh-package.json5 cache by regenerate.
+[2025-09-28T15:06:55.649] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T15:06:55.649] [DEBUG] debug-file - Update task entry:default@ProcessShareConfig output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\share_config\default\temp-share-config.json cache.
+[2025-09-28T15:06:55.650] [DEBUG] debug-file - Incremental task entry:default@ProcessShareConfig post-execution cost:2 ms .
+[2025-09-28T15:06:55.650] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\startup\default\startup_config.json cache.
+[2025-09-28T15:06:55.650] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2025-09-28T15:06:55.650] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\resConfig.json cache.
+[2025-09-28T15:06:55.650] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\opt-compression.json cache.
+[2025-09-28T15:06:55.651] [DEBUG] debug-file - Incremental task entry:default@ProcessResource post-execution cost:1 ms .
+[2025-09-28T15:06:55.652] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\router_map\default\temp-router-map.json cache by regenerate.
+[2025-09-28T15:06:55.652] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader\default\loader.json cache.
+[2025-09-28T15:06:55.652] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:2 ms .
+[2025-09-28T15:06:55.653] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T15:06:55.653] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T15:06:55.653] [DEBUG] debug-file - Update task entry:default@ProcessLibs output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache.
+[2025-09-28T15:06:55.654] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs post-execution cost:2 ms .
+[2025-09-28T15:06:55.655] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\resources cache by regenerate.
+[2025-09-28T15:06:55.660] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\AppScope\resources cache by regenerate.
+[2025-09-28T15:06:55.662] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-09-28T15:06:55.662] [DEBUG] debug-file - Update task entry:default@CompileResource input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\resConfig.json cache by regenerate.
+[2025-09-28T15:06:55.662] [DEBUG] debug-file - Update task entry:default@CompileResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default cache.
+[2025-09-28T15:06:55.668] [DEBUG] debug-file - Update task entry:default@CompileResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\generated\r\default\ResourceTable.h cache.
+[2025-09-28T15:06:55.669] [DEBUG] debug-file - Update task entry:default@CompileResource output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\generated\r\default cache.
+[2025-09-28T15:06:55.669] [DEBUG] debug-file - Incremental task entry:default@CompileResource post-execution cost:16 ms .
+[2025-09-28T15:06:55.669] [DEBUG] debug-file - Update task entry:default@DoNativeStrip input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T15:06:55.670] [DEBUG] debug-file - Update task entry:default@DoNativeStrip output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\stripped_native_libs\default cache.
+[2025-09-28T15:06:55.670] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip post-execution cost:1 ms .
+[2025-09-28T15:06:55.672] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T15:06:55.672] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T15:06:55.672] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T15:06:55.673] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T15:06:55.673] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\src\main\ets cache by regenerate.
+[2025-09-28T15:06:55.677] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T15:06:55.678] [DEBUG] debug-file - Update task entry:default@CompileArkTS output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets cache.
+[2025-09-28T15:06:55.678] [DEBUG] debug-file - Incremental task entry:default@CompileArkTS post-execution cost:9 ms .
+[2025-09-28T15:06:55.679] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T15:06:55.680] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T15:06:55.680] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T15:06:55.680] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T15:06:55.681] [DEBUG] debug-file - Update task entry:default@BuildJS output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\js cache.
+[2025-09-28T15:06:55.681] [DEBUG] debug-file - Incremental task entry:default@BuildJS post-execution cost:3 ms .
+[2025-09-28T15:06:55.681] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T15:06:55.681] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T15:06:55.682] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\patch\default\base_native_libs.json cache.
+[2025-09-28T15:06:55.682] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs post-execution cost:1 ms .
+[2025-09-28T15:06:55.682] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T15:06:55.682] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\package\default\module.json cache.
+[2025-09-28T15:06:55.683] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgModuleJson post-execution cost:1 ms .
+[2025-09-28T15:06:55.683] [DEBUG] debug-file - Incremental task entry:default@ProcessCompiledResources post-execution cost:1 ms .
+[2025-09-28T15:06:55.683] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T15:06:55.684] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T15:06:55.684] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources cache by regenerate.
+[2025-09-28T15:06:55.688] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources.index cache by regenerate.
+[2025-09-28T15:06:55.688] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\outputs\default\pack.info cache by regenerate.
+[2025-09-28T15:06:55.688] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets cache by regenerate.
+[2025-09-28T15:06:55.689] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T15:06:55.689] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T15:06:55.689] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\outputs\default\entry-default-unsigned.hap cache.
+[2025-09-28T15:06:55.690] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\source_map\default\sourceMaps.map cache.
+[2025-09-28T15:06:55.690] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\outputs\default\mapping\sourceMaps.map cache.
+[2025-09-28T15:06:55.690] [DEBUG] debug-file - Incremental task entry:default@PackageHap post-execution cost:8 ms .
+[2025-09-28T15:06:55.690] [DEBUG] debug-file - Update task entry:default@SignHap input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\outputs\default\entry-default-unsigned.hap cache by regenerate.
+[2025-09-28T15:06:55.691] [DEBUG] debug-file - Update task entry:default@SignHap output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\outputs\default\entry-default-signed.hap cache.
+[2025-09-28T15:06:55.691] [DEBUG] debug-file - Incremental task entry:default@SignHap post-execution cost:1 ms .
+[2025-09-28T15:06:55.692] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T15:06:55.692] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T15:06:55.692] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol output file:D:\S\HarmonyOS_Learning\HarmonyOS_Study\TransitionAnimation-master\entry\build\default\outputs\default\symbol cache.
+[2025-09-28T15:06:55.692] [DEBUG] debug-file - Incremental task entry:default@CollectDebugSymbol post-execution cost:2 ms .
+[2025-09-28T15:06:55.717] [DEBUG] debug-file - Cleanup worker 0.
+[2025-09-28T15:06:55.717] [DEBUG] debug-file - Worker 0 has been cleaned up.
+[2025-09-28T15:06:55.717] [DEBUG] debug-file - Current idle worker size: 4.
+[2025-09-28T15:06:55.717] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:06:55.717] [DEBUG] debug-file - Cleanup worker 1.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Worker 1 has been cleaned up.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Current idle worker size: 3.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Cleanup worker 13.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Worker 13 has been cleaned up.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Current idle worker size: 2.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Cleanup worker 14.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Worker 14 has been cleaned up.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T15:06:55.718] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T15:06:55.721] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T15:06:55.722] [DEBUG] debug-file - java daemon socket close code:1000 reason:close by user
+[2025-09-28T15:06:55.723] [DEBUG] debug-file - worker[0] exits with exit code 1.
+[2025-09-28T15:06:55.723] [DEBUG] debug-file - worker[1] exits with exit code 1.
+[2025-09-28T15:06:55.729] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T15:06:55.731] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T15:06:55.729] [DEBUG] debug-file - worker[14] exits with exit code 1.
+[2025-09-28T15:06:55.730] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T15:06:55.731] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T15:06:55.731] [DEBUG] debug-file - worker[13] exits with exit code 1.

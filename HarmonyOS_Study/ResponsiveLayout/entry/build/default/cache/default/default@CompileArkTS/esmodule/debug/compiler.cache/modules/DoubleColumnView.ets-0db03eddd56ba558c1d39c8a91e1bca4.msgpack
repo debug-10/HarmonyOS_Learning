@@ -1,0 +1,287 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚ Üif (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+// å¯¼å…¥å¯¼èˆªæ è§†å›¾ç»„ä»¶
+import { NavigationBarView } from './NavigationBarView';
+// å¯¼å…¥å¯¼èˆªå†…å®¹è§†å›¾ç»„ä»¶
+import { NavigationContent1, NavigationContent2 } from './NavigationContentView';
+export class DoubleColumnView extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__mainWindowInfo = new SynchedPropertyNesedObjectPU(params.mainWindowInfo, this, "mainWindowInfo");
+        this.__isShowingSidebar = new ObservedPropertySimplePU(false, this, "isShowingSidebar");
+        this.pageInfos = new NavPathStack();
+        this.pathStack = new NavPathStack();
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        this.__mainWindowInfo.set(params.mainWindowInfo);
+        if (params.isShowingSidebar !== undefined) {
+            this.isShowingSidebar = params.isShowingSidebar;
+        }
+        if (params.pageInfos !== undefined) {
+            this.pageInfos = params.pageInfos;
+        }
+        if (params.pathStack !== undefined) {
+            this.pathStack = params.pathStack;
+        }
+    }
+    updateStateVars(params) {
+        this.__mainWindowInfo.set(params.mainWindowInfo);
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__mainWindowInfo.purgeDependencyOnElmtId(rmElmtId);
+        this.__isShowingSidebar.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__mainWindowInfo.aboutToBeDeleted();
+        this.__isShowingSidebar.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get mainWindowInfo() {
+        return this.__mainWindowInfo.get();
+    }
+    get isShowingSidebar() {
+        return this.__isShowingSidebar.get();
+    }
+    set isShowingSidebar(newValue) {
+        this.__isShowingSidebar.set(newValue);
+    }
+    /**
+     * é¡µé¢æ˜ å°„æ„å»ºå™¨
+     * æ ¹æ®é¡µé¢åç§°è¿”å›å¯¹åº”çš„é¡µé¢ç»„ä»¶
+     * @param name é¡µé¢åç§°æ ‡è¯†ç¬¦
+     */
+    PageMap(name, parent = null) {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            If.create();
+            if (name === 'navigationContent1') {
+                this.ifElseBranchUpdateFunction(0, () => {
+                    {
+                        this.observeComponentCreation2((elmtId, isInitialRender) => {
+                            if (isInitialRender) {
+                                let componentCall = new 
+                                // æ„å»ºå¯¼èˆªå†…å®¹1é¡µé¢
+                                NavigationContent1(this, { mainWindowInfo: this.mainWindowInfo }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/views/DoubleColumnView.ets", line: 39, col: 7 });
+                                ViewPU.create(componentCall);
+                                let paramsLambda = () => {
+                                    return {
+                                        mainWindowInfo: this.mainWindowInfo
+                                    };
+                                };
+                                componentCall.paramsGenerator_ = paramsLambda;
+                            }
+                            else {
+                                this.updateStateVarsOfChildByElmtId(elmtId, {
+                                    mainWindowInfo: this.mainWindowInfo
+                                });
+                            }
+                        }, { name: "NavigationContent1" });
+                    }
+                });
+            }
+            else if (name === 'navigationContent2') {
+                this.ifElseBranchUpdateFunction(1, () => {
+                    {
+                        this.observeComponentCreation2((elmtId, isInitialRender) => {
+                            if (isInitialRender) {
+                                let componentCall = new 
+                                // æ„å»ºå¯¼èˆªå†…å®¹2é¡µé¢
+                                NavigationContent2(this, { mainWindowInfo: this.mainWindowInfo }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/views/DoubleColumnView.ets", line: 42, col: 7 });
+                                ViewPU.create(componentCall);
+                                let paramsLambda = () => {
+                                    return {
+                                        mainWindowInfo: this.mainWindowInfo
+                                    };
+                                };
+                                componentCall.paramsGenerator_ = paramsLambda;
+                            }
+                            else {
+                                this.updateStateVarsOfChildByElmtId(elmtId, {
+                                    mainWindowInfo: this.mainWindowInfo
+                                });
+                            }
+                        }, { name: "NavigationContent2" });
+                    }
+                });
+            }
+            else /**
+             * æ„å»ºåŒæ å¸ƒå±€è§†å›¾
+             * æ ¹æ®å±å¹•æ–­ç‚¹è‡ªé€‚åº”é€‰æ‹©å¯¼èˆªæ¨¡å¼
+             */ {
+                this.ifElseBranchUpdateFunction(2, () => {
+                });
+            }
+        }, If);
+        If.pop();
+    }
+    /**
+     * æ„å»ºåŒæ å¸ƒå±€è§†å›¾
+     * æ ¹æ®å±å¹•æ–­ç‚¹è‡ªé€‚åº”é€‰æ‹©å¯¼èˆªæ¨¡å¼
+     */
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // [Start double_column_view]
+            Navigation.create(this.pathStack, { moduleName: "entry", pagePath: "entry/src/main/ets/views/DoubleColumnView", isUserCreateStack: true });
+            // [Start double_column_view]
+            Navigation.mode(this.mainWindowInfo.widthBp === WidthBreakpoint.WIDTH_SM ? NavigationMode.Stack : NavigationMode.Split);
+            // [Start double_column_view]
+            Navigation.width('100%');
+            // [Start double_column_view]
+            Navigation.height('100%');
+            // [Start double_column_view]
+            Navigation.navDestination({ builder: this.PageMap.bind(this) });
+            // [Start double_column_view]
+            Navigation.backgroundColor('#B8EEB2');
+            // [Start double_column_view]
+            Navigation.navBarWidth('50%');
+        }, Navigation);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new 
+                    // [StartExclude double_column_view]
+                    // å¯¼èˆªæ è§†å›¾ç»„ä»¶ï¼Œä½œä¸ºåŒæ å¸ƒå±€çš„å·¦ä¾§å¯¼èˆªåŒºåŸŸ
+                    NavigationBarView(this, {
+                        mainWindowInfo: this.mainWindowInfo,
+                        pageInfos: this.pageInfos,
+                        pathStack: this.pathStack,
+                        isShowingSidebar: this.__isShowingSidebar
+                    }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/views/DoubleColumnView.ets", line: 55, col: 7 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            mainWindowInfo: this.mainWindowInfo,
+                            pageInfos: this.pageInfos,
+                            pathStack: this.pathStack,
+                            isShowingSidebar: this.isShowingSidebar
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {
+                        mainWindowInfo: this.mainWindowInfo
+                    });
+                }
+            }, { name: "NavigationBarView" });
+        }
+        // [Start double_column_view]
+        Navigation.pop();
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+}
+//# sourceMappingURL=DoubleColumnView.js.mapÂ’ÙgD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\views\NavigationBarView.etsÙkD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\views\NavigationContentView.etsÙfD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\views\DoubleColumnView.etsÔrBœªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo¯hostModulesInfo°belongModulePath§checker¬shouldEmitJs¥entryÃÂÙ>D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entryÙ8D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout¥entry¥1.0.0Ô  ‘ÔrC’²hostDependencyName®hostModuleName¹../views/DoubleColumnView¥entryÙ>D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entryÔrDÜ ®¬getNodeCount²getIdentifierCount®getSymbolCount¬getTypeCountµgetInstantiationCountµgetRelationCacheSizes±isUndefinedSymbol±isArgumentsSymbol¯isUnknownSymbol¯getMergedSymbol®getDiagnostics´getGlobalDiagnostics´getRecursionIdentity¶getUnmatchedProperties¹getTypeOfSymbolAtLocation¯getTypeOfSymbolÙ(getSymbolsOfParameterPropertyDeclaration·getDeclaredTypeOfSymbol³getPropertiesOfType±getPropertyOfTypeÙ"getPrivateIdentifierPropertyOfType·getTypeOfPropertyOfType²getIndexInfoOfType³getIndexInfosOfTypeºgetIndexInfosOfIndexSymbol³getSignaturesOfType²getIndexTypeOfType¬getIndexType¬getBaseTypes¸getBaseTypeOfLiteralType®getWidenedType³getTypeFromTypeNode°getParameterTypeÙ$getParameterIdentifierNameAtPosition¸getPromisedTypeOfPromise®getAwaitedType¸getReturnTypeOfSignature®isNullableType¯getNullableType²getNonNullableType²getNonOptionalType°getTypeArguments®typeToTypeNodeÙ$indexInfoToIndexSignatureDeclaration¿signatureToSignatureDeclaration²symbolToEntityName²symbolToExpression¬symbolToNodeÙ!symbolToTypeParameterDeclarations¼symbolToParameterDeclarationºtypeParameterToDeclaration±getSymbolsInScope³getSymbolAtLocation·getIndexInfosAtLocationÙ!getShorthandAssignmentValueSymbolÙ#getExportSpecifierLocalTargetSymbol·getExportSymbolOfSymbol±getTypeAtLocationÙ tryGetTypeAtLocationWithoutCheckºgetTypeOfAssignmentPatternÙ*getPropertySymbolOfDestructuringAssignment±signatureToString¬typeToString®symbolToStringµtypePredicateToString®writeSignature©writeType«writeSymbol²writeTypePredicate¼getAugmentedPropertiesOfType®getRootSymbols²getSymbolOfExpando±getContextualTypeÙ(getContextualTypeForObjectLiteralElementÙ#getContextualTypeForArgumentAtIndexÙ getContextualTypeForJsxAttribute²isContextSensitiveÙ!getTypeOfPropertyOfContextualTypeµgetFullyQualifiedNameÙ#tryGetResolvedSignatureWithoutCheck´getResolvedSignatureÙ/getResolvedSignatureForStringLiteralCompletionsÙ$getResolvedSignatureForSignatureHelpµgetExpandedParameters¹hasEffectiveRestParameterºcontainsArgumentsReference°getConstantValueµisValidPropertyAccessÙ#isValidPropertyAccessForCompletions»getSignatureFromDeclarationºisImplementationOfOverload¹getImmediateAliasedSymbol°getAliasedSymbol¯getEmitResolver²getExportsOfModule¿getExportsAndPropertiesOfModuleÙ forEachExportAndPropertyOfModule¯getSymbolWalker±getAmbientModules¹getJsxIntrinsicTagNamesAt³isOptionalParameter»tryGetMemberInModuleExportsÙ(tryGetMemberInModuleExportsAndProperties´tryFindAmbientModuleÙ(tryFindAmbientModuleWithoutAugmentations¯getApparentType¬getUnionType²isTypeAssignableTo³createAnonymousType¯createSignature¬createSymbol¯createIndexInfoªgetAnyType­getStringType­getNumberType±createPromiseType¯createArrayType¹getElementTypeOfArrayType®getBooleanType¬getFalseType«getTrueType«getVoidType°getUndefinedType«getNullType¯getESSymbolType¬getNeverType¯getOptionalType®getPromiseType²getPromiseLikeType´getAsyncIterableType²isSymbolAccessible«isArrayType«isTupleType¯isArrayLikeTypeÙ#isTypeInvalidDueToUnionDiscriminantºgetExactOptionalProperties¿getAllPossiblePropertiesOfTypesÙ(getSuggestedSymbolForNonexistentPropertyÙ#getSuggestionForNonexistentPropertyÙ,getSuggestedSymbolForNonexistentJSXAttributeÙ&getSuggestedSymbolForNonexistentSymbolÙ!getSuggestionForNonexistentSymbolÙ&getSuggestedSymbolForNonexistentModuleÙ!getSuggestionForNonexistentExportÙ+getSuggestedSymbolForNonexistentClassMember·getBaseConstraintOfType»getDefaultFromTypeParameter«resolveName¯getJsxNamespaceµgetJsxFragmentFactory¸getAccessibleSymbolChain»getTypePredicateOfSignature¹resolveExternalModuleName»resolveExternalModuleSymbol°tryGetThisTypeAt¹getTypeArgumentConstraint¸getSuggestionDiagnostics¸runWithCancellationTokenÙ3getLocalTypeParametersOfClassOrInterfaceOrTypeAlias´isDeclarationVisible´isPropertyAccessible»getTypeOnlyAliasDeclaration¿getMemberOverrideModifierStatusÙ!isTypeParameterPossiblyReferenced²getConstEnumRelate´clearConstEnumRelateµdeleteConstEnumRelateÙ$getTypeArgumentsForResolvedSignatureµgetCheckedSourceFilesÙ"collectHaveTsNoCheckFilesForLinter·clearQualifiedNameCache®isStaticRecord²isStaticSourceFile³createIntrinsicTypeÔ  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  ÃÃÚ?// å¯¼å…¥çª—å£ä¿¡æ¯å·¥å…·ç±»ï¼Œç”¨äºè·å–çª—å£å±æ€§å’Œæ–­ç‚¹ä¿¡æ¯
+import { WindowInfo } from '../utils/WindowUtil';
+// å¯¼å…¥å¯¼èˆªæ è§†å›¾ç»„ä»¶
+import { NavigationBarView } from './NavigationBarView';
+// å¯¼å…¥å¯¼èˆªå†…å®¹è§†å›¾ç»„ä»¶
+import { NavigationContent1, NavigationContent2 } from './NavigationContentView';
+
+/**
+ * åŒæ å¸ƒå±€è§†å›¾ç»„ä»¶
+ *
+ * è¿™æ˜¯ä¸€ä¸ªå“åº”å¼åŒæ å¸ƒå±€ç»„ä»¶ï¼Œä¸»è¦ç‰¹æ€§åŒ…æ‹¬ï¼š
+ * - æ ¹æ®å±å¹•å®½åº¦è‡ªé€‚åº”åˆ‡æ¢å¯¼èˆªæ¨¡å¼ï¼ˆå †æ ˆæ¨¡å¼/åˆ†å‰²æ¨¡å¼ï¼‰
+ * - åœ¨å°å±å¹•è®¾å¤‡ä¸Šä½¿ç”¨å †æ ˆæ¨¡å¼ï¼Œåœ¨ä¸­å¤§å±è®¾å¤‡ä¸Šä½¿ç”¨åˆ†å‰²æ¨¡å¼
+ * - æ”¯æŒå·¦å³åŒæ å¸ƒå±€ï¼Œå·¦ä¾§ä¸ºå¯¼èˆªæ ï¼Œå³ä¾§ä¸ºå†…å®¹åŒºåŸŸ
+ * - æä¾›é¡µé¢è·¯ç”±å’Œå¯¼èˆªåŠŸèƒ½
+ *
+ * å“åº”å¼æ–­ç‚¹ï¼š
+ * - WIDTH_SMï¼ˆå°å±ï¼‰ï¼šä½¿ç”¨å †æ ˆå¯¼èˆªæ¨¡å¼ï¼Œå•æ æ˜¾ç¤º
+ * - WIDTH_MDåŠä»¥ä¸Šï¼ˆä¸­å¤§å±ï¼‰ï¼šä½¿ç”¨åˆ†å‰²å¯¼èˆªæ¨¡å¼ï¼ŒåŒæ æ˜¾ç¤º
+ *
+ * @since 2023-xx-xx
+ */
+@Component
+export struct DoubleColumnView {
+  @ObjectLink mainWindowInfo: WindowInfo; // ä¸»çª—å£ä¿¡æ¯å¯¹è±¡ï¼ŒåŒ…å«çª—å£å°ºå¯¸å’Œæ–­ç‚¹ä¿¡æ¯
+  @State isShowingSidebar: boolean = false; // ä¾§è¾¹æ æ˜¾ç¤ºçŠ¶æ€æ ‡è¯†
+  pageInfos: NavPathStack = new NavPathStack(); // é¡µé¢ä¿¡æ¯å¯¼èˆªæ ˆ
+  pathStack: NavPathStack = new NavPathStack(); // è·¯å¾„å¯¼èˆªæ ˆï¼Œç”¨äºé¡µé¢è·¯ç”±ç®¡ç†
+
+  /**
+   * é¡µé¢æ˜ å°„æ„å»ºå™¨
+   * æ ¹æ®é¡µé¢åç§°è¿”å›å¯¹åº”çš„é¡µé¢ç»„ä»¶
+   * @param name é¡µé¢åç§°æ ‡è¯†ç¬¦
+   */
+  @Builder
+  PageMap(name: string) {
+    if (name === 'navigationContent1') {
+      // æ„å»ºå¯¼èˆªå†…å®¹1é¡µé¢
+      NavigationContent1({ mainWindowInfo: this.mainWindowInfo })
+    } else if (name === 'navigationContent2') {
+      // æ„å»ºå¯¼èˆªå†…å®¹2é¡µé¢
+      NavigationContent2({ mainWindowInfo: this.mainWindowInfo })
+    }
+  }
+
+  /**
+   * æ„å»ºåŒæ å¸ƒå±€è§†å›¾
+   * æ ¹æ®å±å¹•æ–­ç‚¹è‡ªé€‚åº”é€‰æ‹©å¯¼èˆªæ¨¡å¼
+   */
+  build() {
+    // [Start double_column_view]
+    Navigation(this.pathStack) {
+      // [StartExclude double_column_view]
+      // å¯¼èˆªæ è§†å›¾ç»„ä»¶ï¼Œä½œä¸ºåŒæ å¸ƒå±€çš„å·¦ä¾§å¯¼èˆªåŒºåŸŸ
+      NavigationBarView({
+        mainWindowInfo: this.mainWindowInfo,
+        pageInfos: this.pageInfos,
+        pathStack: this.pathStack,
+        isShowingSidebar: this.isShowingSidebar
+      })
+      // [EndExclude double_column_view]
+    }
+    // å“åº”å¼å¯¼èˆªæ¨¡å¼ï¼šå°å±ä½¿ç”¨å †æ ˆæ¨¡å¼ï¼Œä¸­å¤§å±ä½¿ç”¨åˆ†å‰²æ¨¡å¼
+    .mode(this.mainWindowInfo.widthBp === WidthBreakpoint.WIDTH_SM ? NavigationMode.Stack : NavigationMode.Split)
+    // [End double_column_view]
+    .width('100%') // è®¾ç½®å®½åº¦ä¸º100%ï¼Œå æ»¡çˆ¶å®¹å™¨
+    .height('100%') // è®¾ç½®é«˜åº¦ä¸º100%ï¼Œå æ»¡çˆ¶å®¹å™¨
+    .navDestination(this.PageMap) // è®¾ç½®å¯¼èˆªç›®æ ‡é¡µé¢æ˜ å°„
+    .backgroundColor('#B8EEB2') // è®¾ç½®èƒŒæ™¯è‰²ä¸ºæµ…ç»¿è‰²
+    .navBarWidth('50%') // è®¾ç½®å¯¼èˆªæ å®½åº¦ä¸º50%ï¼ˆåœ¨åˆ†å‰²æ¨¡å¼ä¸‹ç”Ÿæ•ˆï¼‰
+  }
+}ÀÔrE’³./NavigationBarView·./NavigationContentViewÔrF—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÂÙgD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\views\NavigationBarView.etsAÃªoh-resolveÂFAÂÙkD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\views\NavigationContentView.etsAÃªoh-resolveÂ“ÔrG–§version¤fileªsourceRoot§sources¥names¨mappings³DoubleColumnView.js ‘´DoubleColumnView.etsÜ °’”   ” ˜”   ” ”	 	” ” ”" "”7 7”8 8’”   ” š”   ” ”	 	” ” ”/ /”1 1”7 7”ÌP ÌP”ÌQ ÌQ””   ” ” ” ‘”  ’”? %”ÌD *”” ”  ”) ,”+ .”” ”  ”) ,”+ .‘” ÌQ’” ” ’” 	” ’” 	” ‘” ‘” !”” #” #	” #
+” #–” $” $” $” $”- $%”/ $'’”  %”, %š”  &”2 &”9 &”; &”ÌI &)”ÌK &+”ÌO &/”ÌP &0”Ì^ &>”Ì` &Ì@–”( &”6 &)”8 &+”< &/”= &0”ÌK &>–”$ &”2 &)”4 &+”8 &/”9 &0”ÌG &>‘” '–” '” '” '” '”2 ',”4 '.’”  (”, (š”  )”2 )”9 )”; )”ÌI ))”ÌK )+”ÌO )/”ÌP )0”Ì^ )>”Ì` )Ì@–”( )”6 ))”8 )+”< )/”= )0”ÌK )>–”$ )”2 ))”4 )+”8 )/”9 )0”ÌG )>‘” *‘” -‘” 0‘” *‘” +‘” -‘” 0‘” 1’” 2”) 2!–” 3” 3” 3”" 3”# 3”, 3’” 2”) 2!Ü ” 3” 3” ?” ?	” ?
+”  ?”! ?”/ ?”0 ?”7 ?%”< ?*”ÌK ?9”ÌL ?:”ÌT ?ÌB”ÌU ?ÌC”ÌV ?ÌD”ÌW ?ÌE”Ìe ?ÌS”Ìf ?ÌT”Ìk ?ÌY”Ìl ?ÌZ”Ìm ?Ì[”Ìn ?Ì\”Ì| ?Ìj”Ì} ?Ìk”Ì‚ ?Ìp’” 2”) 2!–” 3” 3” ÌA” ÌA
+” ÌA”# ÌA’” 2”) 2!–” 3” 3” ÌB” ÌB” ÌB”$ ÌB’” 2”) 2!˜” 3” 3” ÌC”% ÌC”1 ÌC”5 ÌC”6 ÌC”= ÌC ’” 2”) 2!–” 3” 3” ÌD”& ÌD”' ÌD”0 ÌD’” 2”) 2!–” 3” 3” ÌE”" ÌE”# ÌE”( ÌE’” 4”8 4*’” 5”, 5“” 6”% 6”, 6–” 7”& 7”( 7”, 7”- 7”; 7+–” 8”! 8”# 8”' 8”( 8”1 8!–” 9”! 9”# 9”' 9”( 9”1 9!“” :”( :”ÌA :/‘” ;–” 7”* 7”, 7”0 7”1 7”? 7+–” 8”% 8”' 8”+ 8”, 8”5 8!–” 9”% 9”' 9”+ 9”, 9”5 9!’” :”, :–” 7”& 7”( 7”, 7”- 7”; 7+’” 2”% 2!’” 3” 3‘” ÌFÔrH–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ µ‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ÔrI’§missing¦pluginÃ¦genAbcÂÔ  ÔrJ”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache‘ÔrK–¤type¥start£end«declarationªspecifiers¦source¶ExportNamedDeclarationÍ*Í¨ÔrL–¤type¥start£end¢idªsuperClass¤body°ClassDeclarationÍ1Í¨ÔrM”¤type¥start£end¤nameªIdentifierÍ7ÍG°DoubleColumnViewMªIdentifierÍPÍV¦ViewPUÔrN”¤type¥start£end¤body©ClassBodyÍWÍ¨›ÔrO˜¤type¥start£end¦static¨computed£key¤kind¥value°MethodDefinitionÍ^Í÷ÂÂMªIdentifierÍ^Íi«constructor«constructorÔrP™¤type¥start£end¢idªexpression©generator¥async¦params¤body²FunctionExpressionÍiÍ÷ÀÂÂÂ–MªIdentifierÍjÍp¦parentMªIdentifierÍrÍx¦paramsMªIdentifierÍzÍˆ®__localStorageÔrQ•¤type¥start£end¤left¥right±AssignmentPatternÍŠÍ•MªIdentifierÍŠÍ¦elmtIdÔrR–¤type¥start£end¨operator¦prefix¨argument¯UnaryExpressionÍ“Í•¡-ÃÔrS•¤type¥start£end¥value£raw§LiteralÍ”Í•¡1Q±AssignmentPatternÍ—Í¯MªIdentifierÍ—Í£¬paramsLambdaMªIdentifierÍ¦Í¯©undefinedMªIdentifierÍ±Íº©extraInfoN®BlockStatementÍ¼Í÷˜ÔrT”¤type¥start£endªexpression³ExpressionStatementÍÇÍøÔrU–¤type¥start£end¦callee©arguments¨optional®CallExpressionÍÇÍ÷ÔrV“¤type¥start£end¥SuperÍÇÍÌ”MªIdentifierÍÍÍÓ¦parentMªIdentifierÍÕÍã®__localStorageMªIdentifierÍåÍë¦elmtIdMªIdentifierÍíÍö©extraInfoÂÔrW–¤type¥start£end¤testªconsequent©alternate«IfStatementÍÍiÔrX–¤type¥start£end¤left¨operator¥right°BinaryExpressionÍÍ(R¯UnaryExpressionÍÍ¦typeofÃMªIdentifierÍÍ¬paramsLambda£===S§LiteralÍÍ(¨functionª"function"N®BlockStatementÍ*Íi‘T³ExpressionStatementÍ9Í^ÔrY–¤type¥start£end¨operator¤left¥right´AssignmentExpressionÍ9Í]¡=ÔrZ—¤type¥start£end¦object¨property¨computed¨optional°MemberExpressionÍ9ÍNV®ThisExpressionÍ9Í=MªIdentifierÍ>ÍN°paramsGenerator_ÂÂMªIdentifierÍQÍ]¬paramsLambdaÀT³ExpressionStatementÍsÍÛY´AssignmentExpressionÍsÍÚ¡=Z°MemberExpressionÍsÍˆV®ThisExpressionÍsÍwMªIdentifierÍxÍˆ°__mainWindowInfoÂÂÔr[•¤type¥start£end¦callee©arguments­NewExpressionÍ‹ÍÚMªIdentifierÍÍ«¼SynchedPropertyNesedObjectPU“Z°MemberExpressionÍ¬ÍÁMªIdentifierÍ¬Í²¦paramsMªIdentifierÍ³ÍÁ®mainWindowInfoÂÂV®ThisExpressionÍÃÍÇS§LiteralÍÉÍÙ®mainWindowInfo°"mainWindowInfo"T³ExpressionStatementÍåÍ=Y´AssignmentExpressionÍåÍ<¡=Z°MemberExpressionÍåÍüV®ThisExpressionÍåÍéMªIdentifierÍêÍü²__isShowingSidebarÂÂ[­NewExpressionÍÿÍ<MªIdentifierÍÍ¸ObservedPropertySimplePU“S§LiteralÍÍ!Â¥falseV®ThisExpressionÍ#Í'S§LiteralÍ)Í;°isShowingSidebar²"isShowingSidebar"T³ExpressionStatementÍGÍkY´AssignmentExpressionÍGÍj¡=Z°MemberExpressionÍGÍUV®ThisExpressionÍGÍKMªIdentifierÍLÍU©pageInfosÂÂ[­NewExpressionÍXÍjMªIdentifierÍ\Íh¬NavPathStackT³ExpressionStatementÍuÍ™Y´AssignmentExpressionÍuÍ˜¡=Z°MemberExpressionÍuÍƒV®ThisExpressionÍuÍyMªIdentifierÍzÍƒ©pathStackÂÂ[­NewExpressionÍ†Í˜MªIdentifierÍŠÍ–¬NavPathStackT³ExpressionStatementÍ£ÍÊU®CallExpressionÍ£ÍÉZ°MemberExpressionÍ£ÍÁV®ThisExpressionÍ£Í§MªIdentifierÍ¨ÍÁ¹setInitiallyProvidedValueÂÂ‘MªIdentifierÍÂÍÈ¦paramsÂT³ExpressionStatementÍÔÍğU®CallExpressionÍÔÍïZ°MemberExpressionÍÔÍíV®ThisExpressionÍÔÍØMªIdentifierÍÙÍí´finalizeConstructionÂÂÂO°MethodDefinitionÍıÍµÂÂMªIdentifierÍıÍ¹setInitiallyProvidedValue¦methodP²FunctionExpressionÍÍµÀÂÂÂ‘MªIdentifierÍÍ¦paramsN®BlockStatementÍÍµ”T³ExpressionStatementÍ*Í[U®CallExpressionÍ*ÍZZ°MemberExpressionÍ*ÍCZ°MemberExpressionÍ*Í?V®ThisExpressionÍ*Í.MªIdentifierÍ/Í?°__mainWindowInfoÂÂMªIdentifierÍ@ÍC£setÂÂ‘Z°MemberExpressionÍDÍYMªIdentifierÍDÍJ¦paramsMªIdentifierÍKÍY®mainWindowInfoÂÂÂW«IfStatementÍeÍÚX°BinaryExpressionÍiÍZ°MemberExpressionÍiÍ€MªIdentifierÍiÍo¦paramsMªIdentifierÍpÍ€°isShowingSidebarÂÂ£!==MªIdentifierÍ…Í©undefinedN®BlockStatementÍÍÚ‘T³ExpressionStatementÍŸÍÏY´AssignmentExpressionÍŸÍÎ¡=Z°MemberExpressionÍŸÍ´V®ThisExpressionÍŸÍ£MªIdentifierÍ¤Í´°isShowingSidebarÂÂZ°MemberExpressionÍ·ÍÎMªIdentifierÍ·Í½¦paramsMªIdentifierÍ¾ÍÎ°isShowingSidebarÂÂÀW«IfStatementÍäÍDX°BinaryExpressionÍèÍZ°MemberExpressionÍèÍøMªIdentifierÍèÍî¦paramsMªIdentifierÍïÍø©pageInfosÂÂ£!==MªIdentifierÍıÍ©undefinedN®BlockStatementÍÍD‘T³ExpressionStatementÍÍ9Y´AssignmentExpressionÍÍ8¡=Z°MemberExpressionÍÍ%V®ThisExpressionÍÍMªIdentifierÍÍ%©pageInfosÂÂZ°MemberExpressionÍ(Í8MªIdentifierÍ(Í.¦paramsMªIdentifierÍ/Í8©pageInfosÂÂÀW«IfStatementÍNÍ®X°BinaryExpressionÍRÍpZ°MemberExpressionÍRÍbMªIdentifierÍRÍX¦paramsMªIdentifierÍYÍb©pathStackÂÂ£!==MªIdentifierÍgÍp©undefinedN®BlockStatementÍrÍ®‘T³ExpressionStatementÍÍ£Y´AssignmentExpressionÍÍ¢¡=Z°MemberExpressionÍÍV®ThisExpressionÍÍ…MªIdentifierÍ†Í©pathStackÂÂZ°MemberExpressionÍ’Í¢MªIdentifierÍ’Í˜¦paramsMªIdentifierÍ™Í¢©pathStackÂÂÀO°MethodDefinitionÍ»ÍÂÂMªIdentifierÍ»ÍÊ¯updateStateVars¦methodP²FunctionExpressionÍÊÍÀÂÂÂ‘MªIdentifierÍËÍÑ¦paramsN®BlockStatementÍÓÍ‘T³ExpressionStatementÍŞÍU®CallExpressionÍŞÍZ°MemberExpressionÍŞÍ÷Z°MemberExpressionÍŞÍóV®ThisExpressionÍŞÍâMªIdentifierÍãÍó°__mainWindowInfoÂÂMªIdentifierÍôÍ÷£setÂÂ‘Z°MemberExpressionÍøÍMªIdentifierÍøÍş¦paramsMªIdentifierÍÿÍ®mainWindowInfoÂÂÂO°MethodDefinitionÍÍÖÂÂMªIdentifierÍÍ=Ù!purgeVariableDependenciesOnElmtId¦methodP²FunctionExpressionÍ=ÍÖÀÂÂÂ‘MªIdentifierÍ>ÍF¨rmElmtIdN®BlockStatementÍHÍÖ’T³ExpressionStatementÍSÍ‹U®CallExpressionÍSÍŠZ°MemberExpressionÍSÍ€Z°MemberExpressionÍSÍhV®ThisExpressionÍSÍWMªIdentifierÍXÍh°__mainWindowInfoÂÂMªIdentifierÍiÍ€·purgeDependencyOnElmtIdÂÂ‘MªIdentifierÍÍ‰¨rmElmtIdÂT³ExpressionStatementÍ•ÍÏU®CallExpressionÍ•ÍÎZ°MemberExpressionÍ•ÍÄZ°MemberExpressionÍ•Í¬V®ThisExpressionÍ•Í™MªIdentifierÍšÍ¬²__isShowingSidebarÂÂMªIdentifierÍ­ÍÄ·purgeDependencyOnElmtIdÂÂ‘MªIdentifierÍÅÍÍ¨rmElmtIdÂO°MethodDefinitionÍÜÍ¿ÂÂMªIdentifierÍÜÍì°aboutToBeDeleted¦methodP²FunctionExpressionÍìÍ¿ÀÂÂÂN®BlockStatementÍïÍ¿”T³ExpressionStatementÍúÍ#U®CallExpressionÍúÍ"Z°MemberExpressionÍúÍ Z°MemberExpressionÍúÍV®ThisExpressionÍúÍşMªIdentifierÍÿÍ°__mainWindowInfoÂÂMªIdentifierÍÍ °aboutToBeDeletedÂÂÂT³ExpressionStatementÍ-ÍXU®CallExpressionÍ-ÍWZ°MemberExpressionÍ-ÍUZ°MemberExpressionÍ-ÍDV®ThisExpressionÍ-Í1MªIdentifierÍ2ÍD²__isShowingSidebarÂÂMªIdentifierÍEÍU°aboutToBeDeletedÂÂÂT³ExpressionStatementÍbÍU®CallExpressionÍbÍZ°MemberExpressionÍbÍ€U®CallExpressionÍbÍyZ°MemberExpressionÍbÍwMªIdentifierÍbÍs±SubscriberManagerMªIdentifierÍtÍw£GetÂÂÂMªIdentifierÍzÍ€¦deleteÂÂ‘U®CallExpressionÍÍŒZ°MemberExpressionÍÍŠV®ThisExpressionÍÍ…MªIdentifierÍ†ÍŠ¤id__ÂÂÂÂT³ExpressionStatementÍ˜Í¸U®CallExpressionÍ˜Í·Z°MemberExpressionÍ˜ÍµV®ThisExpressionÍ˜ÍœMªIdentifierÍÍµ¸aboutToBeDeletedInternalÂÂÂO°MethodDefinitionÍÅÍÂÂMªIdentifierÍÉÍ×®mainWindowInfo£getP²FunctionExpressionÍ×ÍÀÂÂÂN®BlockStatementÍÚÍ‘Ôr\”¤type¥start£end¨argument¯ReturnStatementÍåÍU®CallExpressionÍìÍZ°MemberExpressionÍìÍZ°MemberExpressionÍìÍV®ThisExpressionÍìÍğMªIdentifierÍñÍ°__mainWindowInfoÂÂMªIdentifierÍÍ£getÂÂÂO°MethodDefinitionÍÍcÂÂMªIdentifierÍÍ)°isShowingSidebar£getP²FunctionExpressionÍ)ÍcÀÂÂÂN®BlockStatementÍ,Íc‘\¯ReturnStatementÍ7Í\U®CallExpressionÍ>Í[Z°MemberExpressionÍ>ÍYZ°MemberExpressionÍ>ÍUV®ThisExpressionÍ>ÍBMªIdentifierÍCÍU²__isShowingSidebarÂÂMªIdentifierÍVÍY£getÂÂÂO°MethodDefinitionÍiÍÀÂÂMªIdentifierÍmÍ}°isShowingSidebar£setP²FunctionExpressionÍ}ÍÀÀÂÂÂ‘MªIdentifierÍ~Í†¨newValueN®BlockStatementÍˆÍÀ‘T³ExpressionStatementÍ“Í¹U®CallExpressionÍ“Í¸Z°MemberExpressionÍ“Í®Z°MemberExpressionÍ“ÍªV®ThisExpressionÍ“Í—MªIdentifierÍ˜Íª²__isShowingSidebarÂÂMªIdentifierÍ«Í®£setÂÂ‘MªIdentifierÍ¯Í·¨newValueÂO°MethodDefinitionÍ	ÍmÂÂMªIdentifierÍ	Í	#§PageMap¦methodP²FunctionExpressionÍ	#ÍmÀÂÂÂ’MªIdentifierÍ	$Í	(¤nameQ±AssignmentPatternÍ	*Í	7MªIdentifierÍ	*Í	0¦parentS§LiteralÍ	3Í	7À¤nullN®BlockStatementÍ	9Ím’T³ExpressionStatementÍ	DÍSU®CallExpressionÍ	DÍRZ°MemberExpressionÍ	DÍ	bV®ThisExpressionÍ	DÍ	HMªIdentifierÍ	IÍ	b¹observeComponentCreation2ÂÂ’P·ArrowFunctionExpressionÍ	cÍMÀÂÂÂ’MªIdentifierÍ	dÍ	j¦elmtIdMªIdentifierÍ	lÍ	{¯isInitialRenderN®BlockStatementÍ	€ÍM’T³ExpressionStatementÍ	Í	›U®CallExpressionÍ	Í	šZ°MemberExpressionÍ	Í	˜MªIdentifierÍ	Í	‘¢IfMªIdentifierÍ	’Í	˜¦createÂÂÂW«IfStatementÍ	©ÍBX°BinaryExpressionÍ	­Í	ÊMªIdentifierÍ	­Í	±¤name£===S§LiteralÍ	¶Í	Ê²navigationContent1´'navigationContent1'N®BlockStatementÍ	ÌÍ‘T³ExpressionStatementÍ	ßÍüU®CallExpressionÍ	ßÍûZ°MemberExpressionÍ	ßÍ	şV®ThisExpressionÍ	ßÍ	ãMªIdentifierÍ	äÍ	şºifElseBranchUpdateFunctionÂÂ’S§LiteralÍ	ÿÍ
+  ¡0P·ArrowFunctionExpressionÍ
+ÍúÀÂÂÂN®BlockStatementÍ
+Íú‘N®BlockStatementÍ
+Íç‘T³ExpressionStatementÍ
+:ÍĞU®CallExpressionÍ
+:ÍÏZ°MemberExpressionÍ
+:Í
+XV®ThisExpressionÍ
+:Í
+>MªIdentifierÍ
+?Í
+X¹observeComponentCreation2ÂÂ’P·ArrowFunctionExpressionÍ
+YÍ®ÀÂÂÂ’MªIdentifierÍ
+ZÍ
+`¦elmtIdMªIdentifierÍ
+bÍ
+q¯isInitialRenderN®BlockStatementÍ
+vÍ®‘W«IfStatementÍ
+•Í“MªIdentifierÍ
+™Í
+¨¯isInitialRenderN®BlockStatementÍ
+ªÍ“”Ôr]•¤type¥start£end¬declarations¤kind³VariableDeclarationÍ
+ÍÍâ‘Ôr^•¤type¥start£end¢id¤init²VariableDeclaratorÍ
+ÑÍáMªIdentifierÍ
+ÑÍ
+Ş­componentCall[­NewExpressionÍ
+áÍáMªIdentifierÍ5ÍG²NavigationContent1–V®ThisExpressionÍHÍLÔr_”¤type¥start£endªproperties°ObjectExpressionÍNÍu‘Ôr`™¤type¥start£end¦method©shorthand¨computed£key¥value¤kind¨PropertyÍPÍsÂÂÂMªIdentifierÍPÍ^®mainWindowInfoZ°MemberExpressionÍ`ÍsV®ThisExpressionÍ`ÍdMªIdentifierÍeÍs®mainWindowInfoÂÂ¤initMªIdentifierÍwÍ€©undefinedMªIdentifierÍ‚Íˆ¦elmtIdP·ArrowFunctionExpressionÍŠÍ“ÀÂÂÂN®BlockStatementÍÍ“_°ObjectExpressionÍ•Íà“`¨PropertyÍ—ÍÌÂÂÂMªIdentifierÍ—Í›¤pageS§LiteralÍÍÌÙ-entry/src/main/ets/views/DoubleColumnView.etsÙ/"entry/src/main/ets/views/DoubleColumnView.ets"¤init`¨PropertyÍÎÍÖÂÂÂMªIdentifierÍÎÍÒ¤lineS§LiteralÍÔÍÖ'¢39¤init`¨PropertyÍØÍŞÂÂÂMªIdentifierÍØÍÛ£colS§LiteralÍİÍŞ¡7¤init£letT³ExpressionStatementÍÍ!U®CallExpressionÍÍ Z°MemberExpressionÍÍMªIdentifierÍÍ
+¦ViewPUMªIdentifierÍÍ¦createÂÂ‘MªIdentifierÍÍ­componentCallÂ]³VariableDeclarationÍCÍ$‘^²VariableDeclaratorÍGÍ#MªIdentifierÍGÍS¬paramsLambdaP·ArrowFunctionExpressionÍVÍ#ÀÂÂÂN®BlockStatementÍ\Í#‘\¯ReturnStatementÍƒÍ _°ObjectExpressionÍŠÍÿ‘`¨PropertyÍµÍØÂÂÂMªIdentifierÍµÍÃ®mainWindowInfoZ°MemberExpressionÍÅÍØV®ThisExpressionÍÅÍÉMªIdentifierÍÊÍØ®mainWindowInfoÂÂ¤init£letT³ExpressionStatementÍFÍtY´AssignmentExpressionÍFÍs¡=Z°MemberExpressionÍFÍdMªIdentifierÍFÍS­componentCallMªIdentifierÍTÍd°paramsGenerator_ÂÂMªIdentifierÍgÍs¬paramsLambdaN®BlockStatementÍ¶Í“‘T³ExpressionStatementÍÙÍtU®CallExpressionÍÙÍsZ°MemberExpressionÍÙÍüV®ThisExpressionÍÙÍİMªIdentifierÍŞÍü¾updateStateVarsOfChildByElmtIdÂÂ’MªIdentifierÍıÍ¦elmtId_°ObjectExpressionÍÍr‘`¨PropertyÍ,ÍOÂÂÂMªIdentifierÍ,Í:®mainWindowInfoZ°MemberExpressionÍ<ÍOV®ThisExpressionÍ<Í@MªIdentifierÍAÍO®mainWindowInfoÂÂ¤initÂ_°ObjectExpressionÍ°ÍÎ‘`¨PropertyÍ²ÍÌÂÂÂMªIdentifierÍ²Í¶¤nameS§LiteralÍ¸ÍÌ²NavigationContent1´"NavigationContent1"¤initÂÂW«IfStatementÍÍBX°BinaryExpressionÍ"Í?MªIdentifierÍ"Í&¤name£===S§LiteralÍ+Í?²navigationContent2´'navigationContent2'N®BlockStatementÍAÍ€‘T³ExpressionStatementÍTÍqU®CallExpressionÍTÍpZ°MemberExpressionÍTÍsV®ThisExpressionÍTÍXMªIdentifierÍYÍsºifElseBranchUpdateFunctionÂÂ’S§LiteralÍtÍu¡1P·ArrowFunctionExpressionÍwÍoÀÂÂÂN®BlockStatementÍ}Ío‘N®BlockStatementÍ”Í\‘T³ExpressionStatementÍ¯ÍEU®CallExpressionÍ¯ÍDZ°MemberExpressionÍ¯ÍÍV®ThisExpressionÍ¯Í³MªIdentifierÍ´ÍÍ¹observeComponentCreation2ÂÂ’P·ArrowFunctionExpressionÍÎÍ#ÀÂÂÂ’MªIdentifierÍÏÍÕ¦elmtIdMªIdentifierÍ×Íæ¯isInitialRenderN®BlockStatementÍëÍ#‘W«IfStatementÍ
+ÍMªIdentifierÍÍ¯isInitialRenderN®BlockStatementÍÍ”]³VariableDeclarationÍBÍW‘^²VariableDeclaratorÍFÍVMªIdentifierÍFÍS­componentCall[­NewExpressionÍVÍVMªIdentifierÍªÍ¼²NavigationContent2–V®ThisExpressionÍ½ÍÁ_°ObjectExpressionÍÃÍê‘`¨PropertyÍÅÍèÂÂÂMªIdentifierÍÅÍÓ®mainWindowInfoZ°MemberExpressionÍÕÍèV®ThisExpressionÍÕÍÙMªIdentifierÍÚÍè®mainWindowInfoÂÂ¤initMªIdentifierÍìÍõ©undefinedMªIdentifierÍ÷Íı¦elmtIdP·ArrowFunctionExpressionÍÿÍÀÂÂÂN®BlockStatementÍÍ_°ObjectExpressionÍ
+ÍU“`¨PropertyÍÍAÂÂÂMªIdentifierÍÍ¤pageS§LiteralÍÍAÙ-entry/src/main/ets/views/DoubleColumnView.etsÙ/"entry/src/main/ets/views/DoubleColumnView.ets"¤init`¨PropertyÍCÍKÂÂÂMªIdentifierÍCÍG¤lineS§LiteralÍIÍK*¢42¤init`¨PropertyÍMÍSÂÂÂMªIdentifierÍMÍP£colS§LiteralÍRÍS¡7¤init£letT³ExpressionStatementÍyÍ–U®CallExpressionÍyÍ•Z°MemberExpressionÍyÍ†MªIdentifierÍyÍ¦ViewPUMªIdentifierÍ€Í†¦createÂÂ‘MªIdentifierÍ‡Í”­componentCallÂ]³VariableDeclarationÍ¸Í™‘^²VariableDeclaratorÍ¼Í˜MªIdentifierÍ¼ÍÈ¬paramsLambdaP·ArrowFunctionExpressionÍËÍ˜ÀÂÂÂN®BlockStatementÍÑÍ˜‘\¯ReturnStatementÍøÍu_°ObjectExpressionÍÿÍt‘`¨PropertyÍ*ÍMÂÂÂMªIdentifierÍ*Í8®mainWindowInfoZ°MemberExpressionÍ:ÍMV®ThisExpressionÍ:Í>MªIdentifierÍ?ÍM®mainWindowInfoÂÂ¤init£letT³ExpressionStatementÍ»ÍéY´AssignmentExpressionÍ»Íè¡=Z°MemberExpressionÍ»ÍÙMªIdentifierÍ»ÍÈ­componentCallMªIdentifierÍÉÍÙ°paramsGenerator_ÂÂMªIdentifierÍÜÍè¬paramsLambdaN®BlockStatementÍ+Í‘T³ExpressionStatementÍNÍéU®CallExpressionÍNÍèZ°MemberExpressionÍNÍqV®ThisExpressionÍNÍRMªIdentifierÍSÍq¾updateStateVarsOfChildByElmtIdÂÂ’MªIdentifierÍrÍx¦elmtId_°ObjectExpressionÍzÍç‘`¨PropertyÍ¡ÍÄÂÂÂMªIdentifierÍ¡Í¯®mainWindowInfoZ°MemberExpressionÍ±ÍÄV®ThisExpressionÍ±ÍµMªIdentifierÍ¶ÍÄ®mainWindowInfoÂÂ¤initÂ_°ObjectExpressionÍ%ÍC‘`¨PropertyÍ'ÍAÂÂÂMªIdentifierÍ'Í+¤nameS§LiteralÍ-ÍA²NavigationContent2´"NavigationContent2"¤initÂÂN®BlockStatementÍáÍB‘T³ExpressionStatementÍôÍ3U®CallExpressionÍôÍ2Z°MemberExpressionÍôÍV®ThisExpressionÍôÍøMªIdentifierÍùÍºifElseBranchUpdateFunctionÂÂ’S§LiteralÍÍ¡2P·ArrowFunctionExpressionÍÍ1ÀÂÂÂN®BlockStatementÍÍ1ÂMªIdentifierÍOÍQ¢IfÂT³ExpressionStatementÍ]ÍfU®CallExpressionÍ]ÍeZ°MemberExpressionÍ]ÍcMªIdentifierÍ]Í_¢IfMªIdentifierÍ`Íc£popÂÂÂO°MethodDefinitionÍ®ÍgÂÂMªIdentifierÍ®Í»­initialRender¦methodP²FunctionExpressionÍ»ÍgÀÂÂÂN®BlockStatementÍ¾Íg“T³ExpressionStatementÍÉÍhU®CallExpressionÍÉÍgZ°MemberExpressionÍÉÍçV®ThisExpressionÍÉÍÍMªIdentifierÍÎÍç¹observeComponentCreation2ÂÂ’P·ArrowFunctionExpressionÍèÍZÀÂÂÂ’MªIdentifierÍéÍï¦elmtIdMªIdentifierÍñÍ ¯isInitialRenderN®BlockStatementÍÍZ—T³ExpressionStatementÍ?ÍÊU®CallExpressionÍ?ÍÉZ°MemberExpressionÍ?ÍPMªIdentifierÍ?ÍIªNavigationMªIdentifierÍJÍP¦createÂÂ’Z°MemberExpressionÍQÍ_V®ThisExpressionÍQÍUMªIdentifierÍVÍ_©pathStackÂÂ_°ObjectExpressionÍaÍÈ“`¨PropertyÍcÍvÂÂÂMªIdentifierÍcÍmªmoduleNameS§LiteralÍoÍv¥entry§"entry"¤init`¨PropertyÍxÍ­ÂÂÂMªIdentifierÍxÍ€¨pagePathS§LiteralÍ‚Í­Ù)entry/src/main/ets/views/DoubleColumnViewÙ+"entry/src/main/ets/views/DoubleColumnView"¤init`¨PropertyÍ¯ÍÆÂÂÂMªIdentifierÍ¯ÍÀ±isUserCreateStackS§LiteralÍÂÍÆÃ¤true¤initÂT³ExpressionStatementÍÍ{U®CallExpressionÍÍzZ°MemberExpressionÍÍMªIdentifierÍÍªNavigationMªIdentifierÍÍ¤modeÂÂ‘WµConditionalExpressionÍÍyX°BinaryExpressionÍÍKZ°MemberExpressionÍÍ.Z°MemberExpressionÍÍ&V®ThisExpressionÍÍMªIdentifierÍÍ&®mainWindowInfoÂÂMªIdentifierÍ'Í.§widthBpÂÂ£===Z°MemberExpressionÍ3ÍKMªIdentifierÍ3ÍB¯WidthBreakpointMªIdentifierÍCÍK¨WIDTH_SMÂÂZ°MemberExpressionÍNÍbMªIdentifierÍNÍ\®NavigationModeMªIdentifierÍ]Íb¥StackÂÂZ°MemberExpressionÍeÍyMªIdentifierÍeÍs®NavigationModeMªIdentifierÍtÍy¥SplitÂÂÂT³ExpressionStatementÍ´ÍÍU®CallExpressionÍ´ÍÌZ°MemberExpressionÍ´ÍÄMªIdentifierÍ´Í¾ªNavigationMªIdentifierÍ¿ÍÄ¥widthÂÂ‘S§LiteralÍÅÍË¤100%¦'100%'ÂT³ExpressionStatementÍÍ U®CallExpressionÍÍZ°MemberExpressionÍÍMªIdentifierÍÍªNavigationMªIdentifierÍÍ¦heightÂÂ‘S§LiteralÍÍ¤100%¦'100%'ÂT³ExpressionStatementÍYÍ™U®CallExpressionÍYÍ˜Z°MemberExpressionÍYÍrMªIdentifierÍYÍcªNavigationMªIdentifierÍdÍr®navDestinationÂÂ‘_°ObjectExpressionÍsÍ—‘`¨PropertyÍuÍ•ÂÂÂMªIdentifierÍuÍ|§builderU®CallExpressionÍ~Í•Z°MemberExpressionÍ~ÍZ°MemberExpressionÍ~ÍŠV®ThisExpressionÍ~Í‚MªIdentifierÍƒÍŠ§PageMapÂÂMªIdentifierÍ‹Í¤bindÂÂ‘V®ThisExpressionÍÍ”Â¤initÂT³ExpressionStatementÍÒÍøU®CallExpressionÍÒÍ÷Z°MemberExpressionÍÒÍìMªIdentifierÍÒÍÜªNavigationMªIdentifierÍİÍì¯backgroundColorÂÂ‘S§LiteralÍíÍö§#B8EEB2©'#B8EEB2'ÂT³ExpressionStatementÍ1ÍOU®CallExpressionÍ1ÍNZ°MemberExpressionÍ1ÍGMªIdentifierÍ1Í;ªNavigationMªIdentifierÍ<ÍG«navBarWidthÂÂ‘S§LiteralÍHÍM£50%¥'50%'ÂMªIdentifierÍ\ÍfªNavigationÂN®BlockStatementÍrÍ‘T³ExpressionStatementÍÍU®CallExpressionÍÍZ°MemberExpressionÍÍŸV®ThisExpressionÍÍ…MªIdentifierÍ†ÍŸ¹observeComponentCreation2ÂÂ’P·ArrowFunctionExpressionÍ ÍòÀÂÂÂ’MªIdentifierÍ¡Í§¦elmtIdMªIdentifierÍ©Í¸¯isInitialRenderN®BlockStatementÍ½Íò‘W«IfStatementÍĞÍãMªIdentifierÍÔÍã¯isInitialRenderN®BlockStatementÍåÍ”]³VariableDeclarationÍüÍ‘^²VariableDeclaratorÍ ÍMªIdentifierÍ Í­componentCall[­NewExpressionÍÍMªIdentifierÍ’Í£±NavigationBarView–V®ThisExpressionÍ¤Í¨_°ObjectExpressionÍªÍ«”`¨PropertyÍÅÍèÂÂÂMªIdentifierÍÅÍÓ®mainWindowInfoZ°MemberExpressionÍÕÍèV®ThisExpressionÍÕÍÙMªIdentifierÍÚÍè®mainWindowInfoÂÂ¤init`¨PropertyÍÍÂÂÂMªIdentifierÍÍ©pageInfosZ°MemberExpressionÍÍV®ThisExpressionÍÍMªIdentifierÍÍ©pageInfosÂÂ¤init`¨PropertyÍ7ÍPÂÂÂMªIdentifierÍ7Í@©pathStackZ°MemberExpressionÍBÍPV®ThisExpressionÍBÍFMªIdentifierÍGÍP©pathStackÂÂ¤init`¨PropertyÍkÍ”ÂÂÂMªIdentifierÍkÍ{°isShowingSidebarZ°MemberExpressionÍ}Í”V®ThisExpressionÍ}ÍMªIdentifierÍ‚Í”²__isShowingSidebarÂÂ¤initMªIdentifierÍ­Í¶©undefinedMªIdentifierÍ¸Í¾¦elmtIdP·ArrowFunctionExpressionÍÀÍÉÀÂÂÂN®BlockStatementÍÆÍÉ_°ObjectExpressionÍËÍ“`¨PropertyÍÍÍÂÂÂMªIdentifierÍÍÍÑ¤pageS§LiteralÍÓÍÙ-entry/src/main/ets/views/DoubleColumnView.etsÙ/"entry/src/main/ets/views/DoubleColumnView.ets"¤init`¨PropertyÍÍÂÂÂMªIdentifierÍÍ¤lineS§LiteralÍ
+Í7¢55¤init`¨PropertyÍÍÂÂÂMªIdentifierÍÍ£colS§LiteralÍÍ¡7¤init£letT³ExpressionStatementÍ.ÍKU®CallExpressionÍ.ÍJZ°MemberExpressionÍ.Í;MªIdentifierÍ.Í4¦ViewPUMªIdentifierÍ5Í;¦createÂÂ‘MªIdentifierÍ<ÍI­componentCallÂ]³VariableDeclarationÍaÍÈ‘^²VariableDeclaratorÍeÍÇMªIdentifierÍeÍq¬paramsLambdaP·ArrowFunctionExpressionÍtÍÇÀÂÂÂN®BlockStatementÍzÍÇ‘\¯ReturnStatementÍ•Í°_°ObjectExpressionÍœÍ¯”`¨PropertyÍ»ÍŞÂÂÂMªIdentifierÍ»ÍÉ®mainWindowInfoZ°MemberExpressionÍËÍŞV®ThisExpressionÍËÍÏMªIdentifierÍĞÍŞ®mainWindowInfoÂÂ¤init`¨PropertyÍıÍÂÂÂMªIdentifierÍıÍ©pageInfosZ°MemberExpressionÍÍV®ThisExpressionÍÍMªIdentifierÍÍ©pageInfosÂÂ¤init`¨PropertyÍ5ÍNÂÂÂMªIdentifierÍ5Í>©pathStackZ°MemberExpressionÍ@ÍNV®ThisExpressionÍ@ÍDMªIdentifierÍEÍN©pathStackÂÂ¤init`¨PropertyÍmÍ”ÂÂÂMªIdentifierÍmÍ}°isShowingSidebarZ°MemberExpressionÍÍ”V®ThisExpressionÍÍƒMªIdentifierÍ„Í”°isShowingSidebarÂÂ¤init£letT³ExpressionStatementÍŞÍY´AssignmentExpressionÍŞÍ¡=Z°MemberExpressionÍŞÍüMªIdentifierÍŞÍë­componentCallMªIdentifierÍìÍü°paramsGenerator_ÂÂMªIdentifierÍÿÍ¬paramsLambdaN®BlockStatementÍ6Íã‘T³ExpressionStatementÍMÍĞU®CallExpressionÍMÍÏZ°MemberExpressionÍMÍpV®ThisExpressionÍMÍQMªIdentifierÍRÍp¾updateStateVarsOfChildByElmtIdÂÂ’MªIdentifierÍqÍw¦elmtId_°ObjectExpressionÍyÍÎ‘`¨PropertyÍ”Í·ÂÂÂMªIdentifierÍ”Í¢®mainWindowInfoZ°MemberExpressionÍ¤Í·V®ThisExpressionÍ¤Í¨MªIdentifierÍ©Í·®mainWindowInfoÂÂ¤initÂ_°ObjectExpressionÍôÍ‘`¨PropertyÍöÍÂÂÂMªIdentifierÍöÍú¤nameS§LiteralÍüÍ±NavigationBarView³"NavigationBarView"¤initÂT³ExpressionStatementÍOÍ`U®CallExpressionÍOÍ_Z°MemberExpressionÍOÍ]MªIdentifierÍOÍYªNavigationMªIdentifierÍZÍ]£popÂÂÂO°MethodDefinitionÍmÍ¥ÂÂMªIdentifierÍmÍu¨rerender¦methodP²FunctionExpressionÍuÍ¥ÀÂÂÂN®BlockStatementÍxÍ¥‘T³ExpressionStatementÍƒÍU®CallExpressionÍƒÍZ°MemberExpressionÍƒÍ›V®ThisExpressionÍƒÍ‡MªIdentifierÍˆÍ›³updateDirtyElementsÂÂÂÀ’Ôra•¤type¥start£endªspecifiers¦source±ImportDeclarationÌÌÆ‘Ôrb•¤type¥start£end¨imported¥local¯ImportSpecifierÌ—Ì¨MªIdentifierÌ—Ì¨±NavigationBarViewMªIdentifierÌ—Ì¨±NavigationBarViewS§LiteralÌ°ÌÅ³./NavigationBarViewµ'./NavigationBarView'a±ImportDeclarationÌ×Í(’b¯ImportSpecifierÌàÌòMªIdentifierÌàÌò²NavigationContent1MªIdentifierÌàÌò²NavigationContent1b¯ImportSpecifierÌôÍMªIdentifierÌôÍ²NavigationContent2MªIdentifierÌôÍ²NavigationContent2S§LiteralÍÍ'·./NavigationContentView¹'./NavigationContentView'

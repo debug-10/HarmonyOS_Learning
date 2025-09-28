@@ -1,0 +1,48 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "ListItemEdit"
+    },
+    {
+      "name": "app_name",
+      "value": "待办事项管理"
+    },
+    {
+      "name": "app_name_description",
+      "value": "一个展示列表编辑功能的HarmonyOS应用"
+    },
+    {
+      "name": "todo",
+      "value": "待办事项"
+    },
+    {
+      "name": "undo",
+      "value": "未完成"
+    },
+    {
+      "name": "done",
+      "value": "已完成"
+    },
+    {
+      "name": "edit",
+      "value": "编辑"
+    },
+    {
+      "name": "deleted",
+      "value": "已删除"
+    },
+    {
+      "name": "incomplete",
+      "value": "功能开发中..."
+    }
+  ]
+}

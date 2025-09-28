@@ -1,0 +1,52 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Codelab_V1"
+    },
+    {
+      "name": "multi_popup_interaction",
+      "value": "Multi-popup interaction"
+    },
+    {
+      "name": "personalInformation",
+      "value": "PersonalInformation"
+    },
+    {
+      "name": "male",
+      "value": "Male"
+    },
+    {
+      "name": "save",
+      "value": "Save"
+    },
+    {
+      "name": "nickname",
+      "value": "Nickname"
+    },
+    {
+      "name": "date_of_birth",
+      "value": "Date of birth"
+    },
+    {
+      "name": "sex",
+      "value": "Sex"
+    },
+    {
+      "name": "personal_signature",
+      "value": "Personal signature"
+    },
+    {
+      "name": "Hobbies_multiple_choices",
+      "value": "Hobbies (multiple choices)"
+    }
+  ]
+}

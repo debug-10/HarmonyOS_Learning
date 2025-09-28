@@ -1,0 +1,97 @@
+{
+  "modulePathMap": {
+    "entry": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry"
+  },
+  "compileMode": "esmodule",
+  "projectRootPath": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout",
+  "nodeModulesPath": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\build\\default\\intermediates\\loader_out\\default\\node_modules",
+  "byteCodeHarInfo": {},
+  "declarationEntry": [],
+  "moduleName": "entry",
+  "hspNameOhmMap": {},
+  "harNameOhmMap": {},
+  "packageManagerType": "ohpm",
+  "compileEntry": [
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TabsLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\DoubleColumnLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\GridLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\IndentedLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\ListLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\MoveLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SidebarLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SwiperLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TripleColumnLayout.ets",
+    "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\WaterFlowLayout.ets"
+  ],
+  "otherCompileFiles": [],
+  "dynamicImportLibInfo": {},
+  "routerMap": [
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/TabsLayout&",
+      "name": "Bottom/SideTabs",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TabsLayout.ets",
+      "buildFunction": "TabsBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/DoubleColumnLayout&",
+      "name": "DoubleColumn",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\DoubleColumnLayout.ets",
+      "buildFunction": "DoubleColumnBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/GridLayout&",
+      "name": "Grid",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\GridLayout.ets",
+      "buildFunction": "GridBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/IndentedLayout&",
+      "name": "IndentedLayout",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\IndentedLayout.ets",
+      "buildFunction": "IndentedBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/ListLayout&",
+      "name": "List",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\ListLayout.ets",
+      "buildFunction": "ListBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/MoveLayout&",
+      "name": "MoveLayout",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\MoveLayout.ets",
+      "buildFunction": "MoveBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/SidebarLayout&",
+      "name": "Sidebar",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SidebarLayout.ets",
+      "buildFunction": "SidebarBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/SwiperLayout&",
+      "name": "Swiper",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SwiperLayout.ets",
+      "buildFunction": "SwiperBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/TripleColumnLayout&",
+      "name": "TripleColumn",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TripleColumnLayout.ets",
+      "buildFunction": "TripleColumnBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/WaterFlowLayout&",
+      "name": "WaterFlow",
+      "pageSourceFile": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\WaterFlowLayout.ets",
+      "buildFunction": "WaterFlowBuilder"
+    }
+  ],
+  "hspResourcesMap": {},
+  "updateVersionInfo": {},
+  "anBuildOutPut": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\build\\default\\intermediates\\loader_out\\default\\an\\arm64-v8a",
+  "anBuildMode": "type",
+  "patchConfig": {
+    "changedFileList": "D:\\S\\HarmonyOS_Learning\\HarmonyOS_Study\\ResponsiveLayout\\entry\\build\\default\\intermediates\\patch\\default\\changedFileList.json"
+  }
+}

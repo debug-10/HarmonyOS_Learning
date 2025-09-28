@@ -1,0 +1,75 @@
+{
+  "HVIGOR_OHOS_PLUGIN": {
+    "MODULES": [
+      {
+        "MODULE_NAME": "1043bfc77febe75fafec0c4309faccf1",
+        "API_TYPE": "stageMode"
+      }
+    ],
+    "NATIVE_COMPILER": "Default",
+    "BUILD_MODE": "debug",
+    "USE_NORMALIZED_OHMURL": true
+  },
+  "HVIGOR": {
+    "IS_INCREMENTAL": true,
+    "IS_DAEMON": true,
+    "IS_PARALLEL": true,
+    "IS_HVIGORFILE_TYPE_CHECK": false,
+    "TASK_TIME": {
+      "1043bfc77febe75fafec0c4309faccf1": {
+        "CreateModuleInfo": 894600,
+        "ConfigureCmake": 500200,
+        "PreCheckSyscap": 571600,
+        "ProcessIntegratedHsp": 1237400,
+        "BuildNativeWithCmake": 547300,
+        "SyscapTransform": 4081700,
+        "ProcessStartupConfig": 3094500,
+        "BuildNativeWithNinja": 703500,
+        "BuildJS": 2668500,
+        "ProcessCompiledResources": 860700,
+        "PackingCheck": 6715800
+      }
+    },
+    "APIS": [
+      "getHvigorConfig",
+      "getRootNodeDescriptor",
+      "getChildNode",
+      "getNodeByName",
+      "getAllNodes",
+      "getRootNode",
+      "getNodeName",
+      "getNodePath",
+      "subNodes",
+      "getExtraOption",
+      "getExtParam",
+      "getExtParams",
+      "getProperty",
+      "getProperties",
+      "getParameter",
+      "getProductName",
+      "nodesEvaluated",
+      "getCommandEntryTask"
+    ],
+    "CONFIG_PROPERTIES": {},
+    "TOTAL_TIME": 369351800,
+    "BUILD_ID": "202509281511422770",
+    "ERROR_MESSAGE": [
+      {
+        "CODE": "00303107",
+        "MESSAGE": "Invalid %s value. Make sure it is not null or empty. The file must be included in '%s'. At file: %s",
+        "SOLUTIONS": [
+          "Please check signingConfigs in root project file"
+        ],
+        "TIMESTAMP": "1759043502629"
+      },
+      {
+        "CODE": "00303107",
+        "MESSAGE": "Invalid %s value. Make sure it is not null or empty. The file must be included in '%s'. At file: %s",
+        "SOLUTIONS": [
+          "Please check signingConfigs in root project file"
+        ],
+        "TIMESTAMP": "1759043502632"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1167 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚZÅvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+/**
+ * çª—å£å·¥å…·ç±»æ–‡ä»¶
+ *
+ * æä¾›å®Œæ•´çš„çª—å£ç®¡ç†åŠŸèƒ½ï¼ŒåŒ…æ‹¬ï¼š
+ * - æ²‰æµ¸å¼æ¨¡å¼æ§åˆ¶å’Œç®¡ç†
+ * - çª—å£çŠ¶æ€ã€å°ºå¯¸ã€æ–¹å‘çš„ç›‘å¬å’Œå¤„ç†
+ * - ç³»ç»Ÿé¿è®©åŒºåŸŸçš„ç®¡ç†ï¼ˆçŠ¶æ€æ ã€å¯¼èˆªæ ã€é”®ç›˜ç­‰ï¼‰
+ * - åˆ†å±æ¨¡å¼çš„è®¾ç½®å’Œå–æ¶ˆ
+ * - çª—å£å¤§å°é™åˆ¶å’Œè°ƒæ•´åŠŸèƒ½
+ * - è®¾å¤‡æ–¹å‘æ£€æµ‹å’ŒæŸ¥è¯¢
+ * - å“åº”å¼æ–­ç‚¹ä¿¡æ¯ç®¡ç†
+ *
+ * é€‚ç”¨äºéœ€è¦ç²¾ç»†æ§åˆ¶çª—å£è¡Œä¸ºçš„HarmonyOSåº”ç”¨å¼€å‘åœºæ™¯
+ *
+ * @author å¼€å‘è€…
+ * @since HarmonyOS SDK
+ */
+// å¯¼å…¥ArkUIç›¸å…³çš„æ˜¾ç¤ºã€UIä¸Šä¸‹æ–‡å’Œçª—å£API
+import display from "@ohos.display";
+/**
+ * çª—å£å·¥å…·ç±»æ–‡ä»¶
+ *
+ * æä¾›å®Œæ•´çš„çª—å£ç®¡ç†åŠŸèƒ½ï¼ŒåŒ…æ‹¬ï¼š
+ * - æ²‰æµ¸å¼æ¨¡å¼æ§åˆ¶å’Œç®¡ç†
+ * - çª—å£çŠ¶æ€ã€å°ºå¯¸ã€æ–¹å‘çš„ç›‘å¬å’Œå¤„ç†
+ * - ç³»ç»Ÿé¿è®©åŒºåŸŸçš„ç®¡ç†ï¼ˆçŠ¶æ€æ ã€å¯¼èˆªæ ã€é”®ç›˜ç­‰ï¼‰
+ * - åˆ†å±æ¨¡å¼çš„è®¾ç½®å’Œå–æ¶ˆ
+ * - çª—å£å¤§å°é™åˆ¶å’Œè°ƒæ•´åŠŸèƒ½
+ * - è®¾å¤‡æ–¹å‘æ£€æµ‹å’ŒæŸ¥è¯¢
+ * - å“åº”å¼æ–­ç‚¹ä¿¡æ¯ç®¡ç†
+ *
+ * é€‚ç”¨äºéœ€è¦ç²¾ç»†æ§åˆ¶çª—å£è¡Œä¸ºçš„HarmonyOSåº”ç”¨å¼€å‘åœºæ™¯
+ *
+ * @author å¼€å‘è€…
+ * @since HarmonyOS SDK
+ */
+// å¯¼å…¥ArkUIç›¸å…³çš„æ˜¾ç¤ºã€UIä¸Šä¸‹æ–‡å’Œçª—å£API
+import window from "@ohos.window";
+// å¯¼å…¥æ—¥å¿—è®°å½•å·¥å…·
+import hilog from "@ohos.hilog";
+// å¯¼å…¥åº”ç”¨å¯åŠ¨é€‰é¡¹ã€èƒ½åŠ›å¸¸é‡ã€æ„å›¾å’Œé€šç”¨æ¨¡å—
+import AbilityConstant from "@ohos.app.ability.AbilityConstant";
+// å¯¼å…¥ä¼ æ„Ÿå™¨æœåŠ¡ï¼Œç”¨äºè·å–è®¾å¤‡æ–¹å‘ç­‰ä¿¡æ¯
+import sensor from "@ohos.sensor";
+// å¯¼å…¥å®½åº¦å’Œé«˜åº¦æ–­ç‚¹æšä¸¾ç±»å‹
+// import { WidthBreakpoint, HeightBreakpoint } from '@kit.ArkUI';
+import './WidthBreakpointType';
+/**
+ * æ²‰æµ¸å¼æ¨¡å¼ç±»å‹æšä¸¾
+ * å®šä¹‰äº†ä¸‰ç§ä¸åŒçš„çª—å£æ²‰æµ¸å¼æ˜¾ç¤ºæ¨¡å¼
+ * @enum {number}
+ */
+export var ImmersiveType;
+(function (ImmersiveType) {
+    /** æ™®é€šæ¨¡å¼ - æ˜¾ç¤ºçŠ¶æ€æ ã€å¯¼èˆªæ å’Œçª—å£è£…é¥° */
+    ImmersiveType[ImmersiveType["NORMAL"] = 0] = "NORMAL";
+    /** æ²‰æµ¸å¼æ¨¡å¼ - éšè—çª—å£è£…é¥°ä½†ä¿ç•™ç³»ç»Ÿæ  */
+    ImmersiveType[ImmersiveType["IMMERSIVE"] = 1] = "IMMERSIVE";
+    /** å…¨å±æ²‰æµ¸å¼æ¨¡å¼ - éšè—æ‰€æœ‰ç³»ç»Ÿæ å’Œçª—å£è£…é¥° */
+    ImmersiveType[ImmersiveType["FULLSCREEN_IMMERSIVE"] = 2] = "FULLSCREEN_IMMERSIVE";
+})(ImmersiveType || (ImmersiveType = {}));
+/**
+ * çª—å£å·¥å…·ç±»
+ * æä¾›çª—å£ç®¡ç†çš„æ ¸å¿ƒåŠŸèƒ½ï¼ŒåŒ…æ‹¬æ²‰æµ¸å¼æ¨¡å¼è®¾ç½®ã€çª—å£çŠ¶æ€ç›‘å¬ã€
+ * é¿è®©åŒºåŸŸç®¡ç†ã€åˆ†å±æ“ä½œã€çª—å£å¤§å°è°ƒæ•´ç­‰åŠŸèƒ½
+ *
+ * ä¸»è¦åŠŸèƒ½ï¼š
+ * - çª—å£æ²‰æµ¸å¼æ¨¡å¼ç®¡ç†
+ * - çª—å£çŠ¶æ€å’Œå°ºå¯¸å˜åŒ–ç›‘å¬
+ * - ç³»ç»Ÿé¿è®©åŒºåŸŸå¤„ç†
+ * - çª—å£æ–¹å‘æ§åˆ¶
+ * - åˆ†å±æ¨¡å¼æ”¯æŒ
+ * - çª—å£å¤§å°é™åˆ¶å’Œè°ƒæ•´
+ *
+ * @class WindowUtil
+ */
+export class WindowUtil {
+    /**
+     * æ„é€ å‡½æ•°
+     * @param mainWindow ä¸»çª—å£å®ä¾‹
+     */
+    constructor(mainWindow) {
+        /** çª—å£ä¿¡æ¯å¯¹è±¡ï¼ŒåŒ…å«çª—å£çŠ¶æ€ã€å¤§å°ã€æ–¹å‘ç­‰ä¿¡æ¯ */
+        this.mainWindowInfo = new WindowInfo();
+        /**
+         * çª—å£çŠ¶æ€å˜åŒ–å›è°ƒå‡½æ•°
+         * å½“çª—å£çŠ¶æ€å‘ç”Ÿå˜åŒ–æ—¶ï¼ˆå¦‚æœ€å¤§åŒ–ã€æœ€å°åŒ–ã€æµ®åŠ¨ç­‰ï¼‰ï¼Œæ›´æ–°çª—å£ä¿¡æ¯
+         * @param statusType æ–°çš„çª—å£çŠ¶æ€ç±»å‹
+         */
+        this.onStatusTypeChange = (statusType) => {
+            this.mainWindowInfo.windowStatusType = statusType;
+        };
+        /**
+         * çª—å£å°ºå¯¸å˜åŒ–å›è°ƒå‡½æ•°
+         * å½“çª—å£å¤§å°å‘ç”Ÿå˜åŒ–æ—¶ï¼Œæ›´æ–°çª—å£å°ºå¯¸ä¿¡æ¯å’Œæ–­ç‚¹ä¿¡æ¯
+         * @param windowSize æ–°çš„çª—å£å°ºå¯¸
+         */
+        this.onWindowSizeChange = (windowSize) => {
+            // æ›´æ–°çª—å£å°ºå¯¸
+            this.mainWindowInfo.windowSize = windowSize;
+            // æ›´æ–°å®½åº¦æ–­ç‚¹ä¿¡æ¯ï¼Œç”¨äºå“åº”å¼å¸ƒå±€
+            this.mainWindowInfo.widthBp = this.uiContext.getWindowWidthBreakpoint();
+            // æ›´æ–°é«˜åº¦æ–­ç‚¹ä¿¡æ¯ï¼Œç”¨äºå“åº”å¼å¸ƒå±€
+            this.mainWindowInfo.heightBp = this.uiContext.getWindowHeightBreakpoint();
+        };
+        /**
+         * é¿è®©åŒºåŸŸå˜åŒ–å›è°ƒå‡½æ•°
+         * å½“ç³»ç»Ÿé¿è®©åŒºåŸŸå‘ç”Ÿå˜åŒ–æ—¶ï¼ˆå¦‚é”®ç›˜å¼¹å‡ºã€çŠ¶æ€æ å˜åŒ–ç­‰ï¼‰ï¼Œæ›´æ–°ç›¸åº”çš„é¿è®©åŒºåŸŸä¿¡æ¯
+         * @param avoidOptions é¿è®©åŒºåŸŸé€‰é¡¹ï¼ŒåŒ…å«ç±»å‹å’ŒåŒºåŸŸä¿¡æ¯
+         */
+        this.onAvoidAreaChange = (avoidOptions) => {
+            // æ ¹æ®ä¸åŒçš„é¿è®©åŒºåŸŸç±»å‹ï¼Œæ›´æ–°å¯¹åº”çš„é¿è®©åŒºåŸŸä¿¡æ¯
+            if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM) {
+                // ç³»ç»Ÿé¿è®©åŒºåŸŸï¼ˆçŠ¶æ€æ ç­‰ï¼‰
+                this.mainWindowInfo.AvoidSystem = avoidOptions.area;
+            }
+            else if (avoidOptions.type === window.AvoidAreaType.TYPE_CUTOUT) {
+                // å±å¹•æŒ–å­”é¿è®©åŒºåŸŸ
+                this.mainWindowInfo.AvoidCutout = avoidOptions.area;
+            }
+            else if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM_GESTURE) {
+                // ç³»ç»Ÿæ‰‹åŠ¿é¿è®©åŒºåŸŸ
+                this.mainWindowInfo.AvoidSystemGesture = avoidOptions.area;
+            }
+            else if (avoidOptions.type === window.AvoidAreaType.TYPE_KEYBOARD) {
+                // é”®ç›˜é¿è®©åŒºåŸŸ
+                this.mainWindowInfo.AvoidKeyboard = avoidOptions.area;
+            }
+            else if (avoidOptions.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
+                // å¯¼èˆªæŒ‡ç¤ºå™¨é¿è®©åŒºåŸŸ
+                this.mainWindowInfo.AvoidNavigationIndicator = avoidOptions.area;
+            }
+        };
+        this.mainWindow = mainWindow;
+    }
+    /**
+     * è®¾ç½®çª—å£æ²‰æµ¸å¼æ¨¡å¼ç±»å‹
+     * æ ¹æ®ä¸åŒçš„æ²‰æµ¸å¼æ¨¡å¼ç±»å‹ï¼Œé…ç½®çª—å£çš„æ˜¾ç¤ºçŠ¶æ€
+     * @param type æ²‰æµ¸å¼æ¨¡å¼ç±»å‹
+     */
+    setImmersiveType(type) {
+        try {
+            if (type === ImmersiveType.NORMAL) {
+                // æ™®é€šæ¨¡å¼ï¼šå…³é—­å…¨å±å¸ƒå±€
+                this.mainWindow.setWindowLayoutFullScreen(false)
+                    .then(() => {
+                    hilog.info(0x0000, 'testLog', `Succeeded in setting immersive mode.`);
+                })
+                    .catch((err) => {
+                    hilog.error(0x0000, 'testLog', `Failed to set immersive mode. Code: ${err.code}, message: ${err.message}`);
+                });
+                // æ˜¾ç¤ºç³»ç»Ÿæ ï¼ˆçŠ¶æ€æ å’Œå¯¼èˆªæ ï¼‰
+                this.setSystemBarEnabled(true);
+                // æ˜¾ç¤ºçª—å£è£…é¥°ï¼ˆæ ‡é¢˜æ ç­‰ï¼‰ï¼Œä»…åœ¨è°ƒç”¨loadContent()æˆ–setUIContent()åä½¿ç”¨
+                this.mainWindow.setWindowDecorVisible(true);
+                // æ¢å¤çª—å£çŠ¶æ€
+                this.recover();
+            }
+            else if (type === ImmersiveType.IMMERSIVE) {
+                // æ²‰æµ¸å¼æ¨¡å¼ï¼šå¯ç”¨å…¨å±å¸ƒå±€
+                this.mainWindow.setWindowLayoutFullScreen(true)
+                    .then(() => {
+                    hilog.info(0x0000, 'testLog', `Succeeded in setting immersive mode.`);
+                })
+                    .catch((err) => {
+                    hilog.error(0x0000, 'testLog', `Failed to set immersive mode. Code: ${err.code}, message: ${err.message}`);
+                });
+                // ä¿ç•™ç³»ç»Ÿæ æ˜¾ç¤º
+                this.setSystemBarEnabled(true);
+                // éšè—çª—å£è£…é¥°
+                this.mainWindow.setWindowDecorVisible(false);
+                // æ¢å¤çª—å£çŠ¶æ€
+                this.recover();
+            }
+            else if (type === ImmersiveType.FULLSCREEN_IMMERSIVE) {
+                // å…¨å±æ²‰æµ¸å¼æ¨¡å¼ï¼šå¯ç”¨å…¨å±å¸ƒå±€
+                this.mainWindow.setWindowLayoutFullScreen(true)
+                    .then(() => {
+                    hilog.info(0x0000, 'testLog', `Succeeded in setting immersive mode.`);
+                })
+                    .catch((err) => {
+                    hilog.error(0x0000, 'testLog', `Failed to set immersive mode. Code: ${err.code}, message: ${err.message}`);
+                });
+                // å¦‚æœçª—å£å¤„äºæœ€å¤§åŒ–çŠ¶æ€æˆ–æµ®åŠ¨çŠ¶æ€ä¸”æœ‰è£…é¥°é«˜åº¦ï¼Œåˆ™æ‰§è¡Œæœ€å¤§åŒ–æ“ä½œ
+                if (this.mainWindow.getWindowStatus() === window.WindowStatusType.MAXIMIZE ||
+                    (this.mainWindow.getWindowStatus() === window.WindowStatusType.FLOATING &&
+                        this.mainWindow.getWindowDecorHeight() !== 0)) {
+                    this.mainWindow.maximize()
+                        .then(() => {
+                        hilog.info(0x0000, 'testLog', `Succeeded in maximizing the window.`);
+                    })
+                        .catch((err) => {
+                        hilog.error(0x0000, 'testLog', `Failed to maximize the window. Code: ${err.code}, message: ${err.message}`);
+                    });
+                }
+                // éšè—ç³»ç»Ÿæ 
+                this.setSystemBarEnabled(false);
+                // éšè—çª—å£è£…é¥°
+                this.mainWindow.setWindowDecorVisible(false);
+            }
+            // æ›´æ–°çª—å£ä¿¡æ¯ä¸­çš„æ²‰æµ¸å¼çŠ¶æ€
+            this.mainWindowInfo.isImmersive = type;
+        }
+        catch (error) {
+            let err = error;
+            hilog.error(0x0000, 'TestLog', `Failed to set immersive type. Code: ${err.code}, message: ${err.message}`);
+        }
+    }
+    /**
+     * è®¾ç½®UIä¸Šä¸‹æ–‡
+     * è·å–å¹¶è®¾ç½®çª—å£çš„UIä¸Šä¸‹æ–‡ï¼Œç”¨äºåç»­çš„æ–­ç‚¹ä¿¡æ¯è·å–ç­‰æ“ä½œ
+     */
+    setUIContext() {
+        try {
+            this.uiContext = this.mainWindow.getUIContext();
+        }
+        catch (error) {
+            let err = error;
+            hilog.error(0x0000, 'TestLog', `Failed to set UI context. Code: ${err.code}, message: ${err.message}`);
+        }
+    }
+    /**
+     * è®¾ç½®ç³»ç»Ÿæ çš„æ˜¾ç¤ºçŠ¶æ€
+     * æ§åˆ¶çŠ¶æ€æ å’Œå¯¼èˆªæŒ‡ç¤ºå™¨çš„æ˜¾ç¤ºæˆ–éšè—
+     * @param isVisible æ˜¯å¦æ˜¾ç¤ºç³»ç»Ÿæ ï¼Œtrueä¸ºæ˜¾ç¤ºï¼Œfalseä¸ºéšè—
+     */
+    setSystemBarEnabled(isVisible) {
+        // è®¾ç½®çŠ¶æ€æ çš„æ˜¾ç¤ºçŠ¶æ€
+        this.mainWindow.setSpecificSystemBarEnabled('status', isVisible)
+            .then(() => {
+            hilog.info(0x0000, 'testLog', `Succeeded in setting status bar to be invisible.`);
+        })
+            .catch((err) => {
+            hilog.error(0x0000, 'testLog', `Failed to set status bar to be invisible. Code: ${err.code}, message: ${err.message}`);
+        });
+        // è®¾ç½®å¯¼èˆªæŒ‡ç¤ºå™¨çš„æ˜¾ç¤ºçŠ¶æ€
+        this.mainWindow.setSpecificSystemBarEnabled('navigationIndicator', isVisible)
+            .then(() => {
+            hilog.info(0x0000, 'testLog', `Succeeded in setting navigation indicator to be invisible.`);
+        })
+            .catch((err) => {
+            hilog.error(0x0000, 'testLog', `Failed to set navigation indicator to be invisible. Code: ${err.code}, message: ${err.message}`);
+        });
+    }
+    /**
+     * æ¢å¤çª—å£çŠ¶æ€
+     * å¦‚æœçª—å£å½“å‰å¤„äºå…¨å±çŠ¶æ€ï¼Œåˆ™å°†å…¶æ¢å¤åˆ°ä¹‹å‰çš„çŠ¶æ€
+     */
+    recover() {
+        try {
+            // æ£€æŸ¥çª—å£æ˜¯å¦å¤„äºå…¨å±çŠ¶æ€
+            if (this.mainWindow.getWindowStatus() === window.WindowStatusType.FULL_SCREEN) {
+                // æ¢å¤çª—å£åˆ°ä¹‹å‰çš„çŠ¶æ€
+                this.mainWindow.recover()
+                    .then(() => {
+                    hilog.info(0x0000, 'testLog', `Succeeded in revocering the window.`);
+                })
+                    .catch((err) => {
+                    hilog.error(0x0000, 'testLog', `Failed to revocer the window. Code: ${err.code}, message: ${err.message}`);
+                });
+            }
+        }
+        catch (error) {
+            let err = error;
+            hilog.error(0x0000, 'TestLog', `Failed to recover. Code: ${err.code}, message: ${err.message}`);
+        }
+    }
+    /**
+     * è®¾ç½®çª—å£æ–¹å‘
+     * è®¾ç½®çª—å£çš„é¦–é€‰æ–¹å‘ï¼ˆæ¨ªå±ã€ç«–å±ç­‰ï¼‰
+     * @param orientation çª—å£æ–¹å‘æšä¸¾å€¼
+     */
+    setWindowOrientation(orientation) {
+        this.mainWindow.setPreferredOrientation(orientation)
+            .then(() => {
+            hilog.info(0x0000, 'testLog', `Succeeded in setting window orientation.`);
+            // æ›´æ–°çª—å£ä¿¡æ¯ä¸­çš„æ–¹å‘ä¿¡æ¯
+            this.mainWindowInfo.orientation = orientation;
+        })
+            .catch((err) => {
+            hilog.error(0x0000, 'testLog', `Failed to set window orientation. Code: ${err.code}, message: ${err.message}`);
+        });
+    }
+    /**
+     * æ›´æ–°çª—å£ä¿¡æ¯å¹¶æ³¨å†Œç›‘å¬å™¨
+     * åˆå§‹åŒ–çª—å£çŠ¶æ€ã€å°ºå¯¸ã€æ–­ç‚¹ä¿¡æ¯å’Œé¿è®©åŒºåŸŸï¼Œå¹¶æ³¨å†Œç›¸å…³äº‹ä»¶ç›‘å¬å™¨
+     * è¿™æ˜¯çª—å£ç®¡ç†çš„æ ¸å¿ƒåˆå§‹åŒ–æ–¹æ³•ï¼Œé€šå¸¸åœ¨çª—å£åˆ›å»ºåè°ƒç”¨
+     */
+    updateWindowInfo() {
+        try {
+            // åˆå§‹åŒ–è·å–çª—å£çŠ¶æ€
+            this.mainWindowInfo.windowStatusType = this.mainWindow.getWindowStatus();
+            // æ³¨å†Œçª—å£çŠ¶æ€å˜åŒ–ç›‘å¬å™¨
+            this.mainWindow.on('windowStatusChange', this.onStatusTypeChange);
+            // åˆå§‹åŒ–è·å–çª—å£å°ºå¯¸ä¿¡æ¯
+            let width = this.mainWindow.getWindowProperties().windowRect.width;
+            let height = this.mainWindow.getWindowProperties().windowRect.height;
+            let windowSize = {
+                width: width,
+                height: height
+            };
+            this.mainWindowInfo.windowSize = windowSize;
+            // åˆå§‹åŒ–è·å–å®½åº¦å’Œé«˜åº¦æ–­ç‚¹ä¿¡æ¯ï¼Œç”¨äºå“åº”å¼å¸ƒå±€
+            this.mainWindowInfo.widthBp = this.uiContext.getWindowWidthBreakpoint();
+            this.mainWindowInfo.heightBp = this.uiContext.getWindowHeightBreakpoint();
+            // æ³¨å†Œçª—å£å°ºå¯¸å˜åŒ–ç›‘å¬å™¨ï¼ŒåŒæ—¶æ›´æ–°çª—å£å°ºå¯¸å’Œæ–­ç‚¹ä¿¡æ¯
+            this.mainWindow.on('windowSizeChange', this.onWindowSizeChange);
+            // åˆå§‹åŒ–è·å–å„ç§é¿è®©åŒºåŸŸä¿¡æ¯
+            // ç³»ç»Ÿé¿è®©åŒºåŸŸï¼ˆçŠ¶æ€æ ç­‰ï¼‰
+            this.mainWindowInfo.AvoidSystem = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+            // å¯¼èˆªæŒ‡ç¤ºå™¨é¿è®©åŒºåŸŸ
+            this.mainWindowInfo.AvoidNavigationIndicator =
+                this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+            // å±å¹•æŒ–å­”é¿è®©åŒºåŸŸ
+            this.mainWindowInfo.AvoidCutout = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT);
+            // ç³»ç»Ÿæ‰‹åŠ¿é¿è®©åŒºåŸŸ
+            this.mainWindowInfo.AvoidSystemGesture =
+                this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM_GESTURE);
+            // é”®ç›˜é¿è®©åŒºåŸŸ
+            this.mainWindowInfo.AvoidKeyboard = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD);
+            // æ³¨å†Œé¿è®©åŒºåŸŸå˜åŒ–ç›‘å¬å™¨
+            this.mainWindow.on('avoidAreaChange', this.onAvoidAreaChange);
+        }
+        catch (error) {
+            let err = error;
+            hilog.error(0x0000, `TestLog`, `Failed to update window info. Code: ${err.code}, message: ${err.message}`);
+        }
+    }
+    /**
+     * é‡Šæ”¾èµ„æºå¹¶å–æ¶ˆäº‹ä»¶ç›‘å¬
+     * å–æ¶ˆæ‰€æœ‰å·²æ³¨å†Œçš„çª—å£äº‹ä»¶ç›‘å¬å™¨ï¼Œç”¨äºæ¸…ç†èµ„æº
+     * é€šå¸¸åœ¨çª—å£é”€æ¯æˆ–ç»„ä»¶å¸è½½æ—¶è°ƒç”¨
+     */
+    release() {
+        try {
+            // å–æ¶ˆçª—å£çŠ¶æ€å˜åŒ–ç›‘å¬
+            this.mainWindow.off('windowStatusChange');
+            // å–æ¶ˆçª—å£å°ºå¯¸å˜åŒ–ç›‘å¬
+            this.mainWindow.off('windowSizeChange');
+            // å–æ¶ˆé¿è®©åŒºåŸŸå˜åŒ–ç›‘å¬
+            this.mainWindow.off('avoidAreaChange');
+        }
+        catch (error) {
+            let err = error;
+            hilog.error(0x0000, 'TestLog', `Failed to off. Code: ${err.code}, message: ${err.message}`);
+        }
+    }
+    /**
+     * è®¾ç½®åˆ†å±æ¨¡å¼
+     * å¯åŠ¨æŒ‡å®šçš„åº”ç”¨ç¨‹åºå¹¶è®¾ç½®ä¸ºåˆ†å±æ¨¡å¼çš„ä¸»çª—å£
+     * @param bundleName åº”ç”¨åŒ…å
+     * @param abilityName èƒ½åŠ›åç§°
+     * @param moduleName æ¨¡å—åç§°
+     */
+    setSplitScreen(bundleName, abilityName, moduleName) {
+        // è·å–UIèƒ½åŠ›ä¸Šä¸‹æ–‡
+        let context = this.uiContext?.getHostContext();
+        // åˆ›å»ºå¯åŠ¨é€‰é¡¹å¹¶è®¾ç½®ä¸ºåˆ†å±ä¸»çª—å£æ¨¡å¼
+        let option = { windowMode: AbilityConstant.WindowMode.WINDOW_MODE_SPLIT_PRIMARY };
+        // åˆ›å»ºIntentå¯¹è±¡ï¼ŒæŒ‡å®šè¦å¯åŠ¨çš„åº”ç”¨ä¿¡æ¯
+        let want = { bundleName: bundleName, abilityName: abilityName, moduleName: moduleName };
+        // å¯åŠ¨æŒ‡å®šçš„åº”ç”¨èƒ½åŠ›
+        context.startAbility(want, option).catch((err) => {
+            hilog.error(0x0000, 'TestLog', `Failed to start ability. Code: ${err.code}, message: ${err.message}`);
+        });
+    }
+    /**
+     * å–æ¶ˆåˆ†å±æ¨¡å¼
+     * ç»ˆæ­¢å½“å‰åº”ç”¨ï¼Œé€€å‡ºåˆ†å±æ¨¡å¼
+     */
+    cancelSplitScreen() {
+        // è·å–UIèƒ½åŠ›ä¸Šä¸‹æ–‡
+        let context = this.uiContext?.getHostContext();
+        // ç»ˆæ­¢å½“å‰åº”ç”¨
+        context.terminateSelf().catch((err) => {
+            hilog.error(0x0000, 'TestLog', `Failed to terminate self. Code: ${err.code}, message: ${err.message}`);
+        });
+    }
+    /**
+     * è®¾ç½®çª—å£å¤§å°é™åˆ¶
+     * è®¾ç½®çª—å£çš„æœ€å¤§å’Œæœ€å°å°ºå¯¸é™åˆ¶
+     * @param maxWidth æœ€å¤§å®½åº¦
+     * @param maxHeight æœ€å¤§é«˜åº¦
+     * @param minWidth æœ€å°å®½åº¦
+     * @param minHeight æœ€å°é«˜åº¦
+     */
+    setWindowLimits(maxWidth, maxHeight, minWidth, minHeight) {
+        // åˆ›å»ºçª—å£å¤§å°é™åˆ¶å¯¹è±¡
+        let windowLimits = {
+            maxWidth: maxWidth,
+            maxHeight: maxHeight,
+            minWidth: minWidth,
+            minHeight: minHeight
+        };
+        // åº”ç”¨çª—å£å¤§å°é™åˆ¶
+        this.mainWindow.setWindowLimits(windowLimits).then((data) => {
+            hilog.info(0x0000, 'testLog', `Succeeded in changing the window limits. Cause: ${JSON.stringify(data)}`);
+        }).catch((err) => {
+            hilog.error(0x0000, 'testLog', `Failed to change the window limits. Cause code: ${err.code}, message: ${err.message}`);
+        });
+    }
+    /**
+     * è°ƒæ•´çª—å£å¤§å°
+     * å°†çª—å£è°ƒæ•´åˆ°æŒ‡å®šçš„å®½åº¦å’Œé«˜åº¦
+     * @param width ç›®æ ‡å®½åº¦
+     * @param height ç›®æ ‡é«˜åº¦
+     */
+    resize(width, height) {
+        this.mainWindow.resize(width, height, (err) => {
+            const errCode = err.code;
+            if (errCode) {
+                hilog.error(0x0000, 'testLog', `Failed to change the window size. Cause code: ${err.code}, message: ${err.message}`);
+                return;
+            }
+            hilog.info(0x0000, 'testLog', 'Succeeded in changing the window size.');
+        });
+    }
+    /**
+     * é€šè¿‡æ˜¾ç¤ºå™¨æŸ¥è¯¢è®¾å¤‡æ–¹å‘
+     * ä½¿ç”¨æ˜¾ç¤ºå™¨APIè·å–å½“å‰è®¾å¤‡çš„æ–¹å‘ä¿¡æ¯
+     */
+    queryOrientationByDisplay() {
+        try {
+            // è·å–é»˜è®¤æ˜¾ç¤ºå™¨å¯¹è±¡ï¼Œå¯ç”¨äºæŸ¥è¯¢è®¾å¤‡æ–¹å‘ç­‰ä¿¡æ¯
+            let displayClass = display.getDefaultDisplaySync();
+        }
+        catch (error) {
+            let err = error;
+            hilog.error(0x0000, 'testLog', `Failed to query display orientation. Code: ${err.code}, message: ${err.message}`);
+        }
+    }
+    /**
+     * é€šè¿‡èµ„æºç®¡ç†å™¨æŸ¥è¯¢è®¾å¤‡æ–¹å‘
+     * ä½¿ç”¨èµ„æºç®¡ç†å™¨APIè·å–å½“å‰è®¾å¤‡çš„æ–¹å‘é…ç½®ä¿¡æ¯
+     */
+    queryOrientationByResourceManager() {
+        // é€šè¿‡èµ„æºç®¡ç†å™¨è·å–é…ç½®æ–¹å‘ä¿¡æ¯
+        let info = this.uiContext?.getHostContext()?.resourceManager.getConfigurationSync().direction;
+        hilog.info(0x0000, 'testLog', `The Orientation is ${info}`);
+    }
+    /**
+     * æŸ¥è¯¢è®¾å¤‡è§’åº¦
+     * é€šè¿‡é‡åŠ›ä¼ æ„Ÿå™¨è·å–è®¾å¤‡çš„æ—‹è½¬è§’åº¦ä¿¡æ¯
+     */
+    queryDegree() {
+        try {
+            // ç›‘å¬é‡åŠ›ä¼ æ„Ÿå™¨æ•°æ®ï¼Œè·å–è®¾å¤‡çš„é‡åŠ›ä¿¡æ¯
+            sensor.on(sensor.SensorId.GRAVITY, (data) => {
+                // æ ¹æ®é‡åŠ›ä¼ æ„Ÿå™¨æ•°æ®è®¡ç®—è®¾å¤‡è§’åº¦
+                let degree = this.getCalDegree(data.x, data.y, data.z);
+            });
+        }
+        catch (error) {
+            let err = error;
+            hilog.error(0x0000, 'TestLog', `Failed to query degree. Code: ${err.code}, message: ${err.message}`);
+        }
+    }
+    /**
+     * è®¡ç®—è®¾å¤‡æ—‹è½¬è§’åº¦
+     * æ ¹æ®é‡åŠ›ä¼ æ„Ÿå™¨çš„xã€yã€zè½´æ•°æ®è®¡ç®—è®¾å¤‡çš„æ—‹è½¬è§’åº¦
+     * @param x Xè½´é‡åŠ›å€¼
+     * @param y Yè½´é‡åŠ›å€¼
+     * @param z Zè½´é‡åŠ›å€¼
+     * @returns è®¾å¤‡æ—‹è½¬è§’åº¦ï¼ˆ0-360åº¦ï¼‰
+     */
+    getCalDegree(x, y, z) {
+        let degree = 0;
+        // ä½¿ç”¨æœ‰æ•ˆè§’åº¦é˜ˆå€¼ç³»æ•°ï¼ˆ3ï¼‰æ¥åˆ¤æ–­è®¾å¤‡æ˜¯å¦å¹³æ”¾
+        // å¦‚æœè®¾å¤‡æ¥è¿‘å¹³æ”¾çŠ¶æ€ï¼Œåˆ™è¿”å›0åº¦
+        if ((x * x + y * y) * 3 < z * z) {
+            return degree;
+        }
+        // æ ¹æ®é‡åŠ›ä¼ æ„Ÿå™¨æ•°æ®è®¡ç®—è§’åº¦
+        // ä½¿ç”¨åæ­£åˆ‡å‡½æ•°è®¡ç®—è§’åº¦ï¼Œå¹¶è½¬æ¢ä¸ºåº¦æ•°
+        degree = 90 - (Number)(Math.round(Math.atan2(y, -x) / Math.PI * 180));
+        // ç¡®ä¿è§’åº¦åœ¨0-360åº¦èŒƒå›´å†…
+        return degree >= 0 ? degree % 360 : degree % 360 + 360;
+    }
+}
+/**
+ * çª—å£ä¿¡æ¯ç±»
+ * ç”¨äºå­˜å‚¨å’Œç®¡ç†çª—å£çš„å„ç§çŠ¶æ€ä¿¡æ¯ï¼ŒåŒ…æ‹¬çª—å£çŠ¶æ€ã€å°ºå¯¸ã€æ–¹å‘ã€æ–­ç‚¹ä¿¡æ¯å’Œé¿è®©åŒºåŸŸç­‰
+ * ä½¿ç”¨@Observedè£…é¥°å™¨ï¼Œæ”¯æŒæ•°æ®å˜åŒ–çš„å“åº”å¼ç›‘å¬
+ *
+ * ä¸»è¦åŠŸèƒ½ï¼š
+ * - å­˜å‚¨çª—å£åŸºæœ¬çŠ¶æ€ï¼ˆå¤§å°ã€æ–¹å‘ã€çŠ¶æ€ç±»å‹ï¼‰
+ * - ç®¡ç†å“åº”å¼æ–­ç‚¹ä¿¡æ¯ï¼ˆå®½åº¦æ–­ç‚¹ã€é«˜åº¦æ–­ç‚¹ï¼‰
+ * - å¤„ç†ç³»ç»Ÿé¿è®©åŒºåŸŸä¿¡æ¯ï¼ˆçŠ¶æ€æ ã€å¯¼èˆªæ ã€é”®ç›˜ç­‰ï¼‰
+ * - è®°å½•æ²‰æµ¸å¼æ¨¡å¼çŠ¶æ€
+ *
+ * @class WindowInfo
+ */
+let WindowInfo = class WindowInfo {
+    constructor() {
+        /** çª—å£çŠ¶æ€ç±»å‹ï¼ˆæœ€å¤§åŒ–ã€æœ€å°åŒ–ã€æµ®åŠ¨ç­‰ï¼‰ */
+        this.windowStatusType = window.WindowStatusType.UNDEFINED;
+        /** çª—å£æ²‰æµ¸å¼æ¨¡å¼ç±»å‹ */
+        this.isImmersive = ImmersiveType.NORMAL;
+        /** çª—å£æ–¹å‘ï¼ˆæ¨ªå±ã€ç«–å±ç­‰ï¼‰ */
+        this.orientation = window.Orientation.UNSPECIFIED;
+        /** çª—å£å°ºå¯¸ä¿¡æ¯ï¼ˆå®½åº¦å’Œé«˜åº¦ï¼‰ */
+        this.windowSize = { width: 0, height: 0 };
+        /** å®½åº¦æ–­ç‚¹ï¼Œç”¨äºå“åº”å¼å¸ƒå±€åˆ¤æ–­ */
+        this.widthBp = WidthBreakpoint.WIDTH_XS;
+        /** é«˜åº¦æ–­ç‚¹ï¼Œç”¨äºå“åº”å¼å¸ƒå±€åˆ¤æ–­ */
+        this.heightBp = HeightBreakpoint.HEIGHT_SM;
+    }
+};
+WindowInfo = __decorate([
+    Observed
+], WindowInfo);
+export { WindowInfo };
+//# sourceMappingURL=WindowUtil.js.mapÂ–Ùg hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.display.d.tsÙf hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.window.d.tsÙe hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.hilog.d.tsÙ{ hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.AbilityConstant.d.tsÙf hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.sensor.d.tsÙiD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\utils\WidthBreakpointType.etsÙ`D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\utils\WindowUtil.etsÔrBœªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo¯hostModulesInfo°belongModulePath§checker¬shouldEmitJs¥entryÃÂÙ>D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entryÙ8D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout¥entry¥1.0.0Ô  ‘ÔrC’²hostDependencyName®hostModuleName³../utils/WindowUtil¥entryÙ>D:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entryÔrDÜ ®¬getNodeCount²getIdentifierCount®getSymbolCount¬getTypeCountµgetInstantiationCountµgetRelationCacheSizes±isUndefinedSymbol±isArgumentsSymbol¯isUnknownSymbol¯getMergedSymbol®getDiagnostics´getGlobalDiagnostics´getRecursionIdentity¶getUnmatchedProperties¹getTypeOfSymbolAtLocation¯getTypeOfSymbolÙ(getSymbolsOfParameterPropertyDeclaration·getDeclaredTypeOfSymbol³getPropertiesOfType±getPropertyOfTypeÙ"getPrivateIdentifierPropertyOfType·getTypeOfPropertyOfType²getIndexInfoOfType³getIndexInfosOfTypeºgetIndexInfosOfIndexSymbol³getSignaturesOfType²getIndexTypeOfType¬getIndexType¬getBaseTypes¸getBaseTypeOfLiteralType®getWidenedType³getTypeFromTypeNode°getParameterTypeÙ$getParameterIdentifierNameAtPosition¸getPromisedTypeOfPromise®getAwaitedType¸getReturnTypeOfSignature®isNullableType¯getNullableType²getNonNullableType²getNonOptionalType°getTypeArguments®typeToTypeNodeÙ$indexInfoToIndexSignatureDeclaration¿signatureToSignatureDeclaration²symbolToEntityName²symbolToExpression¬symbolToNodeÙ!symbolToTypeParameterDeclarations¼symbolToParameterDeclarationºtypeParameterToDeclaration±getSymbolsInScope³getSymbolAtLocation·getIndexInfosAtLocationÙ!getShorthandAssignmentValueSymbolÙ#getExportSpecifierLocalTargetSymbol·getExportSymbolOfSymbol±getTypeAtLocationÙ tryGetTypeAtLocationWithoutCheckºgetTypeOfAssignmentPatternÙ*getPropertySymbolOfDestructuringAssignment±signatureToString¬typeToString®symbolToStringµtypePredicateToString®writeSignature©writeType«writeSymbol²writeTypePredicate¼getAugmentedPropertiesOfType®getRootSymbols²getSymbolOfExpando±getContextualTypeÙ(getContextualTypeForObjectLiteralElementÙ#getContextualTypeForArgumentAtIndexÙ getContextualTypeForJsxAttribute²isContextSensitiveÙ!getTypeOfPropertyOfContextualTypeµgetFullyQualifiedNameÙ#tryGetResolvedSignatureWithoutCheck´getResolvedSignatureÙ/getResolvedSignatureForStringLiteralCompletionsÙ$getResolvedSignatureForSignatureHelpµgetExpandedParameters¹hasEffectiveRestParameterºcontainsArgumentsReference°getConstantValueµisValidPropertyAccessÙ#isValidPropertyAccessForCompletions»getSignatureFromDeclarationºisImplementationOfOverload¹getImmediateAliasedSymbol°getAliasedSymbol¯getEmitResolver²getExportsOfModule¿getExportsAndPropertiesOfModuleÙ forEachExportAndPropertyOfModule¯getSymbolWalker±getAmbientModules¹getJsxIntrinsicTagNamesAt³isOptionalParameter»tryGetMemberInModuleExportsÙ(tryGetMemberInModuleExportsAndProperties´tryFindAmbientModuleÙ(tryFindAmbientModuleWithoutAugmentations¯getApparentType¬getUnionType²isTypeAssignableTo³createAnonymousType¯createSignature¬createSymbol¯createIndexInfoªgetAnyType­getStringType­getNumberType±createPromiseType¯createArrayType¹getElementTypeOfArrayType®getBooleanType¬getFalseType«getTrueType«getVoidType°getUndefinedType«getNullType¯getESSymbolType¬getNeverType¯getOptionalType®getPromiseType²getPromiseLikeType´getAsyncIterableType²isSymbolAccessible«isArrayType«isTupleType¯isArrayLikeTypeÙ#isTypeInvalidDueToUnionDiscriminantºgetExactOptionalProperties¿getAllPossiblePropertiesOfTypesÙ(getSuggestedSymbolForNonexistentPropertyÙ#getSuggestionForNonexistentPropertyÙ,getSuggestedSymbolForNonexistentJSXAttributeÙ&getSuggestedSymbolForNonexistentSymbolÙ!getSuggestionForNonexistentSymbolÙ&getSuggestedSymbolForNonexistentModuleÙ!getSuggestionForNonexistentExportÙ+getSuggestedSymbolForNonexistentClassMember·getBaseConstraintOfType»getDefaultFromTypeParameter«resolveName¯getJsxNamespaceµgetJsxFragmentFactory¸getAccessibleSymbolChain»getTypePredicateOfSignature¹resolveExternalModuleName»resolveExternalModuleSymbol°tryGetThisTypeAt¹getTypeArgumentConstraint¸getSuggestionDiagnostics¸runWithCancellationTokenÙ3getLocalTypeParametersOfClassOrInterfaceOrTypeAlias´isDeclarationVisible´isPropertyAccessible»getTypeOnlyAliasDeclaration¿getMemberOverrideModifierStatusÙ!isTypeParameterPossiblyReferenced²getConstEnumRelate´clearConstEnumRelateµdeleteConstEnumRelateÙ$getTypeArgumentsForResolvedSignatureµgetCheckedSourceFilesÙ"collectHaveTsNoCheckFilesForLinter·clearQualifiedNameCache®isStaticRecord²isStaticSourceFile³createIntrinsicTypeÔ  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  Ô  ÃÃÚS/**
+ * çª—å£å·¥å…·ç±»æ–‡ä»¶
+ *
+ * æä¾›å®Œæ•´çš„çª—å£ç®¡ç†åŠŸèƒ½ï¼ŒåŒ…æ‹¬ï¼š
+ * - æ²‰æµ¸å¼æ¨¡å¼æ§åˆ¶å’Œç®¡ç†
+ * - çª—å£çŠ¶æ€ã€å°ºå¯¸ã€æ–¹å‘çš„ç›‘å¬å’Œå¤„ç†
+ * - ç³»ç»Ÿé¿è®©åŒºåŸŸçš„ç®¡ç†ï¼ˆçŠ¶æ€æ ã€å¯¼èˆªæ ã€é”®ç›˜ç­‰ï¼‰
+ * - åˆ†å±æ¨¡å¼çš„è®¾ç½®å’Œå–æ¶ˆ
+ * - çª—å£å¤§å°é™åˆ¶å’Œè°ƒæ•´åŠŸèƒ½
+ * - è®¾å¤‡æ–¹å‘æ£€æµ‹å’ŒæŸ¥è¯¢
+ * - å“åº”å¼æ–­ç‚¹ä¿¡æ¯ç®¡ç†
+ *
+ * é€‚ç”¨äºéœ€è¦ç²¾ç»†æ§åˆ¶çª—å£è¡Œä¸ºçš„HarmonyOSåº”ç”¨å¼€å‘åœºæ™¯
+ *
+ * @author å¼€å‘è€…
+ * @since HarmonyOS SDK
+ */
+
+// å¯¼å…¥ArkUIç›¸å…³çš„æ˜¾ç¤ºã€UIä¸Šä¸‹æ–‡å’Œçª—å£API
+import { display, UIContext, window } from '@kit.ArkUI';
+// å¯¼å…¥ä¸šåŠ¡é”™è¯¯å¤„ç†æ¨¡å—
+import { BusinessError } from '@kit.BasicServicesKit';
+// å¯¼å…¥æ—¥å¿—è®°å½•å·¥å…·
+import { hilog } from '@kit.PerformanceAnalysisKit';
+// å¯¼å…¥åº”ç”¨å¯åŠ¨é€‰é¡¹ã€èƒ½åŠ›å¸¸é‡ã€æ„å›¾å’Œé€šç”¨æ¨¡å—
+import { StartOptions, AbilityConstant, Want, common } from '@kit.AbilityKit';
+// å¯¼å…¥èµ„æºç®¡ç†å™¨ï¼Œç”¨äºè·å–é…ç½®ä¿¡æ¯
+import { resourceManager } from '@kit.LocalizationKit';
+// å¯¼å…¥ä¼ æ„Ÿå™¨æœåŠ¡ï¼Œç”¨äºè·å–è®¾å¤‡æ–¹å‘ç­‰ä¿¡æ¯
+import { sensor } from '@kit.SensorServiceKit';
+// å¯¼å…¥å®½åº¦å’Œé«˜åº¦æ–­ç‚¹æšä¸¾ç±»å‹
+// import { WidthBreakpoint, HeightBreakpoint } from '@kit.ArkUI';
+import './WidthBreakpointType'
+/**
+ * æ²‰æµ¸å¼æ¨¡å¼ç±»å‹æšä¸¾
+ * å®šä¹‰äº†ä¸‰ç§ä¸åŒçš„çª—å£æ²‰æµ¸å¼æ˜¾ç¤ºæ¨¡å¼
+ * @enum {number}
+ */
+export enum ImmersiveType {
+  /** æ™®é€šæ¨¡å¼ - æ˜¾ç¤ºçŠ¶æ€æ ã€å¯¼èˆªæ å’Œçª—å£è£…é¥° */
+  NORMAL,
+  /** æ²‰æµ¸å¼æ¨¡å¼ - éšè—çª—å£è£…é¥°ä½†ä¿ç•™ç³»ç»Ÿæ  */
+  IMMERSIVE,
+  /** å…¨å±æ²‰æµ¸å¼æ¨¡å¼ - éšè—æ‰€æœ‰ç³»ç»Ÿæ å’Œçª—å£è£…é¥° */
+  FULLSCREEN_IMMERSIVE
+}
+
+/**
+ * çª—å£å·¥å…·ç±»
+ * æä¾›çª—å£ç®¡ç†çš„æ ¸å¿ƒåŠŸèƒ½ï¼ŒåŒ…æ‹¬æ²‰æµ¸å¼æ¨¡å¼è®¾ç½®ã€çª—å£çŠ¶æ€ç›‘å¬ã€
+ * é¿è®©åŒºåŸŸç®¡ç†ã€åˆ†å±æ“ä½œã€çª—å£å¤§å°è°ƒæ•´ç­‰åŠŸèƒ½
+ *
+ * ä¸»è¦åŠŸèƒ½ï¼š
+ * - çª—å£æ²‰æµ¸å¼æ¨¡å¼ç®¡ç†
+ * - çª—å£çŠ¶æ€å’Œå°ºå¯¸å˜åŒ–ç›‘å¬
+ * - ç³»ç»Ÿé¿è®©åŒºåŸŸå¤„ç†
+ * - çª—å£æ–¹å‘æ§åˆ¶
+ * - åˆ†å±æ¨¡å¼æ”¯æŒ
+ * - çª—å£å¤§å°é™åˆ¶å’Œè°ƒæ•´
+ *
+ * @class WindowUtil
+ */
+export class WindowUtil {
+  /** UIä¸Šä¸‹æ–‡ï¼Œç”¨äºè·å–çª—å£æ–­ç‚¹ä¿¡æ¯ */
+  public uiContext?: UIContext;
+  /** ä¸»çª—å£å®ä¾‹ */
+  public mainWindow: window.Window;
+  /** çª—å£ä¿¡æ¯å¯¹è±¡ï¼ŒåŒ…å«çª—å£çŠ¶æ€ã€å¤§å°ã€æ–¹å‘ç­‰ä¿¡æ¯ */
+  public mainWindowInfo: WindowInfo = new WindowInfo();
+  /**
+   * çª—å£çŠ¶æ€å˜åŒ–å›è°ƒå‡½æ•°
+   * å½“çª—å£çŠ¶æ€å‘ç”Ÿå˜åŒ–æ—¶ï¼ˆå¦‚æœ€å¤§åŒ–ã€æœ€å°åŒ–ã€æµ®åŠ¨ç­‰ï¼‰ï¼Œæ›´æ–°çª—å£ä¿¡æ¯
+   * @param statusType æ–°çš„çª—å£çŠ¶æ€ç±»å‹
+   */
+  public onStatusTypeChange: (statusType: window.WindowStatusType) => void = (statusType: window.WindowStatusType) => {
+    this.mainWindowInfo.windowStatusType = statusType;
+  }
+  /**
+   * çª—å£å°ºå¯¸å˜åŒ–å›è°ƒå‡½æ•°
+   * å½“çª—å£å¤§å°å‘ç”Ÿå˜åŒ–æ—¶ï¼Œæ›´æ–°çª—å£å°ºå¯¸ä¿¡æ¯å’Œæ–­ç‚¹ä¿¡æ¯
+   * @param windowSize æ–°çš„çª—å£å°ºå¯¸
+   */
+  public onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: window.Size) => {
+    // æ›´æ–°çª—å£å°ºå¯¸
+    this.mainWindowInfo.windowSize = windowSize;
+    // æ›´æ–°å®½åº¦æ–­ç‚¹ä¿¡æ¯ï¼Œç”¨äºå“åº”å¼å¸ƒå±€
+    this.mainWindowInfo.widthBp = this.uiContext!.getWindowWidthBreakpoint();
+    // æ›´æ–°é«˜åº¦æ–­ç‚¹ä¿¡æ¯ï¼Œç”¨äºå“åº”å¼å¸ƒå±€
+    this.mainWindowInfo.heightBp = this.uiContext!.getWindowHeightBreakpoint();
+  };
+  /**
+   * é¿è®©åŒºåŸŸå˜åŒ–å›è°ƒå‡½æ•°
+   * å½“ç³»ç»Ÿé¿è®©åŒºåŸŸå‘ç”Ÿå˜åŒ–æ—¶ï¼ˆå¦‚é”®ç›˜å¼¹å‡ºã€çŠ¶æ€æ å˜åŒ–ç­‰ï¼‰ï¼Œæ›´æ–°ç›¸åº”çš„é¿è®©åŒºåŸŸä¿¡æ¯
+   * @param avoidOptions é¿è®©åŒºåŸŸé€‰é¡¹ï¼ŒåŒ…å«ç±»å‹å’ŒåŒºåŸŸä¿¡æ¯
+   */
+  public onAvoidAreaChange: (avoidOptions: window.AvoidAreaOptions) => void =
+    (avoidOptions: window.AvoidAreaOptions) => {
+      // æ ¹æ®ä¸åŒçš„é¿è®©åŒºåŸŸç±»å‹ï¼Œæ›´æ–°å¯¹åº”çš„é¿è®©åŒºåŸŸä¿¡æ¯
+      if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM) {
+        // ç³»ç»Ÿé¿è®©åŒºåŸŸï¼ˆçŠ¶æ€æ ç­‰ï¼‰
+        this.mainWindowInfo.AvoidSystem = avoidOptions.area;
+      } else if (avoidOptions.type === window.AvoidAreaType.TYPE_CUTOUT) {
+        // å±å¹•æŒ–å­”é¿è®©åŒºåŸŸ
+        this.mainWindowInfo.AvoidCutout = avoidOptions.area;
+      } else if (avoidOptions.type === window.AvoidAreaType.TYPE_SYSTEM_GESTURE) {
+        // ç³»ç»Ÿæ‰‹åŠ¿é¿è®©åŒºåŸŸ
+        this.mainWindowInfo.AvoidSystemGesture = avoidOptions.area;
+      } else if (avoidOptions.type === window.AvoidAreaType.TYPE_KEYBOARD) {
+        // é”®ç›˜é¿è®©åŒºåŸŸ
+        this.mainWindowInfo.AvoidKeyboard = avoidOptions.area;
+      } else if (avoidOptions.type === window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR) {
+        // å¯¼èˆªæŒ‡ç¤ºå™¨é¿è®©åŒºåŸŸ
+        this.mainWindowInfo.AvoidNavigationIndicator = avoidOptions.area;
+      }
+    };
+
+  /**
+   * æ„é€ å‡½æ•°
+   * @param mainWindow ä¸»çª—å£å®ä¾‹
+   */
+  constructor(mainWindow: window.Window) {
+    this.mainWindow = mainWindow;
+  }
+
+  /**
+   * è®¾ç½®çª—å£æ²‰æµ¸å¼æ¨¡å¼ç±»å‹
+   * æ ¹æ®ä¸åŒçš„æ²‰æµ¸å¼æ¨¡å¼ç±»å‹ï¼Œé…ç½®çª—å£çš„æ˜¾ç¤ºçŠ¶æ€
+   * @param type æ²‰æµ¸å¼æ¨¡å¼ç±»å‹
+   */
+  setImmersiveType(type: ImmersiveType) {
+    try {
+      if (type === ImmersiveType.NORMAL) {
+        // æ™®é€šæ¨¡å¼ï¼šå…³é—­å…¨å±å¸ƒå±€
+        this.mainWindow.setWindowLayoutFullScreen(false)
+          .then(() => {
+            hilog.info(0x0000, 'testLog', `Succeeded in setting immersive mode.`);
+          })
+          .catch((err: BusinessError) => {
+            hilog.error(0x0000, 'testLog', `Failed to set immersive mode. Code: ${err.code}, message: ${err.message}`);
+          });
+        // æ˜¾ç¤ºç³»ç»Ÿæ ï¼ˆçŠ¶æ€æ å’Œå¯¼èˆªæ ï¼‰
+        this.setSystemBarEnabled(true);
+        // æ˜¾ç¤ºçª—å£è£…é¥°ï¼ˆæ ‡é¢˜æ ç­‰ï¼‰ï¼Œä»…åœ¨è°ƒç”¨loadContent()æˆ–setUIContent()åä½¿ç”¨
+        this.mainWindow.setWindowDecorVisible(true);
+        // æ¢å¤çª—å£çŠ¶æ€
+        this.recover();
+      } else if (type === ImmersiveType.IMMERSIVE) {
+        // æ²‰æµ¸å¼æ¨¡å¼ï¼šå¯ç”¨å…¨å±å¸ƒå±€
+        this.mainWindow.setWindowLayoutFullScreen(true)
+          .then(() => {
+            hilog.info(0x0000, 'testLog', `Succeeded in setting immersive mode.`);
+          })
+          .catch((err: BusinessError) => {
+            hilog.error(0x0000, 'testLog', `Failed to set immersive mode. Code: ${err.code}, message: ${err.message}`);
+          });
+        // ä¿ç•™ç³»ç»Ÿæ æ˜¾ç¤º
+        this.setSystemBarEnabled(true);
+        // éšè—çª—å£è£…é¥°
+        this.mainWindow.setWindowDecorVisible(false);
+        // æ¢å¤çª—å£çŠ¶æ€
+        this.recover();
+      } else if (type === ImmersiveType.FULLSCREEN_IMMERSIVE) {
+        // å…¨å±æ²‰æµ¸å¼æ¨¡å¼ï¼šå¯ç”¨å…¨å±å¸ƒå±€
+        this.mainWindow.setWindowLayoutFullScreen(true)
+          .then(() => {
+            hilog.info(0x0000, 'testLog', `Succeeded in setting immersive mode.`);
+          })
+          .catch((err: BusinessError) => {
+            hilog.error(0x0000, 'testLog', `Failed to set immersive mode. Code: ${err.code}, message: ${err.message}`);
+          });
+        // å¦‚æœçª—å£å¤„äºæœ€å¤§åŒ–çŠ¶æ€æˆ–æµ®åŠ¨çŠ¶æ€ä¸”æœ‰è£…é¥°é«˜åº¦ï¼Œåˆ™æ‰§è¡Œæœ€å¤§åŒ–æ“ä½œ
+        if (this.mainWindow.getWindowStatus() === window.WindowStatusType.MAXIMIZE ||
+          (this.mainWindow.getWindowStatus() === window.WindowStatusType.FLOATING &&
+            this.mainWindow.getWindowDecorHeight() !== 0)) {
+          this.mainWindow.maximize()
+            .then(() => {
+              hilog.info(0x0000, 'testLog', `Succeeded in maximizing the window.`);
+            })
+            .catch((err: BusinessError) => {
+              hilog.error(0x0000, 'testLog',
+                `Failed to maximize the window. Code: ${err.code}, message: ${err.message}`);
+            });
+        }
+        // éšè—ç³»ç»Ÿæ 
+        this.setSystemBarEnabled(false);
+        // éšè—çª—å£è£…é¥°
+        this.mainWindow.setWindowDecorVisible(false);
+      }
+      // æ›´æ–°çª—å£ä¿¡æ¯ä¸­çš„æ²‰æµ¸å¼çŠ¶æ€
+      this.mainWindowInfo.isImmersive = type;
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'TestLog', `Failed to set immersive type. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  /**
+   * è®¾ç½®UIä¸Šä¸‹æ–‡
+   * è·å–å¹¶è®¾ç½®çª—å£çš„UIä¸Šä¸‹æ–‡ï¼Œç”¨äºåç»­çš„æ–­ç‚¹ä¿¡æ¯è·å–ç­‰æ“ä½œ
+   */
+  setUIContext() {
+    try {
+      this.uiContext = this.mainWindow.getUIContext();
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'TestLog', `Failed to set UI context. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  /**
+   * è®¾ç½®ç³»ç»Ÿæ çš„æ˜¾ç¤ºçŠ¶æ€
+   * æ§åˆ¶çŠ¶æ€æ å’Œå¯¼èˆªæŒ‡ç¤ºå™¨çš„æ˜¾ç¤ºæˆ–éšè—
+   * @param isVisible æ˜¯å¦æ˜¾ç¤ºç³»ç»Ÿæ ï¼Œtrueä¸ºæ˜¾ç¤ºï¼Œfalseä¸ºéšè—
+   */
+  setSystemBarEnabled(isVisible: boolean): void {
+    // è®¾ç½®çŠ¶æ€æ çš„æ˜¾ç¤ºçŠ¶æ€
+    this.mainWindow.setSpecificSystemBarEnabled('status', isVisible)
+      .then(() => {
+        hilog.info(0x0000, 'testLog', `Succeeded in setting status bar to be invisible.`);
+      })
+      .catch((err: BusinessError) => {
+        hilog.error(0x0000, 'testLog',
+          `Failed to set status bar to be invisible. Code: ${err.code}, message: ${err.message}`);
+      });
+    // è®¾ç½®å¯¼èˆªæŒ‡ç¤ºå™¨çš„æ˜¾ç¤ºçŠ¶æ€
+    this.mainWindow.setSpecificSystemBarEnabled('navigationIndicator', isVisible)
+      .then(() => {
+        hilog.info(0x0000, 'testLog', `Succeeded in setting navigation indicator to be invisible.`);
+      })
+      .catch((err: BusinessError) => {
+        hilog.error(0x0000, 'testLog',
+          `Failed to set navigation indicator to be invisible. Code: ${err.code}, message: ${err.message}`);
+      });
+  }
+
+  /**
+   * æ¢å¤çª—å£çŠ¶æ€
+   * å¦‚æœçª—å£å½“å‰å¤„äºå…¨å±çŠ¶æ€ï¼Œåˆ™å°†å…¶æ¢å¤åˆ°ä¹‹å‰çš„çŠ¶æ€
+   */
+  recover(): void {
+    try {
+      // æ£€æŸ¥çª—å£æ˜¯å¦å¤„äºå…¨å±çŠ¶æ€
+      if (this.mainWindow.getWindowStatus() === window.WindowStatusType.FULL_SCREEN) {
+        // æ¢å¤çª—å£åˆ°ä¹‹å‰çš„çŠ¶æ€
+        this.mainWindow.recover()
+          .then(() => {
+            hilog.info(0x0000, 'testLog', `Succeeded in revocering the window.`);
+          })
+          .catch((err: BusinessError) => {
+            hilog.error(0x0000, 'testLog', `Failed to revocer the window. Code: ${err.code}, message: ${err.message}`);
+          });
+      }
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'TestLog', `Failed to recover. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  /**
+   * è®¾ç½®çª—å£æ–¹å‘
+   * è®¾ç½®çª—å£çš„é¦–é€‰æ–¹å‘ï¼ˆæ¨ªå±ã€ç«–å±ç­‰ï¼‰
+   * @param orientation çª—å£æ–¹å‘æšä¸¾å€¼
+   */
+  setWindowOrientation(orientation: window.Orientation): void {
+    this.mainWindow.setPreferredOrientation(orientation)
+      .then(() => {
+        hilog.info(0x0000, 'testLog', `Succeeded in setting window orientation.`);
+        // æ›´æ–°çª—å£ä¿¡æ¯ä¸­çš„æ–¹å‘ä¿¡æ¯
+        this.mainWindowInfo.orientation = orientation;
+      })
+      .catch((err: BusinessError) => {
+        hilog.error(0x0000, 'testLog', `Failed to set window orientation. Code: ${err.code}, message: ${err.message}`);
+      });
+  }
+
+  /**
+   * æ›´æ–°çª—å£ä¿¡æ¯å¹¶æ³¨å†Œç›‘å¬å™¨
+   * åˆå§‹åŒ–çª—å£çŠ¶æ€ã€å°ºå¯¸ã€æ–­ç‚¹ä¿¡æ¯å’Œé¿è®©åŒºåŸŸï¼Œå¹¶æ³¨å†Œç›¸å…³äº‹ä»¶ç›‘å¬å™¨
+   * è¿™æ˜¯çª—å£ç®¡ç†çš„æ ¸å¿ƒåˆå§‹åŒ–æ–¹æ³•ï¼Œé€šå¸¸åœ¨çª—å£åˆ›å»ºåè°ƒç”¨
+   */
+  updateWindowInfo(): void {
+    try {
+      // åˆå§‹åŒ–è·å–çª—å£çŠ¶æ€
+      this.mainWindowInfo.windowStatusType = this.mainWindow.getWindowStatus();
+      // æ³¨å†Œçª—å£çŠ¶æ€å˜åŒ–ç›‘å¬å™¨
+      this.mainWindow.on('windowStatusChange', this.onStatusTypeChange);
+
+      // åˆå§‹åŒ–è·å–çª—å£å°ºå¯¸ä¿¡æ¯
+      let width: number = this.mainWindow.getWindowProperties().windowRect.width;
+      let height: number = this.mainWindow.getWindowProperties().windowRect.height;
+      let windowSize: window.Size = {
+        width: width,
+        height: height
+      }
+      this.mainWindowInfo.windowSize = windowSize;
+
+      // åˆå§‹åŒ–è·å–å®½åº¦å’Œé«˜åº¦æ–­ç‚¹ä¿¡æ¯ï¼Œç”¨äºå“åº”å¼å¸ƒå±€
+      this.mainWindowInfo.widthBp = this.uiContext!.getWindowWidthBreakpoint();
+      this.mainWindowInfo.heightBp = this.uiContext!.getWindowHeightBreakpoint();
+
+      // æ³¨å†Œçª—å£å°ºå¯¸å˜åŒ–ç›‘å¬å™¨ï¼ŒåŒæ—¶æ›´æ–°çª—å£å°ºå¯¸å’Œæ–­ç‚¹ä¿¡æ¯
+      this.mainWindow.on('windowSizeChange', this.onWindowSizeChange);
+
+      // åˆå§‹åŒ–è·å–å„ç§é¿è®©åŒºåŸŸä¿¡æ¯
+      // ç³»ç»Ÿé¿è®©åŒºåŸŸï¼ˆçŠ¶æ€æ ç­‰ï¼‰
+      this.mainWindowInfo.AvoidSystem = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM);
+      // å¯¼èˆªæŒ‡ç¤ºå™¨é¿è®©åŒºåŸŸ
+      this.mainWindowInfo.AvoidNavigationIndicator =
+        this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+      // å±å¹•æŒ–å­”é¿è®©åŒºåŸŸ
+      this.mainWindowInfo.AvoidCutout = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT);
+      // ç³»ç»Ÿæ‰‹åŠ¿é¿è®©åŒºåŸŸ
+      this.mainWindowInfo.AvoidSystemGesture =
+        this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM_GESTURE);
+      // é”®ç›˜é¿è®©åŒºåŸŸ
+      this.mainWindowInfo.AvoidKeyboard = this.mainWindow.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD);
+
+      // æ³¨å†Œé¿è®©åŒºåŸŸå˜åŒ–ç›‘å¬å™¨
+      this.mainWindow.on('avoidAreaChange', this.onAvoidAreaChange);
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, `TestLog`, `Failed to update window info. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  /**
+   * é‡Šæ”¾èµ„æºå¹¶å–æ¶ˆäº‹ä»¶ç›‘å¬
+   * å–æ¶ˆæ‰€æœ‰å·²æ³¨å†Œçš„çª—å£äº‹ä»¶ç›‘å¬å™¨ï¼Œç”¨äºæ¸…ç†èµ„æº
+   * é€šå¸¸åœ¨çª—å£é”€æ¯æˆ–ç»„ä»¶å¸è½½æ—¶è°ƒç”¨
+   */
+  release(): void {
+    try {
+      // å–æ¶ˆçª—å£çŠ¶æ€å˜åŒ–ç›‘å¬
+      this.mainWindow.off('windowStatusChange');
+      // å–æ¶ˆçª—å£å°ºå¯¸å˜åŒ–ç›‘å¬
+      this.mainWindow.off('windowSizeChange');
+      // å–æ¶ˆé¿è®©åŒºåŸŸå˜åŒ–ç›‘å¬
+      this.mainWindow.off('avoidAreaChange');
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'TestLog', `Failed to off. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  /**
+   * è®¾ç½®åˆ†å±æ¨¡å¼
+   * å¯åŠ¨æŒ‡å®šçš„åº”ç”¨ç¨‹åºå¹¶è®¾ç½®ä¸ºåˆ†å±æ¨¡å¼çš„ä¸»çª—å£
+   * @param bundleName åº”ç”¨åŒ…å
+   * @param abilityName èƒ½åŠ›åç§°
+   * @param moduleName æ¨¡å—åç§°
+   */
+  setSplitScreen(bundleName: string, abilityName: string, moduleName: string): void {
+    // è·å–UIèƒ½åŠ›ä¸Šä¸‹æ–‡
+    let context = this.uiContext?.getHostContext() as common.UIAbilityContext;
+
+    // åˆ›å»ºå¯åŠ¨é€‰é¡¹å¹¶è®¾ç½®ä¸ºåˆ†å±ä¸»çª—å£æ¨¡å¼
+    let option: StartOptions = { windowMode: AbilityConstant.WindowMode.WINDOW_MODE_SPLIT_PRIMARY };
+    // åˆ›å»ºIntentå¯¹è±¡ï¼ŒæŒ‡å®šè¦å¯åŠ¨çš„åº”ç”¨ä¿¡æ¯
+    let want: Want = { bundleName: bundleName, abilityName: abilityName, moduleName: moduleName };
+    // å¯åŠ¨æŒ‡å®šçš„åº”ç”¨èƒ½åŠ›
+    context.startAbility(want, option).catch((err: BusinessError) => {
+      hilog.error(0x0000, 'TestLog', `Failed to start ability. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+
+  /**
+   * å–æ¶ˆåˆ†å±æ¨¡å¼
+   * ç»ˆæ­¢å½“å‰åº”ç”¨ï¼Œé€€å‡ºåˆ†å±æ¨¡å¼
+   */
+  cancelSplitScreen(): void {
+    // è·å–UIèƒ½åŠ›ä¸Šä¸‹æ–‡
+    let context = this.uiContext?.getHostContext() as common.UIAbilityContext;
+    // ç»ˆæ­¢å½“å‰åº”ç”¨
+    context.terminateSelf().catch((err: BusinessError) => {
+      hilog.error(0x0000, 'TestLog', `Failed to terminate self. Code: ${err.code}, message: ${err.message}`);
+    });
+  }
+
+  /**
+   * è®¾ç½®çª—å£å¤§å°é™åˆ¶
+   * è®¾ç½®çª—å£çš„æœ€å¤§å’Œæœ€å°å°ºå¯¸é™åˆ¶
+   * @param maxWidth æœ€å¤§å®½åº¦
+   * @param maxHeight æœ€å¤§é«˜åº¦
+   * @param minWidth æœ€å°å®½åº¦
+   * @param minHeight æœ€å°é«˜åº¦
+   */
+  setWindowLimits(maxWidth: number, maxHeight: number, minWidth: number, minHeight: number): void {
+    // åˆ›å»ºçª—å£å¤§å°é™åˆ¶å¯¹è±¡
+    let windowLimits: window.WindowLimits = {
+      maxWidth: maxWidth,
+      maxHeight: maxHeight,
+      minWidth: minWidth,
+      minHeight: minHeight
+    }
+    // åº”ç”¨çª—å£å¤§å°é™åˆ¶
+    this.mainWindow.setWindowLimits(windowLimits).then((data: window.WindowLimits) => {
+      hilog.info(0x0000, 'testLog', `Succeeded in changing the window limits. Cause: ${JSON.stringify(data)}`);
+    }).catch((err: BusinessError) => {
+      hilog.error(0x0000, 'testLog',
+        `Failed to change the window limits. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+
+  /**
+   * è°ƒæ•´çª—å£å¤§å°
+   * å°†çª—å£è°ƒæ•´åˆ°æŒ‡å®šçš„å®½åº¦å’Œé«˜åº¦
+   * @param width ç›®æ ‡å®½åº¦
+   * @param height ç›®æ ‡é«˜åº¦
+   */
+  resize(width: number, height: number): void {
+    this.mainWindow.resize(width, height, (err: BusinessError) => {
+      const errCode: number = err.code;
+      if (errCode) {
+        hilog.error(0x0000, 'testLog',
+          `Failed to change the window size. Cause code: ${err.code}, message: ${err.message}`);
+        return;
+      }
+      hilog.info(0x0000, 'testLog', 'Succeeded in changing the window size.');
+    });
+  }
+
+  /**
+   * é€šè¿‡æ˜¾ç¤ºå™¨æŸ¥è¯¢è®¾å¤‡æ–¹å‘
+   * ä½¿ç”¨æ˜¾ç¤ºå™¨APIè·å–å½“å‰è®¾å¤‡çš„æ–¹å‘ä¿¡æ¯
+   */
+  queryOrientationByDisplay(): void {
+    try {
+      // è·å–é»˜è®¤æ˜¾ç¤ºå™¨å¯¹è±¡ï¼Œå¯ç”¨äºæŸ¥è¯¢è®¾å¤‡æ–¹å‘ç­‰ä¿¡æ¯
+      let displayClass: display.Display | null = display.getDefaultDisplaySync();
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'testLog', `Failed to query display orientation. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  /**
+   * é€šè¿‡èµ„æºç®¡ç†å™¨æŸ¥è¯¢è®¾å¤‡æ–¹å‘
+   * ä½¿ç”¨èµ„æºç®¡ç†å™¨APIè·å–å½“å‰è®¾å¤‡çš„æ–¹å‘é…ç½®ä¿¡æ¯
+   */
+  queryOrientationByResourceManager(): void {
+    // é€šè¿‡èµ„æºç®¡ç†å™¨è·å–é…ç½®æ–¹å‘ä¿¡æ¯
+    let info: resourceManager.Direction | undefined =
+      this.uiContext?.getHostContext()?.resourceManager.getConfigurationSync().direction;
+    hilog.info(0x0000, 'testLog', `The Orientation is ${info}`);
+  }
+
+  /**
+   * æŸ¥è¯¢è®¾å¤‡è§’åº¦
+   * é€šè¿‡é‡åŠ›ä¼ æ„Ÿå™¨è·å–è®¾å¤‡çš„æ—‹è½¬è§’åº¦ä¿¡æ¯
+   */
+  queryDegree(): void {
+    try {
+      // ç›‘å¬é‡åŠ›ä¼ æ„Ÿå™¨æ•°æ®ï¼Œè·å–è®¾å¤‡çš„é‡åŠ›ä¿¡æ¯
+      sensor.on(sensor.SensorId.GRAVITY, (data: sensor.GravityResponse) => {
+        // æ ¹æ®é‡åŠ›ä¼ æ„Ÿå™¨æ•°æ®è®¡ç®—è®¾å¤‡è§’åº¦
+        let degree: number = this.getCalDegree(data.x, data.y, data.z);
+      })
+    } catch (error) {
+      let err = error as BusinessError;
+      hilog.error(0x0000, 'TestLog', `Failed to query degree. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+
+  /**
+   * è®¡ç®—è®¾å¤‡æ—‹è½¬è§’åº¦
+   * æ ¹æ®é‡åŠ›ä¼ æ„Ÿå™¨çš„xã€yã€zè½´æ•°æ®è®¡ç®—è®¾å¤‡çš„æ—‹è½¬è§’åº¦
+   * @param x Xè½´é‡åŠ›å€¼
+   * @param y Yè½´é‡åŠ›å€¼
+   * @param z Zè½´é‡åŠ›å€¼
+   * @returns è®¾å¤‡æ—‹è½¬è§’åº¦ï¼ˆ0-360åº¦ï¼‰
+   */
+  getCalDegree(x: number, y: number, z: number): number {
+    let degree: number = 0;
+    // ä½¿ç”¨æœ‰æ•ˆè§’åº¦é˜ˆå€¼ç³»æ•°ï¼ˆ3ï¼‰æ¥åˆ¤æ–­è®¾å¤‡æ˜¯å¦å¹³æ”¾
+    // å¦‚æœè®¾å¤‡æ¥è¿‘å¹³æ”¾çŠ¶æ€ï¼Œåˆ™è¿”å›0åº¦
+    if ((x * x + y * y) * 3 < z * z) {
+      return degree;
+    }
+    // æ ¹æ®é‡åŠ›ä¼ æ„Ÿå™¨æ•°æ®è®¡ç®—è§’åº¦
+    // ä½¿ç”¨åæ­£åˆ‡å‡½æ•°è®¡ç®—è§’åº¦ï¼Œå¹¶è½¬æ¢ä¸ºåº¦æ•°
+    degree = 90 - (Number)(Math.round(Math.atan2(y, -x) / Math.PI * 180));
+    // ç¡®ä¿è§’åº¦åœ¨0-360åº¦èŒƒå›´å†…
+    return degree >= 0 ? degree % 360 : degree % 360 + 360;
+  }
+}
+
+/**
+ * çª—å£ä¿¡æ¯ç±»
+ * ç”¨äºå­˜å‚¨å’Œç®¡ç†çª—å£çš„å„ç§çŠ¶æ€ä¿¡æ¯ï¼ŒåŒ…æ‹¬çª—å£çŠ¶æ€ã€å°ºå¯¸ã€æ–¹å‘ã€æ–­ç‚¹ä¿¡æ¯å’Œé¿è®©åŒºåŸŸç­‰
+ * ä½¿ç”¨@Observedè£…é¥°å™¨ï¼Œæ”¯æŒæ•°æ®å˜åŒ–çš„å“åº”å¼ç›‘å¬
+ *
+ * ä¸»è¦åŠŸèƒ½ï¼š
+ * - å­˜å‚¨çª—å£åŸºæœ¬çŠ¶æ€ï¼ˆå¤§å°ã€æ–¹å‘ã€çŠ¶æ€ç±»å‹ï¼‰
+ * - ç®¡ç†å“åº”å¼æ–­ç‚¹ä¿¡æ¯ï¼ˆå®½åº¦æ–­ç‚¹ã€é«˜åº¦æ–­ç‚¹ï¼‰
+ * - å¤„ç†ç³»ç»Ÿé¿è®©åŒºåŸŸä¿¡æ¯ï¼ˆçŠ¶æ€æ ã€å¯¼èˆªæ ã€é”®ç›˜ç­‰ï¼‰
+ * - è®°å½•æ²‰æµ¸å¼æ¨¡å¼çŠ¶æ€
+ *
+ * @class WindowInfo
+ */
+@Observed
+export class WindowInfo {
+  /** çª—å£çŠ¶æ€ç±»å‹ï¼ˆæœ€å¤§åŒ–ã€æœ€å°åŒ–ã€æµ®åŠ¨ç­‰ï¼‰ */
+  public windowStatusType: window.WindowStatusType = window.WindowStatusType.UNDEFINED;
+  /** çª—å£æ²‰æµ¸å¼æ¨¡å¼ç±»å‹ */
+  public isImmersive: ImmersiveType = ImmersiveType.NORMAL;
+  /** çª—å£æ–¹å‘ï¼ˆæ¨ªå±ã€ç«–å±ç­‰ï¼‰ */
+  public orientation: window.Orientation = window.Orientation.UNSPECIFIED;
+  /** çª—å£å°ºå¯¸ä¿¡æ¯ï¼ˆå®½åº¦å’Œé«˜åº¦ï¼‰ */
+  public windowSize: window.Size = { width: 0, height: 0 };
+  /** å®½åº¦æ–­ç‚¹ï¼Œç”¨äºå“åº”å¼å¸ƒå±€åˆ¤æ–­ */
+  public widthBp: WidthBreakpoint = WidthBreakpoint.WIDTH_XS;
+  /** é«˜åº¦æ–­ç‚¹ï¼Œç”¨äºå“åº”å¼å¸ƒå±€åˆ¤æ–­ */
+  public heightBp: HeightBreakpoint = HeightBreakpoint.HEIGHT_SM;
+  /** ç³»ç»Ÿé¿è®©åŒºåŸŸï¼ˆçŠ¶æ€æ ã€å¯¼èˆªæ ç­‰ç³»ç»ŸUIå ç”¨çš„åŒºåŸŸï¼‰ */
+  public AvoidSystem?: window.AvoidArea;
+  /** å¯¼èˆªæŒ‡ç¤ºå™¨é¿è®©åŒºåŸŸ */
+  public AvoidNavigationIndicator?: window.AvoidArea;
+  /** å±å¹•æŒ–å­”é¿è®©åŒºåŸŸï¼ˆå¦‚åˆ˜æµ·å±ã€æŒ–å­”å±çš„æ‘„åƒå¤´åŒºåŸŸï¼‰ */
+  public AvoidCutout?: window.AvoidArea;
+  /** ç³»ç»Ÿæ‰‹åŠ¿é¿è®©åŒºåŸŸï¼ˆç”¨äºç³»ç»Ÿæ‰‹åŠ¿æ“ä½œçš„è¾¹ç¼˜åŒºåŸŸï¼‰ */
+  public AvoidSystemGesture?: window.AvoidArea;
+  /** é”®ç›˜é¿è®©åŒºåŸŸï¼ˆè½¯é”®ç›˜å¼¹å‡ºæ—¶å ç”¨çš„åŒºåŸŸï¼‰ */
+  public AvoidKeyboard?: window.AvoidArea;
+}
+ÀÔrE–­@ohos.display¬@ohos.window«@ohos.hilogÙ!@ohos.app.ability.AbilityConstant¬@ohos.sensorµ./WidthBreakpointTypeÔrF—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÃÙg hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.display.d.tsÔrG‘¯hostModulesInfo‘C­@ohos.display¥entryÃªoh-resolveÂFAÃÙf hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.window.d.tsAÃªoh-resolveÂFAÃÙe hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.hilog.d.tsAÃªoh-resolveÂFAÃÙ{ hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.AbilityConstant.d.tsG‘CÙ!@ohos.app.ability.AbilityConstant¥entryÃªoh-resolveÂFAÃÙf hvigor_ignore_D:_tool_DevEco Studio 6_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.sensor.d.tsG‘C¬@ohos.sensor¥entryÃªoh-resolveÂFAÂÙiD:\S\HarmonyOS_Learning\HarmonyOS_Study\ResponsiveLayout\entry\src\main\ets\utils\WidthBreakpointType.etsAÃªoh-resolveÂ“ÔrH–§version¤fileªsourceRoot§sources¥names¨mappings­WindowUtil.js ‘®WindowUtil.etsÜ‘”    ‘” ’”   ” –”   ” 	” ” +”# 7”$ 8‘”    ‘” ’”   ” –”   ” ” #” +”! 7”" 8’”   ” –”   ” 	” ” ” 3”  4’”   ” –”   ” ” &” <”? ÌM”Ì@ ÌN’”   ” –”   ” 	” ” ”! .”" /’”   ” ’”   ”ÌB ÌB””    ”  ”  ”  ‘”  ! ‘” %•”  & ” &” & ” &” -“”  & ” &” &’” '”  '“” (”9 (”: (’” )” )“” *”? *”Ì@ *’” +”! +“” ,”ÌU ,”ÌV ,—”  - ” -” &” &” &”" &”* -‘”  / ‘” =””  > ” >” >” >‘” Ìt‘” Ìw“” Ìx” Ìx” Ìx'’” ÌC”% ÌC—” ÌD	” ÌD” ÌD&”" ÌD*”, ÌD4”. ÌD6”/ ÌD7‘” ÌE‘” ÌI—” ÌJ	” ÌJ”" ÌJÌM”# ÌJÌN”- ÌJÌq”/ ÌJÌs”1 ÌJÌu™” ÌK” ÌK” ÌK	” ÌK”  ÌK”0 ÌK(”3 ÌK+”= ÌK5”> ÌK6“” ÌL”	 ÌL”
+ ÌL‘” ÌM‘” ÌQ—” ÌR	” ÌR”" ÌRÌA”# ÌRÌB”- ÌRÌY”/ ÌRÌ[”1 ÌRÌ]’” ÌS” ÌS™” ÌT” ÌT” ÌT	” ÌT”  ÌT”* ÌT"”- ÌT%”7 ÌT/”8 ÌT0’” ÌU” ÌU” ÌV” ÌV” ÌV	” ÌV”  ÌV”' ÌV”* ÌV"”. ÌV&”/ ÌV'”8 ÌV1”9 ÌV2”ÌQ ÌVÌJ”ÌS ÌVÌL”ÌT ÌVÌM’” ÌW” ÌW” ÌX” ÌX” ÌX	” ÌX”  ÌX”( ÌX ”+ ÌX#”/ ÌX'”0 ÌX(”9 ÌX2”: ÌX3”ÌS ÌXÌL”ÌU ÌXÌN”ÌV ÌXÌO“” ÌY”	 ÌY”
+ ÌY‘” ÌZ‘” Ì^—” Ì_	” Ì_”! Ì`”" Ì`”. Ì`*”0 Ì`,”2 Ì`.’” Ìa”& Ìa œ” Ìb” Ìb
+” Ìb” Ìb”! Ìb”& Ìb ”, Ìb&”- Ìb'”: Ìb4”; Ìb5”ÌF ÌbÌ@”ÌH ÌbÌB’” Ìc” Ìc›” Ìd” Ìd” Ìd”# Ìd”$ Ìd”/ Ìd'”2 Ìd*”> Ìd6”? Ìd7”ÌC Ìd;”ÌD Ìd<‘” Ìeœ” Ìe” Ìe”! Ìe”" Ìe”& Ìe"”+ Ìe'”1 Ìe-”2 Ìe.”? Ìe;”Ì@ Ìe<”ÌK ÌeÌG”ÌM ÌeÌI’” Ìf” Ìf›” Ìg” Ìg” Ìg”# Ìg”$ Ìg”/ Ìg'”2 Ìg*”> Ìg6”? Ìg7”ÌC Ìg;”ÌD Ìg<‘” Ìhœ” Ìh” Ìh”! Ìh”" Ìh”& Ìh"”+ Ìh'”1 Ìh-”2 Ìh.”? Ìh;”Ì@ Ìh<”ÌS ÌhÌO”ÌU ÌhÌQ’” Ìi” Ìi›” Ìj” Ìj” Ìj”# Ìj”$ Ìj”6 Ìj.”9 Ìj1”ÌE Ìj=”ÌF Ìj>”ÌJ ÌjÌB”ÌK ÌjÌC‘” Ìkœ” Ìk” Ìk”! Ìk”" Ìk”& Ìk"”+ Ìk'”1 Ìk-”2 Ìk.”? Ìk;”Ì@ Ìk<”ÌM ÌkÌI”ÌO ÌkÌK’” Ìl” Ìl›” Ìm” Ìm” Ìm”# Ìm”$ Ìm”1 Ìm)”4 Ìm,”Ì@ Ìm8”ÌA Ìm9”ÌE Ìm=”ÌF Ìm>‘” Ìnœ” Ìn” Ìn”! Ìn”" Ìn”& Ìn"”+ Ìn'”1 Ìn-”2 Ìn.”? Ìn;”Ì@ Ìn<”ÌY ÌnÌU”Ì[ ÌnÌW’” Ìo” Ìo›” Ìp” Ìp” Ìp”# Ìp”$ Ìp”< Ìp4”? Ìp7”ÌK ÌpÌC”ÌL ÌpÌD”ÌP ÌpÌH”ÌQ ÌpÌI‘” Ìq“” Ìr”	 Ìr”
+ Ìr—” Ìy” Ìy” Ìy	” Ìy” Ìy”$ Ìy ”% Ìy!’” Ìz” Ìz‘” Ì|‘” Ì€”” Ì” Ì” Ì” Ì&’” Ì‚” Ì‚˜” Ìƒ” Ìƒ
+” Ìƒ” Ìƒ”& Ìƒ ”' Ìƒ!”- Ìƒ'”/ Ìƒ)’” Ì„” Ì„™” Ì…” Ì…” Ì…” Ì…”  Ì…”9 Ì…1”: Ì…2”? Ì…7”Ì@ Ì…8•” Ì†” Ì†” Ì†” Ì†” Ì†œ” Ì‡” Ì‡” Ì‡” Ì‡” Ì‡”% Ì‡”' Ì‡”0 Ì‡(”2 Ì‡*”ÌX Ì‡ÌP”ÌY Ì‡ÌQ”ÌZ Ì‡ÌR“” Ìˆ
+” Ìˆ” Ìˆ—” Ì‰” Ì‰” Ì‰” Ì‰” Ì‰$”! Ì‰&”# Ì‰(Ü ” ÌŠ” ÌŠ” ÌŠ” ÌŠ”  ÌŠ”& ÌŠ”( ÌŠ ”1 ÌŠ)”3 ÌŠ+”ÌZ ÌŠÌR”Ì] ÌŠÌU”Ì^ ÌŠÌV”Ìb ÌŠÌZ”Ìp ÌŠÌh”Ìs ÌŠÌk”Ìt ÌŠÌl”Ì{ ÌŠÌs”Ì} ÌŠÌu”Ì~ ÌŠÌv”Ì ÌŠÌw”” Ì‹
+” Ì‹” Ì‹” Ì‹’” ÌŒ”! ÌŒ˜” Ì” Ì” Ì”( Ì ”) Ì!”- Ì%”. Ì&”/ Ì'’” Ì”ÌC Ì;š” Ì” Ì” Ì” Ì”  Ì”5 Ì-”6 Ì.”: Ì2”; Ì3”< Ì4’” Ì” Ì–” Ì‘” Ì‘” Ì‘” Ì‘” Ì‘” Ì‘‘” Ì’˜” Ì’” Ì’” Ì’” Ì’”+ Ì’'”, Ì’(”5 Ì’1”7 Ì’3’” Ì“” Ì“™” Ì”” Ì”” Ì”” Ì””  Ì””9 Ì”1”: Ì”2”> Ì”6”? Ì”7•” Ì•” Ì•” Ì•” Ì•” Ì•œ” Ì–” Ì–” Ì–” Ì–” Ì–”% Ì–”' Ì–”0 Ì–(”2 Ì–*”ÌX Ì–ÌP”ÌY Ì–ÌQ”ÌZ Ì–ÌR“” Ì—
+” Ì—” Ì——” Ì˜” Ì˜” Ì˜” Ì˜” Ì˜$”! Ì˜&”# Ì˜(Ü ” Ì™” Ì™” Ì™” Ì™”  Ì™”& Ì™”( Ì™ ”1 Ì™)”3 Ì™+”ÌZ Ì™ÌR”Ì] Ì™ÌU”Ì^ Ì™ÌV”Ìb Ì™ÌZ”Ìp Ì™Ìh”Ìs Ì™Ìk”Ìt Ì™Ìl”Ì{ Ì™Ìs”Ì} Ì™Ìu”Ì~ Ì™Ìv”Ì Ì™Ìw”” Ìš
+” Ìš” Ìš” Ìš’” Ì›” Ì›˜” Ìœ” Ìœ” Ìœ”( Ìœ ”) Ìœ!”- Ìœ%”. Ìœ&”/ Ìœ'’” Ì” Ìš” Ì” Ì” Ì” Ì”  Ì”5 Ì-”6 Ì.”; Ì3”< Ì4”= Ì5’” ÌŸ” ÌŸ–” Ì ” Ì ” Ì ” Ì ” Ì ” Ì ‘” Ì¡˜” Ì¡” Ì¡” Ì¡” Ì¡”+ Ì¡'”, Ì¡(”Ì@ Ì¡<”ÌB Ì¡>’” Ì¢”! Ì¢™” Ì£” Ì£” Ì£” Ì£”  Ì£”9 Ì£1”: Ì£2”> Ì£6”? Ì£7•” Ì¤” Ì¤” Ì¤” Ì¤” Ì¤œ” Ì¥” Ì¥” Ì¥” Ì¥” Ì¥”% Ì¥”' Ì¥”0 Ì¥(”2 Ì¥*”ÌX Ì¥ÌP”ÌY Ì¥ÌQ”ÌZ Ì¥ÌR“” Ì¦
+” Ì¦” Ì¦—” Ì§” Ì§” Ì§” Ì§” Ì§$”! Ì§&”# Ì§(Ü ” Ì¨” Ì¨” Ì¨” Ì¨”  Ì¨”& Ì¨”( Ì¨ ”1 Ì¨)”3 Ì¨+”ÌZ Ì¨ÌR”Ì] Ì¨ÌU”Ì^ Ì¨ÌV”Ìb Ì¨ÌZ”Ìp Ì¨Ìh”Ìs Ì¨Ìk”Ìt Ì¨Ìl”Ì{ Ì¨Ìs”Ì} Ì¨Ìu”Ì~ Ì¨Ìv”Ì Ì¨Ìw”” Ì©
+” Ì©” Ì©” Ì©’” Ìª”2 Ìª*” Ì«” Ì«” Ì«” Ì«”# Ì«”$ Ì«”3 Ì«+”5 Ì«-”: Ì«2”Ì@ Ì«8”ÌA Ì«9”ÌQ Ì«ÌI”ÌR Ì«ÌJ”ÌZ Ì«ÌR” Ì¬
+” Ì¬” Ì¬” Ì¬”$ Ì¬”% Ì¬”4 Ì¬*”6 Ì¬,”; Ì¬1”ÌA Ì¬7”ÌB Ì¬8”ÌR Ì¬ÌH”ÌS Ì¬ÌI”Ì[ Ì¬ÌQ›” Ì­” Ì­” Ì­”' Ì­”( Ì­”< Ì­0”> Ì­2”ÌC Ì­7”ÌD Ì­8”ÌE Ì­9”ÌG Ì­;—” Ì®
+” Ì®” Ì®”# Ì®”$ Ì®”, Ì®"”. Ì®$•” Ì¯” Ì¯” Ì¯”! Ì¯”# Ì¯œ” Ì°” Ì°” Ì°”" Ì°”# Ì°”) Ì°”+ Ì°!”4 Ì°*”6 Ì°,”Ì[ Ì°ÌQ”Ì\ Ì°ÌR”Ì] Ì°ÌS“” Ì±” Ì±” Ì±—” Ì²” Ì²” Ì²”  Ì²”# Ì²&”% Ì²(”' Ì²*Ü ” Ì³” Ì³” Ì³”# Ì³”$ Ì³”* Ì³ ”, Ì³"”5 Ì³+”7 Ì´”Ì_ Ì´8”Ìb Ì´;”Ìc Ì´<”Ìg Ì´Ì@”Ìu Ì´ÌN”Ìx Ì´ÌQ”Ìy Ì´ÌR”Ì€ Ì´ÌY”Ì‚ Ì´Ì[”Ìƒ Ì´Ì\”Ì„ Ì´Ì]”” Ìµ” Ìµ” Ìµ” Ìµ‘” Ì¶	’” Ì·” Ì·˜” Ì¸” Ì¸” Ì¸”( Ì¸ ”) Ì¸!”. Ì¸&”/ Ì¸'”0 Ì¸(’” Ì¹” Ì¹š” Ìº” Ìº” Ìº” Ìº”  Ìº”5 Ìº-”6 Ìº.”; Ìº3”< Ìº4”= Ìº5‘” Ì»’” Ì¼” Ì¼™” Ì½” Ì½
+” Ì½” Ì½”  Ì½”+ Ì½%”. Ì½(”2 Ì½,”3 Ì½-‘”	 Ì¾”” Ì¾” Ì¾” Ì¾” Ì¾–” Ì¿” Ì¿
+” Ì¿” Ì¿” Ì¿&” Ì¿'Ü ” ÌÀ” ÌÀ” ÌÀ” ÌÀ” ÌÀ” ÌÀ”  ÌÀ”) ÌÀ#”+ ÌÀ%”ÌR ÌÀÌL”ÌU ÌÀÌO”ÌV ÌÀÌP”ÌZ ÌÀÌT”Ìh ÌÀÌb”Ìk ÌÀÌe”Ìl ÌÀÌf”Ìs ÌÀÌm”Ìu ÌÀÌo”Ìv ÌÀÌp”Ìw ÌÀÌq‘”	 ÌÁ’” ÌÂ” ÌÂ‘” ÌÄ‘” ÌÇ’” ÌÈ” ÌÈ’” ÌÉ” ÌÉœ” ÌÊ” ÌÊ
+” ÌÊ” ÌÊ” ÌÊ”! ÌÊ”" ÌÊ”, ÌÊ&”- ÌÊ'”9 ÌÊ3”; ÌÊ5”< ÌÊ6‘”	 ÌË”” ÌË” ÌË” ÌË” ÌË–” ÌÌ” ÌÌ
+” ÌÌ” ÌÌ” ÌÌ&” ÌÌ'Ü ” ÌÍ” ÌÍ” ÌÍ” ÌÍ” ÌÍ” ÌÍ”  ÌÍ”) ÌÍ#”+ ÌÍ%”ÌN ÌÍÌH”ÌQ ÌÍÌK”ÌR ÌÍÌL”ÌV ÌÍÌP”Ìd ÌÍÌ^”Ìg ÌÍÌa”Ìh ÌÍÌb”Ìo ÌÍÌi”Ìq ÌÍÌk”Ìr ÌÍÌl”Ìs ÌÍÌm‘”	 ÌÎ’” ÌÏ” ÌÏ‘” ÌÑ‘” ÌÕ”” ÌÖ” ÌÖ” ÌÖ”! ÌÖ(’” Ì×” Ì×›” ÌØ” ÌØ” ÌØ	” ÌØ” ÌØ”3 ÌØ/”4 ÌØ0”< ÌØ8”> ÌØ:”ÌG ÌØÌC”ÌH ÌØÌD•” ÌÙ” ÌÙ” ÌÙ” ÌÙ” ÌÙœ” ÌÚ” ÌÚ” ÌÚ” ÌÚ” ÌÚ” ÌÚ” ÌÚ”( ÌÚ$”* ÌÚ&”Ì\ ÌÚÌX”Ì] ÌÚÌY”Ì^ ÌÚÌZ“” ÌÛ”	 ÌÛ”
+ ÌÛ—” ÌÜ” ÌÜ” ÌÜ” ÌÜ” ÌÜ ” ÌÜ"” ÌÜ$Ü ” Ìİ” Ìİ” Ìİ” Ìİ” Ìİ” Ìİ”  Ìİ”) Ìİ%”+ ÌŞ
+”Ì^ ÌŞ=”Ìa ÌŞÌ@”Ìb ÌŞÌA”Ìf ÌŞÌE”Ìt ÌŞÌS”Ìw ÌŞÌV”Ìx ÌŞÌW”Ì ÌŞÌ^”Ì ÌŞÌ`”Ì‚ ÌŞÌa”Ìƒ ÌŞÌb”” Ìß”	 Ìß”
+ Ìß” Ìß	’” Ìà” Ìà›” Ìá” Ìá” Ìá	” Ìá” Ìá”3 Ìá/”4 Ìá0”ÌI ÌáÌE”ÌK ÌáÌG”ÌT ÌáÌP”ÌU ÌáÌQ•” Ìâ” Ìâ” Ìâ” Ìâ” Ìâœ” Ìã” Ìã” Ìã” Ìã” Ìã” Ìã” Ìã”( Ìã$”* Ìã&”Ìf ÌãÌb”Ìg ÌãÌc”Ìh ÌãÌd“” Ìä”	 Ìä”
+ Ìä—” Ìå” Ìå” Ìå” Ìå” Ìå ” Ìå"” Ìå$Ü ” Ìæ” Ìæ” Ìæ” Ìæ” Ìæ” Ìæ”  Ìæ”) Ìæ%”+ Ìç
+”Ìh ÌçÌG”Ìk ÌçÌJ”Ìl ÌçÌK”Ìp ÌçÌO”Ì~ ÌçÌ]”Ì ÌçÌ`”Ì‚ ÌçÌa”Ì‰ ÌçÌh”Ì‹ ÌçÌj”ÌŒ ÌçÌk”Ì ÌçÌl”” Ìè”	 Ìè”
+ Ìè” Ìè	’” Ìé” Ìé‘” Ìë‘” Ìî’” Ìï” Ìï	’” Ìğ” Ìğ’” Ìñ” ÌñŸ” Ìò” Ìò
+” Ìò” Ìò” Ìò”  Ìò”/ Ìò)”1 Ìò+”6 Ìò0”< Ìò6”= Ìò7”ÌM ÌòÌG”ÌN ÌòÌH”ÌY ÌòÌS”Ì[ ÌòÌU’” Ìó” Ìó—” Ìô” Ìô” Ìô” Ìô”  Ìô”' Ìô”) Ìô!•” Ìõ” Ìõ” Ìõ” Ìõ” Ìõœ” Ìö” Ìö” Ìö” Ìö” Ìö”% Ìö”' Ìö”0 Ìö(”2 Ìö*”ÌW ÌöÌO”ÌX ÌöÌP”ÌY ÌöÌQ“” Ì÷
+” Ì÷” Ì÷—” Ìø” Ìø” Ìø” Ìø” Ìø$”! Ìø&”# Ìø(Ü ” Ìù” Ìù” Ìù” Ìù”  Ìù”& Ìù”( Ìù ”1 Ìù)”3 Ìù+”ÌZ ÌùÌR”Ì] ÌùÌU”Ì^ ÌùÌV”Ìb ÌùÌZ”Ìp ÌùÌh”Ìs ÌùÌk”Ìt ÌùÌl”Ì{ ÌùÌs”Ì} ÌùÌu”Ì~ ÌùÌv”Ì ÌùÌw”” Ìú
+” Ìú” Ìú” Ìú‘” Ìû‘”	 Ìü”” Ìü” Ìü” Ìü” Ìü–” Ìı” Ìı
+” Ìı” Ìı” Ìı&” Ìı'Ü ” Ìş” Ìş” Ìş” Ìş” Ìş” Ìş”  Ìş”) Ìş#”+ Ìş%”ÌG ÌşÌA”ÌJ ÌşÌD”ÌK ÌşÌE”ÌO ÌşÌI”Ì] ÌşÌW”Ì` ÌşÌZ”Ìa ÌşÌ[”Ìh ÌşÌb”Ìj ÌşÌd”Ìk ÌşÌe”Ìl ÌşÌf‘”	 Ìÿ’” Í ” Í ‘” Í‘” Í”” Í” Í” Í”$ Í6™” Í” Í” Í	” Í” Í”/ Í+”0 Í,”; Í7”< Í8•” Í	” Í	” Í	” Í	” Í	œ” Í
+” Í
+” Í
+” Í
+” Í
+” Í
+” Í
+”( Í
+$”* Í
+&”ÌT Í
+ÌP”ÌU Í
+ÌQ”ÌV Í
+ÌR’” Í” Í™” Í” Í” Í” Í”  Í”+ Í'”. Í*”9 Í5”: Í6“” Í”	 Í”
+ Í—” Í” Í” Í” Í” Í ” Í"” Í$Ü ” Í” Í” Í” Í” Í” Í”  Í”) Í%”+ Í'”ÌV ÍÌR”ÌY ÍÌU”ÌZ ÍÌV”Ì^ ÍÌZ”Ìl ÍÌh”Ìo ÍÌk”Ìp ÍÌl”Ìw ÍÌs”Ìy ÍÌu”Ìz ÍÌv”Ì{ ÍÌw”” Í”	 Í”
+ Í” Í	’” Í” Í‘” Í‘” Í’” Í” Í’” Í” Í’” Í” Í” Í” Í
+” Í” Í”  Í”0 Í*”3 Í-”7 Í1”8 Í2”ÌB Í<”ÌC Í=”ÌR ÍÌL”ÌT ÍÌN”ÌU ÍÌO’” Í” Í” Í” Í
+” Í” Í” Í” Í” Í”3 Í-”5 Í/”9 Í3”: Í4”ÌL ÍÌF”ÌM ÍÌG”ÌN ÍÌH’” Í” ÍŸ” Í ” Í 
+” Í ” Í ” Í ” Í ”' Í )”( Í *”; Í =”= Í ?”> Í Ì@”ÌH Í ÌJ”ÌI Í ÌK”ÌN Í ÌP”ÌO Í ÌQŸ” Í!” Í!
+” Í!” Í!” Í!” Í! ”( Í!*”) Í!+”< Í!>”> Í!Ì@”? Í!ÌA”ÌI Í!ÌK”ÌJ Í!ÌL”ÌP Í!ÌR”ÌQ Í!ÌS”” Í"” Í"
+” Í"” Í"$”” Í#” Í#” Í#” Í#”” Í$” Í$” Í$” Í$’” Í%” Í%™” Í&” Í&
+” Í&” Í&”  Í&”* Í&$”- Í&'”7 Í&1”8 Í&2’” Í(”% Í(” Í)” Í)
+” Í)” Í)”  Í)”' Í)!”* Í)$”. Í)(”/ Í))”8 Í)3”9 Í)4”ÌQ Í)ÌL”ÌS Í)ÌN”ÌT Í)ÌO” Í*” Í*
+” Í*” Í*”  Í*”( Í*"”+ Í*%”/ Í*)”0 Í**”9 Í*4”: Í*5”ÌS Í*ÌN”ÌU Í*ÌP”ÌV Í*ÌQ’” Í,”( Í,"” Í-” Í-
+” Í-” Í-” Í-” Í-” Í-”1 Í-+”3 Í--”7 Í-1”8 Í-2”ÌJ Í-ÌD”ÌK Í-ÌE”ÌL Í-ÌF’” Í/” Í/’” Í0” Í0Ü ” Í1” Í1
+” Í1” Í1”  Í1”+ Í1%”. Í1(”2 Í1,”3 Í1-”= Í17”> Í18”ÌP Í1ÌJ”ÌQ Í1ÌK”ÌW Í1ÌQ”ÌX Í1ÌR”Ìe Í1Ì_”Ìf Í1Ì`”Ìq Í1Ìk”Ìr Í1Ìl”Ìs Í1Ìm’” Í2” Í2–” Í3” Í3
+” Í3” Í3”  Í3”8 Í32” Í4” Í4” Í4” Í4”  Í4”2 Í4*”3 Í4+”9 Í41”: Í42”ÌG Í4?”ÌH Í4Ì@”Ìa Í4ÌY”Ìb Í4ÌZ”Ìc Í4Ì[’” Í5” Í5Ü ” Í6” Í6
+” Í6” Í6”  Í6”+ Í6%”. Í6(”2 Í6,”3 Í6-”= Í67”> Í68”ÌP Í6ÌJ”ÌQ Í6ÌK”ÌW Í6ÌQ”ÌX Í6ÌR”Ìe Í6Ì_”Ìf Í6Ì`”Ìq Í6Ìk”Ìr Í6Ìl”Ìs Í6Ìm’” Í7” Í7–” Í8” Í8
+” Í8” Í8”  Í8”2 Í8,” Í9” Í9” Í9” Í9”  Í9”2 Í9*”3 Í9+”9 Í91”: Í92”ÌG Í9?”ÌH Í9Ì@”Ì[ Í9ÌS”Ì\ Í9ÌT”Ì] Í9ÌU’” Í:” Í:Ü ” Í;” Í;
+” Í;” Í;”  Í;”- Í;'”0 Í;*”4 Í;.”5 Í;/”? Í;9”Ì@ Í;:”ÌR Í;ÌL”ÌS Í;ÌM”ÌY Í;ÌS”ÌZ Í;ÌT”Ìg Í;Ìa”Ìh Í;Ìb”Ìu Í;Ìo”Ìv Í;Ìp”Ìw Í;Ìq’” Í=” Í=” Í>” Í>
+” Í>” Í>” Í>” Í>” Í>”0 Í>*”2 Í>,”6 Í>0”7 Í>1”ÌH Í>ÌB”ÌI Í>ÌC”ÌJ Í>ÌD‘”	 Í?”” Í?” Í?” Í?” Í?–” Í@” Í@
+” Í@” Í@” Í@&” Í@'Ü ” ÍA” ÍA” ÍA” ÍA” ÍA” ÍA”  ÍA”) ÍA#”+ ÍA%”ÌR ÍAÌL”ÌU ÍAÌO”ÌV ÍAÌP”ÌZ ÍAÌT”Ìh ÍAÌb”Ìk ÍAÌe”Ìl ÍAÌf”Ìs ÍAÌm”Ìu ÍAÌo”Ìv ÍAÌp”Ìw ÍAÌq‘”	 ÍB’” ÍC” ÍC‘” ÍE‘” ÍI’” ÍJ” ÍJ	’” ÍK” ÍK’” ÍL” ÍLš” ÍM” ÍM
+” ÍM” ÍM” ÍM” ÍM”  ÍM”4 ÍM.”5 ÍM/”6 ÍM0’” ÍN” ÍNš” ÍO” ÍO
+” ÍO” ÍO” ÍO” ÍO”  ÍO”2 ÍO,”3 ÍO-”4 ÍO.’” ÍP” ÍPš” ÍQ” ÍQ
+” ÍQ” ÍQ” ÍQ” ÍQ”  ÍQ”1 ÍQ+”2 ÍQ,”3 ÍQ-‘”	 ÍR”” ÍR” ÍR” ÍR” ÍR–” ÍS” ÍS
+” ÍS” ÍS” ÍS&” ÍS'Ü ” ÍT” ÍT” ÍT” ÍT” ÍT” ÍT”  ÍT”) ÍT#”+ ÍT%”ÌC ÍT=”ÌF ÍTÌ@”ÌG ÍTÌA”ÌK ÍTÌE”ÌY ÍTÌS”Ì\ ÍTÌV”Ì] ÍTÌW”Ìd ÍTÌ^”Ìf ÍTÌ`”Ìg ÍTÌa”Ìh ÍTÌb‘”	 ÍU’” ÍV” ÍV‘” ÍX‘” Í^˜” Í_” Í_” Í_” Í_#” Í_%”* Í_8”, Í_:”6 Í_ÌL’” Í`” Í`›” Ía” Ía” Ía” Ía” Ía” Ía”$ Ía ”& Ía"”4 Ía0”6 ÍaÌM”7 ÍaÌN’” Íc” Íc” Íd” Íd” Íd” Íd” Íd!”! Íd+”# Íd-”2 Íd<”3 Íd=”= ÍdÌG”> ÍdÌH”ÌW ÍdÌa”ÌY ÍdÌc”ÌZ ÍdÌd’” Íe”  ÍeÜ ” Íf” Íf” Íf” Íf” Íf” Íf!”! Íf#”+ Íf-”- Íf/”8 Íf:”: Íf<”ÌE ÍfÌG”ÌG ÍfÌI”ÌQ ÍfÌS”ÌS ÍfÌU”Ì] ÍfÌ_”Ì_ ÍfÌa”Ì` ÍfÌb’” Íg” ÍgÜ ” Íh” Íh” Íh” Íh” Íh”! Íh”# Íh”) Íh%”* Íh&”+ Íh'”0 Íh,”1 Íh-”2 Íh.”5 ÍhÌ@”7 ÍhÌB”9 ÍhÌDÜ ” Íi” Íi” Íi” Íi” Íi” Íi”  Íi”) Íi#”+ Íi%”ÌM ÍiÌG”ÌP ÍiÌJ”ÌQ ÍiÌK”ÌU ÍiÌO”Ìc ÍiÌ]”Ìf ÍiÌ`”Ìg ÍiÌa”Ìn ÍiÌh”Ìp ÍiÌj”Ìq ÍiÌk”Ìr ÍiÌl”” Íj”	 Íj”
+ Íj” Íj’” Ík” Ík‘” Ím‘” Íp’” Íq” Íq’” Ír” Ír›” Ís” Ís” Ís” Ís” Ís” Ís”$ Ís ”& Ís"”4 Ís0”6 ÍsÌM”7 ÍsÌN’” Ít” Ítœ” Íu” Íu” Íu” Íu” Íu”  Íu”% Íu!”& Íu"”' Íu#”* Íu5”, Íu7”. Íu9Ü ” Ív” Ív” Ív” Ív” Ív” Ív”  Ív”) Ív#”+ Ív%”ÌN ÍvÌH”ÌQ ÍvÌK”ÌR ÍvÌL”ÌV ÍvÌP”Ìd ÍvÌ^”Ìg ÍvÌa”Ìh ÍvÌb”Ìo ÍvÌi”Ìq ÍvÌk”Ìr ÍvÌl”Ìs ÍvÌm”” Íw”	 Íw”
+ Íw” Íw’” Íx” Íx‘” Íz‘” Íš” Í‚” Í‚” Í‚” Í‚"” Í‚$”' Í‚5”) Í‚7”1 Í‚ÌG”3 Í‚ÌI”< Í‚ÌZ’” Íƒ” Íƒ”” Í„” Í„” Í„” Í„,”” Í…” Í…” Í…” Í…”” Í†” Í†” Í†”  Í†”” Í‡” Í‡” Í‡” Í‡”” Íˆ” Íˆ” Íˆ”  Íˆ’”	 Í‰”
+ Í‰’” ÍŠ” ÍŠÜ ” Í‹” Í‹” Í‹	” Í‹” Í‹”' Í‹#”( Í‹$”4 Í‹0”5 Í‹1”6 Í‹2”: Í‹6”; Í‹7”< Í‹8”Ì@ Í‹ÌQ”ÌB Í‹ÌS”ÌD Í‹ÌUÜ ” ÍŒ” ÍŒ” ÍŒ” ÍŒ” ÍŒ” ÍŒ” ÍŒ”( ÍŒ"”* ÍŒ$”Ì] ÍŒÌW”Ìa ÍŒÌ[”Ìb ÍŒÌ\”Ìk ÍŒÌe”Ìl ÍŒÌf”Ìp ÍŒÌj”Ìq ÍŒÌk”Ìs ÍŒÌm”Ìt ÍŒÌn”Ìu ÍŒÌoš” Í”	 Í”
+ Í” Í” Í” Í” Í” Í ” Í"” Í$Ü ” Í” Í” Í” Í” Í” Í”  Í”) Í#”+ Í”Ì^ Í;”Ìa Í>”Ìb Í?”Ìf ÍÌC”Ìt ÍÌQ”Ìw ÍÌT”Ìx ÍÌU”Ì ÍÌ\”Ì ÍÌ^”Ì‚ ÍÌ_”Ìƒ ÍÌ`”” Í”	 Í”
+ Í” Í’” Í‘” Í‘‘” Í“‘” Í˜–” Í™”
+ Í™” Í™	” Í™” Í™” Í™&Ÿ” Íš” Íš” Íš	” Íš” Íš” Íš” Íš”$ Íš ”& Íš"”, Íš(”. Íš*”/ Íš+”2 Íš=”4 Íš?”6 ÍšÌA˜” Í›” Í›” Í›” Í›” Í›!”  Í›"”$ Í›&”% Í›'”” Íœ” Íœ
+” Íœ” ÍœÜ ” Í” Í” Í” Í” Í”" Í”$ Í”- Í%”/ Í
+”Ì` Í;”Ìc Í>”Ìd Í?”Ìh ÍÌC”Ìv ÍÌQ”Ìy ÍÌT”Ìz ÍÌU”Ì ÍÌ\”Ìƒ ÍÌ^”Ì„ ÍÌ_”Ì… ÍÌ`’” ÍŸ” ÍŸ‘” Í œ” Í¡” Í¡” Í¡” Í¡” Í¡” Í¡” Í¡”( Í¡"”* Í¡$”ÌR Í¡ÌL”ÌS Í¡ÌM”ÌT Í¡ÌN”” Í¢”	 Í¢”
+ Í¢” Í¢’” Í£” Í£‘” Í¥‘” Í¨’” Í©” Í©’” Íª” Íª’” Í«”% Í«™” Í¬” Í¬
+” Í¬” Í¬1”& Í¬8”' Í¬9”< Í¬ÌN”> Í¬ÌP”? Í¬ÌQ‘”	 Í­”” Í­” Í­” Í­” Í­–” Í®” Í®
+” Í®” Í®” Í®&” Í®'Ü ” Í¯” Í¯” Í¯” Í¯” Í¯” Í¯”  Í¯”) Í¯#”+ Í¯%”ÌY Í¯ÌS”Ì\ Í¯ÌV”Ì] Í¯ÌW”Ìa Í¯Ì[”Ìo Í¯Ìi”Ìr Í¯Ìl”Ìs Í¯Ìm”Ìz Í¯Ìt”Ì| Í¯Ìv”Ì} Í¯Ìw”Ì~ Í¯Ìx‘”	 Í°’” Í±” Í±‘” Í³‘” Í¶’” Í·”% Í·#’” Í¸” Í¸Ü ” Í¹” Í¹” Í¹” Íº” Íº
+” Íº”! Íº”# Íº”1 Íº$”3 Íº&”5 Íº(”ÌD Íº7”ÌE Íº8”ÌY ÍºÌL”Ì[ ÍºÌN”Ì\ ÍºÌO”Ìe ÍºÌX”Ìf ÍºÌY” Í»” Í»	” Í»
+” Í»” Í»” Í»” Í»”$ Í» ”& Í»"”< Í»8”Ì@ Í»<”ÌB Í»>”ÌC Í»?”ÌD Í»Ì@’” Í¼” Í¼‘” Í¾‘” ÍÁ’” ÍÂ” ÍÂ’” ÍÃ” ÍÃ’” ÍÄ”" ÍÄŸ” ÍÅ” ÍÅ” ÍÅ” ÍÅ” ÍÅ” ÍÅ” ÍÅ”% ÍÅ”& ÍÅ ”- ÍÅ'”/ ÍÅ)”0 ÍÅ*”4 ÍÅÌF”6 ÍÅÌH”8 ÍÅÌJ’” ÍÆ”" ÍÆÜ ” ÍÇ” ÍÇ” ÍÇ” ÍÇ”! ÍÇ!”" ÍÇ"”. ÍÇ.”/ ÍÇ/”3 ÍÇ3”4 ÍÇ4”5 ÍÇ5”7 ÍÇ7”; ÍÇ;”< ÍÇ<”= ÍÇ=”? ÍÇ?”ÌC ÍÇÌC”ÌD ÍÇÌD”ÌE ÍÇÌE”ÌF ÍÇÌF”ÌG ÍÇÌG”” ÍÈ” ÍÈ” ÍÈ” ÍÈ‘”	 ÍÉ”” ÍÉ” ÍÉ” ÍÉ” ÍÉ–” ÍÊ” ÍÊ
+” ÍÊ” ÍÊ” ÍÊ&” ÍÊ'Ü ” ÍË” ÍË” ÍË” ÍË” ÍË” ÍË”  ÍË”) ÍË#”+ ÍË%”ÌL ÍËÌF”ÌO ÍËÌI”ÌP ÍËÌJ”ÌT ÍËÌN”Ìb ÍËÌ\”Ìe ÍËÌ_”Ìf ÍËÌ`”Ìm ÍËÌg”Ìo ÍËÌi”Ìp ÍËÌj”Ìq ÍËÌk‘”	 ÍÌ’” ÍÍ” ÍÍ‘” ÍÏ‘” ÍÖ˜” Í×” Í×” Í×” Í×” Í×” Í×#” Í×%” Í×.–” ÍØ” ÍØ” ÍØ” ÍØ” ÍØ” ÍØ’” ÍÙ”! ÍÙ’” ÍÚ” ÍÚÜ ” ÍÛ” ÍÛ” ÍÛ	” ÍÛ
+” ÍÛ” ÍÛ” ÍÛ” ÍÛ” ÍÛ” ÍÛ” ÍÛ” ÍÛ” ÍÛ”" ÍÛ”# ÍÛ”& ÍÛ"”' ÍÛ#”) ÍÛ%”” ÍÜ” ÍÜ” ÍÜ” ÍÜ‘”	 Íİ’” ÍŞ” ÍŞ’” Íß” ÍßÜ ” Íà” Íà
+” Íà” Íà” Íà” Íà” Íà” Íà” Íà”# Íà”$ Íà ”) Íà%”* Íà&”. Íà*”/ Íà+”4 Íà0”5 Íà1”6 Íà2”8 Íà4”9 Íà5”: Íà6”; Íà7”> Íà:”ÌB Íà>”ÌC Íà?”ÌE ÍàÌA”ÌH ÍàÌD”ÌK ÍàÌG”ÌL ÍàÌH”ÌM ÍàÌI”ÌN ÍàÌJ’” Íá” ÍáÜ ” Íâ” Íâ” Íâ” Íâ” Íâ” Íâ” Íâ” Íâ”# Íâ”& Íâ"”) Íâ%”* Íâ&”+ Íâ'”, Íâ(”2 Íâ.”5 Íâ1”8 Íâ4”; Íâ7”> Íâ:”? Íâ;’” Íã” Íã‘” Íä‘”  Íæ ‘” Íò–”  Íô” Íô” Íô” Íô” Íô”! Íô‘” Íô’” Íõ”" Íõ™” Íö	” Íö”  Íö5”& Íö;”' Íö<”7 ÍöÌL”8 ÍöÌM”ÌA ÍöÌV”ÌB ÍöÌW’” Í÷” Í÷—” Íø	” Íø” Íø&”( Íø3”) Íø4”/ Íø:”0 Íø;’” Íù” Íù™” Íú	” Íú” Íú+”! Íú1”" Íú2”- Íú=”. Íú>”9 ÍúÌI”: ÍúÌJ’” Íû” Íû” Íü	” Íü” Íü#” Íü%”! Íü*”# Íü,”$ Íü-”& Íü/”, Íü5”. Íü7”/ Íü8”1 Íü:”2 Íü;’” Íı” Íı—” Íş	” Íş” Íş$”& Íş3”' Íş4”/ Íş<”0 Íş=’” Íÿ” Íÿ—” Í 	” Í ” Í &”( Í 6”) Í 7”2 Í Ì@”3 Í ÌA’” Í ” Í’” Í” Í’”  Íô”
+ Íô’” Íó” Íó	“” Íô” Íô” Í’”	 Íô” ÍôÔrI–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌĞ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ‘”  ÌÜ ‘”  Ìİ ‘”  ÌŞ ‘”  Ìß ‘”  Ìà ‘”  Ìá ‘”  Ìâ ‘”  Ìã ‘”  Ìä ‘”  Ìå ‘”  Ìæ ‘”  Ìç ‘”  Ìè ‘”  Ìé ‘”  Ìê ‘”  Ìë ‘”  Ìì ‘”  Ìí ‘”  Ìî ‘”  Ìï ‘”  Ìğ ‘”  Ìñ ‘”  Ìò ‘”  Ìó ‘”  Ìô ‘”  Ìõ ‘”  Ìö ‘”  Ì÷ ‘”  Ìø ‘”  Ìù ‘”  Ìú ‘”  Ìû ‘”  Ìü ‘”  Ìı ‘”  Ìş ‘”  Ìÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í	 ‘”  Í
+ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í  ‘”  Í! ‘”  Í" ‘”  Í# ‘”  Í$ ‘”  Í% ‘”  Í& ‘”  Í' ‘”  Í( ‘”  Í) ‘”  Í* ‘”  Í+ ‘”  Í, ‘”  Í- ‘”  Í. ‘”  Í/ ‘”  Í0 ‘”  Í1 ‘”  Í2 ‘”  Í3 ‘”  Í4 ‘”  Í5 ‘”  Í6 ‘”  Í7 ‘”  Í8 ‘”  Í9 ‘”  Í: ‘”  Í; ‘”  Í< ‘”  Í= ‘”  Í> ‘”  Í? ‘”  Í@ ‘”  ÍA ‘”  ÍB ‘”  ÍC ‘”  ÍD ‘”  ÍE ‘”  ÍF ‘”  ÍG ‘”  ÍH ‘”  ÍI ‘”  ÍJ ‘”  ÍK ‘”  ÍL ‘”  ÍM ‘”  ÍN ‘”  ÍO ‘”  ÍP ‘”  ÍQ ‘”  ÍR ‘”  ÍS ‘”  ÍT ‘”  ÍU ‘”  ÍV ‘”  ÍW ‘”  ÍX ‘”  ÍY ‘”  ÍZ ‘”  Í[ ‘”  Í\ ‘”  Í] ‘”  Í^ ‘”  Í_ ‘”  Í` ‘”  Ía ‘”  Íb ‘”  Íc ‘”  Íd ‘”  Íe ‘”  Íf ‘”  Íg ‘”  Íh ‘”  Íi ‘”  Íj ‘”  Ík ‘”  Íl ‘”  Ím ‘”  Ín ‘”  Ío ‘”  Íp ‘”  Íq ‘”  Ír ‘”  Ís ‘”  Ít ‘”  Íu ‘”  Ív ‘”  Íw ‘”  Íx ‘”  Íy ‘”  Íz ‘”  Í{ ‘”  Í| ‘”  Í} ‘”  Í~ ‘”  Í ‘”  Í€ ‘”  Í ‘”  Í‚ ‘”  Íƒ ‘”  Í„ ‘”  Í… ‘”  Í† ‘”  Í‡ ‘”  Íˆ ‘”  Í‰ ‘”  ÍŠ ‘”  Í‹ ‘”  ÍŒ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í‘ ‘”  Í’ ‘”  Í“ ‘”  Í” ‘”  Í• ‘”  Í– ‘”  Í— ‘”  Í˜ ‘”  Í™ ‘”  Íš ‘”  Í› ‘”  Íœ ‘”  Í ‘”  Í ‘”  ÍŸ ‘”  Í  ‘”  Í¡ ‘”  Í¢ ‘”  Í£ ‘”  Í¤ ‘”  Í¥ ‘”  Í¦ ‘”  Í§ ‘”  Í¨ ‘”  Í© ‘”  Íª ‘”  Í« ‘”  Í¬ ‘”  Í­ ‘”  Í® ‘”  Í¯ ‘”  Í° ‘”  Í± ‘”  Í² ‘”  Í³ ‘”  Í´ ‘”  Íµ ‘”  Í¶ ‘”  Í· ‘”  Í¸ ‘”  Í¹ ‘”  Íº ‘”  Í» ‘”  Í¼ ‘”  Í½ ‘”  Í¾ ‘”  Í¿ ‘”  ÍÀ ‘”  ÍÁ ‘”  ÍÂ ‘”  ÍÃ ‘”  ÍÄ ‘”  ÍÅ ‘”  ÍÆ ‘”  ÍÇ ‘”  ÍÈ ‘”  ÍÉ ‘”  ÍÊ ‘”  ÍË ‘”  ÍÌ ‘”  ÍÍ ‘”  ÍÎ ‘”  ÍÏ ‘”  ÍĞ ‘”  ÍÑ ‘”  ÍÒ ‘”  ÍÓ ‘”  ÍÔ ‘”  ÍÕ ‘”  ÍÖ ‘”  Í× ‘”  ÍØ ‘”  ÍÙ ‘”  ÍÚ ‘”  ÍÛ ‘”  ÍÜ ‘”  Íİ ‘”  ÍŞ ‘”  Íß ‘”  Íà ‘”  Íá ‘”  Íâ ‘”  Íã ‘”  Íä ‘”  Íå ‘”  Íæ ‘”  Íç ‘”  Íè ‘”  Íé ‘”  Íê ‘”  Íë ‘”  Íì ‘”  Íí ‘”  Íî ‘”  Íï ‘”  Íğ ‘”  Íñ ‘”  Íò ‘”  Íó ‘”  Íô ‘”  Íõ ‘”  Íö ‘”  Í÷ ‘”  Íø ‘”  Íù ‘”  Íú ‘”  Íû ‘”  Íü ‘”  Íı ‘”  Íş ‘”  Íÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ÔrJ’§missing¦pluginÃ¦genAbcÂÔ  ÔrK”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache“ÔrL–¤type¥start£end«declarationªspecifiers¦source¶ExportNamedDeclarationÍWÍpÔrM•¤type¥start£end¬declarations¤kind³VariableDeclarationÍ^Íp‘ÔrN•¤type¥start£end¢id¤init²VariableDeclaratorÍbÍoÔrO”¤type¥start£end¤nameªIdentifierÍbÍo­ImmersiveTypeÀ£varÀL¶ExportNamedDeclarationÍÊÍEÕÔrP–¤type¥start£end¢idªsuperClass¤body°ClassDeclarationÍÑÍEÕOªIdentifierÍ×ÍáªWindowUtilÀÔrQ”¤type¥start£end¤body©ClassBodyÍâÍEÕÜ ÔrR˜¤type¥start£end¦static¨computed£key¤kind¥value°MethodDefinitionÍ	(Í¾ÂÂOªIdentifierÍ	(Í	3«constructor«constructorÔrS™¤type¥start£end¢idªexpression©generator¥async¦params¤body²FunctionExpressionÍ	3Í¾ÀÂÂÂ‘OªIdentifierÍ	4Í	>ªmainWindowQ®BlockStatementÍ	@Í¾•ÔrT”¤type¥start£endªexpression³ExpressionStatementÍ	rÍ	™ÔrU–¤type¥start£end¨operator¤left¥right´AssignmentExpressionÍ	rÍ	˜¡=ÔrV—¤type¥start£end¦object¨property¨computed¨optional°MemberExpressionÍ	rÍ	…ÔrW“¤type¥start£end®ThisExpressionÍ	rÍ	vOªIdentifierÍ	wÍ	…®mainWindowInfoÂÂÔrX•¤type¥start£end¦callee©arguments­NewExpressionÍ	ˆÍ	˜OªIdentifierÍ	ŒÍ	–ªWindowInfoT³ExpressionStatementÍ
+'Í
+U´AssignmentExpressionÍ
+'Í
+¡=V°MemberExpressionÍ
+'Í
+>W®ThisExpressionÍ
+'Í
++OªIdentifierÍ
+,Í
+>²onStatusTypeChangeÂÂS·ArrowFunctionExpressionÍ
+AÍ
+ÀÂÂÂ‘OªIdentifierÍ
+BÍ
+LªstatusTypeQ®BlockStatementÍ
+QÍ
+‘T³ExpressionStatementÍ
+`Í
+’U´AssignmentExpressionÍ
+`Í
+‘¡=V°MemberExpressionÍ
+`Í
+„V°MemberExpressionÍ
+`Í
+sW®ThisExpressionÍ
+`Í
+dOªIdentifierÍ
+eÍ
+s®mainWindowInfoÂÂOªIdentifierÍ
+tÍ
+„°windowStatusTypeÂÂOªIdentifierÍ
+‡Í
+‘ªstatusTypeT³ExpressionStatementÍ#Í›U´AssignmentExpressionÍ#Íš¡=V°MemberExpressionÍ#Í:W®ThisExpressionÍ#Í'OªIdentifierÍ(Í:²onWindowSizeChangeÂÂS·ArrowFunctionExpressionÍ=ÍšÀÂÂÂ‘OªIdentifierÍ>ÍHªwindowSizeQ®BlockStatementÍMÍš“T³ExpressionStatementÍsÍŸU´AssignmentExpressionÍsÍ¡=V°MemberExpressionÍsÍ‘V°MemberExpressionÍsÍ†W®ThisExpressionÍsÍwOªIdentifierÍxÍ†®mainWindowInfoÂÂOªIdentifierÍ‡Í‘ªwindowSizeÂÂOªIdentifierÍ”ÍªwindowSizeT³ExpressionStatementÍÎÍU´AssignmentExpressionÍÎÍ¡=V°MemberExpressionÍÎÍéV°MemberExpressionÍÎÍáW®ThisExpressionÍÎÍÒOªIdentifierÍÓÍá®mainWindowInfoÂÂOªIdentifierÍâÍé§widthBpÂÂÔrY–¤type¥start£end¦callee©arguments¨optional®CallExpressionÍìÍV°MemberExpressionÍìÍV°MemberExpressionÍìÍúW®ThisExpressionÍìÍğOªIdentifierÍñÍú©uiContextÂÂOªIdentifierÍûÍ¸getWindowWidthBreakpointÂÂÂT³ExpressionStatementÍEÍU´AssignmentExpressionÍEÍ¡=V°MemberExpressionÍEÍaV°MemberExpressionÍEÍXW®ThisExpressionÍEÍIOªIdentifierÍJÍX®mainWindowInfoÂÂOªIdentifierÍYÍa¨heightBpÂÂY®CallExpressionÍdÍV°MemberExpressionÍdÍŒV°MemberExpressionÍdÍrW®ThisExpressionÍdÍhOªIdentifierÍiÍr©uiContextÂÂOªIdentifierÍsÍŒ¹getWindowHeightBreakpointÂÂÂT³ExpressionStatementÍ:ÍU´AssignmentExpressionÍ:Í¡=V°MemberExpressionÍ:ÍPW®ThisExpressionÍ:Í>OªIdentifierÍ?ÍP±onAvoidAreaChangeÂÂS·ArrowFunctionExpressionÍSÍÀÂÂÂ‘OªIdentifierÍTÍ`¬avoidOptionsQ®BlockStatementÍeÍ‘ÔrZ–¤type¥start£end¤testªconsequent©alternate«IfStatementÍœÍ„Ôr[–¤type¥start£end¤left¨operator¥right°BinaryExpressionÍ ÍÖV°MemberExpressionÍ Í±OªIdentifierÍ Í¬¬avoidOptionsOªIdentifierÍ­Í±¤typeÂÂ£===V°MemberExpressionÍ¶ÍÖV°MemberExpressionÍ¶ÍÊOªIdentifierÍ¶Í¼¦windowOªIdentifierÍ½ÍÊ­AvoidAreaTypeÂÂOªIdentifierÍËÍÖ«TYPE_SYSTEMÂÂQ®BlockStatementÍØÍO‘T³ExpressionStatementÍÍ@U´AssignmentExpressionÍÍ?¡=V°MemberExpressionÍÍ+V°MemberExpressionÍÍW®ThisExpressionÍÍOªIdentifierÍÍ®mainWindowInfoÂÂOªIdentifierÍ Í+«AvoidSystemÂÂV°MemberExpressionÍ.Í?OªIdentifierÍ.Í:¬avoidOptionsOªIdentifierÍ;Í?¤areaÂÂZ«IfStatementÍbÍ„[°BinaryExpressionÍfÍœV°MemberExpressionÍfÍwOªIdentifierÍfÍr¬avoidOptionsOªIdentifierÍsÍw¤typeÂÂ£===V°MemberExpressionÍ|ÍœV°MemberExpressionÍ|ÍOªIdentifierÍ|Í‚¦windowOªIdentifierÍƒÍ­AvoidAreaTypeÂÂOªIdentifierÍ‘Íœ«TYPE_CUTOUTÂÂQ®BlockStatementÍÍ‘T³ExpressionStatementÍÎÍU´AssignmentExpressionÍÎÍ¡=V°MemberExpressionÍÎÍíV°MemberExpressionÍÎÍáW®ThisExpressionÍÎÍÒOªIdentifierÍÓÍá®mainWindowInfoÂÂOªIdentifierÍâÍí«AvoidCutoutÂÂV°MemberExpressionÍğÍOªIdentifierÍğÍü¬avoidOptionsOªIdentifierÍıÍ¤areaÂÂZ«IfStatementÍ$Í„[°BinaryExpressionÍ(ÍfV°MemberExpressionÍ(Í9OªIdentifierÍ(Í4¬avoidOptionsOªIdentifierÍ5Í9¤typeÂÂ£===V°MemberExpressionÍ>ÍfV°MemberExpressionÍ>ÍROªIdentifierÍ>ÍD¦windowOªIdentifierÍEÍR­AvoidAreaTypeÂÂOªIdentifierÍSÍf³TYPE_SYSTEM_GESTUREÂÂQ®BlockStatementÍhÍâ‘T³ExpressionStatementÍ˜ÍÓU´AssignmentExpressionÍ˜ÍÒ¡=V°MemberExpressionÍ˜Í¾V°MemberExpressionÍ˜Í«W®ThisExpressionÍ˜ÍœOªIdentifierÍÍ«®mainWindowInfoÂÂOªIdentifierÍ¬Í¾²AvoidSystemGestureÂÂV°MemberExpressionÍÁÍÒOªIdentifierÍÁÍÍ¬avoidOptionsOªIdentifierÍÎÍÒ¤areaÂÂZ«IfStatementÍõÍ„[°BinaryExpressionÍùÍ1V°MemberExpressionÍùÍ
+OªIdentifierÍùÍ¬avoidOptionsOªIdentifierÍÍ
+¤typeÂÂ£===V°MemberExpressionÍÍ1V°MemberExpressionÍÍ#OªIdentifierÍÍ¦windowOªIdentifierÍÍ#­AvoidAreaTypeÂÂOªIdentifierÍ$Í1­TYPE_KEYBOARDÂÂQ®BlockStatementÍ3Í¦‘T³ExpressionStatementÍaÍ—U´AssignmentExpressionÍaÍ–¡=V°MemberExpressionÍaÍ‚V°MemberExpressionÍaÍtW®ThisExpressionÍaÍeOªIdentifierÍfÍt®mainWindowInfoÂÂOªIdentifierÍuÍ‚­AvoidKeyboardÂÂV°MemberExpressionÍ…Í–OªIdentifierÍ…Í‘¬avoidOptionsOªIdentifierÍ’Í–¤areaÂÂZ«IfStatementÍ¹Í„[°BinaryExpressionÍ½ÍV°MemberExpressionÍ½ÍÎOªIdentifierÍ½ÍÉ¬avoidOptionsOªIdentifierÍÊÍÎ¤typeÂÂ£===V°MemberExpressionÍÓÍV°MemberExpressionÍÓÍçOªIdentifierÍÓÍÙ¦windowOªIdentifierÍÚÍç­AvoidAreaTypeÂÂOªIdentifierÍèÍ¹TYPE_NAVIGATION_INDICATORÂÂQ®BlockStatementÍÍ„‘T³ExpressionStatementÍ4ÍuU´AssignmentExpressionÍ4Ít¡=V°MemberExpressionÍ4Í`V°MemberExpressionÍ4ÍGW®ThisExpressionÍ4Í8OªIdentifierÍ9ÍG®mainWindowInfoÂÂOªIdentifierÍHÍ`¸AvoidNavigationIndicatorÂÂV°MemberExpressionÍcÍtOªIdentifierÍcÍo¬avoidOptionsOªIdentifierÍpÍt¤areaÂÂÀT³ExpressionStatementÍšÍ·U´AssignmentExpressionÍšÍ¶¡=V°MemberExpressionÍšÍ©W®ThisExpressionÍšÍOªIdentifierÍŸÍ©ªmainWindowÂÂOªIdentifierÍ¬Í¶ªmainWindowR°MethodDefinitionÍ%ÍæÂÂOªIdentifierÍ%Í5°setImmersiveType¦methodS²FunctionExpressionÍ5ÍæÀÂÂÂ‘OªIdentifierÍ6Í:¤typeQ®BlockStatementÍ<Íæ‘Ôr\–¤type¥start£end¥block§handler©finalizer¬TryStatementÍGÍßQ®BlockStatementÍKÍ$’Z«IfStatementÍZÍÆ[°BinaryExpressionÍ^Í{OªIdentifierÍ^Íb¤type£===V°MemberExpressionÍgÍ{OªIdentifierÍgÍt­ImmersiveTypeOªIdentifierÍuÍ{¦NORMALÂÂQ®BlockStatementÍ}ÍR”T³ExpressionStatementÍ°Í0Y®CallExpressionÍ°Í/V°MemberExpressionÍ°ÍY®CallExpressionÍ°ÍsV°MemberExpressionÍ°ÍûY®CallExpressionÍ°ÍàV°MemberExpressionÍ°ÍÙV°MemberExpressionÍ°Í¿W®ThisExpressionÍ°Í´OªIdentifierÍµÍ¿ªmainWindowÂÂOªIdentifierÍÀÍÙ¹setWindowLayoutFullScreenÂÂ‘Ôr]•¤type¥start£end¥value£raw§LiteralÍÚÍßÂ¥falseÂOªIdentifierÍ÷Íû¤thenÂÂ‘S·ArrowFunctionExpressionÍüÍrÀÂÂÂQ®BlockStatementÍÍr‘T³ExpressionStatementÍÍ_Y®CallExpressionÍÍ^V°MemberExpressionÍÍ#OªIdentifierÍÍ¥hilogOªIdentifierÍÍ#¤infoÂÂ“]§LiteralÍ$Í* ¦0x0000]§LiteralÍ,Í5§testLog©'testLog'Ôr^•¤type¥start£end«expressions¦quasis¯TemplateLiteralÍ7Í]‘Ôr_•¤type¥start£end¥value¤tail¯TemplateElementÍ8Í\Ôr`’£raw¦cookedÙ$Succeeded in setting immersive mode.Ù$Succeeded in setting immersive mode.ÃÂÂOªIdentifierÍŠÍ¥catchÂÂ‘S·ArrowFunctionExpressionÍÍ.ÀÂÂÂ‘OªIdentifierÍ‘Í”£errQ®BlockStatementÍ™Í.‘T³ExpressionStatementÍ°ÍY®CallExpressionÍ°ÍV°MemberExpressionÍ°Í»OªIdentifierÍ°Íµ¥hilogOªIdentifierÍ¶Í»¥errorÂÂ“]§LiteralÍ¼ÍÂ ¦0x0000]§LiteralÍÄÍÍ§testLog©'testLog'^¯TemplateLiteralÍÏÍ’V°MemberExpressionÍöÍşOªIdentifierÍöÍù£errOªIdentifierÍúÍş¤codeÂÂV°MemberExpressionÍÍOªIdentifierÍÍ£errOªIdentifierÍÍ§messageÂÂ“_¯TemplateElementÍĞÍô`Ù$Failed to set immersive mode. Code: Ù$Failed to set immersive mode. Code: Â_¯TemplateElementÍÿÍ
+`«, message: «, message: Â_¯TemplateElementÍÍ`  ÃÂÂT³ExpressionStatementÍeÍ„Y®CallExpressionÍeÍƒV°MemberExpressionÍeÍ}W®ThisExpressionÍeÍiOªIdentifierÍjÍ}³setSystemBarEnabledÂÂ‘]§LiteralÍ~Í‚Ã¤trueÂT³ExpressionStatementÍÛÍY®CallExpressionÍÛÍV°MemberExpressionÍÛÍ V°MemberExpressionÍÛÍêW®ThisExpressionÍÛÍßOªIdentifierÍàÍêªmainWindowÂÂOªIdentifierÍëÍ µsetWindowDecorVisibleÂÂ‘]§LiteralÍÍÃ¤trueÂT³ExpressionStatementÍ4ÍCY®CallExpressionÍ4ÍBV°MemberExpressionÍ4Í@W®ThisExpressionÍ4Í8OªIdentifierÍ9Í@§recoverÂÂÂZ«IfStatementÍeÍÆ[°BinaryExpressionÍiÍ‰OªIdentifierÍiÍm¤type£===V°MemberExpressionÍrÍ‰OªIdentifierÍrÍ­ImmersiveTypeOªIdentifierÍ€Í‰©IMMERSIVEÂÂQ®BlockStatementÍ‹Í0”T³ExpressionStatementÍ¿Í>Y®CallExpressionÍ¿Í=V°MemberExpressionÍ¿ÍY®CallExpressionÍ¿ÍV°MemberExpressionÍ¿Í	Y®CallExpressionÍ¿ÍîV°MemberExpressionÍ¿ÍèV°MemberExpressionÍ¿ÍÎW®ThisExpressionÍ¿ÍÃOªIdentifierÍÄÍÎªmainWindowÂÂOªIdentifierÍÏÍè¹setWindowLayoutFullScreenÂÂ‘]§LiteralÍéÍíÃ¤trueÂOªIdentifierÍÍ	¤thenÂÂ‘S·ArrowFunctionExpressionÍ
+Í€ÀÂÂÂQ®BlockStatementÍÍ€‘T³ExpressionStatementÍ'ÍmY®CallExpressionÍ'ÍlV°MemberExpressionÍ'Í1OªIdentifierÍ'Í,¥hilogOªIdentifierÍ-Í1¤infoÂÂ“]§LiteralÍ2Í8 ¦0x0000]§LiteralÍ:ÍC§testLog©'testLog'^¯TemplateLiteralÍEÍk‘_¯TemplateElementÍFÍj`Ù$Succeeded in setting immersive mode.Ù$Succeeded in setting immersive mode.ÃÂÂOªIdentifierÍ˜Í¥catchÂÂ‘S·ArrowFunctionExpressionÍÍ<ÀÂÂÂ‘OªIdentifierÍŸÍ¢£errQ®BlockStatementÍ§Í<‘T³ExpressionStatementÍ¾Í)Y®CallExpressionÍ¾Í(V°MemberExpressionÍ¾ÍÉOªIdentifierÍ¾ÍÃ¥hilogOªIdentifierÍÄÍÉ¥errorÂÂ“]§LiteralÍÊÍĞ ¦0x0000]§LiteralÍÒÍÛ§testLog©'testLog'^¯TemplateLiteralÍİÍ'’V°MemberExpressionÍÍOªIdentifierÍÍ£errOªIdentifierÍÍ¤codeÂÂV°MemberExpressionÍÍ%OªIdentifierÍÍ£errOªIdentifierÍÍ%§messageÂÂ“_¯TemplateElementÍŞÍ`Ù$Failed to set immersive mode. Code: Ù$Failed to set immersive mode. Code: Â_¯TemplateElementÍÍ`«, message: «, message: Â_¯TemplateElementÍ&Í&`  ÃÂÂT³ExpressionStatementÍlÍ‹Y®CallExpressionÍlÍŠV°MemberExpressionÍlÍ„W®ThisExpressionÍlÍpOªIdentifierÍqÍ„³setSystemBarEnabledÂÂ‘]§LiteralÍ…Í‰Ã¤trueÂT³ExpressionStatementÍ¸ÍåY®CallExpressionÍ¸ÍäV°MemberExpressionÍ¸ÍİV°MemberExpressionÍ¸ÍÇW®ThisExpressionÍ¸Í¼OªIdentifierÍ½ÍÇªmainWindowÂÂOªIdentifierÍÈÍİµsetWindowDecorVisibleÂÂ‘]§LiteralÍŞÍãÂ¥falseÂT³ExpressionStatementÍÍ!Y®CallExpressionÍÍ V°MemberExpressionÍÍW®ThisExpressionÍÍOªIdentifierÍÍ§recoverÂÂÂZ«IfStatementÍCÍÆ[°BinaryExpressionÍGÍrOªIdentifierÍGÍK¤type£===V°MemberExpressionÍPÍrOªIdentifierÍPÍ]­ImmersiveTypeOªIdentifierÍ^Ír´FULLSCREEN_IMMERSIVEÂÂQ®BlockStatementÍtÍÆ”T³ExpressionStatementÍªÍ)Y®CallExpressionÍªÍ(V°MemberExpressionÍªÍˆY®CallExpressionÍªÍlV°MemberExpressionÍªÍôY®CallExpressionÍªÍÙV°MemberExpressionÍªÍÓV°MemberExpressionÍªÍ¹W®ThisExpressionÍªÍ®OªIdentifierÍ¯Í¹ªmainWindowÂÂOªIdentifierÍºÍÓ¹setWindowLayoutFullScreenÂÂ‘]§LiteralÍÔÍØÃ¤trueÂOªIdentifierÍğÍô¤thenÂÂ‘S·ArrowFunctionExpressionÍõÍkÀÂÂÂQ®BlockStatementÍûÍk‘T³ExpressionStatementÍÍXY®CallExpressionÍÍWV°MemberExpressionÍÍOªIdentifierÍÍ¥hilogOªIdentifierÍÍ¤infoÂÂ“]§LiteralÍÍ# ¦0x0000]§LiteralÍ%Í.§testLog©'testLog'^¯TemplateLiteralÍ0ÍV‘_¯TemplateElementÍ1ÍU`Ù$Succeeded in setting immersive mode.Ù$Succeeded in setting immersive mode.ÃÂÂOªIdentifierÍƒÍˆ¥catchÂÂ‘S·ArrowFunctionExpressionÍ‰Í'ÀÂÂÂ‘OªIdentifierÍŠÍ£errQ®BlockStatementÍ’Í'‘T³ExpressionStatementÍ©ÍY®CallExpressionÍ©ÍV°MemberExpressionÍ©Í´OªIdentifierÍ©Í®¥hilogOªIdentifierÍ¯Í´¥errorÂÂ“]§LiteralÍµÍ» ¦0x0000]§LiteralÍ½ÍÆ§testLog©'testLog'^¯TemplateLiteralÍÈÍ’V°MemberExpressionÍïÍ÷OªIdentifierÍïÍò£errOªIdentifierÍóÍ÷¤codeÂÂV°MemberExpressionÍÍOªIdentifierÍÍ£errOªIdentifierÍ	Í§messageÂÂ“_¯TemplateElementÍÉÍí`Ù$Failed to set immersive mode. Code: Ù$Failed to set immersive mode. Code: Â_¯TemplateElementÍøÍ`«, message: «, message: Â_¯TemplateElementÍÍ`  ÃÂÂZ«IfStatementÍoÍ[±LogicalExpressionÍsÍc[°BinaryExpressionÍsÍ¹Y®CallExpressionÍsÍ”V°MemberExpressionÍsÍ’V°MemberExpressionÍsÍ‚W®ThisExpressionÍsÍwOªIdentifierÍxÍ‚ªmainWindowÂÂOªIdentifierÍƒÍ’¯getWindowStatusÂÂÂ£===V°MemberExpressionÍ™Í¹V°MemberExpressionÍ™Í°OªIdentifierÍ™ÍŸ¦windowOªIdentifierÍ Í°°WindowStatusTypeÂÂOªIdentifierÍ±Í¹¨MAXIMIZEÂÂ¢||[±LogicalExpressionÍÓÍb[°BinaryExpressionÍÓÍY®CallExpressionÍÓÍôV°MemberExpressionÍÓÍòV°MemberExpressionÍÓÍâW®ThisExpressionÍÓÍ×OªIdentifierÍØÍâªmainWindowÂÂOªIdentifierÍãÍò¯getWindowStatusÂÂÂ£===V°MemberExpressionÍùÍV°MemberExpressionÍùÍOªIdentifierÍùÍÿ¦windowOªIdentifierÍ Í°WindowStatusTypeÂÂOªIdentifierÍÍ¨FLOATINGÂÂ¢&&[°BinaryExpressionÍ6ÍbY®CallExpressionÍ6Í\V°MemberExpressionÍ6ÍZV°MemberExpressionÍ6ÍEW®ThisExpressionÍ6Í:OªIdentifierÍ;ÍEªmainWindowÂÂOªIdentifierÍFÍZ´getWindowDecorHeightÂÂÂ£!==]§LiteralÍaÍb ¡0Q®BlockStatementÍeÍ‘T³ExpressionStatementÍ|ÍşY®CallExpressionÍ|ÍıV°MemberExpressionÍ|ÍTY®CallExpressionÍ|Í4V°MemberExpressionÍ|ÍµY®CallExpressionÍ|Í–V°MemberExpressionÍ|Í”V°MemberExpressionÍ|Í‹W®ThisExpressionÍ|Í€OªIdentifierÍÍ‹ªmainWindowÂÂOªIdentifierÍŒÍ”¨maximizeÂÂÂOªIdentifierÍ±Íµ¤thenÂÂ‘S·ArrowFunctionExpressionÍ¶Í3ÀÂÂÂQ®BlockStatementÍ¼Í3‘T³ExpressionStatementÍ×ÍY®CallExpressionÍ×ÍV°MemberExpressionÍ×ÍáOªIdentifierÍ×ÍÜ¥hilogOªIdentifierÍİÍá¤infoÂÂ“]§LiteralÍâÍè ¦0x0000]§LiteralÍêÍó§testLog©'testLog'^¯TemplateLiteralÍõÍ‘_¯TemplateElementÍöÍ`Ù#Succeeded in maximizing the window.Ù#Succeeded in maximizing the window.ÃÂÂOªIdentifierÍOÍT¥catchÂÂ‘S·ArrowFunctionExpressionÍUÍüÀÂÂÂ‘OªIdentifierÍVÍY£errQ®BlockStatementÍ^Íü‘T³ExpressionStatementÍyÍåY®CallExpressionÍyÍäV°MemberExpressionÍyÍ„OªIdentifierÍyÍ~¥hilogOªIdentifierÍÍ„¥errorÂÂ“]§LiteralÍ…Í‹ ¦0x0000]§LiteralÍÍ–§testLog©'testLog'^¯TemplateLiteralÍ˜Íã’V°MemberExpressionÍÀÍÈOªIdentifierÍÀÍÃ£errOªIdentifierÍÄÍÈ¤codeÂÂV°MemberExpressionÍÖÍáOªIdentifierÍÖÍÙ£errOªIdentifierÍÚÍá§messageÂÂ“_¯TemplateElementÍ™Í¾`Ù%Failed to maximize the window. Code: Ù%Failed to maximize the window. Code: Â_¯TemplateElementÍÉÍÔ`«, message: «, message: Â_¯TemplateElementÍâÍâ`  ÃÂÂÀT³ExpressionStatementÍ=Í]Y®CallExpressionÍ=Í\V°MemberExpressionÍ=ÍUW®ThisExpressionÍ=ÍAOªIdentifierÍBÍU³setSystemBarEnabledÂÂ‘]§LiteralÍVÍ[Â¥falseÂT³ExpressionStatementÍŠÍ·Y®CallExpressionÍŠÍ¶V°MemberExpressionÍŠÍ¯V°MemberExpressionÍŠÍ™W®ThisExpressionÍŠÍOªIdentifierÍÍ™ªmainWindowÂÂOªIdentifierÍšÍ¯µsetWindowDecorVisibleÂÂ‘]§LiteralÍ°ÍµÂ¥falseÂÀT³ExpressionStatementÍòÍU´AssignmentExpressionÍòÍ¡=V°MemberExpressionÍòÍV°MemberExpressionÍòÍW®ThisExpressionÍòÍöOªIdentifierÍ÷Í®mainWindowInfoÂÂOªIdentifierÍÍ«isImmersiveÂÂOªIdentifierÍÍ¤typeÔra•¤type¥start£end¥param¤body«CatchClauseÍ.ÍßOªIdentifierÍ5Í:¥errorQ®BlockStatementÍ<Íß’M³VariableDeclarationÍKÍ[‘N²VariableDeclaratorÍOÍZOªIdentifierÍOÍR£errOªIdentifierÍUÍZ¥error£letT³ExpressionStatementÍiÍÔY®CallExpressionÍiÍÓV°MemberExpressionÍiÍtOªIdentifierÍiÍn¥hilogOªIdentifierÍoÍt¥errorÂÂ“]§LiteralÍuÍ{ ¦0x0000]§LiteralÍ}Í†§TestLog©'TestLog'^¯TemplateLiteralÍˆÍÒ’V°MemberExpressionÍ¯Í·OªIdentifierÍ¯Í²£errOªIdentifierÍ³Í·¤codeÂÂV°MemberExpressionÍÅÍĞOªIdentifierÍÅÍÈ£errOªIdentifierÍÉÍĞ§messageÂÂ“_¯TemplateElementÍ‰Í­`Ù$Failed to set immersive type. Code: Ù$Failed to set immersive type. Code: Â_¯TemplateElementÍ¸ÍÃ`«, message: «, message: Â_¯TemplateElementÍÑÍÑ`  ÃÂÀR°MethodDefinitionÍ3Í YÂÂOªIdentifierÍ3Í?¬setUIContext¦methodS²FunctionExpressionÍ?Í YÀÂÂÂQ®BlockStatementÍBÍ Y‘\¬TryStatementÍMÍ RQ®BlockStatementÍQÍ›‘T³ExpressionStatementÍ`ÍU´AssignmentExpressionÍ`Í¡=V°MemberExpressionÍ`ÍnW®ThisExpressionÍ`ÍdOªIdentifierÍeÍn©uiContextÂÂY®CallExpressionÍqÍV°MemberExpressionÍqÍV°MemberExpressionÍqÍ€W®ThisExpressionÍqÍuOªIdentifierÍvÍ€ªmainWindowÂÂOªIdentifierÍÍ¬getUIContextÂÂÂa«CatchClauseÍ¥Í ROªIdentifierÍ¬Í±¥errorQ®BlockStatementÍ³Í R’M³VariableDeclarationÍÂÍÒ‘N²VariableDeclaratorÍÆÍÑOªIdentifierÍÆÍÉ£errOªIdentifierÍÌÍÑ¥error£letT³ExpressionStatementÍàÍ GY®CallExpressionÍàÍ FV°MemberExpressionÍàÍëOªIdentifierÍàÍå¥hilogOªIdentifierÍæÍë¥errorÂÂ“]§LiteralÍìÍò ¦0x0000]§LiteralÍôÍı§TestLog©'TestLog'^¯TemplateLiteralÍÿÍ E’V°MemberExpressionÍ "Í *OªIdentifierÍ "Í %£errOªIdentifierÍ &Í *¤codeÂÂV°MemberExpressionÍ 8Í COªIdentifierÍ 8Í ;£errOªIdentifierÍ <Í C§messageÂÂ“_¯TemplateElementÍ  Í  `Ù Failed to set UI context. Code: Ù Failed to set UI context. Code: Â_¯TemplateElementÍ +Í 6`«, message: «, message: Â_¯TemplateElementÍ DÍ D`  ÃÂÀR°MethodDefinitionÍ ĞÍ$LÂÂOªIdentifierÍ ĞÍ ã³setSystemBarEnabled¦methodS²FunctionExpressionÍ ãÍ$LÀÂÂÂ‘OªIdentifierÍ äÍ í©isVisibleQ®BlockStatementÍ ïÍ$L’T³ExpressionStatementÍ!Í"‰Y®CallExpressionÍ!Í"ˆV°MemberExpressionÍ!Í!ìY®CallExpressionÍ!Í!ØV°MemberExpressionÍ!Í!dY®CallExpressionÍ!Í!QV°MemberExpressionÍ!Í!<V°MemberExpressionÍ!Í! W®ThisExpressionÍ!Í!OªIdentifierÍ!Í! ªmainWindowÂÂOªIdentifierÍ!!Í!<»setSpecificSystemBarEnabledÂÂ’]§LiteralÍ!=Í!E¦status¨'status'OªIdentifierÍ!GÍ!P©isVisibleÂOªIdentifierÍ!`Í!d¤thenÂÂ‘S·ArrowFunctionExpressionÍ!eÍ!×ÀÂÂÂQ®BlockStatementÍ!kÍ!×‘T³ExpressionStatementÍ!zÍ!ÌY®CallExpressionÍ!zÍ!ËV°MemberExpressionÍ!zÍ!„OªIdentifierÍ!zÍ!¥hilogOªIdentifierÍ!€Í!„¤infoÂÂ“]§LiteralÍ!…Í!‹ ¦0x0000]§LiteralÍ!Í!–§testLog©'testLog'^¯TemplateLiteralÍ!˜Í!Ê‘_¯TemplateElementÍ!™Í!É`Ù0Succeeded in setting status bar to be invisible.Ù0Succeeded in setting status bar to be invisible.ÃÂÂOªIdentifierÍ!çÍ!ì¥catchÂÂ‘S·ArrowFunctionExpressionÍ!íÍ"‡ÀÂÂÂ‘OªIdentifierÍ!îÍ!ñ£errQ®BlockStatementÍ!öÍ"‡‘T³ExpressionStatementÍ"Í"|Y®CallExpressionÍ"Í"{V°MemberExpressionÍ"Í"OªIdentifierÍ"Í"
+¥hilogOªIdentifierÍ"Í"¥errorÂÂ“]§LiteralÍ"Í" ¦0x0000]§LiteralÍ"Í""§testLog©'testLog'^¯TemplateLiteralÍ"$Í"z’V°MemberExpressionÍ"WÍ"_OªIdentifierÍ"WÍ"Z£errOªIdentifierÍ"[Í"_¤codeÂÂV°MemberExpressionÍ"mÍ"xOªIdentifierÍ"mÍ"p£errOªIdentifierÍ"qÍ"x§messageÂÂ“_¯TemplateElementÍ"%Í"U`Ù0Failed to set status bar to be invisible. Code: Ù0Failed to set status bar to be invisible. Code: Â_¯TemplateElementÍ"`Í"k`«, message: «, message: Â_¯TemplateElementÍ"yÍ"y`  ÃÂÂT³ExpressionStatementÍ"¬Í$EY®CallExpressionÍ"¬Í$DV°MemberExpressionÍ"¬Í#Y®CallExpressionÍ"¬Í#ŠV°MemberExpressionÍ"¬Í#Y®CallExpressionÍ"¬Í"ùV°MemberExpressionÍ"¬Í"×V°MemberExpressionÍ"¬Í"»W®ThisExpressionÍ"¬Í"°OªIdentifierÍ"±Í"»ªmainWindowÂÂOªIdentifierÍ"¼Í"×»setSpecificSystemBarEnabledÂÂ’]§LiteralÍ"ØÍ"í³navigationIndicatorµ'navigationIndicator'OªIdentifierÍ"ïÍ"ø©isVisibleÂOªIdentifierÍ#Í#¤thenÂÂ‘S·ArrowFunctionExpressionÍ#Í#‰ÀÂÂÂQ®BlockStatementÍ#Í#‰‘T³ExpressionStatementÍ#"Í#~Y®CallExpressionÍ#"Í#}V°MemberExpressionÍ#"Í#,OªIdentifierÍ#"Í#'¥hilogOªIdentifierÍ#(Í#,¤infoÂÂ“]§LiteralÍ#-Í#3 ¦0x0000]§LiteralÍ#5Í#>§testLog©'testLog'^¯TemplateLiteralÍ#@Í#|‘_¯TemplateElementÍ#AÍ#{`Ù:Succeeded in setting navigation indicator to be invisible.Ù:Succeeded in setting navigation indicator to be invisible.ÃÂÂOªIdentifierÍ#™Í#¥catchÂÂ‘S·ArrowFunctionExpressionÍ#ŸÍ$CÀÂÂÂ‘OªIdentifierÍ# Í#££errQ®BlockStatementÍ#¨Í$C‘T³ExpressionStatementÍ#·Í$8Y®CallExpressionÍ#·Í$7V°MemberExpressionÍ#·Í#ÂOªIdentifierÍ#·Í#¼¥hilogOªIdentifierÍ#½Í#Â¥errorÂÂ“]§LiteralÍ#ÃÍ#É ¦0x0000]§LiteralÍ#ËÍ#Ô§testLog©'testLog'^¯TemplateLiteralÍ#ÖÍ$6’V°MemberExpressionÍ$Í$OªIdentifierÍ$Í$£errOªIdentifierÍ$Í$¤codeÂÂV°MemberExpressionÍ$)Í$4OªIdentifierÍ$)Í$,£errOªIdentifierÍ$-Í$4§messageÂÂ“_¯TemplateElementÍ#×Í$`Ù:Failed to set navigation indicator to be invisible. Code: Ù:Failed to set navigation indicator to be invisible. Code: Â_¯TemplateElementÍ$Í$'`«, message: «, message: Â_¯TemplateElementÍ$5Í$5`  ÃÂÂR°MethodDefinitionÍ$”Í'“ÂÂOªIdentifierÍ$”Í$›§recover¦methodS²FunctionExpressionÍ$›Í'“ÀÂÂÂQ®BlockStatementÍ$Í'“‘\¬TryStatementÍ$©Í'ŒQ®BlockStatementÍ$­Í&Ü‘Z«IfStatementÍ$ÙÍ&Ñ[°BinaryExpressionÍ$İÍ%&Y®CallExpressionÍ$İÍ$şV°MemberExpressionÍ$İÍ$üV°MemberExpressionÍ$İÍ$ìW®ThisExpressionÍ$İÍ$áOªIdentifierÍ$âÍ$ìªmainWindowÂÂOªIdentifierÍ$íÍ$ü¯getWindowStatusÂÂÂ£===V°MemberExpressionÍ%Í%&V°MemberExpressionÍ%Í%OªIdentifierÍ%Í%	¦windowOªIdentifierÍ%
+Í%°WindowStatusTypeÂÂOªIdentifierÍ%Í%&«FULL_SCREENÂÂQ®BlockStatementÍ%(Í&Ñ‘T³ExpressionStatementÍ%ZÍ&ÂY®CallExpressionÍ%ZÍ&ÁV°MemberExpressionÍ%ZÍ&!Y®CallExpressionÍ%ZÍ&V°MemberExpressionÍ%ZÍ%Y®CallExpressionÍ%ZÍ%sV°MemberExpressionÍ%ZÍ%qV°MemberExpressionÍ%ZÍ%iW®ThisExpressionÍ%ZÍ%^OªIdentifierÍ%_Í%iªmainWindowÂÂOªIdentifierÍ%jÍ%q§recoverÂÂÂOªIdentifierÍ%ŠÍ%¤thenÂÂ‘S·ArrowFunctionExpressionÍ%Í&ÀÂÂÂQ®BlockStatementÍ%•Í&‘T³ExpressionStatementÍ%¬Í%ñY®CallExpressionÍ%¬Í%ğV°MemberExpressionÍ%¬Í%¶OªIdentifierÍ%¬Í%±¥hilogOªIdentifierÍ%²Í%¶¤infoÂÂ“]§LiteralÍ%·Í%½ ¦0x0000]§LiteralÍ%¿Í%È§testLog©'testLog'^¯TemplateLiteralÍ%ÊÍ%ï‘_¯TemplateElementÍ%ËÍ%î`Ù#Succeeded in revocering the window.Ù#Succeeded in revocering the window.ÃÂÂOªIdentifierÍ&Í&!¥catchÂÂ‘S·ArrowFunctionExpressionÍ&"Í&ÀÀÂÂÂ‘OªIdentifierÍ&#Í&&£errQ®BlockStatementÍ&+Í&À‘T³ExpressionStatementÍ&BÍ&­Y®CallExpressionÍ&BÍ&¬V°MemberExpressionÍ&BÍ&MOªIdentifierÍ&BÍ&G¥hilogOªIdentifierÍ&HÍ&M¥errorÂÂ“]§LiteralÍ&NÍ&T ¦0x0000]§LiteralÍ&VÍ&_§testLog©'testLog'^¯TemplateLiteralÍ&aÍ&«’V°MemberExpressionÍ&ˆÍ&OªIdentifierÍ&ˆÍ&‹£errOªIdentifierÍ&ŒÍ&¤codeÂÂV°MemberExpressionÍ&Í&©OªIdentifierÍ&Í&¡£errOªIdentifierÍ&¢Í&©§messageÂÂ“_¯TemplateElementÍ&bÍ&†`Ù$Failed to revocer the window. Code: Ù$Failed to revocer the window. Code: Â_¯TemplateElementÍ&‘Í&œ`«, message: «, message: Â_¯TemplateElementÍ&ªÍ&ª`  ÃÂÂÀa«CatchClauseÍ&æÍ'ŒOªIdentifierÍ&íÍ&ò¥errorQ®BlockStatementÍ&ôÍ'Œ’M³VariableDeclarationÍ'Í'‘N²VariableDeclaratorÍ'Í'OªIdentifierÍ'Í'
+£errOªIdentifierÍ'Í'¥error£letT³ExpressionStatementÍ'!Í'Y®CallExpressionÍ'!Í'€V°MemberExpressionÍ'!Í',OªIdentifierÍ'!Í'&¥hilogOªIdentifierÍ''Í',¥errorÂÂ“]§LiteralÍ'-Í'3 ¦0x0000]§LiteralÍ'5Í'>§TestLog©'TestLog'^¯TemplateLiteralÍ'@Í'’V°MemberExpressionÍ'\Í'dOªIdentifierÍ'\Í'_£errOªIdentifierÍ'`Í'd¤codeÂÂV°MemberExpressionÍ'rÍ'}OªIdentifierÍ'rÍ'u£errOªIdentifierÍ'vÍ'}§messageÂÂ“_¯TemplateElementÍ'AÍ'Z`¹Failed to recover. Code: ¹Failed to recover. Code: Â_¯TemplateElementÍ'eÍ'p`«, message: «, message: Â_¯TemplateElementÍ'~Í'~`  ÃÂÀR°MethodDefinitionÍ'÷Í)àÂÂOªIdentifierÍ'÷Í(´setWindowOrientation¦methodS²FunctionExpressionÍ(Í)àÀÂÂÂ‘OªIdentifierÍ(Í(«orientationQ®BlockStatementÍ(Í)à‘T³ExpressionStatementÍ($Í)ÙY®CallExpressionÍ($Í)ØV°MemberExpressionÍ($Í)DY®CallExpressionÍ($Í)0V°MemberExpressionÍ($Í(kY®CallExpressionÍ($Í(XV°MemberExpressionÍ($Í(KV°MemberExpressionÍ($Í(3W®ThisExpressionÍ($Í((OªIdentifierÍ()Í(3ªmainWindowÂÂOªIdentifierÍ(4Í(K·setPreferredOrientationÂÂ‘OªIdentifierÍ(LÍ(W«orientationÂOªIdentifierÍ(gÍ(k¤thenÂÂ‘S·ArrowFunctionExpressionÍ(lÍ)/ÀÂÂÂQ®BlockStatementÍ(rÍ)/’T³ExpressionStatementÍ(Í(ËY®CallExpressionÍ(Í(ÊV°MemberExpressionÍ(Í(‹OªIdentifierÍ(Í(†¥hilogOªIdentifierÍ(‡Í(‹¤infoÂÂ“]§LiteralÍ(ŒÍ(’ ¦0x0000]§LiteralÍ(”Í(§testLog©'testLog'^¯TemplateLiteralÍ(ŸÍ(É‘_¯TemplateElementÍ( Í(È`Ù(Succeeded in setting window orientation.Ù(Succeeded in setting window orientation.ÃÂT³ExpressionStatementÍ(öÍ)$U´AssignmentExpressionÍ(öÍ)#¡=V°MemberExpressionÍ(öÍ)V°MemberExpressionÍ(öÍ)	W®ThisExpressionÍ(öÍ(úOªIdentifierÍ(ûÍ)	®mainWindowInfoÂÂOªIdentifierÍ)
+Í)«orientationÂÂOªIdentifierÍ)Í)#«orientationÂOªIdentifierÍ)?Í)D¥catchÂÂ‘S·ArrowFunctionExpressionÍ)EÍ)×ÀÂÂÂ‘OªIdentifierÍ)FÍ)I£errQ®BlockStatementÍ)NÍ)×‘T³ExpressionStatementÍ)]Í)ÌY®CallExpressionÍ)]Í)ËV°MemberExpressionÍ)]Í)hOªIdentifierÍ)]Í)b¥hilogOªIdentifierÍ)cÍ)h¥errorÂÂ“]§LiteralÍ)iÍ)o ¦0x0000]§LiteralÍ)qÍ)z§testLog©'testLog'^¯TemplateLiteralÍ)|Í)Ê’V°MemberExpressionÍ)§Í)¯OªIdentifierÍ)§Í)ª£errOªIdentifierÍ)«Í)¯¤codeÂÂV°MemberExpressionÍ)½Í)ÈOªIdentifierÍ)½Í)À£errOªIdentifierÍ)ÁÍ)È§messageÂÂ“_¯TemplateElementÍ)}Í)¥`Ù(Failed to set window orientation. Code: Ù(Failed to set window orientation. Code: Â_¯TemplateElementÍ)°Í)»`«, message: «, message: Â_¯TemplateElementÍ)ÉÍ)É`  ÃÂÂR°MethodDefinitionÍ*WÍ2yÂÂOªIdentifierÍ*WÍ*g°updateWindowInfo¦methodS²FunctionExpressionÍ*gÍ2yÀÂÂÂQ®BlockStatementÍ*jÍ2y‘\¬TryStatementÍ*uÍ2rQ®BlockStatementÍ*yÍ1·ŸT³ExpressionStatementÍ*¢Í*ëU´AssignmentExpressionÍ*¢Í*ê¡=V°MemberExpressionÍ*¢Í*ÆV°MemberExpressionÍ*¢Í*µW®ThisExpressionÍ*¢Í*¦OªIdentifierÍ*§Í*µ®mainWindowInfoÂÂOªIdentifierÍ*¶Í*Æ°windowStatusTypeÂÂY®CallExpressionÍ*ÉÍ*êV°MemberExpressionÍ*ÉÍ*èV°MemberExpressionÍ*ÉÍ*ØW®ThisExpressionÍ*ÉÍ*ÍOªIdentifierÍ*ÎÍ*ØªmainWindowÂÂOªIdentifierÍ*ÙÍ*è¯getWindowStatusÂÂÂT³ExpressionStatementÍ+Í+WY®CallExpressionÍ+Í+VV°MemberExpressionÍ+Í+'V°MemberExpressionÍ+Í+$W®ThisExpressionÍ+Í+OªIdentifierÍ+Í+$ªmainWindowÂÂOªIdentifierÍ+%Í+'¢onÂÂ’]§LiteralÍ+(Í+<²windowStatusChange´'windowStatusChange'V°MemberExpressionÍ+>Í+UW®ThisExpressionÍ+>Í+BOªIdentifierÍ+CÍ+U²onStatusTypeChangeÂÂÂM³VariableDeclarationÍ+Í+Ä‘N²VariableDeclaratorÍ+…Í+ÃOªIdentifierÍ+…Í+Š¥widthV°MemberExpressionÍ+Í+ÃV°MemberExpressionÍ+Í+½Y®CallExpressionÍ+Í+²V°MemberExpressionÍ+Í+°V°MemberExpressionÍ+Í+œW®ThisExpressionÍ+Í+‘OªIdentifierÍ+’Í+œªmainWindowÂÂOªIdentifierÍ+Í+°³getWindowPropertiesÂÂÂOªIdentifierÍ+³Í+½ªwindowRectÂÂOªIdentifierÍ+¾Í+Ã¥widthÂÂ£letM³VariableDeclarationÍ+ÒÍ,‘N²VariableDeclaratorÍ+ÖÍ,OªIdentifierÍ+ÖÍ+Ü¦heightV°MemberExpressionÍ+ßÍ,V°MemberExpressionÍ+ßÍ,Y®CallExpressionÍ+ßÍ,V°MemberExpressionÍ+ßÍ,V°MemberExpressionÍ+ßÍ+îW®ThisExpressionÍ+ßÍ+ãOªIdentifierÍ+äÍ+îªmainWindowÂÂOªIdentifierÍ+ïÍ,³getWindowPropertiesÂÂÂOªIdentifierÍ,Í,ªwindowRectÂÂOªIdentifierÍ,Í,¦heightÂÂ£letM³VariableDeclarationÍ,%Í,†‘N²VariableDeclaratorÍ,)Í,…OªIdentifierÍ,)Í,3ªwindowSizeÔrb”¤type¥start£endªproperties°ObjectExpressionÍ,6Í,…’Ôrc™¤type¥start£end¦method©shorthand¨computed£key¥value¤kind¨PropertyÍ,IÍ,UÂÂÂOªIdentifierÍ,IÍ,N¥widthOªIdentifierÍ,PÍ,U¥width¤initc¨PropertyÍ,hÍ,vÂÂÂOªIdentifierÍ,hÍ,n¦heightOªIdentifierÍ,pÍ,v¦height¤init£letT³ExpressionStatementÍ,”Í,ÀU´AssignmentExpressionÍ,”Í,¿¡=V°MemberExpressionÍ,”Í,²V°MemberExpressionÍ,”Í,§W®ThisExpressionÍ,”Í,˜OªIdentifierÍ,™Í,§®mainWindowInfoÂÂOªIdentifierÍ,¨Í,²ªwindowSizeÂÂOªIdentifierÍ,µÍ,¿ªwindowSizeT³ExpressionStatementÍ,õÍ-=U´AssignmentExpressionÍ,õÍ-<¡=V°MemberExpressionÍ,õÍ-V°MemberExpressionÍ,õÍ-W®ThisExpressionÍ,õÍ,ùOªIdentifierÍ,úÍ-®mainWindowInfoÂÂOªIdentifierÍ-	Í-§widthBpÂÂY®CallExpressionÍ-Í-<V°MemberExpressionÍ-Í-:V°MemberExpressionÍ-Í-!W®ThisExpressionÍ-Í-OªIdentifierÍ-Í-!©uiContextÂÂOªIdentifierÍ-"Í-:¸getWindowWidthBreakpointÂÂÂT³ExpressionStatementÍ-KÍ-•U´AssignmentExpressionÍ-KÍ-”¡=V°MemberExpressionÍ-KÍ-gV°MemberExpressionÍ-KÍ-^W®ThisExpressionÍ-KÍ-OOªIdentifierÍ-PÍ-^®mainWindowInfoÂÂOªIdentifierÍ-_Í-g¨heightBpÂÂY®CallExpressionÍ-jÍ-”V°MemberExpressionÍ-jÍ-’V°MemberExpressionÍ-jÍ-xW®ThisExpressionÍ-jÍ-nOªIdentifierÍ-oÍ-x©uiContextÂÂOªIdentifierÍ-yÍ-’¹getWindowHeightBreakpointÂÂÂT³ExpressionStatementÍ-ÍÍ.Y®CallExpressionÍ-ÍÍ.V°MemberExpressionÍ-ÍÍ-ßV°MemberExpressionÍ-ÍÍ-ÜW®ThisExpressionÍ-ÍÍ-ÑOªIdentifierÍ-ÒÍ-ÜªmainWindowÂÂOªIdentifierÍ-İÍ-ß¢onÂÂ’]§LiteralÍ-àÍ-ò°windowSizeChange²'windowSizeChange'V°MemberExpressionÍ-ôÍ.W®ThisExpressionÍ-ôÍ-øOªIdentifierÍ-ùÍ.²onWindowSizeChangeÂÂÂT³ExpressionStatementÍ.VÍ.½U´AssignmentExpressionÍ.VÍ.¼¡=V°MemberExpressionÍ.VÍ.uV°MemberExpressionÍ.VÍ.iW®ThisExpressionÍ.VÍ.ZOªIdentifierÍ.[Í.i®mainWindowInfoÂÂOªIdentifierÍ.jÍ.u«AvoidSystemÂÂY®CallExpressionÍ.xÍ.¼V°MemberExpressionÍ.xÍ.šV°MemberExpressionÍ.xÍ.‡W®ThisExpressionÍ.xÍ.|OªIdentifierÍ.}Í.‡ªmainWindowÂÂOªIdentifierÍ.ˆÍ.š²getWindowAvoidAreaÂÂ‘V°MemberExpressionÍ.›Í.»V°MemberExpressionÍ.›Í.¯OªIdentifierÍ.›Í.¡¦windowOªIdentifierÍ.¢Í.¯­AvoidAreaTypeÂÂOªIdentifierÍ.°Í.»«TYPE_SYSTEMÂÂÂT³ExpressionStatementÍ.åÍ/xU´AssignmentExpressionÍ.åÍ/w¡=V°MemberExpressionÍ.åÍ/V°MemberExpressionÍ.åÍ.øW®ThisExpressionÍ.åÍ.éOªIdentifierÍ.êÍ.ø®mainWindowInfoÂÂOªIdentifierÍ.ùÍ/¸AvoidNavigationIndicatorÂÂY®CallExpressionÍ/%Í/wV°MemberExpressionÍ/%Í/GV°MemberExpressionÍ/%Í/4W®ThisExpressionÍ/%Í/)OªIdentifierÍ/*Í/4ªmainWindowÂÂOªIdentifierÍ/5Í/G²getWindowAvoidAreaÂÂ‘V°MemberExpressionÍ/HÍ/vV°MemberExpressionÍ/HÍ/\OªIdentifierÍ/HÍ/N¦windowOªIdentifierÍ/OÍ/\­AvoidAreaTypeÂÂOªIdentifierÍ/]Í/v¹TYPE_NAVIGATION_INDICATORÂÂÂT³ExpressionStatementÍ/ŸÍ0U´AssignmentExpressionÍ/ŸÍ0¡=V°MemberExpressionÍ/ŸÍ/¾V°MemberExpressionÍ/ŸÍ/²W®ThisExpressionÍ/ŸÍ/£OªIdentifierÍ/¤Í/²®mainWindowInfoÂÂOªIdentifierÍ/³Í/¾«AvoidCutoutÂÂY®CallExpressionÍ/ÁÍ0V°MemberExpressionÍ/ÁÍ/ãV°MemberExpressionÍ/ÁÍ/ĞW®ThisExpressionÍ/ÁÍ/ÅOªIdentifierÍ/ÆÍ/ĞªmainWindowÂÂOªIdentifierÍ/ÑÍ/ã²getWindowAvoidAreaÂÂ‘V°MemberExpressionÍ/äÍ0V°MemberExpressionÍ/äÍ/øOªIdentifierÍ/äÍ/ê¦windowOªIdentifierÍ/ëÍ/ø­AvoidAreaTypeÂÂOªIdentifierÍ/ùÍ0«TYPE_CUTOUTÂÂÂT³ExpressionStatementÍ0-Í0´U´AssignmentExpressionÍ0-Í0³¡=V°MemberExpressionÍ0-Í0SV°MemberExpressionÍ0-Í0@W®ThisExpressionÍ0-Í01OªIdentifierÍ02Í0@®mainWindowInfoÂÂOªIdentifierÍ0AÍ0S²AvoidSystemGestureÂÂY®CallExpressionÍ0gÍ0³V°MemberExpressionÍ0gÍ0‰V°MemberExpressionÍ0gÍ0vW®ThisExpressionÍ0gÍ0kOªIdentifierÍ0lÍ0vªmainWindowÂÂOªIdentifierÍ0wÍ0‰²getWindowAvoidAreaÂÂ‘V°MemberExpressionÍ0ŠÍ0²V°MemberExpressionÍ0ŠÍ0OªIdentifierÍ0ŠÍ0¦windowOªIdentifierÍ0‘Í0­AvoidAreaTypeÂÂOªIdentifierÍ0ŸÍ0²³TYPE_SYSTEM_GESTUREÂÂÂT³ExpressionStatementÍ0ÙÍ1DU´AssignmentExpressionÍ0ÙÍ1C¡=V°MemberExpressionÍ0ÙÍ0úV°MemberExpressionÍ0ÙÍ0ìW®ThisExpressionÍ0ÙÍ0İOªIdentifierÍ0ŞÍ0ì®mainWindowInfoÂÂOªIdentifierÍ0íÍ0ú­AvoidKeyboardÂÂY®CallExpressionÍ0ıÍ1CV°MemberExpressionÍ0ıÍ1V°MemberExpressionÍ0ıÍ1W®ThisExpressionÍ0ıÍ1OªIdentifierÍ1Í1ªmainWindowÂÂOªIdentifierÍ1Í1²getWindowAvoidAreaÂÂ‘V°MemberExpressionÍ1 Í1BV°MemberExpressionÍ1 Í14OªIdentifierÍ1 Í1&¦windowOªIdentifierÍ1'Í14­AvoidAreaTypeÂÂOªIdentifierÍ15Í1B­TYPE_KEYBOARDÂÂÂT³ExpressionStatementÍ1nÍ1¬Y®CallExpressionÍ1nÍ1«V°MemberExpressionÍ1nÍ1€V°MemberExpressionÍ1nÍ1}W®ThisExpressionÍ1nÍ1rOªIdentifierÍ1sÍ1}ªmainWindowÂÂOªIdentifierÍ1~Í1€¢onÂÂ’]§LiteralÍ1Í1’¯avoidAreaChange±'avoidAreaChange'V°MemberExpressionÍ1”Í1ªW®ThisExpressionÍ1”Í1˜OªIdentifierÍ1™Í1ª±onAvoidAreaChangeÂÂÂa«CatchClauseÍ1ÁÍ2rOªIdentifierÍ1ÈÍ1Í¥errorQ®BlockStatementÍ1ÏÍ2r’M³VariableDeclarationÍ1ŞÍ1î‘N²VariableDeclaratorÍ1âÍ1íOªIdentifierÍ1âÍ1å£errOªIdentifierÍ1èÍ1í¥error£letT³ExpressionStatementÍ1üÍ2gY®CallExpressionÍ1üÍ2fV°MemberExpressionÍ1üÍ2OªIdentifierÍ1üÍ2¥hilogOªIdentifierÍ2Í2¥errorÂÂ“]§LiteralÍ2Í2 ¦0x0000^¯TemplateLiteralÍ2Í2‘_¯TemplateElementÍ2Í2`§TestLog§TestLogÃ^¯TemplateLiteralÍ2Í2e’V°MemberExpressionÍ2BÍ2JOªIdentifierÍ2BÍ2E£errOªIdentifierÍ2FÍ2J¤codeÂÂV°MemberExpressionÍ2XÍ2cOªIdentifierÍ2XÍ2[£errOªIdentifierÍ2\Í2c§messageÂÂ“_¯TemplateElementÍ2Í2@`Ù$Failed to update window info. Code: Ù$Failed to update window info. Code: Â_¯TemplateElementÍ2KÍ2V`«, message: «, message: Â_¯TemplateElementÍ2dÍ2d`  ÃÂÀR°MethodDefinitionÍ2ÜÍ4¨ÂÂOªIdentifierÍ2ÜÍ2ã§release¦methodS²FunctionExpressionÍ2ãÍ4¨ÀÂÂÂQ®BlockStatementÍ2æÍ4¨‘\¬TryStatementÍ2ñÍ4¡Q®BlockStatementÍ2õÍ3õ“T³ExpressionStatementÍ3Í3IY®CallExpressionÍ3Í3HV°MemberExpressionÍ3Í32V°MemberExpressionÍ3Í3.W®ThisExpressionÍ3Í3#OªIdentifierÍ3$Í3.ªmainWindowÂÂOªIdentifierÍ3/Í32£offÂÂ‘]§LiteralÍ33Í3G²windowStatusChange´'windowStatusChange'ÂT³ExpressionStatementÍ3rÍ3šY®CallExpressionÍ3rÍ3™V°MemberExpressionÍ3rÍ3…V°MemberExpressionÍ3rÍ3W®ThisExpressionÍ3rÍ3vOªIdentifierÍ3wÍ3ªmainWindowÂÂOªIdentifierÍ3‚Í3…£offÂÂ‘]§LiteralÍ3†Í3˜°windowSizeChange²'windowSizeChange'ÂT³ExpressionStatementÍ3ÃÍ3êY®CallExpressionÍ3ÃÍ3éV°MemberExpressionÍ3ÃÍ3ÖV°MemberExpressionÍ3ÃÍ3ÒW®ThisExpressionÍ3ÃÍ3ÇOªIdentifierÍ3ÈÍ3ÒªmainWindowÂÂOªIdentifierÍ3ÓÍ3Ö£offÂÂ‘]§LiteralÍ3×Í3è¯avoidAreaChange±'avoidAreaChange'Âa«CatchClauseÍ3ÿÍ4¡OªIdentifierÍ4Í4¥errorQ®BlockStatementÍ4Í4¡’M³VariableDeclarationÍ4Í4,‘N²VariableDeclaratorÍ4 Í4+OªIdentifierÍ4 Í4#£errOªIdentifierÍ4&Í4+¥error£letT³ExpressionStatementÍ4:Í4–Y®CallExpressionÍ4:Í4•V°MemberExpressionÍ4:Í4EOªIdentifierÍ4:Í4?¥hilogOªIdentifierÍ4@Í4E¥errorÂÂ“]§LiteralÍ4FÍ4L ¦0x0000]§LiteralÍ4NÍ4W§TestLog©'TestLog'^¯TemplateLiteralÍ4YÍ4”’V°MemberExpressionÍ4qÍ4yOªIdentifierÍ4qÍ4t£errOªIdentifierÍ4uÍ4y¤codeÂÂV°MemberExpressionÍ4‡Í4’OªIdentifierÍ4‡Í4Š£errOªIdentifierÍ4‹Í4’§messageÂÂ“_¯TemplateElementÍ4ZÍ4o`µFailed to off. Code: µFailed to off. Code: Â_¯TemplateElementÍ4zÍ4…`«, message: «, message: Â_¯TemplateElementÍ4“Í4“`  ÃÂÀR°MethodDefinitionÍ5KÍ7¨ÂÂOªIdentifierÍ5KÍ5Y®setSplitScreen¦methodS²FunctionExpressionÍ5YÍ7¨ÀÂÂÂ“OªIdentifierÍ5ZÍ5dªbundleNameOªIdentifierÍ5fÍ5q«abilityNameOªIdentifierÍ5sÍ5}ªmoduleNameQ®BlockStatementÍ5Í7¨”M³VariableDeclarationÍ5 Í5Ï‘N²VariableDeclaratorÍ5¤Í5ÎOªIdentifierÍ5¤Í5«§contextT¯ChainExpressionÍ5®Í5ÎY®CallExpressionÍ5®Í5ÎV°MemberExpressionÍ5®Í5ÌV°MemberExpressionÍ5®Í5¼W®ThisExpressionÍ5®Í5²OªIdentifierÍ5³Í5¼©uiContextÂÂOªIdentifierÍ5¾Í5Ì®getHostContextÂÃÂ£letM³VariableDeclarationÍ5÷Í6I‘N²VariableDeclaratorÍ5ûÍ6HOªIdentifierÍ5ûÍ6¦optionb°ObjectExpressionÍ6Í6H‘c¨PropertyÍ6Í6FÂÂÂOªIdentifierÍ6Í6ªwindowModeV°MemberExpressionÍ6Í6FV°MemberExpressionÍ6Í6,OªIdentifierÍ6Í6!¯AbilityConstantOªIdentifierÍ6"Í6,ªWindowModeÂÂOªIdentifierÍ6-Í6F¹WINDOW_MODE_SPLIT_PRIMARYÂÂ¤init£letM³VariableDeclarationÍ6uÍ6Í‘N²VariableDeclaratorÍ6yÍ6ÌOªIdentifierÍ6yÍ6}¤wantb°ObjectExpressionÍ6€Í6Ì“c¨PropertyÍ6‚Í6˜ÂÂÂOªIdentifierÍ6‚Í6ŒªbundleNameOªIdentifierÍ6Í6˜ªbundleName¤initc¨PropertyÍ6šÍ6²ÂÂÂOªIdentifierÍ6šÍ6¥«abilityNameOªIdentifierÍ6§Í6²«abilityName¤initc¨PropertyÍ6´Í6ÊÂÂÂOªIdentifierÍ6´Í6¾ªmoduleNameOªIdentifierÍ6ÀÍ6ÊªmoduleName¤init£letT³ExpressionStatementÍ6íÍ7¡Y®CallExpressionÍ6íÍ7 V°MemberExpressionÍ6íÍ7Y®CallExpressionÍ6íÍ7V°MemberExpressionÍ6íÍ7OªIdentifierÍ6íÍ6ô§contextOªIdentifierÍ6õÍ7¬startAbilityÂÂ’OªIdentifierÍ7Í7¤wantOªIdentifierÍ7Í7¦optionÂOªIdentifierÍ7Í7¥catchÂÂ‘S·ArrowFunctionExpressionÍ7Í7ŸÀÂÂÂ‘OªIdentifierÍ7Í7£errQ®BlockStatementÍ7Í7Ÿ‘T³ExpressionStatementÍ7.Í7”Y®CallExpressionÍ7.Í7“V°MemberExpressionÍ7.Í79OªIdentifierÍ7.Í73¥hilogOªIdentifierÍ74Í79¥errorÂÂ“]§LiteralÍ7:Í7@ ¦0x0000]§LiteralÍ7BÍ7K§TestLog©'TestLog'^¯TemplateLiteralÍ7MÍ7’’V°MemberExpressionÍ7oÍ7wOªIdentifierÍ7oÍ7r£errOªIdentifierÍ7sÍ7w¤codeÂÂV°MemberExpressionÍ7…Í7OªIdentifierÍ7…Í7ˆ£errOªIdentifierÍ7‰Í7§messageÂÂ“_¯TemplateElementÍ7NÍ7m`¿Failed to start ability. Code: ¿Failed to start ability. Code: Â_¯TemplateElementÍ7xÍ7ƒ`«, message: «, message: Â_¯TemplateElementÍ7‘Í7‘`  ÃÂÂR°MethodDefinitionÍ7åÍ9ÂÂOªIdentifierÍ7åÍ7ö±cancelSplitScreen¦methodS²FunctionExpressionÍ7öÍ9ÀÂÂÂQ®BlockStatementÍ7ùÍ9’M³VariableDeclarationÍ8Í8I‘N²VariableDeclaratorÍ8Í8HOªIdentifierÍ8Í8%§contextT¯ChainExpressionÍ8(Í8HY®CallExpressionÍ8(Í8HV°MemberExpressionÍ8(Í8FV°MemberExpressionÍ8(Í86W®ThisExpressionÍ8(Í8,OªIdentifierÍ8-Í86©uiContextÂÂOªIdentifierÍ88Í8F®getHostContextÂÃÂ£letT³ExpressionStatementÍ8fÍ9Y®CallExpressionÍ8fÍ9V°MemberExpressionÍ8fÍ8ƒY®CallExpressionÍ8fÍ8}V°MemberExpressionÍ8fÍ8{OªIdentifierÍ8fÍ8m§contextOªIdentifierÍ8nÍ8{­terminateSelfÂÂÂOªIdentifierÍ8~Í8ƒ¥catchÂÂ‘S·ArrowFunctionExpressionÍ8„Í9ÀÂÂÂ‘OªIdentifierÍ8…Í8ˆ£errQ®BlockStatementÍ8Í9‘T³ExpressionStatementÍ8œÍ9Y®CallExpressionÍ8œÍ9V°MemberExpressionÍ8œÍ8§OªIdentifierÍ8œÍ8¡¥hilogOªIdentifierÍ8¢Í8§¥errorÂÂ“]§LiteralÍ8¨Í8® ¦0x0000]§LiteralÍ8°Í8¹§TestLog©'TestLog'^¯TemplateLiteralÍ8»Í9’V°MemberExpressionÍ8ŞÍ8æOªIdentifierÍ8ŞÍ8á£errOªIdentifierÍ8âÍ8æ¤codeÂÂV°MemberExpressionÍ8ôÍ8ÿOªIdentifierÍ8ôÍ8÷£errOªIdentifierÍ8øÍ8ÿ§messageÂÂ“_¯TemplateElementÍ8¼Í8Ü`Ù Failed to terminate self. Code: Ù Failed to terminate self. Code: Â_¯TemplateElementÍ8çÍ8ò`«, message: «, message: Â_¯TemplateElementÍ9 Í9 `  ÃÂÂR°MethodDefinitionÍ9ÍÍ<ZÂÂOªIdentifierÍ9ÍÍ9Ü¯setWindowLimits¦methodS²FunctionExpressionÍ9ÜÍ<ZÀÂÂÂ”OªIdentifierÍ9İÍ9å¨maxWidthOªIdentifierÍ9çÍ9ğ©maxHeightOªIdentifierÍ9òÍ9ú¨minWidthOªIdentifierÍ9üÍ:©minHeightQ®BlockStatementÍ:Í<Z’M³VariableDeclarationÍ:)Í:Ğ‘N²VariableDeclaratorÍ:-Í:ÏOªIdentifierÍ:-Í:9¬windowLimitsb°ObjectExpressionÍ:<Í:Ï”c¨PropertyÍ:KÍ:]ÂÂÂOªIdentifierÍ:KÍ:S¨maxWidthOªIdentifierÍ:UÍ:]¨maxWidth¤initc¨PropertyÍ:lÍ:€ÂÂÂOªIdentifierÍ:lÍ:u©maxHeightOªIdentifierÍ:wÍ:€©maxHeight¤initc¨PropertyÍ:Í:¡ÂÂÂOªIdentifierÍ:Í:—¨minWidthOªIdentifierÍ:™Í:¡¨minWidth¤initc¨PropertyÍ:°Í:ÄÂÂÂOªIdentifierÍ:°Í:¹©minHeightOªIdentifierÍ:»Í:Ä©minHeight¤init£letT³ExpressionStatementÍ:ïÍ<SY®CallExpressionÍ:ïÍ<RV°MemberExpressionÍ:ïÍ;¶Y®CallExpressionÍ:ïÍ;°V°MemberExpressionÍ:ïÍ;!Y®CallExpressionÍ:ïÍ;V°MemberExpressionÍ:ïÍ;V°MemberExpressionÍ:ïÍ:şW®ThisExpressionÍ:ïÍ:óOªIdentifierÍ:ôÍ:şªmainWindowÂÂOªIdentifierÍ:ÿÍ;¯setWindowLimitsÂÂ‘OªIdentifierÍ;Í;¬windowLimitsÂOªIdentifierÍ;Í;!¤thenÂÂ‘S·ArrowFunctionExpressionÍ;"Í;¯ÀÂÂÂ‘OªIdentifierÍ;#Í;'¤dataQ®BlockStatementÍ;,Í;¯‘T³ExpressionStatementÍ;;Í;¤Y®CallExpressionÍ;;Í;£V°MemberExpressionÍ;;Í;EOªIdentifierÍ;;Í;@¥hilogOªIdentifierÍ;AÍ;E¤infoÂÂ“]§LiteralÍ;FÍ;L ¦0x0000]§LiteralÍ;NÍ;W§testLog©'testLog'^¯TemplateLiteralÍ;YÍ;¢‘Y®CallExpressionÍ;ŒÍ; V°MemberExpressionÍ;ŒÍ;šOªIdentifierÍ;ŒÍ;¤JSONOªIdentifierÍ;‘Í;š©stringifyÂÂ‘OªIdentifierÍ;›Í;Ÿ¤dataÂ’_¯TemplateElementÍ;ZÍ;Š`Ù0Succeeded in changing the window limits. Cause: Ù0Succeeded in changing the window limits. Cause: Â_¯TemplateElementÍ;¡Í;¡`  ÃÂÂOªIdentifierÍ;±Í;¶¥catchÂÂ‘S·ArrowFunctionExpressionÍ;·Í<QÀÂÂÂ‘OªIdentifierÍ;¸Í;»£errQ®BlockStatementÍ;ÀÍ<Q‘T³ExpressionStatementÍ;ÏÍ<FY®CallExpressionÍ;ÏÍ<EV°MemberExpressionÍ;ÏÍ;ÚOªIdentifierÍ;ÏÍ;Ô¥hilogOªIdentifierÍ;ÕÍ;Ú¥errorÂÂ“]§LiteralÍ;ÛÍ;á ¦0x0000]§LiteralÍ;ãÍ;ì§testLog©'testLog'^¯TemplateLiteralÍ;îÍ<D’V°MemberExpressionÍ<!Í<)OªIdentifierÍ<!Í<$£errOªIdentifierÍ<%Í<)¤codeÂÂV°MemberExpressionÍ<7Í<BOªIdentifierÍ<7Í<:£errOªIdentifierÍ<;Í<B§messageÂÂ“_¯TemplateElementÍ;ïÍ<`Ù0Failed to change the window limits. Cause code: Ù0Failed to change the window limits. Cause code: Â_¯TemplateElementÍ<*Í<5`«, message: «, message: Â_¯TemplateElementÍ<CÍ<C`  ÃÂÂR°MethodDefinitionÍ<ÍÍ>zÂÂOªIdentifierÍ<ÍÍ<Ó¦resize¦methodS²FunctionExpressionÍ<ÓÍ>zÀÂÂÂ’OªIdentifierÍ<ÔÍ<Ù¥widthOªIdentifierÍ<ÛÍ<á¦heightQ®BlockStatementÍ<ãÍ>z‘T³ExpressionStatementÍ<îÍ>sY®CallExpressionÍ<îÍ>rV°MemberExpressionÍ<îÍ=V°MemberExpressionÍ<îÍ<ıW®ThisExpressionÍ<îÍ<òOªIdentifierÍ<óÍ<ıªmainWindowÂÂOªIdentifierÍ<şÍ=¦resizeÂÂ“OªIdentifierÍ=Í=
+¥widthOªIdentifierÍ=Í=¦heightS·ArrowFunctionExpressionÍ=Í>qÀÂÂÂ‘OªIdentifierÍ=Í=£errQ®BlockStatementÍ=Í>q“M³VariableDeclarationÍ=,Í=E‘N²VariableDeclaratorÍ=2Í=DOªIdentifierÍ=2Í=9§errCodeV°MemberExpressionÍ=<Í=DOªIdentifierÍ=<Í=?£errOªIdentifierÍ=@Í=D¤codeÂÂ¥constZ«IfStatementÍ=SÍ>OªIdentifierÍ=WÍ=^§errCodeQ®BlockStatementÍ=`Í>’T³ExpressionStatementÍ=sÍ=èY®CallExpressionÍ=sÍ=çV°MemberExpressionÍ=sÍ=~OªIdentifierÍ=sÍ=x¥hilogOªIdentifierÍ=yÍ=~¥errorÂÂ“]§LiteralÍ=Í=… ¦0x0000]§LiteralÍ=‡Í=§testLog©'testLog'^¯TemplateLiteralÍ=’Í=æ’V°MemberExpressionÍ=ÃÍ=ËOªIdentifierÍ=ÃÍ=Æ£errOªIdentifierÍ=ÇÍ=Ë¤codeÂÂV°MemberExpressionÍ=ÙÍ=äOªIdentifierÍ=ÙÍ=Ü£errOªIdentifierÍ=İÍ=ä§messageÂÂ“_¯TemplateElementÍ=“Í=Á`Ù.Failed to change the window size. Cause code: Ù.Failed to change the window size. Cause code: Â_¯TemplateElementÍ=ÌÍ=×`«, message: «, message: Â_¯TemplateElementÍ=åÍ=å`  ÃÂÔrd”¤type¥start£end¨argument¯ReturnStatementÍ=úÍ>ÀÀT³ExpressionStatementÍ>Í>fY®CallExpressionÍ>Í>eV°MemberExpressionÍ>Í>(OªIdentifierÍ>Í>#¥hilogOªIdentifierÍ>$Í>(¤infoÂÂ“]§LiteralÍ>)Í>/ ¦0x0000]§LiteralÍ>1Í>:§testLog©'testLog']§LiteralÍ><Í>dÙ&Succeeded in changing the window size.Ù('Succeeded in changing the window size.'ÂÂR°MethodDefinitionÍ>ÂÍ@*ÂÂOªIdentifierÍ>ÂÍ>Û¹queryOrientationByDisplay¦methodS²FunctionExpressionÍ>ÛÍ@*ÀÂÂÂQ®BlockStatementÍ>ŞÍ@*‘\¬TryStatementÍ>éÍ@#Q®BlockStatementÍ>íÍ?a‘M³VariableDeclarationÍ?#Í?V‘N²VariableDeclaratorÍ?'Í?UOªIdentifierÍ?'Í?3¬displayClassY®CallExpressionÍ?6Í?UV°MemberExpressionÍ?6Í?SOªIdentifierÍ?6Í?=§displayOªIdentifierÍ?>Í?SµgetDefaultDisplaySyncÂÂÂ£leta«CatchClauseÍ?kÍ@#OªIdentifierÍ?rÍ?w¥errorQ®BlockStatementÍ?yÍ@#’M³VariableDeclarationÍ?ˆÍ?˜‘N²VariableDeclaratorÍ?ŒÍ?—OªIdentifierÍ?ŒÍ?£errOªIdentifierÍ?’Í?—¥error£letT³ExpressionStatementÍ?¦Í@Y®CallExpressionÍ?¦Í@V°MemberExpressionÍ?¦Í?±OªIdentifierÍ?¦Í?«¥hilogOªIdentifierÍ?¬Í?±¥errorÂÂ“]§LiteralÍ?²Í?¸ ¦0x0000]§LiteralÍ?ºÍ?Ã§testLog©'testLog'^¯TemplateLiteralÍ?ÅÍ@’V°MemberExpressionÍ?óÍ?ûOªIdentifierÍ?óÍ?ö£errOªIdentifierÍ?÷Í?û¤codeÂÂV°MemberExpressionÍ@	Í@OªIdentifierÍ@	Í@£errOªIdentifierÍ@Í@§messageÂÂ“_¯TemplateElementÍ?ÆÍ?ñ`Ù+Failed to query display orientation. Code: Ù+Failed to query display orientation. Code: Â_¯TemplateElementÍ?üÍ@`«, message: «, message: Â_¯TemplateElementÍ@Í@`  ÃÂÀR°MethodDefinitionÍ@xÍAnÂÂOªIdentifierÍ@xÍ@™Ù!queryOrientationByResourceManager¦methodS²FunctionExpressionÍ@™ÍAnÀÂÂÂQ®BlockStatementÍ@œÍAn’M³VariableDeclarationÍ@ÃÍA!‘N²VariableDeclaratorÍ@ÇÍA OªIdentifierÍ@ÇÍ@Ë¤infoT¯ChainExpressionÍ@ÎÍA V°MemberExpressionÍ@ÎÍA Y®CallExpressionÍ@ÎÍAV°MemberExpressionÍ@ÎÍAV°MemberExpressionÍ@ÎÍ@ÿY®CallExpressionÍ@ÎÍ@îV°MemberExpressionÍ@ÎÍ@ìV°MemberExpressionÍ@ÎÍ@ÜW®ThisExpressionÍ@ÎÍ@ÒOªIdentifierÍ@ÓÍ@Ü©uiContextÂÂOªIdentifierÍ@ŞÍ@ì®getHostContextÂÃÂOªIdentifierÍ@ğÍ@ÿ¯resourceManagerÂÃOªIdentifierÍA ÍA´getConfigurationSyncÂÂÂOªIdentifierÍAÍA ©directionÂÂ£letT³ExpressionStatementÍA+ÍAgY®CallExpressionÍA+ÍAfV°MemberExpressionÍA+ÍA5OªIdentifierÍA+ÍA0¥hilogOªIdentifierÍA1ÍA5¤infoÂÂ“]§LiteralÍA6ÍA< ¦0x0000]§LiteralÍA>ÍAG§testLog©'testLog'^¯TemplateLiteralÍAIÍAe‘OªIdentifierÍA_ÍAc¤info’_¯TemplateElementÍAJÍA]`³The Orientation is ³The Orientation is Â_¯TemplateElementÍAdÍAd`  ÃÂR°MethodDefinitionÍA°ÍCsÂÂOªIdentifierÍA°ÍA»«queryDegree¦methodS²FunctionExpressionÍA»ÍCsÀÂÂÂQ®BlockStatementÍA¾ÍCs‘\¬TryStatementÍAÉÍClQ®BlockStatementÍAÍÍB·‘T³ExpressionStatementÍB ÍB¬Y®CallExpressionÍB ÍB«V°MemberExpressionÍB ÍB	OªIdentifierÍB ÍB¦sensorOªIdentifierÍBÍB	¢onÂÂ’V°MemberExpressionÍB
+ÍB!V°MemberExpressionÍB
+ÍBOªIdentifierÍB
+ÍB¦sensorOªIdentifierÍBÍB¨SensorIdÂÂOªIdentifierÍBÍB!§GRAVITYÂÂS·ArrowFunctionExpressionÍB#ÍBªÀÂÂÂ‘OªIdentifierÍB$ÍB(¤dataQ®BlockStatementÍB-ÍBª‘M³VariableDeclarationÍBdÍB›‘N²VariableDeclaratorÍBhÍBšOªIdentifierÍBhÍBn¦degreeY®CallExpressionÍBqÍBšV°MemberExpressionÍBqÍB‚W®ThisExpressionÍBqÍBuOªIdentifierÍBvÍB‚¬getCalDegreeÂÂ“V°MemberExpressionÍBƒÍB‰OªIdentifierÍBƒÍB‡¤dataOªIdentifierÍBˆÍB‰¡xÂÂV°MemberExpressionÍB‹ÍB‘OªIdentifierÍB‹ÍB¤dataOªIdentifierÍBÍB‘¡yÂÂV°MemberExpressionÍB“ÍB™OªIdentifierÍB“ÍB—¤dataOªIdentifierÍB˜ÍB™¡zÂÂÂ£letÂa«CatchClauseÍBÁÍClOªIdentifierÍBÈÍBÍ¥errorQ®BlockStatementÍBÏÍCl’M³VariableDeclarationÍBŞÍBî‘N²VariableDeclaratorÍBâÍBíOªIdentifierÍBâÍBå£errOªIdentifierÍBèÍBí¥error£letT³ExpressionStatementÍBüÍCaY®CallExpressionÍBüÍC`V°MemberExpressionÍBüÍCOªIdentifierÍBüÍC¥hilogOªIdentifierÍCÍC¥errorÂÂ“]§LiteralÍCÍC ¦0x0000]§LiteralÍCÍC§TestLog©'TestLog'^¯TemplateLiteralÍCÍC_’V°MemberExpressionÍC<ÍCDOªIdentifierÍC<ÍC?£errOªIdentifierÍC@ÍCD¤codeÂÂV°MemberExpressionÍCRÍC]OªIdentifierÍCRÍCU£errOªIdentifierÍCVÍC]§messageÂÂ“_¯TemplateElementÍCÍC:`¾Failed to query degree. Code: ¾Failed to query degree. Code: Â_¯TemplateElementÍCEÍCP`«, message: «, message: Â_¯TemplateElementÍC^ÍC^`  ÃÂÀR°MethodDefinitionÍD#ÍEÒÂÂOªIdentifierÍD#ÍD/¬getCalDegree¦methodS²FunctionExpressionÍD/ÍEÒÀÂÂÂ“OªIdentifierÍD0ÍD1¡xOªIdentifierÍD3ÍD4¡yOªIdentifierÍD6ÍD7¡zQ®BlockStatementÍD9ÍEÒ”M³VariableDeclarationÍDDÍDS‘N²VariableDeclaratorÍDHÍDROªIdentifierÍDHÍDN¦degree]§LiteralÍDQÍDR ¡0£letZ«IfStatementÍDÍDæ[°BinaryExpressionÍD¡ÍD¼[°BinaryExpressionÍD¡ÍD´[°BinaryExpressionÍD¢ÍD¯[°BinaryExpressionÍD¢ÍD§OªIdentifierÍD¢ÍD£¡x¡*OªIdentifierÍD¦ÍD§¡x¡+[°BinaryExpressionÍDªÍD¯OªIdentifierÍDªÍD«¡y¡*OªIdentifierÍD®ÍD¯¡y¡*]§LiteralÍD³ÍD´¡3¡<[°BinaryExpressionÍD·ÍD¼OªIdentifierÍD·ÍD¸¡z¡*OªIdentifierÍD»ÍD¼¡zQ®BlockStatementÍD¾ÍDæ‘d¯ReturnStatementÍDÍÍDÛOªIdentifierÍDÔÍDÚ¦degreeÀT³ExpressionStatementÍE)ÍEoU´AssignmentExpressionÍE)ÍEn¡=OªIdentifierÍE)ÍE/¦degree[°BinaryExpressionÍE2ÍEn]§LiteralÍE2ÍE4ÌZ¢90¡-Y®CallExpressionÍE7ÍEnOªIdentifierÍE8ÍE>¦Number‘Y®CallExpressionÍE@ÍEmV°MemberExpressionÍE@ÍEJOªIdentifierÍE@ÍED¤MathOªIdentifierÍEEÍEJ¥roundÂÂ‘[°BinaryExpressionÍEKÍEl[°BinaryExpressionÍEKÍEfY®CallExpressionÍEKÍE\V°MemberExpressionÍEKÍEUOªIdentifierÍEKÍEO¤MathOªIdentifierÍEPÍEU¥atan2ÂÂ’OªIdentifierÍEVÍEW¡yÔre–¤type¥start£end¨operator¦prefix¨argument¯UnaryExpressionÍEYÍE[¡-ÃOªIdentifierÍEZÍE[¡xÂ¡/V°MemberExpressionÍE_ÍEfOªIdentifierÍE_ÍEc¤MathOªIdentifierÍEdÍEf¢PIÂÂ¡*]§LiteralÍEiÍElÌ´£180ÂÂd¯ReturnStatementÍE”ÍEËZµConditionalExpressionÍE›ÍEÊ[°BinaryExpressionÍE›ÍE¦OªIdentifierÍE›ÍE¡¦degree¢>=]§LiteralÍE¥ÍE¦ ¡0[°BinaryExpressionÍE©ÍEµOªIdentifierÍE©ÍE¯¦degree¡%]§LiteralÍE²ÍEµÍh£360[°BinaryExpressionÍE¸ÍEÊ[°BinaryExpressionÍE¸ÍEÄOªIdentifierÍE¸ÍE¾¦degree¡%]§LiteralÍEÁÍEÄÍh£360¡+]§LiteralÍEÇÍEÊÍh£360ÀL¶ExportNamedDeclarationÍIGÍI]À‘Ôrf•¤type¥start£end¥local¨exported¯ExportSpecifierÍIPÍIZOªIdentifierÍIPÍIZªWindowInfoOªIdentifierÍIPÍIZªWindowInfoÀ–Ôrg•¤type¥start£endªspecifiers¦source±ImportDeclarationÍhÍŒ‘Ôrh”¤type¥start£end¥local¶ImportDefaultSpecifierÍoÍvOªIdentifierÍoÍv§display]§LiteralÍ|Í‹­@ohos.display¯"@ohos.display"g±ImportDeclarationÍ´ÍÖ‘h¶ImportDefaultSpecifierÍ»ÍÁOªIdentifierÍ»ÍÁ¦window]§LiteralÍÇÍÕ¬@ohos.window®"@ohos.window"g±ImportDeclarationÍåÍ‘h¶ImportDefaultSpecifierÍìÍñOªIdentifierÍìÍñ¥hilog]§LiteralÍ÷Í«@ohos.hilog­"@ohos.hilog"g±ImportDeclarationÍ!Ía‘h¶ImportDefaultSpecifierÍ(Í7OªIdentifierÍ(Í7¯AbilityConstant]§LiteralÍ=Í`Ù!@ohos.app.ability.AbilityConstantÙ#"@ohos.app.ability.AbilityConstant"g±ImportDeclarationÍ{Í‘h¶ImportDefaultSpecifierÍ‚ÍˆOªIdentifierÍ‚Íˆ¦sensor]§LiteralÍÍœ¬@ohos.sensor®"@ohos.sensor"g±ImportDeclarationÍõÍ]§LiteralÍüÍµ./WidthBreakpointType·'./WidthBreakpointType'
